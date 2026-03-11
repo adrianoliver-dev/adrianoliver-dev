@@ -5,29 +5,27 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B1
-- **Block Name:** Global Layout & Fonts
-- **Status:** IN_PROGRESS
+- **Block Number:** B2
+- **Block Name:** Hero Section
+- **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B0
-- **Block Name:** Foundation & Setup (.agent, rules, structure, skills)
+- **Block Number:** B1
+- **Block Name:** Global Layout & Fonts
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
 
 
 ## FILES CHANGED THIS SESSION
-- `src/app/page.tsx` — Created dummy homepage route.
-- `src/app/projects/lukess-home/page.tsx` — Created dummy project case study route.
-- `src/app/projects/lukess-inventory-system/page.tsx` — Created dummy project case study route.
-- `src/app/blog/page.tsx` — Created dummy blog index route.
-- `src/app/blog/[slug]/page.tsx` — Created dummy dynamic blog post route.
-- `src/app/contact/page.tsx` — Created dummy contact route.
-- `public/llms.txt` — Created placeholder file for AI context.
-- Scaffolding of standard directories: `src/components/{layout,home,projects,blog,ui}`, `src/lib/`, `src/content/blog/`, `public/{images,mockups}`.
-- `package.json` — Initialized with `framer-motion`, `vanilla-tilt`, `next-mdx-remote`, `gray-matter`, `resend` (installations in progress).
-- `.agent/skills/` — Added ui-ux-pro, react-design-patterns, seo-patterns, nextjs-vercel skills and configured triggers.
+- `src/app/page.tsx` — Minimal placeholder for layout testing
+- `src/app/layout.tsx` — Configured with fonts, metadata, Navbar, and Footer
+- `src/app/globals.css` — Configured Tailwind v4 @theme design tokens
+- `src/lib/fonts.ts` — Defined DM Sans, Instrument Serif, JetBrains Mono
+- `src/components/layout/Navbar.tsx` — Created skeleton Navbar
+- `src/components/layout/Footer.tsx` — Created skeleton Footer
+- `package.json` — Scaffolded Next.js 15 app with original custom dependencies reinstalled
+- `.agent/.context/activecontext.md` — Marked B1 DONE
 
 ## PROJECT STATE
 
@@ -38,21 +36,20 @@
 ---
 
 ## OPEN ISSUES
-- [ ] Next.js 15 app requires initialization (package missing). To be done in B1.
-- [ ] Confirm Tailwind is v4 with Oxide and @theme (not v3). To be done in B1.
-- [ ] Create `src/lib/fonts.ts` with Instrument Serif, DM Sans, JetBrains Mono via `next/font/google`.
-- [ ] Set up `globals.css` with design tokens from portfolio-rules.md.
+- [ ] Implement actual Hero section in `src/components/home/Hero.tsx`
+- [ ] Build global Navbar with animations
+- [ ] Connect Framer Motion transitions (B2/B3)
 
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B1
-- **Block Name:** Global Layout & Fonts
-- **Dependencies:** B0 rules & design tokens in place
+- **Block Number:** B2
+- **Block Name:** Hero Section
+- **Dependencies:** B1 Global Layout
 - **Scope:**
-  - Implement `src/app/layout.tsx` with fonts and base layout.
-  - Create `Navbar` and `Footer` skeletons.
-  - Apply background, noise texture, and basic theming.
+  - Build `<Hero />` component with typography hierarchy
+  - Add text scramble/glitch effect to the main title
+  - Animate entrance with Framer Motion `LazyMotion`
 
 ---
 
@@ -61,3 +58,4 @@
 | Block | Name                    | Status       | Date       | Commit |
 |-------|-------------------------|--------------|------------|--------|
 | B0    | Foundation & Setup      | DONE         | 2026-03-11 | chore: complete block B0 - foundation, dependencies, and skills |
+| B1    | Global Layout & Fonts   | DONE         | 2026-03-11 | feat(portfolio-b1): Next.js 15 init, Tailwind v4, global layout, fonts, navbar, footer |

@@ -1,7 +1,9 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
-      <h1>Home</h1>
-    </main>
-  );
+    <div className="min-h-screen flex items-center justify-center">
+      <p className="font-mono text-text-secondary text-sm">
+        B1 layout check — adrianoliver.dev
+      </p>
+    </div>
+  )
 }
