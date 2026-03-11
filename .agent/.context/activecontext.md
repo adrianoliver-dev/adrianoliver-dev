@@ -5,19 +5,21 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B5
-- **Block Name:** Case Study pages (/work/lukess-home, /work/lukess-inventory)
+- **Block Number:** B6
+- **Block Name:** Contact page + availability section
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B4
-- **Block Name:** Methodology / Technical Philosophy
+- **Block Number:** B5
+- **Block Name:** Case Study pages (/work/lukess-home, /work/lukess-inventory)
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
 ## FILES CHANGED THIS SESSION
-- `src/components/home/Methodology.tsx` — Created
-- `src/app/page.tsx` — Modified
+- `src/components/work/CaseStudyLayout.tsx` — Created
+- `src/components/work/MetricCard.tsx` — Created
+- `src/app/work/lukess-home/page.tsx` — Created
+- `src/app/work/lukess-inventory/page.tsx` — Created
 
 ## PROJECT STATE
 
@@ -35,11 +37,11 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B5
-- **Block Name:** Case Study pages (/work/lukess-home, /work/lukess-inventory)
-- **Dependencies:** B4 Methodology
+- **Block Number:** B6
+- **Block Name:** Contact page + availability section
+- **Dependencies:** B5 Case Study pages
 - **Scope:**
-  - Build the structural case study pages.
+  - Build the contact page and availability section.
 
 ---
 
@@ -51,3 +53,5 @@
 | B1    | Global Layout & Fonts   | DONE         | 2026-03-11 | feat(portfolio-b1): Next.js 15 init, Tailwind v4, global layout, fonts, navbar, footer |
 | B2    | Hero Section            | DONE         | 2026-03-11 | feat(portfolio-b2): hero section with glitch, stagger reveal, cursor glow |
 | B2.5  | Vercel Domain Fix       | DONE         | 2026-03-11 | chore(deploy): trigger Vercel deploy after framework fix |
+| B4    | Methodology Section     | DONE         | 2026-03-11 | feat(portfolio-b4): methodology section |
+| B5    | Case Study Pages        | DONE         | 2026-03-11 | feat(portfolio-b5): case study pages for lukess-home and lukess-inventory |
