@@ -5,22 +5,18 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B4
-- **Block Name:** Methodology / Technical Philosophy
+- **Block Number:** B5
+- **Block Name:** Case Study pages (/work/lukess-home, /work/lukess-inventory)
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B3
-- **Block Name:** Projects Bento Grid + Hero Copy Fix
+- **Block Number:** B4
+- **Block Name:** Methodology / Technical Philosophy
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
-
-
 ## FILES CHANGED THIS SESSION
-- `src/components/home/HeroAnimations.tsx` — Modified
-- `src/components/home/ProjectCard.tsx` — Created
-- `src/components/home/ProjectsGrid.tsx` — Created
+- `src/components/home/Methodology.tsx` — Created
 - `src/app/page.tsx` — Modified
 
 ## PROJECT STATE
@@ -39,11 +35,11 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B4
-- **Block Name:** Methodology / Technical Philosophy
-- **Dependencies:** B3 Projects Bento Grid
+- **Block Number:** B5
+- **Block Name:** Case Study pages (/work/lukess-home, /work/lukess-inventory)
+- **Dependencies:** B4 Methodology
 - **Scope:**
-  - Build the detailed methodology section describing the development process.
+  - Build the structural case study pages.
 
 ---
 
