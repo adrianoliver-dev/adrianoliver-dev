@@ -5,27 +5,23 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B2
-- **Block Name:** Hero Section
+- **Block Number:** B3
+- **Block Name:** Projects Bento Grid
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B1
-- **Block Name:** Global Layout & Fonts
+- **Block Number:** B2
+- **Block Name:** Hero Section
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
 
 
 ## FILES CHANGED THIS SESSION
-- `src/app/page.tsx` — Minimal placeholder for layout testing
-- `src/app/layout.tsx` — Configured with fonts, metadata, Navbar, and Footer
-- `src/app/globals.css` — Configured Tailwind v4 @theme design tokens
-- `src/lib/fonts.ts` — Defined DM Sans, Instrument Serif, JetBrains Mono
-- `src/components/layout/Navbar.tsx` — Created skeleton Navbar
-- `src/components/layout/Footer.tsx` — Created skeleton Footer
-- `package.json` — Scaffolded Next.js 15 app with original custom dependencies reinstalled
-- `.agent/.context/activecontext.md` — Marked B1 DONE
+- `src/components/home/Hero.tsx` — Created static Hero component
+- `src/components/home/HeroAnimations.tsx` — Created Client Component with Framer Motion glitch and cursor glow
+- `src/app/page.tsx` — Wired Hero component into home page
+- `.agent/.context/activecontext.md` — Marked B2 DONE
 
 ## PROJECT STATE
 
@@ -36,20 +32,20 @@
 ---
 
 ## OPEN ISSUES
-- [ ] Implement actual Hero section in `src/components/home/Hero.tsx`
+- [x] Implement actual Hero section in `src/components/home/Hero.tsx`
 - [ ] Build global Navbar with animations
-- [ ] Connect Framer Motion transitions (B2/B3)
+- [ ] Connect Framer Motion transitions (B3)
 
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B2
-- **Block Name:** Hero Section
-- **Dependencies:** B1 Global Layout
+- **Block Number:** B3
+- **Block Name:** Projects Bento Grid
+- **Dependencies:** B2 Hero Section
 - **Scope:**
-  - Build `<Hero />` component with typography hierarchy
-  - Add text scramble/glitch effect to the main title
-  - Animate entrance with Framer Motion `LazyMotion`
+  - Build `<ProjectsPreview />` component
+  - Implement Vanilla Tilt on project cards
+  - Setup responsive CSS Grid (Bento style)
 
 ---
 
@@ -59,3 +55,4 @@
 |-------|-------------------------|--------------|------------|--------|
 | B0    | Foundation & Setup      | DONE         | 2026-03-11 | chore: complete block B0 - foundation, dependencies, and skills |
 | B1    | Global Layout & Fonts   | DONE         | 2026-03-11 | feat(portfolio-b1): Next.js 15 init, Tailwind v4, global layout, fonts, navbar, footer |
+| B2    | Hero Section            | DONE         | 2026-03-11 | feat(portfolio-b2): hero section with glitch, stagger reveal, cursor glow |
