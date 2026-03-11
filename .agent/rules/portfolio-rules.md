@@ -177,3 +177,48 @@ llms.txt
 
 When creating new components, ALWAYS place them in the appropriate folder above instead of inventing new top-level folders.
 
+
+## 9. Commit & Push Protocol
+
+A block or sub-block is NEVER complete until the code is pushed to GitHub remote.
+
+After EVERY completed block or meaningful sub-block fix:
+
+1. Run lint first:
+   npm run lint
+   (wait for output — fix ALL errors before continuing)
+
+2. Run build:
+   npm run build
+   (wait for output — fix ALL errors before continuing)
+
+3. Only if both pass with zero errors:
+   git add .
+   git commit -m "[type](portfolio-b[N]-[name]): [description]"
+   
+4. Push to remote immediately after commit:
+   Use GitHub MCP: push_files OR run: git push origin main
+
+NEVER commit if lint or build has errors.
+NEVER leave a commit without pushing — local commits are invisible to Vercel deploy.
+NEVER chain commands — run each one separately and wait for output.
+
+Commit message format:
+- feat(portfolio-b1-layout): description → new feature completed
+- fix(portfolio-b1-layout): description → bug fix
+- chore(portfolio): description → config, deps, non-code changes
+
+## 10. Browser / Screenshot Protocol
+
+Do NOT run the dev server or take screenshots by default.
+
+ONLY use Browser Sub-Agent or dev server when:
+- Explicitly requested by the user ("show me how it looks")
+- Verifying a visual bug that cannot be diagnosed from code alone
+- Capturing mockup screenshots for case studies or portfolio documentation
+- Running a Lighthouse audit (B12 QA block only)
+- Checking a layout on mobile viewport (375px) when responsive issues are suspected
+
+For all other tasks: trust lint + build output as the verification signal.
+When in doubt, ask: "Do you want me to run the dev server to verify visually?"
+

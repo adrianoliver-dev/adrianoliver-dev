@@ -5,20 +5,17 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B0
-- **Block Name:** Foundation & Setup (.agent, rules, structure)
+- **Block Number:** B1
+- **Block Name:** Global Layout & Fonts
 - **Status:** IN_PROGRESS
-- **Started:** 2026-03-11
-
----
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** —
-- **Block Name:** —
-- **Completed:** —
-- **Commit:** —
+- **Block Number:** B0
+- **Block Name:** Foundation & Setup (.agent, rules, structure, skills)
+- **Completed Date:** 2026-03-11
+- **Started:** 2026-03-11
 
----
+
 
 ## FILES CHANGED THIS SESSION
 - `src/app/page.tsx` — Created dummy homepage route.
@@ -30,6 +27,7 @@
 - `public/llms.txt` — Created placeholder file for AI context.
 - Scaffolding of standard directories: `src/components/{layout,home,projects,blog,ui}`, `src/lib/`, `src/content/blog/`, `public/{images,mockups}`.
 - `package.json` — Initialized with `framer-motion`, `vanilla-tilt`, `next-mdx-remote`, `gray-matter`, `resend` (installations in progress).
+- `.agent/skills/` — Added ui-ux-pro, react-design-patterns, seo-patterns, nextjs-vercel skills and configured triggers.
 
 ## PROJECT STATE
 
@@ -62,4 +60,4 @@
 
 | Block | Name                    | Status       | Date       | Commit |
 |-------|-------------------------|--------------|------------|--------|
-| B0    | Foundation & Setup      | IN_PROGRESS  | 2026-03-11 | —      |
+| B0    | Foundation & Setup      | DONE         | 2026-03-11 | chore: complete block B0 - foundation, dependencies, and skills |
