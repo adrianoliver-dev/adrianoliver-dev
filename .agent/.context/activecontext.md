@@ -5,23 +5,23 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B3
-- **Block Name:** Projects Bento Grid
+- **Block Number:** B4
+- **Block Name:** Methodology / Technical Philosophy
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B2
-- **Block Name:** Hero Section
+- **Block Number:** B3
+- **Block Name:** Projects Bento Grid + Hero Copy Fix
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
 
 
 ## FILES CHANGED THIS SESSION
-- `src/components/home/Hero.tsx` — Created static Hero component
-- `src/components/home/HeroAnimations.tsx` — Created Client Component with Framer Motion glitch and cursor glow
-- `src/app/page.tsx` — Wired Hero component into home page
-- `.agent/.context/activecontext.md` — Marked B2 DONE
+- `src/components/home/HeroAnimations.tsx` — Modified
+- `src/components/home/ProjectCard.tsx` — Created
+- `src/components/home/ProjectsGrid.tsx` — Created
+- `src/app/page.tsx` — Modified
 
 ## PROJECT STATE
 
@@ -39,13 +39,11 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B3
-- **Block Name:** Projects Bento Grid
-- **Dependencies:** B2 Hero Section
+- **Block Number:** B4
+- **Block Name:** Methodology / Technical Philosophy
+- **Dependencies:** B3 Projects Bento Grid
 - **Scope:**
-  - Build `<ProjectsPreview />` component
-  - Implement Vanilla Tilt on project cards
-  - Setup responsive CSS Grid (Bento style)
+  - Build the detailed methodology section describing the development process.
 
 ---
 
@@ -56,3 +54,4 @@
 | B0    | Foundation & Setup      | DONE         | 2026-03-11 | chore: complete block B0 - foundation, dependencies, and skills |
 | B1    | Global Layout & Fonts   | DONE         | 2026-03-11 | feat(portfolio-b1): Next.js 15 init, Tailwind v4, global layout, fonts, navbar, footer |
 | B2    | Hero Section            | DONE         | 2026-03-11 | feat(portfolio-b2): hero section with glitch, stagger reveal, cursor glow |
+| B2.5  | Vercel Domain Fix       | DONE         | 2026-03-11 | chore(deploy): trigger Vercel deploy after framework fix |

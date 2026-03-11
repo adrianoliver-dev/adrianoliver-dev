@@ -86,24 +86,15 @@ export default function HeroAnimations() {
         }}
       />
       
-      {/* eyebrow */}
-      <m.p 
-        className="font-mono text-text-secondary text-sm"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0, duration: 0.5, ease: "easeOut" }}
-      >
-        Full-Stack Developer — Bolivia
-      </m.p>
-      
       {/* h1 with glitch */}
       <m.h1 
         className="font-serif text-[clamp(4rem,8vw,7rem)] leading-none text-text-primary mt-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
+        aria-label="Adrian Oliver"
       >
-        <span ref={nameRef}>{ORIGINAL}</span>
+        <span ref={nameRef} aria-hidden="true">{ORIGINAL}</span>
       </m.h1>
       
       {/* subtitle */}
@@ -113,7 +104,7 @@ export default function HeroAnimations() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
       >
-        <span className="font-serif italic text-text-secondary block">I build high-performance web systems</span>
+        <span className="font-serif text-text-secondary block">I build web systems that generate revenue</span>
         <span className="font-serif italic text-accent block mt-1">for businesses that need results.</span>
       </m.p>
       
