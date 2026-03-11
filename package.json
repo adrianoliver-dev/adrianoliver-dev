@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "framer-motion": "^12.35.2",
+    "gray-matter": "^4.0.3",
+    "next-mdx-remote": "^6.0.0",
+    "resend": "^6.9.3",
+    "vanilla-tilt": "^1.8.1"
+  }
+}
