@@ -1,6 +1,7 @@
 'use client'
-import { useActionState } from 'react'
+import { useActionState, useEffect, useRef, useState } from 'react'
 import { sendContactEmail, type ContactFormState } from '@/app/actions/contact'
+import { trackEvent } from '@/lib/analytics'
 
 const initialState: ContactFormState = { status: 'idle' }
 
@@ -13,6 +14,33 @@ const budgetOptions = [
 
 export default function ContactForm() {
   const [state, action, pending] = useActionState(sendContactEmail, initialState)
+  const [selectedBudget, setSelectedBudget] = useState<string | undefined>(undefined)
+  const formStarted = useRef(false)
+  const prevStatus = useRef<string>('idle')
+
+  // Track form success / error state transitions
+  useEffect(() => {
+    if (state.status === prevStatus.current) return
+    prevStatus.current = state.status
+
+    if (state.status === 'success') {
+      trackEvent({ action: 'contact_form_success', budget: selectedBudget })
+    } else if (state.status === 'error') {
+      trackEvent({ action: 'contact_form_error' })
+    }
+  }, [state.status, selectedBudget])
+
+  function handleFirstFocus() {
+    if (!formStarted.current) {
+      formStarted.current = true
+      trackEvent({ action: 'contact_form_start' })
+    }
+  }
+
+  // Track submit click (fires before server action runs)
+  function handleSubmitClick() {
+    trackEvent({ action: 'contact_form_submit', budget: selectedBudget })
+  }
 
   if (state.status === 'success') {
     return (
@@ -27,7 +55,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form action={action} className="flex flex-col gap-5">
+    <form action={action} onFocus={handleFirstFocus} className="flex flex-col gap-5">
       {/* Name + Email row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">
@@ -70,14 +98,14 @@ export default function ContactForm() {
         </label>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {budgetOptions.map(({ value, label }) => (
-            <label key={value}
-              className="relative cursor-pointer">
+            <label key={value} className="relative cursor-pointer">
               <input
                 type="radio"
                 name="budget"
                 value={value}
                 className="peer sr-only"
                 required
+                onChange={() => setSelectedBudget(value)}
               />
               <span className="block text-center font-mono text-xs 
                 border border-border rounded-lg py-2.5 px-2
@@ -122,6 +150,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={pending}
+        onClick={handleSubmitClick}
         className="self-start inline-flex items-center gap-2 bg-accent 
           text-black font-mono text-sm font-medium px-6 py-3 rounded-lg
           shadow-[0_0_40px_#D9770630] hover:shadow-[0_0_60px_#D9770650]
