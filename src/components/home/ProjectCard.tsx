@@ -82,12 +82,12 @@ export default function ProjectCard({
       {featured && (
         <div className="mt-auto pt-4 border-t border-border grid grid-cols-3 gap-2 text-center">
           <div>
-            <p className="font-mono text-accent text-sm font-medium">~23d</p>
-            <p className="font-mono text-text-secondary text-xs">Active build</p>
+            <p className="font-mono text-accent text-sm font-medium">100/100</p>
+            <p className="font-mono text-text-secondary text-xs">Performance</p>
           </div>
           <div>
-            <p className="font-mono text-accent text-sm font-medium">100</p>
-            <p className="font-mono text-text-secondary text-xs">Lighthouse</p>
+            <p className="font-mono text-accent text-sm font-medium">Next.js</p>
+            <p className="font-mono text-text-secondary text-xs">Modern Stack</p>
           </div>
           <div>
             <p className="font-mono text-accent text-sm font-medium">Full</p>

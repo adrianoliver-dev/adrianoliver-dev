@@ -22,13 +22,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${base}/work/lukess-home`,
+      url: `${base}/projects/lukess-home`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${base}/work/lukess-inventory`,
+      url: `${base}/projects/lukess-inventory-system`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,

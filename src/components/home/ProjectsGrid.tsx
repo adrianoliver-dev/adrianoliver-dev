@@ -21,9 +21,9 @@ export default function ProjectsGrid() {
           <ProjectCard 
             title="Lukess Home"
             tagline="E-Commerce Platform · Next.js + Supabase"
-            description="Full e-commerce storefront with product catalog, WhatsApp checkout flow, and custom CMS. Built solo, shipped to production in ~23 days."
+            description="Omnichannel retail engine with real-time stock sync at the database level. Built with Next.js 15 Server Components and Supabase RLS for maximum integrity."
             tags={["Next.js 15", "TypeScript", "Supabase", "Tailwind v4", "Resend"]}
-            href="/work/lukess-home"
+            href="/projects/lukess-home"
             status="live"
             featured={true}
             className="md:col-span-3 h-full"
@@ -34,9 +34,9 @@ export default function ProjectsGrid() {
             <ProjectCard 
               title="Lukess Inventory"
               tagline="POS + Inventory System · Real-time sync"
-              description="Custom inventory and point-of-sale system syncing stock across 3 retail locations in real-time. RBAC, analytics dashboard, order fulfillment."
+              description="Enterprise-grade ERP system with RBAC permissions, real-time POS ergonomics, and automated financial reporting for multi-location businesses."
               tags={["Next.js 15", "Supabase Realtime", "PostgreSQL", "RBAC"]}
-              href="/work/lukess-inventory"
+              href="/projects/lukess-inventory-system"
               status="case-study"
               featured={false}
             />

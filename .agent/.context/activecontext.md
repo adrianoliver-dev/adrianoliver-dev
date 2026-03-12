@@ -5,9 +5,9 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B12
-- **Block Name:** QA & Launch
-- **Status:** PENDING
+- **Block Number:** B12.1 / B12.2
+- **Block Name:** Case Study Optimization & Routing Consolidation
+- **Status:** DONE
 
 ## LAST COMPLETED BLOCK
 - **Block Number:** B11.2
@@ -64,3 +64,7 @@
 | B11.1 | Clarity + Email Tmpl    | DONE         | 2026-03-11 | feat(portfolio-b11.1): clarity, resend email templates, search console placeholder |
 | B11.2 | GA4 Event Tracking      | DONE         | 2026-03-12 | feat(portfolio-b11.2): GA4 custom events tracking |
 | B11.2 | Email Polish & Readability | DONE         | 2026-03-12 | feat(portfolio-b11.2): email polish — typography, dark mode, copy |
+| B12.1 | Lukess Home Optimization  | DONE         | 2026-03-12 | feat(portfolio-b12.1): premium case study with ProjectHero and TechBento |
+| B12.2 | Inventory System Optimization | DONE      | 2026-03-12 | feat(portfolio-b12.2): technical case study focused on enterprise ERP |
+| B12.3 | Final QA & Routing Consolidation | DONE    | 2026-03-12 | chore(portfolio-b12.3): unify routes under /projects, fix sitemap, refine copy |
+| B12.4 | Visual Upgrades & Immersion | DONE       | 2026-03-12 | feat(portfolio-b12.4): premium visuals (Yakushev style) + technical immersion (Guignand style) |
