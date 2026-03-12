@@ -84,7 +84,7 @@ export default function LukessHomeCaseStudy() {
               <h2 className="text-4xl font-instrument-serif italic text-[var(--color-text-primary)]">The Architecture Challenge</h2>
               <div className="space-y-6 text-[var(--color-text-secondary)] text-xl leading-relaxed font-light">
                 <p>
-                  Transitioning a traditional brick-and-mortar business to an omnichannel model required more than just a website. It required a centralized "brain" capable of managing stock levels across multiple locations while remaining accessible to customers.
+                  Transitioning a traditional brick-and-mortar business to an omnichannel model required more than just a website. It required a centralized &quot;brain&quot; capable of managing stock levels across multiple locations while remaining accessible to customers.
                 </p>
                 <p>
                   I architected a solution that prioritizes data integrity, ensuring that a sale in a physical stall is reflected on the e-commerce storefront in milliseconds, preventing the common pitfalls of overselling and manual stock-outs.
@@ -164,7 +164,7 @@ export default function LukessHomeCaseStudy() {
             Digitalizing legacy systems in 30 days.
           </h2>
           <p className="text-[var(--color-text-secondary)] text-xl mb-16 font-light leading-relaxed">
-            The Lukess ecosystem isn't just a store; it's a blueprint for modern retail. By focusing on database-level integrity and server-first performance, I delivered a system that empowers the business for long-term growth.
+            The Lukess ecosystem isn&apos;t just a store; it&apos;s a blueprint for modern retail. By focusing on database-level integrity and server-first performance, I delivered a system that empowers the business for long-term growth.
           </p>
           <div className="flex justify-center flex-col md:flex-row gap-12 items-center">
             <a href="https://store.adrianoliver.dev" target="_blank" className="font-mono text-sm uppercase tracking-widest text-[var(--color-text-primary)] border-b border-[var(--color-accent)] pb-2 active:scale-95 transition-transform">

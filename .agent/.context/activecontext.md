@@ -5,19 +5,20 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B12.1 / B12.2
-- **Block Name:** Case Study Optimization & Routing Consolidation
-- **Status:** DONE
+- **Block Number:** B13.2
+- **Block Name:** Final Polish & Launch
+- **Status:** IN_PROGRESS
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B11.2
-- **Block Name:** Email Polish & Readability
+- **Block Number:** B13.1
+- **Block Name:** ProjectCard Visual Upgrade
 - **Completed Date:** 2026-03-12
 - **Started:** 2026-03-12
 
 ## FILES CHANGED THIS SESSION
-- `src/lib/email-templates.ts`
-- `src/app/actions/contact.ts`
+- `src/components/home/ProjectCard.tsx`
+- `src/components/home/ProjectsGrid.tsx`
+- `src/app/projects/lukess-home/page.tsx`
 
 ## PROJECT STATE
 
@@ -68,3 +69,4 @@
 | B12.2 | Inventory System Optimization | DONE      | 2026-03-12 | feat(portfolio-b12.2): technical case study focused on enterprise ERP |
 | B12.3 | Final QA & Routing Consolidation | DONE    | 2026-03-12 | chore(portfolio-b12.3): unify routes under /projects, fix sitemap, refine copy |
 | B12.4 | Visual Upgrades & Immersion | DONE       | 2026-03-12 | feat(portfolio-b12.4): premium visuals (Yakushev style) + technical immersion (Guignand style) |
+| B12.5 | Screenshot Integration & Polish | DONE   | 2026-03-12 | feat(portfolio-b12.5): integrated real screenshots from live demos + accurate metrics |

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import ProjectCard from "./ProjectCard"
 
 export default function ProjectsGrid() {
@@ -26,6 +27,7 @@ export default function ProjectsGrid() {
             href="/projects/lukess-home"
             status="live"
             featured={true}
+            imageSrc="/images/projects/home-hero.png"
             className="md:col-span-3 h-full"
           />
           
@@ -39,14 +41,26 @@ export default function ProjectsGrid() {
               href="/projects/lukess-inventory-system"
               status="case-study"
               featured={false}
+              imageSrc="/images/projects/inv-dashboard.png"
             />
             
-            {/* Coming Soon Card */}
-            <div className="rounded-2xl border border-dashed border-border p-6 flex flex-1 items-center justify-center min-h-[120px]">
-              <p className="font-mono text-xs text-text-secondary">
-                Next project — in progress
-              </p>
-            </div>
+            {/* CTA Card: Available for new projects */}
+            <Link 
+              href="#contact"
+              className="group rounded-2xl border border-dashed border-border p-6 flex flex-1 items-center justify-center min-h-[120px] bg-surface/50 hover:bg-surface/80 transition-all duration-300 decoration-none"
+            >
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-text-secondary group-hover:text-amber-500 transition-colors">
+                    Available for a new build
+                  </p>
+                </div>
+                <p className="font-serif text-lg text-text-primary group-hover:text-amber-500/90 transition-colors">
+                  Let&apos;s talk about your project
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
 
