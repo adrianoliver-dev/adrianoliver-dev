@@ -11,6 +11,7 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.0",
     "@vercel/speed-insights": "^2.0.0",
+    "clarity-js": "^0.8.57",
     "framer-motion": "^12.35.2",
     "gray-matter": "^4.0.3",
     "next": "16.1.6",

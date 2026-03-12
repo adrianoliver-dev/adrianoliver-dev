@@ -2,6 +2,7 @@
 
 import { Resend } from 'resend'
 import { z } from 'zod'
+import { adminEmailHtml, confirmationEmailHtml } from '@/lib/email-templates'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -36,19 +37,23 @@ export async function sendContactEmail(
   const { name, email, budget, message } = parsed.data
 
   try {
-    await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: 'adrianoliver.dev@gmail.com',
-      subject: `New project inquiry from ${name} — Budget: ${budget}`,
-      text: `
-Name: ${name}
-Email: ${email}
-Budget: ${budget}
-Message:
-${message}
-      `.trim(),
-    })
-    return { status: 'success', message: 'Message sent. I\'ll reply within 24 hours.' }
+    await Promise.all([
+      // Admin notification
+      resend.emails.send({
+        from: 'Adrian Oliver <hello@adrianoliver.dev>',
+        to: 'adrianoliver.dev@gmail.com',
+        subject: `New inquiry from ${name} — ${budget}`,
+        html: adminEmailHtml({ name, email, budget, message }),
+      }),
+      // Confirmation to sender
+      resend.emails.send({
+        from: 'Adrian Oliver <hello@adrianoliver.dev>',
+        to: email,
+        subject: "Got your message — I'll reply within 24h",
+        html: confirmationEmailHtml({ name }),
+      }),
+    ])
+    return { status: 'success', message: "Message sent. I'll reply within 24 hours." }
   } catch {
     return { status: 'error', message: 'Failed to send. Email me directly at adrianoliver.dev@gmail.com' }
   }

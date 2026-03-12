@@ -8,6 +8,7 @@ import PageTransition from "@/components/layout/PageTransition"
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
+import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
 export const metadata: Metadata = {
   metadataBase: new URL('https://adrianoliver.dev'),
   title: {
@@ -94,6 +95,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         <GoogleAnalytics />
+        <MicrosoftClarity />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
