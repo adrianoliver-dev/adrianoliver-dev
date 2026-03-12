@@ -35,15 +35,13 @@ export async function sendContactEmail(
   }
 
   const { name, email, budget, message } = parsed.data
-  const adminEmail = process.env.ADMIN_EMAIL || 'adrianoliver.dev@gmail.com'
 
   try {
     await Promise.all([
       resend.emails.send({
         from: 'Adrian Oliver <hello@adrianoliver.dev>',
-        to: adminEmail,
+        to: 'adrianoliver.dev@gmail.com',
         subject: `New inquiry from ${name} — ${budget}`,
-        replyTo: email,
         html: adminEmailHtml({ name, email, budget, message }),
       }),
       resend.emails.send({
@@ -55,6 +53,6 @@ export async function sendContactEmail(
     ])
     return { status: 'success', message: "Message sent. I'll reply within 24 hours." }
   } catch {
-    return { status: 'error', message: `Failed to send. Email me directly at ${adminEmail}` }
+    return { status: 'error', message: 'Failed to send. Email me directly at adrianoliver.dev@gmail.com' }
   }
 }
