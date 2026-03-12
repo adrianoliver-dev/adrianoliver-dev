@@ -3,6 +3,7 @@ import ProjectsGrid from "@/components/home/ProjectsGrid"
 import Methodology from "@/components/home/Methodology"
 import About from "@/components/home/About"
 import Services from "@/components/home/Services"
+import Contact from "@/components/home/Contact"
 import FadeUp from "@/components/ui/FadeUp"
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
       </FadeUp>
       <About />
       <Services />
+      <Contact />
     </>
   )
 }

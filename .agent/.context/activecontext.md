@@ -5,19 +5,20 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B9
-- **Block Name:** Contact Form
+- **Block Number:** B10
+- **Block Name:** Final Wrap & Polish
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B8
-- **Block Name:** Services + Process Section
+- **Block Number:** B9
+- **Block Name:** Contact Form
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
 ## FILES CHANGED THIS SESSION
-- `src/components/home/Services.tsx`
-- `src/components/home/ProcessSteps.tsx`
+- `src/app/actions/contact.ts`
+- `src/components/home/ContactForm.tsx`
+- `src/components/home/Contact.tsx`
 - `src/app/page.tsx`
 
 ## PROJECT STATE
@@ -36,11 +37,11 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B9
-- **Block Name:** Contact Form
-- **Dependencies:** B8
+- **Block Number:** B10
+- **Block Name:** Final Wrap & Polish
+- **Dependencies:** B9
 - **Scope:**
-  - Build the contact form and interactive validation.
+  - Final QA, Lighthouse checks, remaining animations.
 
 ---
 
@@ -59,4 +60,5 @@
 | B7    | About + Stack Section   | DONE         | 2026-03-11 | feat(portfolio-b7): about section — terminal card, stack grid, self-taught narrative |
 | B7.1  | About Copy Updates      | DONE         | 2026-03-11 | fix(portfolio-b7.1): update about section copy — professional framing, remove bootcamp/bolivia focus |
 | B8    | Services & Process      | DONE         | 2026-03-11 | feat(portfolio-b8): services, process steps, and SLA strip |
+| B9    | Contact Form            | DONE         | 2026-03-11 | feat(portfolio-b9): contact section, server action, resend integration, availability indicator |
 
