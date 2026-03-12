@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import TiltCard from '@/components/ui/TiltCard'
 import { trackEvent } from '@/lib/analytics'
