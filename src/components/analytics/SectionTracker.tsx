@@ -1,10 +1,10 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { trackEvent } from '@/lib/analytics'
 
 interface SectionTrackerProps {
   name: string
-  children: React.ReactNode
+  children: ReactNode
   threshold?: number
 }
 
