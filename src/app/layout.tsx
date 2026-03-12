@@ -5,7 +5,9 @@ import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 import SpotlightProvider from "@/components/ui/SpotlightProvider"
 import PageTransition from "@/components/layout/PageTransition"
-
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 export const metadata: Metadata = {
   metadataBase: new URL('https://adrianoliver.dev'),
   title: {
@@ -89,6 +91,9 @@ export default function RootLayout({
           </PageTransition>
         </main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
+        <GoogleAnalytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

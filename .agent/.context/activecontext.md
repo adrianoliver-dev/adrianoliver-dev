@@ -5,24 +5,22 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B11
+- **Block Number:** B12
 - **Block Name:** QA & Launch
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B10
-- **Block Name:** SEO Completo
+- **Block Number:** B11
+- **Block Name:** Analytics
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
 ## FILES CHANGED THIS SESSION
 - `src/app/layout.tsx`
-- `src/app/work/lukess-home/page.tsx`
-- `src/app/work/lukess-inventory/page.tsx`
-- `src/app/sitemap.ts`
-- `src/app/robots.ts`
-- `public/llms.txt`
-- `src/app/opengraph-image.tsx`
+- `src/components/analytics/GoogleAnalytics.tsx`
+- `.env.local`
+- `package.json`
+- `package-lock.json`
 
 ## PROJECT STATE
 
@@ -40,9 +38,9 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B11
+- **Block Number:** B12
 - **Block Name:** QA & Launch
-- **Dependencies:** B10
+- **Dependencies:** B11
 - **Scope:**
   - Final QA, Lighthouse checks, remaining animations.
 
@@ -65,4 +63,5 @@
 | B8    | Services & Process      | DONE         | 2026-03-11 | feat(portfolio-b8): services, process steps, and SLA strip |
 | B9    | Contact Form            | DONE         | 2026-03-11 | feat(portfolio-b9): contact section, server action, resend integration, availability indicator |
 | B10   | SEO Completo            | DONE         | 2026-03-11 | feat(portfolio-b10): seo — metadata, json-ld, sitemap, robots, llms.txt, og image |
+| B11   | Analytics               | DONE         | 2026-03-11 | feat(portfolio-b11): analytics — vercel analytics, speed insights, ga4 |
 
