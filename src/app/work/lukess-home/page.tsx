@@ -5,7 +5,7 @@ import MetricCard from "@/components/work/MetricCard"
 
 export const metadata: Metadata = {
   title: "Lukess Home — E-Commerce Platform",
-  description: "How I architected and shipped a full e-commerce platform with Next.js 15 and Supabase in 30 days, solo.",
+  description: "How I architected and shipped a full e-commerce platform with Next.js 15 and Supabase in ~23 days, solo.",
 }
 
 export default function LukessHomePage() {

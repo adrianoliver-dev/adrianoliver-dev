@@ -21,7 +21,7 @@ export default function ProjectsGrid() {
           <ProjectCard 
             title="Lukess Home"
             tagline="E-Commerce Platform · Next.js + Supabase"
-            description="Full e-commerce storefront with product catalog, WhatsApp checkout flow, and custom CMS. Built solo, shipped to production in 30 days."
+            description="Full e-commerce storefront with product catalog, WhatsApp checkout flow, and custom CMS. Built solo, shipped to production in ~23 days."
             tags={["Next.js 15", "TypeScript", "Supabase", "Tailwind v4", "Resend"]}
             href="/work/lukess-home"
             status="live"

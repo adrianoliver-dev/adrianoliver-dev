@@ -5,7 +5,7 @@ import MetricCard from "@/components/work/MetricCard"
 
 export const metadata: Metadata = {
   title: "Lukess Inventory — POS & Inventory System",
-  description: "How I built a real-time inventory and point-of-sale system syncing stock across 3 retail locations, solo in 30 days.",
+  description: "How I built a real-time inventory and point-of-sale system syncing stock across 3 retail locations, solo in ~23 days.",
 }
 
 export default function LukessInventoryPage() {
@@ -48,7 +48,7 @@ export default function LukessInventoryPage() {
         </p>
         <p className="text-text-secondary leading-relaxed">
           The system needed to work on basic hardware, require minimal training, 
-          and be operational within 30 days — with no budget for commercial POS software.
+          and be operational within ~23 days — with no budget for commercial POS software.
         </p>
       </section>
 
