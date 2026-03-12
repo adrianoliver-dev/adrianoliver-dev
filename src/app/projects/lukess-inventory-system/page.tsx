@@ -41,8 +41,8 @@ export default function LukessInventoryCaseStudy() {
 
   const metrics = [
     { label: "Synced Points", value: "3", suffix: "Nodes" },
+    { label: "Inventory Units", value: "1.8K", suffix: "+" },
     { label: "Data Latency", value: "<100", suffix: "ms" },
-    { label: "Report Depth", value: "15", suffix: "+" },
   ];
 
   const features = [

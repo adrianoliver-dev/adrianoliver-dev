@@ -38,8 +38,8 @@ export default function LukessHomeCaseStudy() {
 
   const metrics = [
     { label: "Performance", value: "100", suffix: "/100" },
-    { label: "Production Load", value: "40", suffix: "+" },
-    { label: "Sync Speed", value: "<100", suffix: "ms" },
+    { label: "Live Inventory", value: "26", suffix: "+" },
+    { label: "Stock Units", value: "1.8K", suffix: "+" },
   ];
 
   const features = [
@@ -122,15 +122,15 @@ export default function LukessHomeCaseStudy() {
           <FadeUp>
             <div className="aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
               <Image 
-                src="/images/projects/home-checkout.png" 
-                alt="Checkout Flow"
+                src="/images/projects/home-catalog.png" 
+                alt="Product Catalog"
                 fill
                 className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-700"
               />
               <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Frictionless Checkout</h4>
+                <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Global Catalog</h4>
                 <p className="text-[var(--color-text-secondary)] max-w-xs text-sm leading-relaxed lowercase">
-                  Custom-built flow integrated with local logistics and whatsapp notifications.
+                  Real-time synchronization across three physical storefronts and digital portal.
                 </p>
               </div>
             </div>
