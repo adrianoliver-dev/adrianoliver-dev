@@ -1,6 +1,7 @@
 'use client'
-import { useActionState } from 'react'
+import { useActionState, useEffect, useRef } from 'react'
 import { sendContactEmail, type ContactFormState } from '@/app/actions/contact'
+import { trackEvent } from '@/lib/analytics'
 
 const initialState: ContactFormState = { status: 'idle' }
 
@@ -13,6 +14,36 @@ const budgetOptions = [
 
 export default function ContactForm() {
   const [state, action, pending] = useActionState(sendContactEmail, initialState)
+  const formStarted = useRef(false)
+  const budgetRef = useRef<string | undefined>(undefined)
+
+  // Track form success / error after submission
+  useEffect(() => {
+    if (state.status === 'success') {
+      trackEvent({
+        action: 'contact_form_success',
+        budget: budgetRef.current,
+      })
+    } else if (state.status === 'error') {
+      trackEvent({ action: 'contact_form_error' })
+    }
+  }, [state.status])
+
+  function handleFirstFocus() {
+    if (!formStarted.current) {
+      formStarted.current = true
+      trackEvent({ action: 'contact_form_start' })
+    }
+  }
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    const data = new FormData(e.currentTarget)
+    budgetRef.current = data.get('budget')?.toString()
+    trackEvent({
+      action: 'contact_form_submit',
+      budget: budgetRef.current,
+    })
+  }
 
   if (state.status === 'success') {
     return (
@@ -27,7 +58,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form action={action} className="flex flex-col gap-5">
+    <form action={action} onFocus={handleFirstFocus} onSubmit={handleSubmit} className="flex flex-col gap-5">
       {/* Name + Email row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">

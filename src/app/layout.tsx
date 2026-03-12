@@ -9,6 +9,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
+import ScrollDepth from '@/components/analytics/ScrollDepth'
 export const metadata: Metadata = {
   metadataBase: new URL('https://adrianoliver.dev'),
   title: {
@@ -96,6 +97,7 @@ export default function RootLayout({
         <SpeedInsights />
         <GoogleAnalytics />
         <MicrosoftClarity />
+        <ScrollDepth />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

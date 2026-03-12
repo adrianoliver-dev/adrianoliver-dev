@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import TiltCard from '@/components/ui/TiltCard'
+import { trackEvent } from '@/lib/analytics'
 
 interface ProjectCardProps {
   title: string
@@ -22,10 +23,19 @@ export default function ProjectCard({
   featured = false,
   className = "",
 }: ProjectCardProps) {
+  function handleClick() {
+    trackEvent({
+      action: 'project_card_click',
+      project_name: title,
+      link_type: status,
+    })
+  }
+
   return (
     <TiltCard className={`block card-spotlight rounded-2xl ${className}`}>
       <Link 
         href={href}
+        onClick={handleClick}
         className={`relative overflow-hidden rounded-2xl bg-surface p-6 flex flex-col gap-4 group transition-colors duration-300 block h-full`}
       >
       <div className="flex items-center justify-between">
