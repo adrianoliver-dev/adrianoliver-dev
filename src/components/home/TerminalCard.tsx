@@ -4,15 +4,15 @@ import { useInView } from 'framer-motion'
 
 const LINES = [
   { prefix: '~', command: 'whoami', delay: 0 },
-  { prefix: null, output: 'adrian oliver — full-stack developer, santa cruz, bolivia', delay: 600 },
-  { prefix: '~', command: 'cat background.txt', delay: 1400 },
-  { prefix: null, output: 'economics → self-taught dev. started with zero code knowledge.', delay: 2000 },
-  { prefix: null, output: 'built two production systems in ~23 days. learning in public.', delay: 2600 },
-  { prefix: '~', command: 'cat approach.txt', delay: 3400 },
-  { prefix: null, output: 'i don\'t build templates. i build systems that solve real problems.', delay: 4000 },
-  { prefix: null, output: 'server-first. type-safe. shipped, not staged.', delay: 4600 },
+  { prefix: null, output: 'adrian oliver — full-stack developer', delay: 600 },
+  { prefix: '~', command: 'cat focus.txt', delay: 1400 },
+  { prefix: null, output: 'e-commerce systems · business web apps · inventory platforms', delay: 2000 },
+  { prefix: '~', command: 'cat stack.txt', delay: 2800 },
+  { prefix: null, output: 'next.js 15 · typescript · supabase · tailwind v4', delay: 3400 },
+  { prefix: '~', command: 'cat delivery.txt', delay: 4200 },
+  { prefix: null, output: 'two production systems shipped solo. zero downtime. documented.', delay: 4800 },
   { prefix: '~', command: 'cat availability.txt', delay: 5400 },
-  { prefix: null, output: 'open to new projects — GMT-4 timezone, async-first.', delay: 6000 },
+  { prefix: null, output: 'available for remote projects — async-first, weekly milestones.', delay: 6000 },
   { prefix: '~', command: '', delay: 6800, cursor: true },
 ]
 

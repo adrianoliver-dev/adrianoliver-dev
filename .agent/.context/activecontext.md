@@ -58,4 +58,5 @@
 | B5.1  | Case Study Copy Fixes   | DONE         | 2026-03-11 | fix(work): correct case study copy — accurate timeline and architecture framing |
 | B6    | Visual Polish           | DONE         | 2026-03-11 | feat(portfolio-b6): visual polish — noise, tilt, amber glow, spotlight borders, page transitions, scroll fade-up |
 | B7    | About + Stack Section   | DONE         | 2026-03-11 | feat(portfolio-b7): about section — terminal card, stack grid, self-taught narrative |
+| B7.1  | About Copy Updates      | DONE         | 2026-03-11 | fix(portfolio-b7.1): update about section copy — professional framing, remove bootcamp/bolivia focus |
 

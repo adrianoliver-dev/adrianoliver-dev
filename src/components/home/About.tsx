@@ -12,12 +12,12 @@ export default function About() {
           <div className="mb-16">
             <p className="font-mono text-xs text-text-secondary uppercase 
                tracking-widest mb-3">
-              The person behind the commits
+              The engineer behind the system
             </p>
             <h2 className="font-serif text-3xl md:text-4xl text-text-primary 
                max-w-xl">
-              Economics background.{' '}
-              <em>Self-taught engineer.</em>
+              Systems thinking.{' '}
+              <em>Production-first engineer.</em>
             </h2>
           </div>
         </FadeUp>
@@ -35,22 +35,20 @@ export default function About() {
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-4">
                 <p className="text-text-secondary leading-relaxed">
-                  I came from Economics — systems thinking, 
-                  constraint-based reasoning, understanding why 
-                  things fail. That background shapes how I approach 
-                  engineering: every decision has a cost, every 
-                  abstraction has a tradeoff.
+                  I approach engineering the way analysts approach systems — 
+                  every decision has a cost, every abstraction has a tradeoff. 
+                  That discipline shapes how I scope, build, and ship.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  I didn&apos;t take a bootcamp. I picked a real problem, 
-                  built two production systems with zero prior 
-                  experience, and documented everything I broke along 
-                  the way. That&apos;s still how I work.
+                  I&apos;ve shipped two production systems solo: a full e-commerce 
+                  platform with WhatsApp Meta API checkout and a multi-role 
+                  POS inventory system with real-time sync across locations. 
+                  Both are live. Both are documented.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  Based in Santa Cruz de la Sierra, Bolivia. 
-                  Available for remote projects with US/EU teams. 
-                  Async-first, documented decisions, weekly milestones.
+                  Available for remote projects with US and EU teams. 
+                  GMT-4 timezone — async-first workflow, weekly milestones, 
+                  decisions documented in writing.
                 </p>
               </div>
 
