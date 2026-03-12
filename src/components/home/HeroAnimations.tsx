@@ -94,7 +94,7 @@ export default function HeroAnimations() {
         transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
         aria-label="Adrian Oliver"
       >
-        <span ref={nameRef} aria-hidden="true">{ORIGINAL}</span>
+        <span ref={nameRef} aria-hidden="true" className="hover:drop-shadow-[0_0_20px_#D9770660] transition-all duration-300 inline-block">{ORIGINAL}</span>
       </m.h1>
       
       {/* subtitle */}
@@ -127,7 +127,7 @@ export default function HeroAnimations() {
       >
         <Link 
           href="/#projects"
-          className="bg-accent text-black px-6 py-3 text-sm font-medium hover:bg-amber-500 transition-colors duration-200"
+          className="bg-accent text-black px-6 py-3 text-sm font-medium hover:bg-amber-500 transition-all duration-300 shadow-[0_0_40px_#D9770630] hover:shadow-[0_0_60px_#D9770650]"
         >
           View My Work
         </Link>

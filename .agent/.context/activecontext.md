@@ -5,19 +5,28 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B6
+- **Block Number:** B7
 - **Block Name:** Contact page + availability section
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B5.1
-- **Block Name:** Case Study Copy Corrections
+- **Block Number:** B6
+- **Block Name:** Visual Polish & Design Bible Implementation
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
 ## FILES CHANGED THIS SESSION
-- `src/app/work/lukess-home/page.tsx` — Modified (copy updates)
-- `src/app/work/lukess-inventory/page.tsx` — Modified (copy updates)
+- `src/app/globals.css`
+- `src/app/layout.tsx`
+- `src/app/page.tsx`
+- `src/app/work/lukess-home/page.tsx`
+- `src/app/work/lukess-inventory/page.tsx`
+- `src/components/home/HeroAnimations.tsx`
+- `src/components/home/ProjectCard.tsx`
+- `src/components/layout/PageTransition.tsx`
+- `src/components/ui/FadeUp.tsx`
+- `src/components/ui/SpotlightProvider.tsx`
+- `src/components/ui/TiltCard.tsx`
 
 ## PROJECT STATE
 
@@ -35,9 +44,9 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B6
+- **Block Number:** B7
 - **Block Name:** Contact page + availability section
-- **Dependencies:** B5 Case Study pages
+- **Dependencies:** B6
 - **Scope:**
   - Build the contact page and availability section.
 
@@ -54,3 +63,4 @@
 | B4    | Methodology Section     | DONE         | 2026-03-11 | feat(portfolio-b4): methodology section |
 | B5    | Case Study Pages        | DONE         | 2026-03-11 | feat(portfolio-b5): case study pages for lukess-home and lukess-inventory |
 | B5.1  | Case Study Copy Fixes   | DONE         | 2026-03-11 | fix(work): correct case study copy — accurate timeline and architecture framing |
+| B6    | Visual Polish           | DONE         | 2026-03-11 | feat(portfolio-b6): visual polish — noise, tilt, amber glow, spotlight borders, page transitions, scroll fade-up |

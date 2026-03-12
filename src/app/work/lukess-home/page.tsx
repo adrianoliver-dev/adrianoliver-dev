@@ -123,7 +123,7 @@ export default function LukessHomePage() {
         </p>
         <Link 
           href="/contact"
-          className="inline-block bg-accent text-black px-5 py-2.5 text-sm font-medium hover:bg-amber-500 transition-colors duration-200"
+          className="inline-block bg-accent text-black px-5 py-2.5 text-sm font-medium hover:bg-amber-500 transition-all duration-300 shadow-[0_0_40px_#D9770630] hover:shadow-[0_0_60px_#D9770650]"
         >
           Discuss your project →
         </Link>

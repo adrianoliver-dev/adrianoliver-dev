@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import TiltCard from '@/components/ui/TiltCard'
 
 interface ProjectCardProps {
   title: string
@@ -22,10 +23,11 @@ export default function ProjectCard({
   className = "",
 }: ProjectCardProps) {
   return (
-    <Link 
-      href={href}
-      className={`relative overflow-hidden rounded-2xl border border-border bg-surface p-6 flex flex-col gap-4 group transition-colors duration-300 hover:border-accent/40 block ${className}`}
-    >
+    <TiltCard className={`block card-spotlight rounded-2xl ${className}`}>
+      <Link 
+        href={href}
+        className={`relative overflow-hidden rounded-2xl bg-surface p-6 flex flex-col gap-4 group transition-colors duration-300 block h-full`}
+      >
       <div className="flex items-center justify-between">
         {status === "live" ? (
           <span className="bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-0.5 rounded-full font-mono text-xs">
@@ -82,6 +84,7 @@ export default function ProjectCard({
           </div>
         </div>
       )}
-    </Link>
+      </Link>
+    </TiltCard>
   )
 }

@@ -3,6 +3,8 @@ import { dmSans, instrumentSerif, jetbrainsMono } from "@/lib/fonts"
 import "./globals.css"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
+import SpotlightProvider from "@/components/ui/SpotlightProvider"
+import PageTransition from "@/components/layout/PageTransition"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://adrianoliver.dev"),
@@ -38,8 +40,13 @@ export default function RootLayout({
       className={`${dmSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
     >
       <body>
+        <SpotlightProvider />
         <Navbar />
-        <main>{children}</main>
+        <main>
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
         <Footer />
       </body>
     </html>
