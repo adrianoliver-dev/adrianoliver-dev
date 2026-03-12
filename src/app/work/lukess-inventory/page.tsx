@@ -23,9 +23,11 @@ export default function LukessInventoryPage() {
         </div>
         <h1 className="font-serif text-4xl md:text-5xl text-text-primary mb-4">Lukess Inventory</h1>
         <p className="text-lg text-text-secondary leading-relaxed">
-          A clothing retailer operating 3 physical locations had no unified view of stock. 
-          I built a real-time POS and inventory management system that syncs across all 
-          locations instantly — with role-based access, analytics, and order fulfillment built in.
+          A clothing retailer operating 3 physical locations needed a unified 
+          operations system. I built a real-time POS and inventory management 
+          platform from scratch — multi-location stock sync, 3-tier RBAC, 
+          WhatsApp Business API integration, and analytics — sharing the same 
+          PostgreSQL database as the public-facing e-commerce storefront.
         </p>
       </header>
 
@@ -33,7 +35,7 @@ export default function LukessInventoryPage() {
         <MetricCard value="3" label="Locations" sublabel="Real-time sync" />
         <MetricCard value="< 500ms" label="Sync latency" sublabel="Cross-location updates" />
         <MetricCard value="RBAC" label="Access control" sublabel="3 permission tiers" />
-        <MetricCard value="30d" label="Delivery" sublabel="Solo end-to-end" />
+        <MetricCard value="~23d" label="Active build" sublabel="Concurrent with e-commerce build" />
       </div>
 
       <section className="mb-12">
@@ -69,15 +71,25 @@ export default function LukessInventoryPage() {
             </div>
           ))}
         </div>
+        <p className="text-sm text-text-secondary leading-relaxed mt-6 p-4 rounded-xl border border-border bg-surface">
+          <span className="font-mono text-accent">Shared database architecture: </span>
+          Both this system and the public storefront connect to the same 
+          Supabase PostgreSQL instance. The storefront operates under 
+          read-only RLS policies. This system holds full mutation rights, 
+          isolated as a separate Vercel deployment to protect the 
+          revenue-facing application from admin bundle risk.
+        </p>
       </section>
 
       <section className="mb-12">
         <h2 className="font-serif text-2xl text-text-primary mb-4">Key Challenges</h2>
         <p className="text-text-secondary leading-relaxed mb-4">
-          The hardest problem was concurrent stock depletion — two cashiers at different 
-          locations attempting to sell the last unit of a product simultaneously. 
-          This required PostgreSQL transaction isolation with SELECT FOR UPDATE to 
-          lock the inventory row during the sale, preventing oversell at the database level.
+          The most complex engineering challenge was designing atomic POS 
+          transactions across a multi-location inventory matrix. A single 
+          checkout needed to deduct the exact size/color variant from the 
+          correct physical stall, in a single SQL RPC, without race conditions 
+          — while simultaneously firing WhatsApp Business API notifications 
+          and Resend emails without blocking the client response.
         </p>
         <p className="text-text-secondary leading-relaxed">
           Designing an RBAC system that was strict enough for the owner&apos;s security 

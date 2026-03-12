@@ -27,13 +27,14 @@ export default function LukessHomePage() {
         <p className="text-lg text-text-secondary leading-relaxed">
           A retail clothing business needed to move beyond WhatsApp-only sales. 
           I built a complete e-commerce system — product catalog, checkout flow, 
-          order management, and inventory sync — solo, in 30 days.
+          order management, and inventory sync — starting from zero web development 
+          experience, with approximately 23 days of focused build time.
         </p>
       </header>
 
       {/* Metrics row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-16">
-        <MetricCard value="30d" label="Delivery" sublabel="Concept to production" />
+        <MetricCard value="~23d" label="Active build" sublabel="Concept to production" />
         <MetricCard value="100" label="Lighthouse" sublabel="Performance score" />
         <MetricCard value="1" label="Developer" sublabel="Solo end-to-end" />
         <MetricCard value="< 1s" label="LCP" sublabel="Largest Contentful Paint" />
@@ -59,7 +60,8 @@ export default function LukessHomePage() {
       <section className="mb-12">
         <h2 className="font-serif text-2xl text-text-primary mb-4">Architecture Decisions</h2>
         <p className="text-text-secondary leading-relaxed mb-6">
-          The stack was chosen to minimize operational risk for a first-time e-commerce deployment:
+          Every architectural decision was made to maximize performance and 
+          minimize operational risk:
         </p>
         <div className="flex flex-col gap-3">
           {[
@@ -80,9 +82,12 @@ export default function LukessHomePage() {
       <section className="mb-12">
         <h2 className="font-serif text-2xl text-text-primary mb-4">Key Challenges</h2>
         <p className="text-text-secondary leading-relaxed mb-4">
-          The hardest constraint was the 30-day timeline with zero budget for third-party 
-          e-commerce platforms. Every feature had to be built from scratch and justified 
-          against delivery risk.
+          The hardest technical constraint was building a shared-database 
+          architecture where the storefront and the inventory management system 
+          operate as two independent Vercel deployments against the same 
+          Supabase PostgreSQL instance. Row Level Security policies needed to 
+          grant the storefront read-only access while preserving full mutation 
+          rights for the admin system — with zero risk of data bleed between layers.
         </p>
         <p className="text-text-secondary leading-relaxed">
           Inventory sync between the storefront and the owner&apos;s management view required 
@@ -96,10 +101,11 @@ export default function LukessHomePage() {
       <section className="mb-16">
         <h2 className="font-serif text-2xl text-text-primary mb-4">Results</h2>
         <p className="text-text-secondary leading-relaxed mb-4">
-          The platform shipped on schedule. The owner went from zero digital infrastructure 
-          to a fully operational e-commerce system in one month. Customers can now browse 
-          the full catalog, check real-time stock, and initiate checkout without any 
-          manual intervention from the business.
+          The platform shipped production-ready. The system handles the full 
+          retail cycle — product discovery, filtered catalog, multi-step checkout 
+          with GPS delivery integration, WhatsApp Meta API notifications, and 
+          Resend transactional email — from a single PostgreSQL source of truth 
+          shared with the inventory system.
         </p>
         <p className="text-text-secondary leading-relaxed">
           The system sustained a 100/100 Lighthouse performance score across all 
