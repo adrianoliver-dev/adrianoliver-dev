@@ -5,20 +5,19 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B8
-- **Block Name:** Contact page + availability section
+- **Block Number:** B9
+- **Block Name:** Contact Form
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B7
-- **Block Name:** About + Stack Section
+- **Block Number:** B8
+- **Block Name:** Services + Process Section
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
 ## FILES CHANGED THIS SESSION
-- `src/components/home/TerminalCard.tsx`
-- `src/components/home/StackGrid.tsx`
-- `src/components/home/About.tsx`
+- `src/components/home/Services.tsx`
+- `src/components/home/ProcessSteps.tsx`
 - `src/app/page.tsx`
 
 ## PROJECT STATE
@@ -37,11 +36,11 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B8
-- **Block Name:** Contact page + availability section
-- **Dependencies:** B7
+- **Block Number:** B9
+- **Block Name:** Contact Form
+- **Dependencies:** B8
 - **Scope:**
-  - Build the contact page and availability section.
+  - Build the contact form and interactive validation.
 
 ---
 
@@ -59,4 +58,5 @@
 | B6    | Visual Polish           | DONE         | 2026-03-11 | feat(portfolio-b6): visual polish — noise, tilt, amber glow, spotlight borders, page transitions, scroll fade-up |
 | B7    | About + Stack Section   | DONE         | 2026-03-11 | feat(portfolio-b7): about section — terminal card, stack grid, self-taught narrative |
 | B7.1  | About Copy Updates      | DONE         | 2026-03-11 | fix(portfolio-b7.1): update about section copy — professional framing, remove bootcamp/bolivia focus |
+| B8    | Services & Process      | DONE         | 2026-03-11 | feat(portfolio-b8): services, process steps, and SLA strip |
 
