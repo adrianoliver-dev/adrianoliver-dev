@@ -38,14 +38,12 @@ export async function sendContactEmail(
 
   try {
     await Promise.all([
-      // Admin notification
       resend.emails.send({
         from: 'Adrian Oliver <hello@adrianoliver.dev>',
         to: 'adrianoliver.dev@gmail.com',
         subject: `New inquiry from ${name} — ${budget}`,
         html: adminEmailHtml({ name, email, budget, message }),
       }),
-      // Confirmation to sender
       resend.emails.send({
         from: 'Adrian Oliver <hello@adrianoliver.dev>',
         to: email,

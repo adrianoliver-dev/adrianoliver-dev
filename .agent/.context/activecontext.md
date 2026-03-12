@@ -10,17 +10,14 @@
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B11
-- **Block Name:** Analytics
-- **Completed Date:** 2026-03-11
-- **Started:** 2026-03-11
+- **Block Number:** B11.2
+- **Block Name:** Email Polish & Readability
+- **Completed Date:** 2026-03-12
+- **Started:** 2026-03-12
 
 ## FILES CHANGED THIS SESSION
-- `src/app/layout.tsx`
-- `src/components/analytics/GoogleAnalytics.tsx`
-- `.env.local`
-- `package.json`
-- `package-lock.json`
+- `src/lib/email-templates.ts`
+- `src/app/actions/contact.ts`
 
 ## PROJECT STATE
 
@@ -64,4 +61,6 @@
 | B9    | Contact Form            | DONE         | 2026-03-11 | feat(portfolio-b9): contact section, server action, resend integration, availability indicator |
 | B10   | SEO Completo            | DONE         | 2026-03-11 | feat(portfolio-b10): seo — metadata, json-ld, sitemap, robots, llms.txt, og image |
 | B11   | Analytics               | DONE         | 2026-03-11 | feat(portfolio-b11): analytics — vercel analytics, speed insights, ga4 |
-
+| B11.1 | Clarity + Email Tmpl    | DONE         | 2026-03-11 | feat(portfolio-b11.1): clarity, resend email templates, search console placeholder |
+| B11.2 | GA4 Event Tracking      | DONE         | 2026-03-12 | feat(portfolio-b11.2): GA4 custom events tracking |
+| B11.2 | Email Polish & Readability | DONE         | 2026-03-12 | feat(portfolio-b11.2): email polish — typography, dark mode, copy |
