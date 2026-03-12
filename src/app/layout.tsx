@@ -3,12 +3,13 @@ import { dmSans, instrumentSerif, jetbrainsMono } from "@/lib/fonts"
 import "./globals.css"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
-import SpotlightProvider from "@/components/ui/SpotlightProvider"
 import PageTransition from "@/components/layout/PageTransition"
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
+import ClientSideProviders from '@/components/providers/ClientSideProviders'
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://adrianoliver.dev'),
   title: {
@@ -84,14 +85,15 @@ export default function RootLayout({
       className={`${dmSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
     >
       <body>
-        <SpotlightProvider />
-        <Navbar />
-        <main>
-          <PageTransition>
-            {children}
-          </PageTransition>
-        </main>
-        <Footer />
+        <ClientSideProviders>
+          <Navbar />
+          <main>
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </main>
+          <Footer />
+        </ClientSideProviders>
         <Analytics />
         <SpeedInsights />
         <GoogleAnalytics />
