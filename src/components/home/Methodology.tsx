@@ -2,23 +2,18 @@ export default function Methodology() {
   const principles = [
     {
       number: "01",
-      title: "Server-first architecture",
-      description: "React Server Components by default. Client JS only where interaction demands it. Faster pages, better SEO, lower infrastructure costs."
+      title: "Speed that saves sales",
+      description: "Performance isn't a feature; it's a conversion strategy. I build high-concurrency systems that handle traffic spikes without breaking a sweat."
     },
     {
       number: "02", 
-      title: "Database design before UI",
-      description: "Schema decisions made upfront prevent costly rewrites. Every project starts with an ER diagram and query plan before a single component is written."
+      title: "Maintainable systems",
+      description: "You get a codebase your team can actually maintain, not a cryptic puzzle. Full documentation, clean abstractions, and zero technical debt."
     },
     {
       number: "03",
-      title: "Async by default",
-      description: "Daily written updates, documented decisions, staged deployments. I work to US/EU timezone overlap. No surprises, no blocked threads."
-    },
-    {
-      number: "04",
-      title: "Ship, then optimize",
-      description: "Working software in production beats perfect software in staging. I deliver in milestones — you see progress weekly, not at the end."
+      title: "Zero-friction workflow",
+      description: "Async-first communication tailored for US/EU timezones. Weekly Loom demos, written logs, and staged deployments keep you in the loop 24/7."
     }
   ]
 

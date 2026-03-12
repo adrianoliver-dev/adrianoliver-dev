@@ -104,8 +104,8 @@ export default function HeroAnimations() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
       >
-        <span className="font-serif text-text-secondary block">I build web systems that generate revenue</span>
-        <span className="font-serif italic text-accent block mt-1">for businesses that need results.</span>
+        <span className="font-serif text-text-secondary block">I build e-commerce and business web apps</span>
+        <span className="font-serif italic text-accent block mt-1">for growing companies — fast, clean, production-ready.</span>
       </m.p>
       
       {/* bio */}
@@ -115,7 +115,7 @@ export default function HeroAnimations() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.35, duration: 0.5, ease: "easeOut" }}
       >
-        Next.js · TypeScript · Supabase — from Bolivia, working globally.
+        Next.js 15 · TypeScript · Supabase · Tailwind v4 — Working globally with US/EU teams.
       </m.p>
       
       {/* CTAs */}

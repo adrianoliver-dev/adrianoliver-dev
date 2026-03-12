@@ -47,8 +47,8 @@ export default function About() {
                 </p>
                 <p className="text-text-secondary leading-relaxed">
                   Available for remote projects with US and EU teams. 
-                  GMT-4 timezone — async-first workflow, weekly milestones, 
-                  decisions documented in writing.
+                  Synchronized overlap — async-first workflow, weekly milestones, 
+                  and every technical decision documented in writing.
                 </p>
               </div>
 
