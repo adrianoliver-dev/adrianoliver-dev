@@ -30,7 +30,7 @@ export function adminEmailHtml({
             <p style="margin:0;font-family:'Courier New',monospace;font-size:11px;color:#D97706;letter-spacing:0.15em;text-transform:uppercase;">
               adrianoliver.dev
             </p>
-            <h1 style="margin:8px 0 0;font-size:20px;font-weight:400;color:#F5F0E8;">
+            <h1 style="margin:8px 0 0;font-size:20px;font-weight:400;color:#D97706;">
               New project inquiry
             </h1>
           </td>
@@ -44,7 +44,7 @@ export function adminEmailHtml({
                 ([label, value]) => `
               <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
                 <tr>
-                  <td style="font-family:'Courier New',monospace;font-size:10px;color:#78716C;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:4px;">
+                  <td style="font-family:'Courier New',monospace;font-size:10px;color:#D97706;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:4px;opacity:0.8;">
                     ${label}
                   </td>
                 </tr>
@@ -61,7 +61,7 @@ export function adminEmailHtml({
             <!-- Message -->
             <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:32px;">
               <tr>
-                <td style="font-family:'Courier New',monospace;font-size:10px;color:#78716C;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:4px;">
+                <td style="font-family:'Courier New',monospace;font-size:10px;color:#D97706;letter-spacing:0.1em;text-transform:uppercase;padding-bottom:4px;opacity:0.8;">
                   Message
                 </td>
               </tr>
@@ -82,7 +82,7 @@ export function adminEmailHtml({
         <!-- Footer -->
         <tr>
           <td style="padding:20px 40px;border-top:1px solid #1C1C1C;">
-            <p style="margin:0;font-family:'Courier New',monospace;font-size:11px;color:#78716C;">
+            <p style="margin:0;font-family:'Courier New',monospace;font-size:11px;color:#D97706;opacity:0.7;">
               adrianoliver.dev &middot; automated notification
             </p>
           </td>
@@ -112,7 +112,7 @@ export function confirmationEmailHtml({ name }: { name: string }): string {
             <p style="margin:0 0 12px;font-family:'Courier New',monospace;font-size:11px;color:#D97706;letter-spacing:0.15em;text-transform:uppercase;">
               adrianoliver.dev
             </p>
-            <h1 style="margin:0;font-size:24px;font-weight:400;color:#F5F0E8;line-height:1.3;">
+            <h1 style="margin:0;font-size:24px;font-weight:400;color:#D97706;line-height:1.3;">
               Message received, ${name}.
             </h1>
           </td>
@@ -121,12 +121,12 @@ export function confirmationEmailHtml({ name }: { name: string }): string {
         <!-- Body -->
         <tr>
           <td style="padding:32px 40px;">
-            <p style="margin:0 0 20px;font-size:15px;color:#78716C;line-height:1.7;">
+            <p style="margin:0 0 20px;font-size:15px;color:#F5F0E8;line-height:1.7;opacity:0.8;">
               I review every inquiry personally and reply within
-              <span style="color:#F5F0E8;">24 hours</span>.
+              <span style="color:#D97706;">24 hours</span>.
               If your project has a tight timeline, mention it in a follow-up &mdash; I&apos;ll prioritize accordingly.
             </p>
-            <p style="margin:0 0 32px;font-size:15px;color:#78716C;line-height:1.7;">
+            <p style="margin:0 0 32px;font-size:15px;color:#F5F0E8;line-height:1.7;opacity:0.8;">
               In the meantime, you can review my recent work at
               <a href="https://adrianoliver.dev/work" style="color:#D97706;text-decoration:none;">
                 adrianoliver.dev/work
@@ -140,7 +140,7 @@ export function confirmationEmailHtml({ name }: { name: string }): string {
                   <p style="margin:0 0 2px;font-size:14px;color:#F5F0E8;font-weight:500;">
                     Adrian Oliver
                   </p>
-                  <p style="margin:0;font-family:'Courier New',monospace;font-size:12px;color:#78716C;">
+                  <p style="margin:0;font-family:'Courier New',monospace;font-size:12px;color:#D97706;opacity:0.8;">
                     Full-Stack Developer &middot; adrianoliver.dev
                   </p>
                 </td>
@@ -152,7 +152,7 @@ export function confirmationEmailHtml({ name }: { name: string }): string {
         <!-- Footer -->
         <tr>
           <td style="padding:16px 40px;border-top:1px solid #1C1C1C;">
-            <p style="margin:0;font-family:'Courier New',monospace;font-size:10px;color:#78716C;">
+            <p style="margin:0;font-family:'Courier New',monospace;font-size:10px;color:#D97706;opacity:0.6;">
               You are receiving this because you submitted a contact form at adrianoliver.dev
             </p>
           </td>
