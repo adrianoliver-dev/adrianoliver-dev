@@ -1,0 +1,37 @@
+# Adrian Oliver
+
+> Full-stack developer specializing in Next.js 15, TypeScript, and Supabase.
+> Building production-ready e-commerce platforms and business web applications
+> for US and EU remote clients. Async-first. GMT-4 timezone.
+
+## Services
+
+- E-Commerce Architecture: full-stack storefront systems, checkout flows,
+  order management, WhatsApp Meta API and Resend notification pipelines
+- Business Web Applications: POS systems, inventory management, RBAC dashboards,
+  real-time data sync with Supabase
+- Technical Consulting: architecture review, stack selection, system design
+
+## Stack
+
+- Framework: Next.js 15 App Router, React 19, TypeScript (strict)
+- Database: Supabase (PostgreSQL, RLS, Realtime), raw SQL, RPC
+- Styling: Tailwind CSS v4, Framer Motion (LazyMotion)
+- APIs: Resend (transactional email), WhatsApp Meta API
+- Deploy: Vercel (Edge, CI/CD)
+
+## Production Work
+
+- Lukess Home: https://adrianoliver.dev/work/lukess-home
+  Full e-commerce platform. Next.js 15 + Supabase + WhatsApp checkout.
+  Built solo in ~23 days. Live in production.
+
+- Lukess Inventory: https://adrianoliver.dev/work/lukess-inventory
+  Multi-role POS and inventory system. RBAC, real-time sync,
+  multi-location support. Built solo. Live in production.
+
+## Availability
+
+Open to new remote projects. Async-first workflow.
+Weekly milestones. GMT-4 timezone.
+Contact: adrianoliver.dev@gmail.com

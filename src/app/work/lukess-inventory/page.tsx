@@ -4,8 +4,20 @@ import CaseStudyLayout from "@/components/work/CaseStudyLayout"
 import MetricCard from "@/components/work/MetricCard"
 
 export const metadata: Metadata = {
-  title: "Lukess Inventory — POS & Inventory System",
-  description: "How I built a real-time inventory and point-of-sale system syncing stock across 3 retail locations, solo in ~23 days.",
+  title: 'Lukess Inventory — POS & Inventory System Case Study',
+  description:
+    'Multi-role POS and inventory management system with real-time sync, ' +
+    'RBAC, and multi-location support. Next.js 15, Supabase, TypeScript.',
+  openGraph: {
+    title: 'Lukess Inventory — POS & Inventory System Case Study',
+    description:
+      'Multi-role POS system with real-time inventory sync and RBAC. ' +
+      'Built solo with Next.js 15 and Supabase PostgreSQL.',
+    url: 'https://adrianoliver.dev/work/lukess-inventory',
+  },
+  alternates: {
+    canonical: 'https://adrianoliver.dev/work/lukess-inventory',
+  },
 }
 
 export default function LukessInventoryPage() {

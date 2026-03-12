@@ -5,21 +5,24 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B10
-- **Block Name:** Final Wrap & Polish
+- **Block Number:** B11
+- **Block Name:** QA & Launch
 - **Status:** PENDING
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B9
-- **Block Name:** Contact Form
+- **Block Number:** B10
+- **Block Name:** SEO Completo
 - **Completed Date:** 2026-03-11
 - **Started:** 2026-03-11
 
 ## FILES CHANGED THIS SESSION
-- `src/app/actions/contact.ts`
-- `src/components/home/ContactForm.tsx`
-- `src/components/home/Contact.tsx`
-- `src/app/page.tsx`
+- `src/app/layout.tsx`
+- `src/app/work/lukess-home/page.tsx`
+- `src/app/work/lukess-inventory/page.tsx`
+- `src/app/sitemap.ts`
+- `src/app/robots.ts`
+- `public/llms.txt`
+- `src/app/opengraph-image.tsx`
 
 ## PROJECT STATE
 
@@ -37,9 +40,9 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B10
-- **Block Name:** Final Wrap & Polish
-- **Dependencies:** B9
+- **Block Number:** B11
+- **Block Name:** QA & Launch
+- **Dependencies:** B10
 - **Scope:**
   - Final QA, Lighthouse checks, remaining animations.
 
@@ -61,4 +64,5 @@
 | B7.1  | About Copy Updates      | DONE         | 2026-03-11 | fix(portfolio-b7.1): update about section copy — professional framing, remove bootcamp/bolivia focus |
 | B8    | Services & Process      | DONE         | 2026-03-11 | feat(portfolio-b8): services, process steps, and SLA strip |
 | B9    | Contact Form            | DONE         | 2026-03-11 | feat(portfolio-b9): contact section, server action, resend integration, availability indicator |
+| B10   | SEO Completo            | DONE         | 2026-03-11 | feat(portfolio-b10): seo — metadata, json-ld, sitemap, robots, llms.txt, og image |
 

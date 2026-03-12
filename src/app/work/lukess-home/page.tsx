@@ -4,8 +4,21 @@ import CaseStudyLayout from "@/components/work/CaseStudyLayout"
 import MetricCard from "@/components/work/MetricCard"
 
 export const metadata: Metadata = {
-  title: "Lukess Home — E-Commerce Platform",
-  description: "How I architected and shipped a full e-commerce platform with Next.js 15 and Supabase in ~23 days, solo.",
+  title: 'Lukess Home — E-Commerce Architecture Case Study',
+  description:
+    'Full-stack e-commerce platform built solo in ~23 days. ' +
+    'Next.js 15, Supabase, WhatsApp Meta API checkout, Resend. ' +
+    'Production-ready from day one.',
+  openGraph: {
+    title: 'Lukess Home — E-Commerce Architecture Case Study',
+    description:
+      'Full-stack e-commerce platform built solo in ~23 days. ' +
+      'Next.js 15 App Router, Supabase PostgreSQL, WhatsApp checkout.',
+    url: 'https://adrianoliver.dev/work/lukess-home',
+  },
+  alternates: {
+    canonical: 'https://adrianoliver.dev/work/lukess-home',
+  },
 }
 
 export default function LukessHomePage() {
