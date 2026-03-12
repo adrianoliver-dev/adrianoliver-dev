@@ -37,9 +37,9 @@ export default function LukessHomeCaseStudy() {
   ];
 
   const metrics = [
-    { label: "Performance", value: "100", suffix: "/100" },
-    { label: "Live Inventory", value: "26", suffix: "+" },
-    { label: "Stock Units", value: "1.8K", suffix: "+" },
+    { label: "Delivery", value: "23", suffix: "Days to production" },
+    { label: "Lighthouse Score", value: "100", suffix: "/100" },
+    { label: "Synced live", value: "3", suffix: " storefronts" },
   ];
 
   const features = [
@@ -84,10 +84,10 @@ export default function LukessHomeCaseStudy() {
               <h2 className="text-4xl font-instrument-serif italic text-[var(--color-text-primary)]">The Architecture Challenge</h2>
               <div className="space-y-6 text-[var(--color-text-secondary)] text-xl leading-relaxed font-light">
                 <p>
-                  Transitioning a traditional brick-and-mortar business to an omnichannel model required more than just a website. It required a centralized &quot;brain&quot; capable of managing stock levels across multiple locations while remaining accessible to customers.
+                  The client had three physical storefronts running on disconnected spreadsheets. A sale in one location wouldn&apos;t reflect in the others until end of day — causing overselling, frustrated customers, and manual reconciliation overhead.
                 </p>
                 <p>
-                  I architected a solution that prioritizes data integrity, ensuring that a sale in a physical stall is reflected on the e-commerce storefront in milliseconds, preventing the common pitfalls of overselling and manual stock-outs.
+                  I replaced the spreadsheet chaos with a PostgreSQL-first architecture: atomic triggers that decrement stock across all locations in the same transaction as the sale. The result is a system where a 2AM online order and a noon in-store sale compete for the same stock with zero race conditions.
                 </p>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function LukessHomeCaseStudy() {
                   src="/images/projects/home-hero.png" 
                   alt="Lukess Home Landing Page"
                   fill
-                  className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                  className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)]/80 to-transparent p-8 flex flex-end items-end">
                   <span className="font-mono text-xs uppercase tracking-widest text-[var(--color-text-primary)]">01 / High-Conversion Frontdoor</span>
@@ -125,7 +125,7 @@ export default function LukessHomeCaseStudy() {
                 src="/images/projects/home-catalog.png" 
                 alt="Product Catalog"
                 fill
-                className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-700"
+                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
               />
               <div className="absolute inset-0 p-12 flex flex-col justify-end">
                 <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Global Catalog</h4>
@@ -142,7 +142,7 @@ export default function LukessHomeCaseStudy() {
                 src="/images/projects/home-mobile.png" 
                 alt="Mobile Experience"
                 fill
-                className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-700"
+                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
               />
               <div className="absolute inset-0 p-12 flex flex-col justify-end">
                 <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Mobile Precision</h4>
@@ -161,7 +161,7 @@ export default function LukessHomeCaseStudy() {
         <FadeUp>
           <span className="font-mono text-xs text-[var(--color-accent)] uppercase tracking-[0.3em] mb-8 block">Results</span>
           <h2 className="text-5xl md:text-7xl font-instrument-serif italic text-[var(--color-text-primary)] mb-12 leading-tight">
-            Digitalizing legacy systems in 30 days.
+            From spreadsheets to real-time omnichannel in 23 days.
           </h2>
           <p className="text-[var(--color-text-secondary)] text-xl mb-16 font-light leading-relaxed">
             The Lukess ecosystem isn&apos;t just a store; it&apos;s a blueprint for modern retail. By focusing on database-level integrity and server-first performance, I delivered a system that empowers the business for long-term growth.

@@ -40,9 +40,9 @@ export default function LukessInventoryCaseStudy() {
   ];
 
   const metrics = [
-    { label: "Synced Points", value: "3", suffix: "Nodes" },
-    { label: "Inventory Units", value: "1.8K", suffix: "+" },
-    { label: "Data Latency", value: "<100", suffix: "ms" },
+    { label: "Visibility", value: "Real-time", suffix: "" },
+    { label: "Auditability", value: "100", suffix: "%" },
+    { label: "Reporting", value: "Instant", suffix: "" },
   ];
 
   const features = [
@@ -88,10 +88,10 @@ export default function LukessInventoryCaseStudy() {
               <h2 className="text-4xl font-instrument-serif italic text-[var(--color-text-primary)]">The Systems Challenge</h2>
               <div className="space-y-6 text-[var(--color-text-secondary)] text-xl leading-relaxed font-light">
                 <p>
-                  Scaling a business across multiple physical locations creates a data fragmentation problem. Without a centralized authority, stock levels drift, and financial accountability becomes impossible.
+                  Before this system, stock records relied on manual paper logs and end-of-week spreadsheets. This lack of visibility led to constant inventory leakage, unrecorded returns, and a purely reactive approach to purchasing.
                 </p>
                 <p>
-                  I engineered a custom ERP that replaces manual effort with automated integrity. The system acts as a high-fidelity mirror of the physical business, providing owners with the data they need to make high-stakes decisions with confidence.
+                  I engineered a custom POS and ERP backbone powered by Supabase and granular RBAC. By moving from paper to real-time data streams, the business gained absolute transparency. Owners now have instant financial reporting and 100% auditability for every transaction across the entire warehouse.
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function LukessInventoryCaseStudy() {
                   src="/images/projects/inv-dashboard.png" 
                   alt="Inventory Analytics Dashboard"
                   fill
-                  className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                  className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)]/80 to-transparent p-8 flex flex-end items-end">
                   <span className="font-mono text-xs uppercase tracking-widest text-[var(--color-text-primary)]">01 / Business Intelligence Center</span>
@@ -129,7 +129,7 @@ export default function LukessInventoryCaseStudy() {
                 src="/images/projects/inv-pos.png" 
                 alt="Reactive POS View"
                 fill
-                className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-700"
+                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
               />
               <div className="absolute inset-0 p-12 flex flex-col justify-end">
                 <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Operational Precision</h4>
@@ -146,7 +146,7 @@ export default function LukessInventoryCaseStudy() {
                 src="/images/projects/inv-rbac.png" 
                 alt="RBAC Security Management"
                 fill
-                className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-700"
+                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
               />
               <div className="absolute inset-0 p-12 flex flex-col justify-end">
                 <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Immutable Security</h4>
@@ -165,7 +165,7 @@ export default function LukessInventoryCaseStudy() {
         <FadeUp>
           <span className="font-mono text-xs text-[var(--color-accent)] uppercase tracking-[0.3em] mb-8 block">Results</span>
           <h2 className="text-5xl md:text-7xl font-instrument-serif italic text-[var(--color-text-primary)] mb-12 leading-tight">
-            Engineering tools that drive business.
+            Replacing manual counts with automated Business Intelligence.
           </h2>
           <p className="text-[var(--color-text-secondary)] text-xl mb-16 font-light leading-relaxed">
             The Lukess Inventory system is a testament to the power of custom software. By building a tool tailored to the specific operational needs of the client, I delivered measurable value that off-the-shelf software simply cannot match.
