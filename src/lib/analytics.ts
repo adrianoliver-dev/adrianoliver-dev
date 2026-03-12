@@ -1,14 +1,12 @@
 /**
  * Analytics utility — centralizes all GA4 custom event calls.
- * Never import window.gtag directly in components; use this helper.
+ * Never call window.gtag directly in components; use this helper.
  */
 
-type GTagEvent = {
+type GTagEventParams = Record<string, string | number | boolean | undefined>
+
+interface GTagEvent extends GTagEventParams {
   action: string
-  category?: string
-  label?: string
-  value?: number
-  [key: string]: string | number | boolean | undefined
 }
 
 export function trackEvent({ action, ...params }: GTagEvent): void {
