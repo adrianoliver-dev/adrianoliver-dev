@@ -1,4 +1,4 @@
-import Contact from "@/components/home/Contact"
+import ContactForm from "@/components/home/ContactForm"
 import FadeUp from "@/components/ui/FadeUp"
 
 export const metadata = {
@@ -9,9 +9,17 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen py-32 px-6">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl font-sans">
         <FadeUp>
-          <Contact />
+          <div className="mb-12">
+            <h1 className="font-serif text-4xl md:text-5xl text-text-primary mb-4">
+              Let&apos;s build <em>something.</em>
+            </h1>
+            <p className="text-text-secondary text-lg">
+              Tell me about your project, timeline, and goals.
+            </p>
+          </div>
+          <ContactForm />
         </FadeUp>
       </div>
     </main>

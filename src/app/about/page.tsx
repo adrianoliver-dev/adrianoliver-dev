@@ -94,15 +94,6 @@ export default function AboutPage() {
         <section className="py-12">
           <FadeUp>
             <div className="flex flex-col items-center text-center gap-10">
-              <div className="flex flex-col gap-4">
-                <h2 className="font-serif text-4xl md:text-5xl text-text-primary">
-                  Open to new projects starting <em>April 2026.</em>
-                </h2>
-                <p className="text-text-secondary text-lg">
-                  Let&apos;s talk about your next build.
-                </p>
-              </div>
-
               <MagneticButton
                 href="/contact"
                 className="bg-accent text-black px-8 py-4 text-sm font-medium hover:bg-amber-500 transition-all duration-300 shadow-[0_0_40px_#D9770630] hover:shadow-[0_0_60px_#D9770650]"

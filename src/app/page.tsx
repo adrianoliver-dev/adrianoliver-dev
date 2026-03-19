@@ -1,8 +1,7 @@
 import Hero from "@/components/home/Hero"
 import ProjectsGrid from "@/components/home/ProjectsGrid"
-import Methodology from "@/components/home/Methodology"
+import CurrentProject from "@/components/home/CurrentProject"
 import About from "@/components/home/About"
-import Services from "@/components/home/Services"
 import Contact from "@/components/home/Contact"
 import FadeUp from "@/components/ui/FadeUp"
 import SectionTracker from "@/components/analytics/SectionTracker"
@@ -14,26 +13,29 @@ export default function HomePage() {
       <SectionTracker name="hero">
         <Hero />
       </SectionTracker>
+      
       <SectionDivider />
+      
       <SectionTracker name="projects">
         <FadeUp>
           <ProjectsGrid />
         </FadeUp>
       </SectionTracker>
 
-      <SectionTracker name="methodology">
-        <FadeUp>
-          <Methodology />
-        </FadeUp>
-      </SectionTracker>
       <SectionDivider />
+
+      <SectionTracker name="current">
+        <CurrentProject />
+      </SectionTracker>
+
+      <SectionDivider />
+
       <SectionTracker name="about">
         <About />
       </SectionTracker>
+
       <SectionDivider />
-      <SectionTracker name="services">
-        <Services />
-      </SectionTracker>
+
       <SectionTracker name="contact">
         <Contact />
       </SectionTracker>
