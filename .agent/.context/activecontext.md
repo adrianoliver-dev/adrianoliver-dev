@@ -5,26 +5,26 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B4
-- **Block Name:** Solnr Studio WIP page & Blog fixes
-- **Status:** DONE
+- **Block Number:** B5
+- **Block Name:** (TBD by user)
+- **Status:** PENDING
 
 ### Files Modified (final state)
-- `src/app/projects/solnr-studio/page.tsx` [MODIFY]
-  - Replaced technical content with an honest "What's being built" WIP preview
-  - Added new WIP MagneticButton CTA
-- `src/content/blog/server-components-retail.mdx` [MODIFY]
-  - Fixed conclusion to mention Supabase Realtime WebSockets instead of SSE
-- `src/app/blog/page.tsx` [MODIFY]
-  - Added a "coming soon" note at the bottom of the blog list
+- `src/components/ui/BrandMark.tsx` [MODIFY]
+  - Added `width`, `height`, and `exportMode` props for PNG rendering.
+- `src/components/ui/BrandExportCard.tsx` [NEW]
+  - Client component for SVG → Canvas → PNG download.
+- `src/app/brand/page.tsx` [NEW]
+  - Brand assets export page at `/brand`.
 
 ### Notes
 - `npm run lint` — 0 errors
 - `npm run build` — exit code 0
+- *Canvas API:* The export uses native browser Canvas API for high-quality PNG generation.
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B4
-- **Block Name:** Solnr Studio WIP page & Blog fixes
+- **Block Number:** B4.5b
+- **Block Name:** Brand assets export page
 - **Completed Date:** 2026-03-19
 
 ## PROJECT STATE
@@ -36,7 +36,7 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B4.5
+- **Block Number:** B5
 - **Block Name:** (TBD by user)
 
 ---
@@ -67,3 +67,5 @@
 | B3    | Lukess Inventory Overhaul| DONE         | 2026-03-19 | feat(portfolio-b3-lukess-inventory): overhaul case study — metadata, real metrics, architecture copy, bento fix, gallery captions, results before/after, MagneticButton CTAs, testimonial |
 | B4    | Solnr WIP & Blog Fixes | DONE         | 2026-03-19 | feat(portfolio-b4-solnr-blog): Solnr WIP preview, fix SSE→WebSocket in blog post, add coming-soon to blog list |
 | B3fix | Lukess Inventory Next.js 15 Fix | DONE         | 2026-03-19 | fix(portfolio-b4-solnr-blog): update Next.js version to 15 in lukess inventory metadata |
+| B4.5  | Personal brand mark            | DONE         | 2026-03-19 | feat(portfolio-b4.5-brand-mark): geometric mark component, navbar logo redesign, favicon.svg |
+| B4.5b | Brand assets export page       | DONE         | 2026-03-19 | feat(portfolio-b4.5b-brand-assets): /brand export page |
