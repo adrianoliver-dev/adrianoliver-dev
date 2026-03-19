@@ -1,37 +1,37 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
 **Last Updated:** 2026-03-19
-**Updated By:** Antigravity (B2 fix applied)
+**Updated By:** Antigravity (B2 fully complete)
 
 ---
 
 ## CURRENT BLOCK
 - **Block Number:** B2
 - **Block Name:** Lukess Home Case Study Overhaul
-- **Status:** DONE (fix applied)
+- **Status:** DONE
 
-### Files Modified (B2 fix)
+### Files Modified (final state)
 - `src/app/projects/lukess-home/page.tsx` [MODIFY]
-  - metrics: replaced with real perf data (99/100 PageSpeed, 2.5s LCP, 3 checkout flows)
-  - Architecture Challenge em-dashes: now using `&mdash;` HTML entities
-  - Results After paragraph: rewritten without invented template counts; LCP story added
-  - Arrow in CTA: now `&#8594;` entity
+  - metadata: 3 items (Role, Stack, Service) — no Timeline
+  - metrics: 4 verified PageSpeed Insights values (99 Performance, 91 Accessibility, 100 Best Practices, 100 SEO)
+  - Architecture Challenge: first paragraph — 4 locations, `&mdash;` entities throughout
+  - Results h2: removed "in 23 days"
+  - Results After paragraph: rewritten — no invented numbers, guest checkout detail added
+  - CTA: `MagneticButton` components, literal → arrow in JSX
+  - Gallery: captions on all 7 images; `aspect-[9/19]` on both mobile images
+  - VideoDemo posterImage: `lukess-home_Home_page.png` (no space)
+  - Testimonial section: inserted after TechnicalSnippet, before VideoDemo
 - `src/components/home/ProjectCard.tsx` [MODIFY]
-  - Image container: `aspect-video` → `aspect-[4/3]` to avoid cropping catalog screenshot
+  - `aspect-video` → `aspect-[4/3]` on image container
 
 ### Notes
 - `npm run lint` — 0 errors
 - `npm run build` — exit code 0
-- Fix 1 (unicode dashes): used `&mdash;` entities throughout JSX
-- Fix 2 (image filename): already correct as `lukess-home_Home_page.png` from B2
-- Fix 3 (metrics): LCP data from audit
-- Fix 4 (After paragraph): removed invented numbers
-- Fix 5 (aspect ratio): aspect-[4/3] in ProjectCard
+- No hardcoded hex, no invented metrics, no Timeline references
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B2 (+ fix)
+- **Block Number:** B2
 - **Block Name:** Lukess Home Case Study Overhaul
 - **Completed Date:** 2026-03-19
-- **Started:** 2026-03-19
 
 ## PROJECT STATE
 
@@ -68,4 +68,5 @@
 | B0    | Prerequisite Migration  | DONE         | 2026-03-19 | chore(portfolio-b0): lenis migration, VideoDemo coming-soon, ProjectGallery real images |
 | B1    | Homepage Refactor       | DONE         | 2026-03-19 | feat(portfolio-b1-homepage): hero subtitle, data-driven metrics, grid to 2 projects, Solnr to CurrentProject, contact email |
 | B2    | Lukess Home Overhaul    | DONE         | 2026-03-19 | feat(portfolio-b2-lukess-home): overhaul case study — metadata, metrics, copy, gallery captions, results before/after, CTA buttons |
-| B2fix | Lukess Home Fixes      | DONE         | 2026-03-19 | fix(portfolio-b2-lukess-home): unicode dashes, image filename, metrics LCP data, results copy, card aspect ratio |
+| B2fix | Lukess Home Fixes v1   | DONE         | 2026-03-19 | fix(portfolio-b2-lukess-home): unicode dashes, image filename, metrics LCP data, results copy, card aspect ratio |
+| B2fix2| Lukess Home Fixes v2   | DONE         | 2026-03-19 | fix(portfolio-b2-lukess-home): lighthouse metrics, results copy, testimonial section |

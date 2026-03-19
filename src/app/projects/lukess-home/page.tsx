@@ -38,9 +38,10 @@ export default function LukessHomeCaseStudy() {
   ];
 
   const metrics = [
-    { value: "99",   suffix: "/100",    label: "PageSpeed Desktop" },
-    { value: "2.5s", suffix: "",        label: "LCP — down from 5.6s" },
-    { value: "3",    suffix: " flows",  label: "QR · Stripe · Cash" },
+    { value: "99",  suffix: "/100", label: "Performance" },
+    { value: "91",  suffix: "/100", label: "Accessibility" },
+    { value: "100", suffix: "/100", label: "Best Practices" },
+    { value: "100", suffix: "/100", label: "SEO" },
   ];
 
   const features = [
@@ -105,6 +106,80 @@ export default function LukessHomeCaseStudy() {
         code={DB_TRIGGER_CODE}
       />
 
+      {/* Client Testimonial */}
+      <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto">
+        <FadeUp>
+          <div
+            className="relative rounded-2xl p-10 border"
+            style={{
+              borderColor: "var(--color-border)",
+              background: "var(--color-surface)",
+            }}
+          >
+            {/* Amber quote mark */}
+            <span
+              className="font-serif text-8xl leading-none absolute -top-6 left-8 select-none"
+              style={{ color: "var(--color-accent)", opacity: 0.4 }}
+              aria-hidden="true"
+            >
+              &ldquo;
+            </span>
+
+            <blockquote className="relative z-10 space-y-6">
+              <p
+                className="font-serif text-xl md:text-2xl leading-relaxed font-light italic"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                The system works exactly as we needed &mdash; real-time inventory and
+                the order notification system via WhatsApp are the most useful
+                parts. If anyone needs something similar for their store,
+                I&apos;d recommend it without hesitation.
+              </p>
+              <footer
+                className="flex items-center gap-4 pt-4"
+                style={{ borderTop: "1px solid var(--color-border)" }}
+              >
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center font-mono text-sm font-medium flex-shrink-0"
+                  style={{
+                    backgroundColor: "color-mix(in srgb, var(--color-accent) 15%, transparent)",
+                    color: "var(--color-accent)",
+                    border: "1px solid var(--color-accent)",
+                  }}
+                >
+                  AL
+                </div>
+                <div>
+                  <p
+                    className="font-mono text-sm font-medium"
+                    style={{ color: "var(--color-text-primary)" }}
+                  >
+                    Aldrin L.
+                  </p>
+                  <p
+                    className="font-mono text-xs"
+                    style={{ color: "var(--color-text-secondary)" }}
+                  >
+                    Owner, Lukess Home &middot; Santa Cruz de la Sierra, Bolivia
+                  </p>
+                </div>
+                <div className="ml-auto">
+                  <span
+                    className="font-mono text-[10px] uppercase tracking-widest px-2 py-1 rounded"
+                    style={{
+                      color: "var(--color-accent)",
+                      backgroundColor: "color-mix(in srgb, var(--color-accent) 10%, transparent)",
+                      border: "1px solid var(--color-accent)",
+                    }}
+                  >
+                    Production client
+                  </span>
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        </FadeUp>
+      </section>
 
       <VideoDemo 
         title="Omnichannel Retail Walkthrough"
@@ -174,11 +249,11 @@ export default function LukessHomeCaseStudy() {
           </p>
           <p className="text-[var(--color-text-secondary)] text-xl mb-16 font-light leading-relaxed mt-8">
             After: atomic PostgreSQL triggers preventing race conditions across all
-            locations in a single transaction. Real-time stock sync from a single
-            Supabase source of truth shared with the admin POS. Three checkout paths &mdash;
-            QR bank transfer, cash pickup, and Stripe &mdash; each with automatic WhatsApp
-            and email notifications. LCP reduced from 5.6s to 2.5s with a dual-image
-            system and server-first rendering.
+            locations in a single transaction. Real-time stock sync from a shared
+            Supabase instance powering both the storefront and the admin POS system.
+            Three checkout paths &mdash; QR bank transfer, cash pickup, and Stripe &mdash; each
+            triggering automatic WhatsApp and email notifications. Guest checkout with
+            no account required: just a name and a phone number.
           </p>
           <div className="flex justify-center flex-col md:flex-row gap-6 items-center">
             <MagneticButton
@@ -191,7 +266,7 @@ export default function LukessHomeCaseStudy() {
               href="https://store.adrianoliver.dev"
               className="border border-border text-text-primary px-6 py-3 text-sm hover:border-accent hover:text-accent transition-colors duration-200"
             >
-              View live deployment &#8594;
+              View live deployment →
             </MagneticButton>
           </div>
         </FadeUp>
