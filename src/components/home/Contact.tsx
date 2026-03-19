@@ -62,8 +62,7 @@ export default function Contact() {
 
             <div className="w-full lg:w-auto pt-4 lg:pt-0">
                <p className="font-mono text-[10px] text-text-secondary uppercase tracking-widest leading-loose max-w-[200px] lg:text-right">
-                High-performance delivery <br /> 
-                <span className="text-text-primary">Solo 30-day builds</span>
+                High-performance delivery
                </p>
             </div>
           </div>

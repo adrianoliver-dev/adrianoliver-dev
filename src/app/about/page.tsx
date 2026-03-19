@@ -1,7 +1,6 @@
 import { Metadata } from "next"
 import FadeUp from "@/components/ui/FadeUp"
 import TerminalCard from "@/components/home/TerminalCard"
-import StackGrid from "@/components/home/StackGrid"
 import MagneticButton from "@/components/ui/MagneticButton"
 import SectionDivider from "@/components/ui/SectionDivider"
 
@@ -28,20 +27,12 @@ export default function AboutPage() {
               </h1>
               <div className="flex flex-col gap-6 text-lg text-text-secondary leading-relaxed">
                 <p>
-                  I approach engineering the way analysts approach systems — 
-                  every decision has a cost, every abstraction has a tradeoff. 
-                  That discipline shapes how I scope, build, and ship.
+                  I transitioned from Economics to full-stack engineering 
+                  with one focus: building systems that solve real operational 
+                  problems for retail and e-commerce businesses.
                 </p>
                 <p>
-                  I&apos;ve shipped two production systems solo: a full e-commerce 
-                  platform with WhatsApp Meta API checkout and a multi-role 
-                  POS inventory system with real-time sync across locations. 
-                  Both are live. Both are documented.
-                </p>
-                <p>
-                  Available for remote projects with US and EU teams. 
-                  Synchronized overlap — async-first workflow, weekly milestones, 
-                  and every technical decision documented in writing.
+                  Based in Bolivia, working async with US and EU teams.
                 </p>
               </div>
             </div>
@@ -73,18 +64,30 @@ export default function AboutPage() {
 
         <SectionDivider />
 
-        {/* Section 3: Stack */}
+        {/* Section 3: How I Engage */}
         <section>
           <FadeUp>
             <div className="mb-12">
               <p className="font-mono text-xs text-text-secondary uppercase tracking-widest mb-4">
-                Current technical stack
+                How I engage
               </p>
               <h2 className="font-serif text-3xl md:text-4xl text-text-primary">
-                Modern tools for <em>high performance.</em>
+                A focus on <em>transparency and results.</em>
               </h2>
             </div>
-            <StackGrid />
+            
+            <ul className="space-y-6">
+              {[
+                "Async-first. Every decision documented in writing.",
+                "Weekly Loom walkthrough + written milestone update.",
+                "60-day post-launch support included on all projects."
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-4 text-lg text-text-secondary group">
+                  <span className="text-accent mt-1 transition-transform group-hover:translate-x-1 duration-300">→</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </FadeUp>
         </section>
 
