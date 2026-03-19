@@ -1,7 +1,6 @@
 'use client'
-
-import React, { useRef } from 'react'
-import BrandMark from './BrandMark'
+import { useRef, useEffect } from "react"
+import BrandMark from "./BrandMark"
 
 interface BrandExportCardProps {
   label: string
@@ -118,13 +117,4 @@ export default function BrandExportCard({
       </button>
     </div>
   )
-}
-
-// Add className to BrandMark interface if needed - updating BrandMark.tsx next to support it
-interface BrandMarkProps {
-  size?: number
-  width?: number
-  height?: number
-  exportMode?: boolean
-  className?: string
 }

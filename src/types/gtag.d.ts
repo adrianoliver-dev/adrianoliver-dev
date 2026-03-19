@@ -3,7 +3,6 @@
 export {}
 
 declare global {
-  // eslint-disable-next-line no-unused-vars
   interface Window {
     gtag: (
       command: 'config' | 'event' | 'set' | 'js',
