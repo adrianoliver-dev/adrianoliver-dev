@@ -8,7 +8,7 @@ import BrandMark from "@/components/ui/BrandMark"
 
 const navLinks = [
   { label: "Work", href: "/#projects" },
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ]
@@ -82,7 +82,7 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8">
-          {navLinks.slice(0, 3).map((link) => (
+          {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
@@ -93,15 +93,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        <div className="hidden md:block">
-          <Link
-            href="/contact"
-            className="text-sm px-4 py-2 border border-[var(--color-border)] text-[var(--color-text-primary)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors duration-200"
-          >
-            Hire me
-          </Link>
-        </div>
 
         {/* Mobile Hamburger Button */}
         <button
