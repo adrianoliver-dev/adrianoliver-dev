@@ -1,6 +1,5 @@
 import Hero from "@/components/home/Hero"
 import ProjectsGrid from "@/components/home/ProjectsGrid"
-import CurrentProject from "@/components/home/CurrentProject"
 import Methodology from "@/components/home/Methodology"
 import About from "@/components/home/About"
 import Services from "@/components/home/Services"
@@ -21,11 +20,7 @@ export default function HomePage() {
           <ProjectsGrid />
         </FadeUp>
       </SectionTracker>
-      <SectionDivider />
-      <SectionTracker name="current-project">
-        <CurrentProject />
-      </SectionTracker>
-      <SectionDivider />
+
       <SectionTracker name="methodology">
         <FadeUp>
           <Methodology />

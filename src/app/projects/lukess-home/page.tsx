@@ -6,8 +6,6 @@ import TechnicalSnippet from "@/components/projects/TechnicalSnippet";
 import FadeUp from "@/components/ui/FadeUp";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import VideoDemo from "@/components/projects/VideoDemo";
-import Image from "next/image";
-
 export const metadata: Metadata = {
   title: "Lukess Home | Omnichannel E-commerce Case Study",
   description: "High-performance retail architecture built with Next.js 15 and Supabase.",
@@ -94,22 +92,6 @@ export default function LukessHomeCaseStudy() {
               </div>
             </div>
           </FadeUp>
-          
-          <div className="space-y-12">
-            <FadeUp delay={0.2}>
-              <div className="aspect-video bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
-                <Image 
-                  src="/images/projects/lukess-home/lukess-home_Home_page hero.png" 
-                  alt="Lukess Home Technical Architecture"
-                  fill
-                  className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)]/80 to-transparent p-8 flex flex-end items-end">
-                  <span className="font-mono text-xs uppercase tracking-widest text-[var(--color-text-primary)]">01 / High-Conversion Frontdoor</span>
-                </div>
-              </div>
-            </FadeUp>
-          </div>
         </div>
       </section>
 
@@ -119,43 +101,6 @@ export default function LukessHomeCaseStudy() {
         code={DB_TRIGGER_CODE}
       />
 
-      <section className="py-32 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          <FadeUp>
-            <div className="aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
-              <Image 
-                src="/images/projects/lukess-home/lukess-home_Catalogo.png" 
-                alt="Product Catalog Database Optimization"
-                fill
-                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
-              />
-              <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Global Catalog</h4>
-                <p className="text-[var(--color-text-secondary)] max-w-xs text-sm leading-relaxed lowercase">
-                  Real-time synchronization across three physical storefronts and digital portal.
-                </p>
-              </div>
-            </div>
-          </FadeUp>
-          
-          <FadeUp delay={0.2}>
-            <div className="aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
-              <Image 
-                src="/images/projects/lukess-home/lukess-home_catalogo_mobile.png" 
-                alt="Mobile Experience"
-                fill
-                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
-              />
-              <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Mobile Precision</h4>
-                <p className="text-[var(--color-text-secondary)] max-w-xs text-sm leading-relaxed lowercase">
-                  Tailwind v4 primitives and RSC for a blazing fast native-like browsing experience.
-                </p>
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
 
       <VideoDemo 
         title="Omnichannel Retail Walkthrough"
@@ -164,10 +109,13 @@ export default function LukessHomeCaseStudy() {
 
       <ProjectGallery 
         images={[
+          { src: "/images/projects/lukess-home/lukess-home_Home_page hero.png", alt: "Home Page Hero View", colSpan: "col-span-1 lg:col-span-2" },
           { src: "/images/projects/lukess-home/lukess-home_cart_drawer.png", alt: "Cart Drawer overlay", colSpan: "col-span-1" },
-          { src: "/images/projects/lukess-home/lukess-home_catalogo_con_filtros.png", alt: "Catalog view with active filters", colSpan: "col-span-2", aspectRatio: "aspect-video" },
-          { src: "/images/projects/lukess-home/lukess-home_page_product.png", alt: "Detailed Product View", colSpan: "col-span-2", aspectRatio: "aspect-video" },
-          { src: "/images/projects/lukess-home/lukess-home_page_product_mobile.png", alt: "Mobile Product View", colSpan: "col-span-1", aspectRatio: "aspect-[3/4]" },
+          { src: "/images/projects/lukess-home/lukess-home_Catalogo.png", alt: "Global Catalog View", colSpan: "col-span-1" },
+          { src: "/images/projects/lukess-home/lukess-home_catalogo_con_filtros.png", alt: "Catalog view with active filters", colSpan: "col-span-2" },
+          { src: "/images/projects/lukess-home/lukess-home_page_product.png", alt: "Detailed Product View", colSpan: "col-span-2" },
+          { src: "/images/projects/lukess-home/lukess-home_catalogo_mobile.png", alt: "Mobile Catalog", colSpan: "col-span-1" },
+          { src: "/images/projects/lukess-home/lukess-home_page_product_mobile.png", alt: "Mobile Product View", colSpan: "col-span-1" },
         ]} 
       />
 

@@ -6,8 +6,6 @@ import TechnicalSnippet from "@/components/projects/TechnicalSnippet";
 import FadeUp from "@/components/ui/FadeUp";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import VideoDemo from "@/components/projects/VideoDemo";
-import Image from "next/image";
-
 export const metadata: Metadata = {
   title: "Lukess Inventory | Enterprise ERP Case Study",
   description: "Advanced inventory management and POS system built with Next.js 15 and Supabase.",
@@ -98,22 +96,6 @@ export default function LukessInventoryCaseStudy() {
               </div>
             </div>
           </FadeUp>
-          
-          <div className="space-y-12">
-            <FadeUp delay={0.2}>
-              <div className="aspect-video bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
-                <Image 
-                  src="/images/projects/lukess-inventory/inventory_dashboard.png" 
-                  alt="Inventory Dashboard Architecture"
-                  fill
-                  className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)]/80 to-transparent p-8 flex flex-end items-end">
-                  <span className="font-mono text-xs uppercase tracking-widest text-[var(--color-text-primary)]">01 / Business Intelligence Center</span>
-                </div>
-              </div>
-            </FadeUp>
-          </div>
         </div>
       </section>
 
@@ -123,43 +105,6 @@ export default function LukessInventoryCaseStudy() {
         code={RBAC_POLICY_CODE}
       />
 
-      <section className="py-32 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          <FadeUp>
-            <div className="aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
-              <Image 
-                src="/images/projects/lukess-inventory/inventory_POS_view.png" 
-                alt="Point of Sale Technical Workflow"
-                fill
-                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
-              />
-              <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Operational Precision</h4>
-                <p className="text-[var(--color-text-secondary)] max-w-xs text-sm leading-relaxed lowercase">
-                  Custom POS logic optimized for staff efficiency and zero-latency transaction handling.
-                </p>
-              </div>
-            </div>
-          </FadeUp>
-          
-          <FadeUp delay={0.2}>
-            <div className="aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
-              <Image 
-                src="/images/projects/lukess-inventory/inventory_reports.png" 
-                alt="RBAC Security Management"
-                fill
-                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
-              />
-              <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                <h4 className="text-2xl font-instrument-serif text-[var(--color-text-primary)] mb-2">Immutable Security</h4>
-                <p className="text-[var(--color-text-secondary)] max-w-xs text-sm leading-relaxed lowercase">
-                  Enterprise-grade permission hierarchies ensuring data privacy and financial security.
-                </p>
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
 
       <VideoDemo 
         title="ERP System Demonstration"
@@ -168,9 +113,12 @@ export default function LukessInventoryCaseStudy() {
 
       <ProjectGallery 
         images={[
-          { src: "/images/projects/lukess-inventory/inventory_list_inventory.png", alt: "Inventory Data Table", colSpan: "col-span-2", aspectRatio: "aspect-video" },
-          { src: "/images/projects/lukess-inventory/inventory_edit_product.png", alt: "Edit Product Panel", colSpan: "col-span-1" },
-          { src: "/images/projects/lukess-inventory/inventory_reports_2.png", alt: "Advanced Analytics Reports", colSpan: "col-span-1 lg:col-span-2", aspectRatio: "aspect-video" },
+          { src: "/images/projects/lukess-inventory/inventory_dashboard.png", alt: "Business Intelligence Center", colSpan: "col-span-1 lg:col-span-2" },
+          { src: "/images/projects/lukess-inventory/inventory_POS_view.png", alt: "Point of Sale (POS)", colSpan: "col-span-1" },
+          { src: "/images/projects/lukess-inventory/inventory_reports.png", alt: "Permissions & Groups Auth", colSpan: "col-span-1" },
+          { src: "/images/projects/lukess-inventory/inventory_list_inventory.png", alt: "Inventory Data Table", colSpan: "col-span-2" },
+          { src: "/images/projects/lukess-inventory/inventory_edit_product.png", alt: "Edit Product Panel", colSpan: "col-span-1 lg:col-span-2" },
+          { src: "/images/projects/lukess-inventory/inventory_reports_2.png", alt: "Advanced Analytics Reports", colSpan: "col-span-1" },
         ]} 
       />
 

@@ -30,16 +30,17 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
             <div
               className={`relative bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl overflow-hidden group ${
                 img.colSpan || "col-span-1"
-              } ${img.aspectRatio || "aspect-square"}`}
+              }`}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
-                fill
+                width={1600}
+                height={1200}
                 quality={90}
-                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700 group-hover:scale-105"
+                className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 text-sm font-medium text-[var(--color-text-primary)] drop-shadow-md pointer-events-none">
                 {img.alt}
               </div>

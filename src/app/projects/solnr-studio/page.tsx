@@ -3,7 +3,6 @@ import ProjectHero from "@/components/projects/ProjectHero";
 import TechBento from "@/components/projects/TechBento";
 import ProjectMetric from "@/components/projects/ProjectMetric";
 import ProjectGallery from "@/components/projects/ProjectGallery";
-import VideoDemo from "@/components/projects/VideoDemo";
 import FadeUp from "@/components/ui/FadeUp";
 
 export const metadata: Metadata = {
@@ -45,7 +44,6 @@ export default function SolnrStudioCaseStudy() {
         italicWord="Studio"
         description="An ongoing exploration in luxury e-commerce. Focused on high-fidelity animations, deep dark-mode aesthetics, and Next.js 15 Server Components for zero-compromise performance."
         metadata={metadata}
-        liveUrl="https://solnr-studio.vercel.app"
       />
 
       <section className="px-6 lg:px-12 max-w-7xl mx-auto py-32">
@@ -53,11 +51,6 @@ export default function SolnrStudioCaseStudy() {
           <ProjectMetric metrics={metrics} />
         </FadeUp>
       </section>
-
-      <VideoDemo 
-        title="Interactive Studio Prototype"
-        posterImage="/images/projects/solnr-studio/solnr-studio.vercel.app_.png"
-      />
 
       <ProjectGallery 
         images={[
@@ -69,14 +62,12 @@ export default function SolnrStudioCaseStudy() {
 
       <section className="py-48 px-6 lg:px-12 text-center max-w-4xl mx-auto">
         <FadeUp>
-          <span className="font-mono text-xs text-[var(--color-accent)] uppercase tracking-[0.3em] mb-8 block">Next Steps</span>
+          <span className="font-mono text-xs text-[var(--color-accent)] uppercase tracking-[0.3em] mb-8 block">Project Status</span>
           <h2 className="text-5xl md:text-7xl font-instrument-serif italic text-[var(--color-text-primary)] mb-12 leading-tight">
-            Building the next generation of digital luxury.
+            Currently In Development.
           </h2>
           <div className="flex justify-center flex-col md:flex-row gap-12 items-center">
-            <a href="https://solnr-studio.vercel.app" target="_blank" className="font-mono text-sm uppercase tracking-widest text-[var(--color-text-primary)] border-b border-[var(--color-accent)] pb-2 active:scale-95 transition-transform">
-              View Live Prototype →
-            </a>
+             <p className="text-[var(--color-text-secondary)] font-mono text-sm uppercase tracking-widest">More captures coming soon</p>
           </div>
         </FadeUp>
       </section>
