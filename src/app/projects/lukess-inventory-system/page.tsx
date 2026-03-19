@@ -65,8 +65,8 @@ export default function LukessInventoryCaseStudy() {
       colSpan: "col-span-2" as const,
     },
     {
-      title: "Audit Trails",
-      description: "Immutable transaction logs tracking every inventory movement, adjustment, and staff action.",
+      title: "Loyalty Engine",
+      description: "On order completion, the system generates a unique discount code &mdash; configurable percentage, single-use, 7-day expiry &mdash; and delivers it simultaneously by email and WhatsApp in the same transaction. Zero manual steps.",
     },
   ];
 
@@ -94,7 +94,7 @@ export default function LukessInventoryCaseStudy() {
                   Before this system, stock records lived in paper logs and end-of-week spreadsheets. A return at one location never reached the others. Purchasing decisions were reactive &mdash; they only knew they were out of stock when the shelf was empty. No audit trail. No financial visibility.
                 </p>
                 <p>
-                  I built a custom ERP and POS from scratch on a 19-table PostgreSQL schema with row-level security. Stock is not decremented on sale &mdash; it is reserved via a database trigger, preventing overselling even when a physical sale and an online order compete for the same unit simultaneously. A 7-state order machine manages every transition from placement to delivery, triggering WhatsApp notifications automatically on each state change via direct Meta Business API integration &mdash; no Twilio, no third-party wrapper. Three roles &mdash; admin, manager, staff &mdash; are enforced at the database level via RLS and at the application level via Next.js Edge middleware.
+                  I built a custom ERP and POS from scratch on a 19-table PostgreSQL schema with row-level security. Stock is not decremented on sale &mdash; it is reserved via a database trigger, preventing overselling even when a physical sale and an online order compete for the same unit simultaneously. A 7-state order machine manages every transition from placement to delivery, triggering automated email and WhatsApp notifications on each state change &mdash; email via Resend for standard transactional workflows, WhatsApp via direct Meta Business API integration with no Twilio dependency. Three roles &mdash; admin, manager, staff &mdash; are enforced at the database level via RLS and at the application level via Next.js Edge middleware.
                 </p>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function LukessInventoryCaseStudy() {
                 style={{ color: "var(--color-text-primary)" }}
               >
                 The order and inventory system is exactly what we needed &mdash; we can
-                see what&apos;s happening across all locations in real time, and the POS
+                see what&apos;s happening across all four locations in real time, and the POS
                 makes processing sales much faster than before. The WhatsApp
                 notification on every order state change is the part we use most.
               </p>
