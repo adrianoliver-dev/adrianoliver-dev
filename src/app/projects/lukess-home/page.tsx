@@ -154,13 +154,13 @@ export default function LukessHomeCaseStudy() {
                     className="font-mono text-sm font-medium"
                     style={{ color: "var(--color-text-primary)" }}
                   >
-                    Aldrin L.
+                    Aldrin Mamani
                   </p>
                   <p
                     className="font-mono text-xs"
                     style={{ color: "var(--color-text-secondary)" }}
                   >
-                    Owner, Lukess Home &middot; Santa Cruz de la Sierra, Bolivia
+                    Lukess Home — Mercado Mutualista, Santa Cruz de la Sierra
                   </p>
                 </div>
                 <div className="ml-auto">
@@ -183,13 +183,13 @@ export default function LukessHomeCaseStudy() {
 
       <VideoDemo 
         title="Omnichannel Retail Walkthrough"
-        posterImage="/images/projects/lukess-home/lukess-home_Home_page.png"
+        posterImage="/images/projects/lukess-home/lukess-home_Home_page%20hero.png"
       />
 
       <ProjectGallery 
         images={[
           {
-            src: "/images/projects/lukess-home/lukess-home_Home_page.png",
+            src: "/images/projects/lukess-home/lukess-home_Home_page%20hero.png",
             alt: "Home Page Hero View",
             caption: "Homepage hero with animated banner CMS and trust signals",
             colSpan: "col-span-1 lg:col-span-2",
