@@ -1,14 +1,14 @@
 import type { MetadataRoute } from 'next'
+import { getBlogPosts } from '@/lib/mdx'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://adrianoliver.dev'
   const now = new Date()
 
-  // In the future, fetch blog slugs from filesystem or CMS here
-  const blogPosts: string[] = [] 
+  const blogPosts = getBlogPosts()
   
-  const blogRoutes = blogPosts.map((slug) => ({
-    url: `${base}/blog/${slug}`,
+  const blogRoutes = blogPosts.map((post) => ({
+    url: `${base}/blog/${post.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
