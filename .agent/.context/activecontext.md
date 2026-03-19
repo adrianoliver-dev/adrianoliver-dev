@@ -1,33 +1,34 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
 **Last Updated:** 2026-03-19
-**Updated By:** Antigravity (Block B2-lukess-home completion)
+**Updated By:** Antigravity (B2 fix applied)
 
 ---
 
 ## CURRENT BLOCK
 - **Block Number:** B2
 - **Block Name:** Lukess Home Case Study Overhaul
-- **Status:** DONE
+- **Status:** DONE (fix applied)
 
-### Files Modified
+### Files Modified (B2 fix)
 - `src/app/projects/lukess-home/page.tsx` [MODIFY]
-  - metadata: 3 items (Role, Stack, Service) — Timeline removed
-  - metrics: 99/100 PageSpeed, 4 locations real-time synced, 10 Resend templates
-  - Architecture Challenge: first paragraph updated to 4 locations
-  - Results h2: removed "in 23 days"
-  - Results body: replaced with before/after two-paragraph structure
-  - CTA: replaced `<a>` tags with `MagneticButton` components
-  - Gallery: captions added to all 7 images; aspectRatio on 2 mobile images
-  - VideoDemo posterImage: fixed to `lukess-home_Home_page.png` (no space)
-  - All gallery srcs: fixed to `lukess-home_Home_page.png` (confirmed on disk)
+  - metrics: replaced with real perf data (99/100 PageSpeed, 2.5s LCP, 3 checkout flows)
+  - Architecture Challenge em-dashes: now using `&mdash;` HTML entities
+  - Results After paragraph: rewritten without invented template counts; LCP story added
+  - Arrow in CTA: now `&#8594;` entity
+- `src/components/home/ProjectCard.tsx` [MODIFY]
+  - Image container: `aspect-video` → `aspect-[4/3]` to avoid cropping catalog screenshot
 
 ### Notes
 - `npm run lint` — 0 errors
 - `npm run build` — exit code 0
-- No Timeline, no 23-day claims, no hardcoded hex — constraint check passed
+- Fix 1 (unicode dashes): used `&mdash;` entities throughout JSX
+- Fix 2 (image filename): already correct as `lukess-home_Home_page.png` from B2
+- Fix 3 (metrics): LCP data from audit
+- Fix 4 (After paragraph): removed invented numbers
+- Fix 5 (aspect ratio): aspect-[4/3] in ProjectCard
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B2
+- **Block Number:** B2 (+ fix)
 - **Block Name:** Lukess Home Case Study Overhaul
 - **Completed Date:** 2026-03-19
 - **Started:** 2026-03-19
@@ -67,3 +68,4 @@
 | B0    | Prerequisite Migration  | DONE         | 2026-03-19 | chore(portfolio-b0): lenis migration, VideoDemo coming-soon, ProjectGallery real images |
 | B1    | Homepage Refactor       | DONE         | 2026-03-19 | feat(portfolio-b1-homepage): hero subtitle, data-driven metrics, grid to 2 projects, Solnr to CurrentProject, contact email |
 | B2    | Lukess Home Overhaul    | DONE         | 2026-03-19 | feat(portfolio-b2-lukess-home): overhaul case study — metadata, metrics, copy, gallery captions, results before/after, CTA buttons |
+| B2fix | Lukess Home Fixes      | DONE         | 2026-03-19 | fix(portfolio-b2-lukess-home): unicode dashes, image filename, metrics LCP data, results copy, card aspect ratio |

@@ -51,7 +51,7 @@ export default function ProjectCard({
       >
       {/* Thumbnail */}
       {imageSrc && (
-        <div className="relative aspect-video overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={imageSrc}
             alt={title}

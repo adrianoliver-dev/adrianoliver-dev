@@ -33,20 +33,20 @@ $$ LANGUAGE plpgsql;`;
 export default function LukessHomeCaseStudy() {
   const heroMetadata = [
     { label: "Role",    value: "Lead Developer" },
-    { label: "Stack",   value: "Next.js 15 \u00b7 TypeScript \u00b7 Supabase \u00b7 Resend" },
+    { label: "Stack",   value: "Next.js 15 · TypeScript · Supabase · Resend" },
     { label: "Service", value: "Omnichannel Retail" },
   ];
 
   const metrics = [
-    { value: "99",  suffix: "/100",        label: "PageSpeed Desktop" },
-    { value: "4",   suffix: " locations",  label: "Real-time synced" },
-    { value: "10",  suffix: " templates",  label: "Automated via Resend" },
+    { value: "99",   suffix: "/100",    label: "PageSpeed Desktop" },
+    { value: "2.5s", suffix: "",        label: "LCP — down from 5.6s" },
+    { value: "3",    suffix: " flows",  label: "QR · Stripe · Cash" },
   ];
 
   const features = [
     {
       title: "Omnichannel State",
-      description: "Real-time sync between four locations \u2014 three storefronts and a central warehouse \u2014 via PostgreSQL triggers and RLS.",
+      description: "Real-time sync between four locations — three storefronts and a central warehouse — via PostgreSQL triggers and RLS.",
       colSpan: "col-span-2" as const,
     },
     {
@@ -85,9 +85,9 @@ export default function LukessHomeCaseStudy() {
               <h2 className="text-4xl font-instrument-serif italic text-[var(--color-text-primary)]">The Architecture Challenge</h2>
               <div className="space-y-6 text-[var(--color-text-secondary)] text-xl leading-relaxed font-light">
                 <p>
-                  The client had four locations \u2014 three storefronts and a central warehouse \u2014
+                  The client had four locations &mdash; three storefronts and a central warehouse &mdash;
                   running on disconnected spreadsheets. A sale in one location wouldn&apos;t reflect
-                  in the others until end of day \u2014 causing overselling, frustrated customers,
+                  in the others until end of day &mdash; causing overselling, frustrated customers,
                   and manual reconciliation overhead.
                 </p>
                 <p>
@@ -134,7 +134,7 @@ export default function LukessHomeCaseStudy() {
           {
             src: "/images/projects/lukess-home/lukess-home_catalogo_con_filtros.png",
             alt: "Catalog view with active filters",
-            caption: "Dynamic filters with URL-based state \u2014 deep-linkable",
+            caption: "Dynamic filters with URL-based state — deep-linkable",
             colSpan: "col-span-2",
           },
           {
@@ -146,7 +146,7 @@ export default function LukessHomeCaseStudy() {
           {
             src: "/images/projects/lukess-home/lukess-home_catalogo_mobile.png",
             alt: "Mobile Catalog",
-            caption: "Responsive mobile catalog \u2014 optimized layout",
+            caption: "Responsive mobile catalog — optimized layout",
             colSpan: "col-span-1",
             aspectRatio: "aspect-[9/19]",
           },
@@ -174,9 +174,11 @@ export default function LukessHomeCaseStudy() {
           </p>
           <p className="text-[var(--color-text-secondary)] text-xl mb-16 font-light leading-relaxed mt-8">
             After: atomic PostgreSQL triggers preventing race conditions across all
-            locations. 10 automated email templates via Resend. 9 WhatsApp Business API
-            templates for order notifications. Real-time stock sync from a single Supabase
-            source of truth. Checkout flows for Stripe, QR transfer, and cash pickup.
+            locations in a single transaction. Real-time stock sync from a single
+            Supabase source of truth shared with the admin POS. Three checkout paths &mdash;
+            QR bank transfer, cash pickup, and Stripe &mdash; each with automatic WhatsApp
+            and email notifications. LCP reduced from 5.6s to 2.5s with a dual-image
+            system and server-first rendering.
           </p>
           <div className="flex justify-center flex-col md:flex-row gap-6 items-center">
             <MagneticButton
@@ -189,7 +191,7 @@ export default function LukessHomeCaseStudy() {
               href="https://store.adrianoliver.dev"
               className="border border-border text-text-primary px-6 py-3 text-sm hover:border-accent hover:text-accent transition-colors duration-200"
             >
-              View live deployment \u2192
+              View live deployment &#8594;
             </MagneticButton>
           </div>
         </FadeUp>
