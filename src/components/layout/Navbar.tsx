@@ -1,4 +1,5 @@
 import Link from "next/link"
+import BrandMark from "@/components/ui/BrandMark"
 
 const navLinks = [
   { label: "Work", href: "/#projects" },
@@ -12,9 +13,13 @@ export default function Navbar() {
       <nav className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between">
         <Link
           href="/"
-          className="font-mono text-sm text-text-secondary hover:text-accent transition-colors duration-200"
+          className="flex items-center group decoration-transparent"
         >
-          adrianoliver.dev
+          <BrandMark size={26} />
+          <div className="hidden md:block w-[1px] h-[14px] bg-border mx-[12px]" />
+          <span className="hidden md:block font-sans text-[14px] text-text-primary">
+            Adrian Oliver<span className="text-accent">.</span>
+          </span>
         </Link>
         <ul className="flex items-center gap-8">
           {navLinks.map((link) => (

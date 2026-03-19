@@ -295,7 +295,7 @@ src/
 │   │   ├── Contact.tsx               #   CTA section de contacto
 │   │   ├── ContactForm.tsx           #   5,931 bytes — Formulario interactivo con Server Action
 │   │   ├── CurrentProject.tsx        #   Sección "Currently Building"
-│   │   └── .gitkeep
+│   │   
 │   ├── layout/                       # PageTransition, Navbar, Footer
 │   ├── projects/                     # 6 componentes de case study rich:
 │   │   ├── ProjectHero.tsx           #   4,928 bytes — Hero banner con metadata strip

@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # PROJECT CONTEXT — adrianoliver.dev (Portfolio)
 
 ## Project Identity
@@ -5,7 +9,7 @@
 - **Repo:** adrianoliver-dev/adrianoliver-dev
 - **Live Domain:** https://adrianoliver.dev
 - **Developer:** Adrian Oliver — Full-Stack Developer (Santa Cruz de la Sierra, Bolivia)
-- **Goal:** Use this portfolio as main asset to reach $300+/month remote freelance income (US/EU) in <= 5 months.
+- **Goal:** Use this portfolio as main asset to reach $800+/month remote freelance income (US/EU) in <= 5 months.
 - **Target Clients:** SMB owners, startup founders, technical leads in US/EU looking for:
   - High-performance e-commerce
   - Custom business dashboards (inventory / POS / internal tools)
