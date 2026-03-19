@@ -83,6 +83,20 @@ export default function ProjectsGrid() {
           </div>
         </div>
 
+        <div className="mt-4">
+          <ProjectCard
+            title="Solnr Studio"
+            tagline="Quiet Luxury E-Commerce · Design Engineering"
+            description="A dark-mode menswear storefront being built as a design engineering showcase. Editorial UX, Framer Motion animations, and a premium cart experience — not a template."
+            tags={["Next.js 15", "Supabase", "Tailwind v4", "Framer Motion"]}
+            href="/projects/solnr-studio"
+            status="case-study"
+            featured={false}
+            imageSrc="/images/projects/solnr-studio/solnr-studio.vercel.app_.png"
+            className="w-full"
+          />
+        </div>
+
       </div>
     </section>
   )
