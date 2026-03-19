@@ -66,3 +66,4 @@
 | B2fix2| Lukess Home Fixes v2   | DONE         | 2026-03-19 | fix(portfolio-b2-lukess-home): lighthouse metrics, results copy, testimonial section |
 | B3    | Lukess Inventory Overhaul| DONE         | 2026-03-19 | feat(portfolio-b3-lukess-inventory): overhaul case study — metadata, real metrics, architecture copy, bento fix, gallery captions, results before/after, MagneticButton CTAs, testimonial |
 | B4    | Solnr WIP & Blog Fixes | DONE         | 2026-03-19 | feat(portfolio-b4-solnr-blog): Solnr WIP preview, fix SSE→WebSocket in blog post, add coming-soon to blog list |
+| B3fix | Lukess Inventory Next.js 15 Fix | DONE         | 2026-03-19 | fix(portfolio-b4-solnr-blog): update Next.js version to 15 in lukess inventory metadata |
