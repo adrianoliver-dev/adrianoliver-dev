@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import ProjectCard from "./ProjectCard"
 
 export default function ProjectsGrid() {
@@ -83,19 +84,115 @@ export default function ProjectsGrid() {
           </div>
         </div>
 
-        <div className="mt-4">
-          <ProjectCard
-            title="Solnr Studio"
-            tagline="Quiet Luxury E-Commerce · Design Engineering"
-            description="A dark-mode menswear storefront being built as a design engineering showcase. Editorial UX, Framer Motion animations, and a premium cart experience — not a template."
-            tags={["Next.js 15", "Supabase", "Tailwind v4", "Framer Motion"]}
-            href="/projects/solnr-studio"
-            status="case-study"
-            featured={false}
-            imageSrc="/images/projects/solnr-studio/solnr-studio.vercel.app_.png"
-            className="w-full"
-          />
+        {/* Divider — visual separation from production projects */}
+        <div className="mt-16 mb-10 flex items-center gap-4">
+          <div className="h-px flex-1" style={{ backgroundColor: "var(--color-border)" }} />
+          <span
+            className="font-mono text-[10px] uppercase tracking-[0.25em]"
+            style={{ color: "var(--color-text-secondary)" }}
+          >
+            Also in the lab
+          </span>
+          <div className="h-px flex-1" style={{ backgroundColor: "var(--color-border)" }} />
         </div>
+
+        {/* Solnr Studio — WIP preview row */}
+        <Link
+          href="/projects/solnr-studio"
+          className="group flex flex-col sm:flex-row gap-6 rounded-2xl p-5 border transition-colors duration-300"
+          style={{
+            borderColor: "var(--color-border)",
+            backgroundColor: "var(--color-surface)",
+          }}
+        >
+          {/* Image — fixed size, no stretch */}
+          <div
+            className="relative rounded-xl overflow-hidden flex-shrink-0"
+            style={{ width: "240px", height: "160px" }}
+          >
+            <Image
+              src="/images/projects/solnr-studio/solnr-studio.vercel.app_.png"
+              alt="Solnr Studio preview"
+              fill
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              sizes="240px"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col justify-center gap-3 flex-1 min-w-0">
+            <div className="flex items-center gap-3">
+              <span
+                className="font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full border"
+                style={{
+                  color: "var(--color-text-secondary)",
+                  borderColor: "var(--color-border)",
+                  backgroundColor: "transparent",
+                }}
+              >
+                ○ In Development
+              </span>
+            </div>
+
+            <div>
+              <h3
+                className="font-serif text-lg"
+                style={{ color: "var(--color-text-primary)" }}
+              >
+                Solnr Studio
+              </h3>
+              <p
+                className="font-mono text-xs mt-0.5"
+                style={{ color: "var(--color-accent)" }}
+              >
+                Quiet Luxury Menswear · Design Engineering Showcase
+              </p>
+            </div>
+
+            <p
+              className="text-sm leading-relaxed line-clamp-2"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              A dark-mode menswear storefront being built as a portfolio
+              piece — editorial UX, Framer Motion animations, and a
+              premium cart experience. Not a template.
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {["Next.js 15", "Supabase", "Tailwind v4", "Framer Motion"].map((tag) => (
+                <span
+                  key={tag}
+                  className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded border"
+                  style={{
+                    color: "var(--color-text-secondary)",
+                    borderColor: "var(--color-border)",
+                    backgroundColor: "rgba(255,255,255,0.03)",
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Arrow — right side */}
+          <div className="hidden sm:flex items-center pr-2">
+            <svg
+              className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+              style={{ color: "var(--color-accent)" }}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </div>
+        </Link>
 
       </div>
     </section>
