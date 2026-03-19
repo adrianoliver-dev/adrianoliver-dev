@@ -132,3 +132,14 @@ a, button {
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@keyframes videoPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.video-pulse-circle {
+  animation: videoPulse 3s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .video-pulse-circle { animation: none !important; }
+}

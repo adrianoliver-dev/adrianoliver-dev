@@ -5,7 +5,7 @@ export interface GalleryImage {
   src: string;
   alt: string;
   caption?: string;
-  featured?: boolean;
+  featured?: boolean | "mobile" | string;
   colSpan?: "col-span-1" | "col-span-2" | "col-span-1 lg:col-span-2" | string;
   aspectRatio?: "aspect-square" | "aspect-video" | "aspect-auto" | "aspect-[3/4]" | string;
 }
@@ -31,19 +31,21 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
             <div
               className={`relative bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl overflow-hidden group ${
                 img.colSpan || "col-span-1"
+              } ${
+                img.aspectRatio || (img.featured === true || img.featured === 'mobile' ? "aspect-[9/19] max-w-[280px] mx-auto" : "aspect-[4/3]")
               }`}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
-                width={1600}
-                height={1200}
+                fill
                 quality={90}
-                className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover group-hover:opacity-100 opacity-90 transition-opacity duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 text-sm font-medium text-[var(--color-text-primary)] drop-shadow-md pointer-events-none">
-                {img.alt}
+                {img.caption || img.alt}
               </div>
             </div>
           </FadeUp>

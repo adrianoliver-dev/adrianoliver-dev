@@ -5,33 +5,21 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B17
-- **Block Name:** Outreach Launch & Freelance Indexing
-- **Status:** IN_PROGRESS
+- **Block Number:** B0
+- **Block Name:** Prerequisite Package Migration + Hide Production Placeholders
+- **Status:** DONE
 
-- `PORTFOLIO_AUDIT_2026.md` [NEW] (Deep AI Audit generated)
-- `AGENT_OPERATIONAL_GUIDE.md` [NEW] (Operational protocol for external AI)
+- `package.json` [MODIFY]
+- `src/components/providers/ClientSideProviders.tsx` [MODIFY]
+- `src/components/projects/VideoDemo.tsx` [MODIFY]
+- `src/components/projects/ProjectGallery.tsx` [MODIFY]
+- **Notes:** lenis migrated from @studio-freight/lenis@1.0.42 to lenis (latest); VideoDemo shows coming-soon state when no URL; ProjectGallery renders real PNGs; both placeholder texts removed from production
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B16
-- **Block Name:** Outreach & Content
-- **Completed Date:** 2026-03-18
-- **Started:** 2026-03-18
-
-- `src/components/projects/ProjectGallery.tsx` [NEW]
-- `src/components/projects/VideoDemo.tsx` [NEW]
-- `src/app/projects/solnr-studio/page.tsx` [NEW]
-- `src/app/projects/lukess-home/page.tsx` [MODIFY]
-- `src/app/projects/lukess-inventory-system/page.tsx` [MODIFY]
-- `src/components/home/ProjectsGrid.tsx` [MODIFY]
-- `src/app/sitemap.ts` [MODIFY]
-- `src/app/blog/page.tsx` [MODIFY]
-- `src/app/blog/[slug]/page.tsx` [NEW]
-- `src/lib/mdx.ts` [NEW]
-- `src/content/blog/server-components-retail.mdx` [NEW]
-- `src/app/layout.tsx` [MODIFY] (B16.1 SEO hotfix)
-- `src/app/sitemap.ts` [MODIFY] (B16.1 SEO hotfix)
-- `src/components/analytics/MicrosoftClarity.tsx` [MODIFY] (B16.1 SEO hotfix)
+- **Block Number:** B0
+- **Block Name:** Prerequisite Package Migration + Hide Production Placeholders
+- **Completed Date:** 2026-03-19
+- **Started:** 2026-03-19
 
 ## PROJECT STATE
 
@@ -41,18 +29,9 @@
 
 ---
 
-## OPEN ISSUES
-- [ ] Build global Navbar with animations (Placeholder exists)
-- [ ] Connect Framer Motion transitions (B3) - Partially done via PageTransition
-
 ## NEXT BLOCK
-- **Block Number:** B17
-- **Block Name:** Outreach Launch & Freelance Indexing
-- **Dependencies:** B16
-- **Scope:**
-  - Record the 60-90s Voiceover Demos.
-  - Publish links on LinkedIn, X, and Upwork.
-  - Monitor GSC and Clarity for indexation and user sessions.
+- **Block Number:** B1
+- **Block Name:** Global Layout & Fonts
 
 ---
 

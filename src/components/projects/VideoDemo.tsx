@@ -10,27 +10,15 @@ interface VideoDemoProps {
   title?: string;
 }
 
-export default function VideoDemo({ videoUrl, posterImage, title = "System Demonstration" }: VideoDemoProps) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function VideoDemo({ videoUrl, posterImage, title }: VideoDemoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   if (!videoUrl) {
     return (
       <section className="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
         <FadeUp>
-          <style dangerouslySetInnerHTML={{__html: `
-            @keyframes videoPulse {
-              0%, 100% { opacity: 1; }
-              50% { opacity: 0.55; }
-            }
-            .video-pulse-circle {
-              animation: videoPulse 3s ease-in-out infinite;
-            }
-            @media (prefers-reduced-motion: reduce) {
-              .video-pulse-circle {
-                animation: none !important;
-              }
-            }
-          `}} />
+
           <div 
             className="w-full min-h-[280px] flex flex-col items-center justify-center gap-4 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl"
           >
@@ -56,10 +44,7 @@ export default function VideoDemo({ videoUrl, posterImage, title = "System Demon
   return (
     <section className="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
       <FadeUp>
-        <div className="mb-12">
-          <h3 className="text-3xl font-instrument-serif text-[var(--color-text-primary)] mb-4">{title}</h3>
-          <p className="text-[var(--color-text-secondary)]">Narrated walkthrough (60-90s)</p>
-        </div>
+
         
         <div className="relative aspect-video bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden group">
           {videoUrl && isPlaying ? (
