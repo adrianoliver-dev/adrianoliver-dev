@@ -53,6 +53,12 @@ export default function BlogPage() {
                No architectural insights published yet.
             </p>
           )}
+
+          <p className="font-mono text-sm mt-12"
+            style={{ color: "var(--color-text-secondary)" }}>
+            More articles on retail architecture, inventory systems,
+            and e-commerce performance — coming soon.
+          </p>
         </div>
       </div>
     </main>

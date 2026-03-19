@@ -36,7 +36,7 @@ USING (true);`;
 export default function LukessInventoryCaseStudy() {
   const metadata = [
     { label: "Role", value: "Systems Architect" },
-    { label: "Stack", value: "Next.js 16 · TypeScript · Supabase · Recharts" },
+    { label: "Stack", value: "Next.js 15 · TypeScript · Supabase · Recharts" },
     { label: "Type", value: "Internal ERP / POS" },
     { label: "Access", value: "Role-gated — 3 permission levels" },
   ];

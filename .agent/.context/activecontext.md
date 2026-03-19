@@ -5,29 +5,26 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B3
-- **Block Name:** Lukess Inventory System Case Study Overhaul
+- **Block Number:** B4
+- **Block Name:** Solnr Studio WIP page & Blog fixes
 - **Status:** DONE
 
 ### Files Modified (final state)
-- `src/app/projects/lukess-inventory-system/page.tsx` [MODIFY]
-  - metadata: 4 items (Role, Stack, Type, Access) — no Timeline
-  - metrics: 4 real system metrics (tables, states, templates, roles)
-  - Architecture translated to "The Operations Problem"
-  - TechBento: Supply Intelligence rewritten
-  - Gallery: captions on 6 images
-  - Testimonial inserted before VideoDemo
-  - Results section rewritten to From paper logs to a live ERP
-  - CTA: `MagneticButton` components used
+- `src/app/projects/solnr-studio/page.tsx` [MODIFY]
+  - Replaced technical content with an honest "What's being built" WIP preview
+  - Added new WIP MagneticButton CTA
+- `src/content/blog/server-components-retail.mdx` [MODIFY]
+  - Fixed conclusion to mention Supabase Realtime WebSockets instead of SSE
+- `src/app/blog/page.tsx` [MODIFY]
+  - Added a "coming soon" note at the bottom of the blog list
 
 ### Notes
 - `npm run lint` — 0 errors
 - `npm run build` — exit code 0
-- No hardcoded hex, no invented metrics, no vendor management
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B3
-- **Block Name:** Lukess Inventory System Case Study Overhaul
+- **Block Number:** B4
+- **Block Name:** Solnr Studio WIP page & Blog fixes
 - **Completed Date:** 2026-03-19
 
 ## PROJECT STATE
@@ -39,7 +36,7 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B4
+- **Block Number:** B4.5
 - **Block Name:** (TBD by user)
 
 ---
@@ -68,3 +65,4 @@
 | B2fix | Lukess Home Fixes v1   | DONE         | 2026-03-19 | fix(portfolio-b2-lukess-home): unicode dashes, image filename, metrics LCP data, results copy, card aspect ratio |
 | B2fix2| Lukess Home Fixes v2   | DONE         | 2026-03-19 | fix(portfolio-b2-lukess-home): lighthouse metrics, results copy, testimonial section |
 | B3    | Lukess Inventory Overhaul| DONE         | 2026-03-19 | feat(portfolio-b3-lukess-inventory): overhaul case study — metadata, real metrics, architecture copy, bento fix, gallery captions, results before/after, MagneticButton CTAs, testimonial |
+| B4    | Solnr WIP & Blog Fixes | DONE         | 2026-03-19 | feat(portfolio-b4-solnr-blog): Solnr WIP preview, fix SSE→WebSocket in blog post, add coming-soon to blog list |
