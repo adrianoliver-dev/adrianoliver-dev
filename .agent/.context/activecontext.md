@@ -26,6 +26,9 @@
 - `src/app/blog/[slug]/page.tsx` [NEW]
 - `src/lib/mdx.ts` [NEW]
 - `src/content/blog/server-components-retail.mdx` [NEW]
+- `src/app/layout.tsx` [MODIFY] (B16.1 SEO hotfix)
+- `src/app/sitemap.ts` [MODIFY] (B16.1 SEO hotfix)
+- `src/components/analytics/MicrosoftClarity.tsx` [MODIFY] (B16.1 SEO hotfix)
 
 ## PROJECT STATE
 
