@@ -6,6 +6,8 @@ import TechnicalSnippet from "@/components/projects/TechnicalSnippet";
 import FadeUp from "@/components/ui/FadeUp";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import VideoDemo from "@/components/projects/VideoDemo";
+import MagneticButton from "@/components/ui/MagneticButton";
+
 export const metadata: Metadata = {
   title: "Lukess Home | Omnichannel E-commerce Case Study",
   description: "High-performance retail architecture built with Next.js 15 and Supabase.",
@@ -29,23 +31,22 @@ END;
 $$ LANGUAGE plpgsql;`;
 
 export default function LukessHomeCaseStudy() {
-  const metadata = [
-    { label: "Role", value: "Lead Developer" },
-    { label: "Timeline", value: "23-Day Build" },
-    { label: "Stack", value: "Next.js 15, TS, Supabase" },
+  const heroMetadata = [
+    { label: "Role",    value: "Lead Developer" },
+    { label: "Stack",   value: "Next.js 15 \u00b7 TypeScript \u00b7 Supabase \u00b7 Resend" },
     { label: "Service", value: "Omnichannel Retail" },
   ];
 
   const metrics = [
-    { label: "Delivery", value: "23", suffix: "Days to production" },
-    { label: "Lighthouse Score", value: "100", suffix: "/100" },
-    { label: "Synced live", value: "3", suffix: " storefronts" },
+    { value: "99",  suffix: "/100",        label: "PageSpeed Desktop" },
+    { value: "4",   suffix: " locations",  label: "Real-time synced" },
+    { value: "10",  suffix: " templates",  label: "Automated via Resend" },
   ];
 
   const features = [
     {
       title: "Omnichannel State",
-      description: "Real-time sync between three physical storefronts and digital catalog via PostgreSQL triggers and RLS.",
+      description: "Real-time sync between four locations \u2014 three storefronts and a central warehouse \u2014 via PostgreSQL triggers and RLS.",
       colSpan: "col-span-2" as const,
     },
     {
@@ -69,7 +70,7 @@ export default function LukessHomeCaseStudy() {
         title="Lukess"
         italicWord="Home"
         description="A high-performance retail engine designed to bridge the gap between physical storefronts and digital discovery. Built for resilience and speed, this system handles complex inventory logic with zero compromises."
-        metadata={metadata}
+        metadata={heroMetadata}
         liveUrl="https://store.adrianoliver.dev"
       />
 
@@ -84,7 +85,10 @@ export default function LukessHomeCaseStudy() {
               <h2 className="text-4xl font-instrument-serif italic text-[var(--color-text-primary)]">The Architecture Challenge</h2>
               <div className="space-y-6 text-[var(--color-text-secondary)] text-xl leading-relaxed font-light">
                 <p>
-                  The client had three physical storefronts running on disconnected spreadsheets. A sale in one location wouldn&apos;t reflect in the others until end of day — causing overselling, frustrated customers, and manual reconciliation overhead.
+                  The client had four locations \u2014 three storefronts and a central warehouse \u2014
+                  running on disconnected spreadsheets. A sale in one location wouldn&apos;t reflect
+                  in the others until end of day \u2014 causing overselling, frustrated customers,
+                  and manual reconciliation overhead.
                 </p>
                 <p>
                   I replaced the spreadsheet chaos with a PostgreSQL-first architecture: atomic triggers that decrement stock across all locations in the same transaction as the sale. The result is a system where a 2AM online order and a noon in-store sale compete for the same stock with zero race conditions.
@@ -104,18 +108,55 @@ export default function LukessHomeCaseStudy() {
 
       <VideoDemo 
         title="Omnichannel Retail Walkthrough"
-        posterImage="/images/projects/lukess-home/lukess-home_Home_page hero.png"
+        posterImage="/images/projects/lukess-home/lukess-home_Home_page.png"
       />
 
       <ProjectGallery 
         images={[
-          { src: "/images/projects/lukess-home/lukess-home_Home_page hero.png", alt: "Home Page Hero View", colSpan: "col-span-1 lg:col-span-2" },
-          { src: "/images/projects/lukess-home/lukess-home_cart_drawer.png", alt: "Cart Drawer overlay", colSpan: "col-span-1" },
-          { src: "/images/projects/lukess-home/lukess-home_Catalogo.png", alt: "Global Catalog View", colSpan: "col-span-1" },
-          { src: "/images/projects/lukess-home/lukess-home_catalogo_con_filtros.png", alt: "Catalog view with active filters", colSpan: "col-span-2" },
-          { src: "/images/projects/lukess-home/lukess-home_page_product.png", alt: "Detailed Product View", colSpan: "col-span-2" },
-          { src: "/images/projects/lukess-home/lukess-home_catalogo_mobile.png", alt: "Mobile Catalog", colSpan: "col-span-1" },
-          { src: "/images/projects/lukess-home/lukess-home_page_product_mobile.png", alt: "Mobile Product View", colSpan: "col-span-1" },
+          {
+            src: "/images/projects/lukess-home/lukess-home_Home_page.png",
+            alt: "Home Page Hero View",
+            caption: "Homepage hero with animated banner CMS and trust signals",
+            colSpan: "col-span-1 lg:col-span-2",
+          },
+          {
+            src: "/images/projects/lukess-home/lukess-home_cart_drawer.png",
+            alt: "Cart Drawer overlay",
+            caption: "Slide-in cart drawer with Framer Motion animations",
+            colSpan: "col-span-1",
+          },
+          {
+            src: "/images/projects/lukess-home/lukess-home_Catalogo.png",
+            alt: "Global Catalog View",
+            caption: "Product catalog with multi-category navigation",
+            colSpan: "col-span-1",
+          },
+          {
+            src: "/images/projects/lukess-home/lukess-home_catalogo_con_filtros.png",
+            alt: "Catalog view with active filters",
+            caption: "Dynamic filters with URL-based state \u2014 deep-linkable",
+            colSpan: "col-span-2",
+          },
+          {
+            src: "/images/projects/lukess-home/lukess-home_page_product.png",
+            alt: "Detailed Product View",
+            caption: "Product detail page with size selector and gallery",
+            colSpan: "col-span-2",
+          },
+          {
+            src: "/images/projects/lukess-home/lukess-home_catalogo_mobile.png",
+            alt: "Mobile Catalog",
+            caption: "Responsive mobile catalog \u2014 optimized layout",
+            colSpan: "col-span-1",
+            aspectRatio: "aspect-[9/19]",
+          },
+          {
+            src: "/images/projects/lukess-home/lukess-home_page_product_mobile.png",
+            alt: "Mobile Product View",
+            caption: "Mobile PDP with sticky add-to-cart",
+            colSpan: "col-span-1",
+            aspectRatio: "aspect-[9/19]",
+          },
         ]} 
       />
 
@@ -125,18 +166,31 @@ export default function LukessHomeCaseStudy() {
         <FadeUp>
           <span className="font-mono text-xs text-[var(--color-accent)] uppercase tracking-[0.3em] mb-8 block">Results</span>
           <h2 className="text-5xl md:text-7xl font-instrument-serif italic text-[var(--color-text-primary)] mb-12 leading-tight">
-            From spreadsheets to real-time omnichannel in 23 days.
+            From spreadsheets to real-time omnichannel.
           </h2>
-          <p className="text-[var(--color-text-secondary)] text-xl mb-16 font-light leading-relaxed">
-            The Lukess ecosystem isn&apos;t just a store; it&apos;s a blueprint for modern retail. By focusing on database-level integrity and server-first performance, I delivered a system that empowers the business for long-term growth.
+          <p className="text-[var(--color-text-secondary)] text-xl mb-8 font-light leading-relaxed">
+            Before: four disconnected locations running on spreadsheets. Manual
+            reconciliation every night. No visibility between stores. No online presence.
           </p>
-          <div className="flex justify-center flex-col md:flex-row gap-12 items-center">
-            <a href="https://store.adrianoliver.dev" target="_blank" className="font-mono text-sm uppercase tracking-widest text-[var(--color-text-primary)] border-b border-[var(--color-accent)] pb-2 active:scale-95 transition-transform">
-              Explore Live Store →
-            </a>
-            <a href="/contact" className="font-mono text-sm uppercase tracking-widest text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors">
+          <p className="text-[var(--color-text-secondary)] text-xl mb-16 font-light leading-relaxed mt-8">
+            After: atomic PostgreSQL triggers preventing race conditions across all
+            locations. 10 automated email templates via Resend. 9 WhatsApp Business API
+            templates for order notifications. Real-time stock sync from a single Supabase
+            source of truth. Checkout flows for Stripe, QR transfer, and cash pickup.
+          </p>
+          <div className="flex justify-center flex-col md:flex-row gap-6 items-center">
+            <MagneticButton
+              href="/contact"
+              className="bg-accent text-black px-6 py-3 text-sm font-medium hover:bg-amber-500 transition-all duration-300 shadow-[0_0_40px_#D9770630] hover:shadow-[0_0_60px_#D9770650]"
+            >
               Start your build
-            </a>
+            </MagneticButton>
+            <MagneticButton
+              href="https://store.adrianoliver.dev"
+              className="border border-border text-text-primary px-6 py-3 text-sm hover:border-accent hover:text-accent transition-colors duration-200"
+            >
+              View live deployment \u2192
+            </MagneticButton>
           </div>
         </FadeUp>
       </section>

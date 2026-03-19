@@ -1,30 +1,34 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
 **Last Updated:** 2026-03-19
-**Updated By:** Antigravity (Block B1-homepage completion)
+**Updated By:** Antigravity (Block B2-lukess-home completion)
 
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B1
-- **Block Name:** Homepage Refactor
+- **Block Number:** B2
+- **Block Name:** Lukess Home Case Study Overhaul
 - **Status:** DONE
 
 ### Files Modified
-- `src/components/home/HeroAnimations.tsx` [MODIFY] — subtitle second span updated with new apparel/retail copy
-- `src/components/home/ProjectCard.tsx` [MODIFY] — data-driven metrics prop added, hardcoded values removed
-- `src/components/home/ProjectsGrid.tsx` [MODIFY] — Solnr removed, grid restructured to Lukess Home (col-span-3) + Lukess Inventory (col-span-2) + CTA card, both with metrics and correct imageSrc paths
-- `src/components/home/CurrentProject.tsx` [MODIFY] — replaced with Solnr Studio WIP, styled accent-border placeholder, no broken image references
-- `src/components/home/ContactForm.tsx` — verified email is hello@adrianoliver.dev (no change needed)
+- `src/app/projects/lukess-home/page.tsx` [MODIFY]
+  - metadata: 3 items (Role, Stack, Service) — Timeline removed
+  - metrics: 99/100 PageSpeed, 4 locations real-time synced, 10 Resend templates
+  - Architecture Challenge: first paragraph updated to 4 locations
+  - Results h2: removed "in 23 days"
+  - Results body: replaced with before/after two-paragraph structure
+  - CTA: replaced `<a>` tags with `MagneticButton` components
+  - Gallery: captions added to all 7 images; aspectRatio on 2 mobile images
+  - VideoDemo posterImage: fixed to `lukess-home_Home_page.png` (no space)
+  - All gallery srcs: fixed to `lukess-home_Home_page.png` (confirmed on disk)
 
 ### Notes
-- `npm run lint` — 0 errors (1 pre-existing warning in gtag.d.ts, unrelated)
+- `npm run lint` — 0 errors
 - `npm run build` — exit code 0
-- CTA dot: var(--color-code-green), hover text: var(--color-accent)
-- All colors via CSS variables, no hardcoded hex in className props
+- No Timeline, no 23-day claims, no hardcoded hex — constraint check passed
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B1
-- **Block Name:** Homepage Refactor
+- **Block Number:** B2
+- **Block Name:** Lukess Home Case Study Overhaul
 - **Completed Date:** 2026-03-19
 - **Started:** 2026-03-19
 
@@ -37,7 +41,7 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B2
+- **Block Number:** B3
 - **Block Name:** (TBD by user)
 
 ---
@@ -62,3 +66,4 @@
 | B16   | Outreach & Content      | DONE         | 2026-03-18 | feat(portfolio-b16-outreach): implemented multi-project visual galleries, dynamic MDX blog, and finalized top-tier SEO/Analytics |
 | B0    | Prerequisite Migration  | DONE         | 2026-03-19 | chore(portfolio-b0): lenis migration, VideoDemo coming-soon, ProjectGallery real images |
 | B1    | Homepage Refactor       | DONE         | 2026-03-19 | feat(portfolio-b1-homepage): hero subtitle, data-driven metrics, grid to 2 projects, Solnr to CurrentProject, contact email |
+| B2    | Lukess Home Overhaul    | DONE         | 2026-03-19 | feat(portfolio-b2-lukess-home): overhaul case study — metadata, metrics, copy, gallery captions, results before/after, CTA buttons |
