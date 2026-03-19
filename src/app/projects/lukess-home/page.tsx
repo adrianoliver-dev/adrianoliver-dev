@@ -4,6 +4,8 @@ import TechBento from "@/components/projects/TechBento";
 import ProjectMetric from "@/components/projects/ProjectMetric";
 import TechnicalSnippet from "@/components/projects/TechnicalSnippet";
 import FadeUp from "@/components/ui/FadeUp";
+import ProjectGallery from "@/components/projects/ProjectGallery";
+import VideoDemo from "@/components/projects/VideoDemo";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -97,8 +99,8 @@ export default function LukessHomeCaseStudy() {
             <FadeUp delay={0.2}>
               <div className="aspect-video bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
                 <Image 
-                  src="/images/projects/home-hero.png" 
-                  alt="Lukess Home Landing Page"
+                  src="/images/projects/lukess-home/lukess-home_Home_page hero.png" 
+                  alt="Lukess Home Technical Architecture"
                   fill
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                 />
@@ -122,8 +124,8 @@ export default function LukessHomeCaseStudy() {
           <FadeUp>
             <div className="aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
               <Image 
-                src="/images/projects/home-catalog.png" 
-                alt="Product Catalog"
+                src="/images/projects/lukess-home/lukess-home_Catalogo.png" 
+                alt="Product Catalog Database Optimization"
                 fill
                 className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
               />
@@ -139,7 +141,7 @@ export default function LukessHomeCaseStudy() {
           <FadeUp delay={0.2}>
             <div className="aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
               <Image 
-                src="/images/projects/home-mobile.png" 
+                src="/images/projects/lukess-home/lukess-home_catalogo_mobile.png" 
                 alt="Mobile Experience"
                 fill
                 className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
@@ -154,6 +156,20 @@ export default function LukessHomeCaseStudy() {
           </FadeUp>
         </div>
       </section>
+
+      <VideoDemo 
+        title="Omnichannel Retail Walkthrough"
+        posterImage="/images/projects/lukess-home/lukess-home_Home_page hero.png"
+      />
+
+      <ProjectGallery 
+        images={[
+          { src: "/images/projects/lukess-home/lukess-home_cart_drawer.png", alt: "Cart Drawer overlay", colSpan: "col-span-1" },
+          { src: "/images/projects/lukess-home/lukess-home_catalogo_con_filtros.png", alt: "Catalog view with active filters", colSpan: "col-span-2", aspectRatio: "aspect-video" },
+          { src: "/images/projects/lukess-home/lukess-home_page_product.png", alt: "Detailed Product View", colSpan: "col-span-2", aspectRatio: "aspect-video" },
+          { src: "/images/projects/lukess-home/lukess-home_page_product_mobile.png", alt: "Mobile Product View", colSpan: "col-span-1", aspectRatio: "aspect-[3/4]" },
+        ]} 
+      />
 
       <TechBento sectionTitle="Strategic Engineering" features={features} />
 

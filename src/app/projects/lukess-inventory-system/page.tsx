@@ -4,6 +4,8 @@ import TechBento from "@/components/projects/TechBento";
 import ProjectMetric from "@/components/projects/ProjectMetric";
 import TechnicalSnippet from "@/components/projects/TechnicalSnippet";
 import FadeUp from "@/components/ui/FadeUp";
+import ProjectGallery from "@/components/projects/ProjectGallery";
+import VideoDemo from "@/components/projects/VideoDemo";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -101,8 +103,8 @@ export default function LukessInventoryCaseStudy() {
             <FadeUp delay={0.2}>
               <div className="aspect-video bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
                 <Image 
-                  src="/images/projects/inv-dashboard.png" 
-                  alt="Inventory Analytics Dashboard"
+                  src="/images/projects/lukess-inventory/inventory_dashboard.png" 
+                  alt="Inventory Dashboard Architecture"
                   fill
                   className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                 />
@@ -126,8 +128,8 @@ export default function LukessInventoryCaseStudy() {
           <FadeUp>
             <div className="aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
               <Image 
-                src="/images/projects/inv-pos.png" 
-                alt="Reactive POS View"
+                src="/images/projects/lukess-inventory/inventory_POS_view.png" 
+                alt="Point of Sale Technical Workflow"
                 fill
                 className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
               />
@@ -143,7 +145,7 @@ export default function LukessInventoryCaseStudy() {
           <FadeUp delay={0.2}>
             <div className="aspect-square bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden relative group">
               <Image 
-                src="/images/projects/inv-rbac.png" 
+                src="/images/projects/lukess-inventory/inventory_reports.png" 
                 alt="RBAC Security Management"
                 fill
                 className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
@@ -158,6 +160,19 @@ export default function LukessInventoryCaseStudy() {
           </FadeUp>
         </div>
       </section>
+
+      <VideoDemo 
+        title="ERP System Demonstration"
+        posterImage="/images/projects/lukess-inventory/inventory_POS_view.png"
+      />
+
+      <ProjectGallery 
+        images={[
+          { src: "/images/projects/lukess-inventory/inventory_list_inventory.png", alt: "Inventory Data Table", colSpan: "col-span-2", aspectRatio: "aspect-video" },
+          { src: "/images/projects/lukess-inventory/inventory_edit_product.png", alt: "Edit Product Panel", colSpan: "col-span-1" },
+          { src: "/images/projects/lukess-inventory/inventory_reports_2.png", alt: "Advanced Analytics Reports", colSpan: "col-span-1 lg:col-span-2", aspectRatio: "aspect-video" },
+        ]} 
+      />
 
       <TechBento sectionTitle="Infrastructure Core" features={features} />
 

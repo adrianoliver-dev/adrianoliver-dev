@@ -90,7 +90,7 @@ export default function ProjectCard({
           {tags.map((tag) => (
             <span 
               key={tag}
-              className="font-mono text-xs bg-border text-text-secondary px-2 py-1 rounded"
+              className="font-mono text-[10px] uppercase tracking-wider bg-white/5 text-text-secondary px-2 py-1 rounded border border-white/5 group-hover:border-accent/20 group-hover:text-accent/80 transition-all duration-300"
             >
               {tag}
             </span>

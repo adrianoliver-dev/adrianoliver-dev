@@ -53,9 +53,9 @@ export default function Contact() {
               <p className="font-mono text-xs text-text-secondary">
                 Prefer email?{' '}
                 <a
-                  href="mailto:adrianoliver.dev@gmail.com"
+                  href="mailto:hello@adrianoliver.dev"
                   className="text-accent hover:underline">
-                  adrianoliver.dev@gmail.com
+                  hello@adrianoliver.dev
                 </a>
               </p>
             </div>

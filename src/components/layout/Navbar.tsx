@@ -4,7 +4,6 @@ const navLinks = [
   { label: "Work", href: "/#projects" },
   { label: "About", href: "/#about" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
 ]
 
 export default function Navbar() {
@@ -30,7 +29,7 @@ export default function Navbar() {
           ))}
         </ul>
         <Link
-          href="/contact"
+          href="/#contact"
           className="text-sm px-4 py-2 border border-border text-text-primary hover:border-accent hover:text-accent transition-colors duration-200"
         >
           Hire me

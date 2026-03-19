@@ -6,10 +6,10 @@ import { trackEvent } from '@/lib/analytics'
 const initialState: ContactFormState = { status: 'idle' }
 
 const budgetOptions = [
-  { value: '<1k',   label: 'Under $1,000' },
-  { value: '1k-3k', label: '$1,000 – $3,000' },
-  { value: '3k-5k', label: '$3,000 – $5,000' },
-  { value: '5k+',   label: '$5,000+' },
+  { value: 'under-3k', label: 'Under $3,000' },
+  { value: '3k-10k',  label: '$3,000 – $10,000' },
+  { value: '10k+',    label: '$10,000+' },
+  { value: 'other',    label: 'Other / Consulting' },
 ]
 
 export default function ContactForm() {
@@ -152,11 +152,11 @@ export default function ContactForm() {
         disabled={pending}
         onClick={handleSubmitClick}
         className="self-start inline-flex items-center gap-2 bg-accent 
-          text-black font-mono text-sm font-medium px-6 py-3 rounded-lg
+          text-black font-mono text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-lg
           shadow-[0_0_40px_#D9770630] hover:shadow-[0_0_60px_#D9770650]
           disabled:opacity-50 disabled:cursor-not-allowed
           transition-all duration-300">
-        {pending ? 'Sending...' : 'Send message →'}
+        {pending ? 'Sending...' : 'Start a Conversation →'}
       </button>
     </form>
   )

@@ -41,7 +41,18 @@ export default function ProjectsGrid() {
               href="/projects/lukess-inventory-system"
               status="case-study"
               featured={false}
-              imageSrc="/images/projects/inv-dashboard.png"
+              imageSrc="/images/projects/lukess-inventory/inventory_dashboard.png"
+            />
+            
+            <ProjectCard 
+              title="Solnr Studio"
+              tagline="Luxury E-Commerce Exploration"
+              description="High-fidelity animations and dark-mode aesthetics for digital fashion retail."
+              tags={["Next.js 15", "Framer Motion", "Tailwind v4", "Dark Mode"]}
+              href="/projects/solnr-studio"
+              status="case-study"
+              featured={false}
+              imageSrc="/images/projects/solnr-studio/solnr-studio.vercel.app_.png"
             />
             
             {/* CTA Card: Available for new projects */}

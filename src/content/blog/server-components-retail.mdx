@@ -1,0 +1,43 @@
+---
+title: "The Case for Server Components in Omnichannel Retail"
+description: "Why we chose Next.js 15 Server Components and Supabase for a multi-node retail architecture."
+date: "2026-03-18"
+---
+
+# The Performance Imperative in Modern E-commerce
+
+When dealing with multiple physical storefronts and a unified digital catalog, state synthesis becomes the hardest computer science problem you will face daily. 
+
+In building **Lukess Home**, the mandate was simple: eliminate overselling. We couldn't afford a reality where an item is bought in-store, but is concurrently checked out online.
+
+## Enter PostgreSQL and Next.js 15 
+
+We moved away from decoupled client-heavy SPAs and transitioned to Edge-rendered Server Components communicating directly with Supabase via PostgREST.
+
+### 1. Database-Level Locking
+By defining stock decrements inside atomic PostgreSQL triggers, the database acts as the strict source of truth.
+
+```sql
+-- Atomic stock decrement trigger
+CREATE OR REPLACE FUNCTION handle_new_order() 
+RETURNS TRIGGER AS $$
+BEGIN
+  UPDATE products 
+  SET stock = stock - (NEW.quantity)
+  WHERE id = NEW.product_id AND stock >= NEW.quantity;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'Insufficient stock';
+  END IF;
+
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+```
+
+### 2. Edge Rendering
+Because data fetching happens securely on the server in `page.tsx`, we can aggressively cache successful inventory queries while mutating the exact row via triggers during checkout.
+
+## Conclusion
+
+The result is a system where a checkout on mobile in Madrid and an in-store swipe in Santa Cruz compete seamlessly, correctly locked by PostgreSQL, and instantly reflected back to the users via Next.js 15 Server-Sent Events.

@@ -5,25 +5,27 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B15
-- **Block Name:** Final QA & Polish
+- **Block Number:** B17
+- **Block Name:** Outreach Launch & Freelance Indexing
 - **Status:** PLANNED
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B14
-- **Block Name:** Premium Visual Layer
-- **Completed Date:** 2026-03-12
-- **Started:** 2026-03-12
+- **Block Number:** B16
+- **Block Name:** Outreach & Content
+- **Completed Date:** 2026-03-18
+- **Started:** 2026-03-18
 
-## FILES CHANGED THIS SESSION
-- `src/components/providers/SmoothScrollProvider.tsx` [NEW]
-- `src/components/providers/ClientSideProviders.tsx` [NEW]
-- `src/components/ui/MagneticButton.tsx` [NEW]
-- `src/components/ui/SectionDivider.tsx` [NEW]
-- `src/app/layout.tsx` [MODIFY]
-- `src/components/home/HeroAnimations.tsx` [MODIFY]
-- `src/app/globals.css` [MODIFY]
-- `src/app/page.tsx` [MODIFY]
+- `src/components/projects/ProjectGallery.tsx` [NEW]
+- `src/components/projects/VideoDemo.tsx` [NEW]
+- `src/app/projects/solnr-studio/page.tsx` [NEW]
+- `src/app/projects/lukess-home/page.tsx` [MODIFY]
+- `src/app/projects/lukess-inventory-system/page.tsx` [MODIFY]
+- `src/components/home/ProjectsGrid.tsx` [MODIFY]
+- `src/app/sitemap.ts` [MODIFY]
+- `src/app/blog/page.tsx` [MODIFY]
+- `src/app/blog/[slug]/page.tsx` [NEW]
+- `src/lib/mdx.ts` [NEW]
+- `src/content/blog/server-components-retail.mdx` [NEW]
 
 ## PROJECT STATE
 
@@ -37,14 +39,14 @@
 - [ ] Build global Navbar with animations (Placeholder exists)
 - [ ] Connect Framer Motion transitions (B3) - Partially done via PageTransition
 
----
-
 ## NEXT BLOCK
-- **Block Number:** B15
-- **Block Name:** Final QA & Performance Audit
-- **Dependencies:** B14
+- **Block Number:** B17
+- **Block Name:** Outreach Launch & Freelance Indexing
+- **Dependencies:** B16
 - **Scope:**
-  - Lighthouse audit, cross-browser testing, final responsive tweaks.
+  - Record the 60-90s Voiceover Demos.
+  - Publish links on LinkedIn, X, and Upwork.
+  - Monitor GSC and Clarity for indexation and user sessions.
 
 ---
 
@@ -63,5 +65,6 @@
 | B9    | Contact Form            | DONE         | 2026-03-11 | feat(portfolio-b9): contact section, server action, resend integration, availability indicator |
 | B10   | SEO Completo            | DONE         | 2026-03-11 | feat(portfolio-b10): seo — metadata, json-ld, sitemap, robots, llms.txt, og image |
 | B11   | Analytics               | DONE         | 2026-03-11 | feat(portfolio-b11): analytics — vercel analytics, speed insights, ga4 |
-| B12.5 | Screenshot Integration  | DONE         | 2026-03-12 | feat(portfolio-b12.5): integrated real screenshots from live demos + accurate metrics |
 | B14   | Premium Visual Layer    | DONE         | 2026-03-12 | feat(portfolio-b14): premium visual layer — lenis, hero scale, magnetic buttons, ambient glow, dividers |
+| B15   | Final QA & Optimization | DONE         | 2026-03-18 | feat(portfolio-b15): final QA and analytics setups |
+| B16   | Outreach & Content      | DONE         | 2026-03-18 | feat(portfolio-b16-outreach): implemented multi-project visual galleries, dynamic MDX blog, and finalized top-tier SEO/Analytics |

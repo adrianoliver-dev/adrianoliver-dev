@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useRef } from "react"
-import { LazyMotion, domAnimation, m } from "framer-motion"
+import { m } from "framer-motion"
 import MagneticButton from "@/components/ui/MagneticButton"
 
 const CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%"
@@ -49,7 +49,7 @@ export default function HeroAnimations() {
   }, [])
 
   return (
-    <LazyMotion features={domAnimation}>
+    <>
       {/* Static amber ambient — hero only */}
       <div
         aria-hidden="true"
@@ -100,8 +100,8 @@ export default function HeroAnimations() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
       >
-        <span className="font-serif text-text-secondary block">I build e-commerce and business web apps</span>
-        <span className="font-serif italic text-accent block mt-1">for growing companies — fast, clean, production-ready.</span>
+        <span className="font-serif text-text-secondary block">I build e-commerce and inventory systems</span>
+        <span className="font-serif italic text-accent block mt-1">for apparel and retail brands — fast, clean, production-ready.</span>
       </m.p>
       
       {/* bio */}
@@ -111,7 +111,7 @@ export default function HeroAnimations() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.35, duration: 0.5, ease: "easeOut" }}
       >
-        Next.js 15 · TypeScript · Supabase · Tailwind v4 — Working globally with US/EU teams.
+        Next.js 15 · TypeScript · Supabase · Tailwind v4 — Available for US/EU remote projects · GMT-4
       </m.p>
       
       {/* CTAs */}
@@ -134,6 +134,6 @@ export default function HeroAnimations() {
           Get In Touch
         </MagneticButton>
       </m.div>
-    </LazyMotion>
+    </>
   )
 }
