@@ -13,6 +13,46 @@ interface VideoDemoProps {
 export default function VideoDemo({ videoUrl, posterImage, title = "System Demonstration" }: VideoDemoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
+  if (!videoUrl) {
+    return (
+      <section className="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
+        <FadeUp>
+          <style dangerouslySetInnerHTML={{__html: `
+            @keyframes videoPulse {
+              0%, 100% { opacity: 1; }
+              50% { opacity: 0.55; }
+            }
+            .video-pulse-circle {
+              animation: videoPulse 3s ease-in-out infinite;
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .video-pulse-circle {
+                animation: none !important;
+              }
+            }
+          `}} />
+          <div 
+            className="w-full min-h-[280px] flex flex-col items-center justify-center gap-4 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl"
+          >
+            <div className="video-pulse-circle w-16 h-16 border-[1.5px] border-[var(--color-accent)] rounded-full flex items-center justify-center">
+              <svg viewBox="0 0 36 32" className="w-8 h-8 fill-[var(--color-accent)] opacity-80" aria-hidden="true">
+                <path d="M10,6 L10,26 L26,16 Z" />
+              </svg>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <span className="font-sans text-[14px] text-[var(--color-text-secondary)] tracking-[0.02em]">
+                Video walkthrough
+              </span>
+              <span className="font-mono text-[11px] text-[var(--color-accent)] opacity-65 uppercase tracking-[0.08em]">
+                Coming soon
+              </span>
+            </div>
+          </div>
+        </FadeUp>
+      </section>
+    );
+  }
+
   return (
     <section className="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
       <FadeUp>

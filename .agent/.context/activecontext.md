@@ -7,7 +7,10 @@
 ## CURRENT BLOCK
 - **Block Number:** B17
 - **Block Name:** Outreach Launch & Freelance Indexing
-- **Status:** PLANNED
+- **Status:** IN_PROGRESS
+
+- `PORTFOLIO_AUDIT_2026.md` [NEW] (Deep AI Audit generated)
+- `AGENT_OPERATIONAL_GUIDE.md` [NEW] (Operational protocol for external AI)
 
 ## LAST COMPLETED BLOCK
 - **Block Number:** B16

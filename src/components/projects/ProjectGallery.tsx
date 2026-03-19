@@ -1,13 +1,17 @@
 import Image from "next/image";
 import FadeUp from "@/components/ui/FadeUp";
 
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+  featured?: boolean;
+  colSpan?: "col-span-1" | "col-span-2" | "col-span-1 lg:col-span-2" | string;
+  aspectRatio?: "aspect-square" | "aspect-video" | "aspect-auto" | "aspect-[3/4]" | string;
+}
+
 interface ProjectGalleryProps {
-  images: {
-    src: string;
-    alt: string;
-    colSpan?: "col-span-1" | "col-span-2" | "col-span-1 lg:col-span-2";
-    aspectRatio?: "aspect-square" | "aspect-video" | "aspect-auto" | "aspect-[3/4]";
-  }[];
+  images: GalleryImage[];
 }
 
 export default function ProjectGallery({ images }: ProjectGalleryProps) {
@@ -18,9 +22,6 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
       <FadeUp>
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <h3 className="text-3xl font-instrument-serif text-[var(--color-text-primary)]">Gallery</h3>
-          <p className="text-sm font-mono text-[var(--color-text-secondary)] uppercase tracking-widest">
-            {images.length} Captures
-          </p>
         </div>
       </FadeUp>
 
