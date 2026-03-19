@@ -101,7 +101,7 @@ export default function HeroAnimations() {
         transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
       >
         <span className="font-serif text-text-secondary block">I build e-commerce and inventory systems</span>
-        <span className="font-serif italic text-accent block mt-1">for apparel and retail brands — fast, clean, production-ready.</span>
+        <span className="font-serif italic text-accent block mt-1">for apparel and retail brands — the kind that replaces spreadsheets and prevents overselling across locations.</span>
       </m.p>
       
       {/* bio */}

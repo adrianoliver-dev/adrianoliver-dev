@@ -4,6 +4,11 @@ import Link from 'next/link'
 import TiltCard from '@/components/ui/TiltCard'
 import { trackEvent } from '@/lib/analytics'
 
+interface Metric {
+  value: string
+  label: string
+}
+
 interface ProjectCardProps {
   title: string
   tagline: string
@@ -14,6 +19,7 @@ interface ProjectCardProps {
   featured?: boolean
   imageSrc?: string
   className?: string
+  metrics?: Metric[]
 }
 
 export default function ProjectCard({
@@ -26,6 +32,7 @@ export default function ProjectCard({
   featured = false,
   imageSrc,
   className = "",
+  metrics,
 }: ProjectCardProps) {
   function handleClick() {
     trackEvent({
@@ -97,20 +104,17 @@ export default function ProjectCard({
           ))}
         </div>
 
-        {featured && (
-          <div className="mt-auto pt-6 border-t border-border grid grid-cols-3 gap-2 text-center">
-            <div>
-              <p className="font-mono text-accent text-sm font-medium">23-Day</p>
-              <p className="font-mono text-text-secondary text-[10px] uppercase tracking-wider">Build</p>
-            </div>
-            <div>
-              <p className="font-mono text-accent text-sm font-medium">100/100</p>
-              <p className="font-mono text-text-secondary text-[10px] uppercase tracking-wider">Lighthouse</p>
-            </div>
-            <div>
-              <p className="font-mono text-accent text-sm font-medium">26+ SKUs</p>
-              <p className="font-mono text-text-secondary text-[10px] uppercase tracking-wider">Live Sync</p>
-            </div>
+        {featured && metrics && metrics.length > 0 && (
+          <div
+            className="mt-auto pt-6 border-t border-border grid gap-2 text-center"
+            style={{ gridTemplateColumns: `repeat(${metrics.length}, 1fr)` }}
+          >
+            {metrics.map((metric) => (
+              <div key={metric.label}>
+                <p className="font-mono text-accent text-sm font-medium">{metric.value}</p>
+                <p className="font-mono text-text-secondary text-[10px] uppercase tracking-wider">{metric.label}</p>
+              </div>
+            ))}
           </div>
         )}
       </div>

@@ -1,23 +1,30 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
-**Last Updated:** 2026-03-12
-**Updated By:** Antigravity (Block B14 completion)
+**Last Updated:** 2026-03-19
+**Updated By:** Antigravity (Block B1-homepage completion)
 
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B0
-- **Block Name:** Prerequisite Package Migration + Hide Production Placeholders
+- **Block Number:** B1
+- **Block Name:** Homepage Refactor
 - **Status:** DONE
 
-- `package.json` [MODIFY]
-- `src/components/providers/ClientSideProviders.tsx` [MODIFY]
-- `src/components/projects/VideoDemo.tsx` [MODIFY]
-- `src/components/projects/ProjectGallery.tsx` [MODIFY]
-- **Notes:** lenis migrated from @studio-freight/lenis@1.0.42 to lenis (latest); VideoDemo shows coming-soon state when no URL; ProjectGallery renders real PNGs; both placeholder texts removed from production
+### Files Modified
+- `src/components/home/HeroAnimations.tsx` [MODIFY] — subtitle second span updated with new apparel/retail copy
+- `src/components/home/ProjectCard.tsx` [MODIFY] — data-driven metrics prop added, hardcoded values removed
+- `src/components/home/ProjectsGrid.tsx` [MODIFY] — Solnr removed, grid restructured to Lukess Home (col-span-3) + Lukess Inventory (col-span-2) + CTA card, both with metrics and correct imageSrc paths
+- `src/components/home/CurrentProject.tsx` [MODIFY] — replaced with Solnr Studio WIP, styled accent-border placeholder, no broken image references
+- `src/components/home/ContactForm.tsx` — verified email is hello@adrianoliver.dev (no change needed)
+
+### Notes
+- `npm run lint` — 0 errors (1 pre-existing warning in gtag.d.ts, unrelated)
+- `npm run build` — exit code 0
+- CTA dot: var(--color-code-green), hover text: var(--color-accent)
+- All colors via CSS variables, no hardcoded hex in className props
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B0
-- **Block Name:** Prerequisite Package Migration + Hide Production Placeholders
+- **Block Number:** B1
+- **Block Name:** Homepage Refactor
 - **Completed Date:** 2026-03-19
 - **Started:** 2026-03-19
 
@@ -30,8 +37,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B1
-- **Block Name:** Global Layout & Fonts
+- **Block Number:** B2
+- **Block Name:** (TBD by user)
 
 ---
 
@@ -53,3 +60,5 @@
 | B14   | Premium Visual Layer    | DONE         | 2026-03-12 | feat(portfolio-b14): premium visual layer — lenis, hero scale, magnetic buttons, ambient glow, dividers |
 | B15   | Final QA & Optimization | DONE         | 2026-03-18 | feat(portfolio-b15): final QA and analytics setups |
 | B16   | Outreach & Content      | DONE         | 2026-03-18 | feat(portfolio-b16-outreach): implemented multi-project visual galleries, dynamic MDX blog, and finalized top-tier SEO/Analytics |
+| B0    | Prerequisite Migration  | DONE         | 2026-03-19 | chore(portfolio-b0): lenis migration, VideoDemo coming-soon, ProjectGallery real images |
+| B1    | Homepage Refactor       | DONE         | 2026-03-19 | feat(portfolio-b1-homepage): hero subtitle, data-driven metrics, grid to 2 projects, Solnr to CurrentProject, contact email |
