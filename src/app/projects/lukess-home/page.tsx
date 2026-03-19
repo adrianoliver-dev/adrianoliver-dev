@@ -86,9 +86,9 @@ export default function LukessHomeCaseStudy() {
               <h2 className="text-4xl font-instrument-serif italic text-[var(--color-text-primary)]">The Architecture Challenge</h2>
               <div className="space-y-6 text-[var(--color-text-secondary)] text-xl leading-relaxed font-light">
                 <p>
-                  The client had four locations &mdash; three storefronts and a central warehouse &mdash;
+                  The client had four locations — three storefronts and a central warehouse —
                   running on disconnected spreadsheets. A sale in one location wouldn&apos;t reflect
-                  in the others until end of day &mdash; causing overselling, frustrated customers,
+                  in the others until end of day — causing overselling, frustrated customers,
                   and manual reconciliation overhead.
                 </p>
                 <p>
@@ -180,6 +180,7 @@ export default function LukessHomeCaseStudy() {
           </div>
         </FadeUp>
       </section>
+
 
       <VideoDemo 
         title="Omnichannel Retail Walkthrough"

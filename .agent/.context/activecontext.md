@@ -5,32 +5,29 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B2
-- **Block Name:** Lukess Home Case Study Overhaul
+- **Block Number:** B3
+- **Block Name:** Lukess Inventory System Case Study Overhaul
 - **Status:** DONE
 
 ### Files Modified (final state)
-- `src/app/projects/lukess-home/page.tsx` [MODIFY]
-  - metadata: 3 items (Role, Stack, Service) — no Timeline
-  - metrics: 4 verified PageSpeed Insights values (99 Performance, 91 Accessibility, 100 Best Practices, 100 SEO)
-  - Architecture Challenge: first paragraph — 4 locations, `&mdash;` entities throughout
-  - Results h2: removed "in 23 days"
-  - Results After paragraph: rewritten — no invented numbers, guest checkout detail added
-  - CTA: `MagneticButton` components, literal → arrow in JSX
-  - Gallery: captions on all 7 images; `aspect-[9/19]` on both mobile images
-  - VideoDemo posterImage: `lukess-home_Home_page.png` (no space)
-  - Testimonial section: inserted after TechnicalSnippet, before VideoDemo
-- `src/components/home/ProjectCard.tsx` [MODIFY]
-  - `aspect-video` → `aspect-[4/3]` on image container
+- `src/app/projects/lukess-inventory-system/page.tsx` [MODIFY]
+  - metadata: 4 items (Role, Stack, Type, Access) — no Timeline
+  - metrics: 4 real system metrics (tables, states, templates, roles)
+  - Architecture translated to "The Operations Problem"
+  - TechBento: Supply Intelligence rewritten
+  - Gallery: captions on 6 images
+  - Testimonial inserted before VideoDemo
+  - Results section rewritten to From paper logs to a live ERP
+  - CTA: `MagneticButton` components used
 
 ### Notes
 - `npm run lint` — 0 errors
 - `npm run build` — exit code 0
-- No hardcoded hex, no invented metrics, no Timeline references
+- No hardcoded hex, no invented metrics, no vendor management
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B2
-- **Block Name:** Lukess Home Case Study Overhaul
+- **Block Number:** B3
+- **Block Name:** Lukess Inventory System Case Study Overhaul
 - **Completed Date:** 2026-03-19
 
 ## PROJECT STATE
@@ -42,7 +39,7 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B3
+- **Block Number:** B4
 - **Block Name:** (TBD by user)
 
 ---
@@ -70,3 +67,4 @@
 | B2    | Lukess Home Overhaul    | DONE         | 2026-03-19 | feat(portfolio-b2-lukess-home): overhaul case study — metadata, metrics, copy, gallery captions, results before/after, CTA buttons |
 | B2fix | Lukess Home Fixes v1   | DONE         | 2026-03-19 | fix(portfolio-b2-lukess-home): unicode dashes, image filename, metrics LCP data, results copy, card aspect ratio |
 | B2fix2| Lukess Home Fixes v2   | DONE         | 2026-03-19 | fix(portfolio-b2-lukess-home): lighthouse metrics, results copy, testimonial section |
+| B3    | Lukess Inventory Overhaul| DONE         | 2026-03-19 | feat(portfolio-b3-lukess-inventory): overhaul case study — metadata, real metrics, architecture copy, bento fix, gallery captions, results before/after, MagneticButton CTAs, testimonial |

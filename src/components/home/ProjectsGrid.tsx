@@ -65,12 +65,17 @@ export default function ProjectsGrid() {
                     className="w-2 h-2 rounded-full animate-pulse"
                     style={{ backgroundColor: "var(--color-code-green)" }}
                   />
-                  <p className="font-mono text-[10px] uppercase tracking-wider text-text-secondary transition-colors">
+                  <p
+                    className="font-mono text-[10px] uppercase tracking-wider text-text-secondary transition-colors"
+                    style={{ color: undefined }}
+                  >
                     <span className="group-hover:hidden">Available for a new build</span>
                     <span className="hidden group-hover:inline" style={{ color: "var(--color-accent)" }}>Available for a new build</span>
                   </p>
                 </div>
-                <p className="font-serif text-lg text-text-primary transition-colors group-hover:text-[var(--color-accent)]">
+                <p
+                  className="font-serif text-lg text-text-primary transition-colors group-hover:text-[var(--color-accent)]"
+                >
                   Let&apos;s talk about your project
                 </p>
               </div>
