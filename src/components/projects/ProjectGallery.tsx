@@ -1,55 +1,83 @@
 import Image from "next/image";
 import FadeUp from "@/components/ui/FadeUp";
 
-export interface GalleryImage {
+interface GalleryImage {
   src: string;
   alt: string;
-  caption?: string;
-  featured?: boolean | "mobile" | string;
-  colSpan?: "col-span-1" | "col-span-2" | "col-span-1 lg:col-span-2" | string;
-  aspectRatio?: "aspect-square" | "aspect-video" | "aspect-auto" | "aspect-[3/4]" | string;
+  caption?: string; // Optional to avoid build errors from legacy pages
+  featured?: boolean;
+  // Temporary: Allow legacy props to avoid build errors from page files
+  colSpan?: string;
+  aspectRatio?: string;
 }
 
 interface ProjectGalleryProps {
   images: GalleryImage[];
+  className?: string;
 }
 
-export default function ProjectGallery({ images }: ProjectGalleryProps) {
+export default function ProjectGallery({ images, className = "" }: ProjectGalleryProps) {
   if (!images || images.length === 0) return null;
 
   return (
-    <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+    <section className={`py-24 px-6 lg:px-12 max-w-7xl mx-auto ${className}`}>
       <FadeUp>
-        <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <h3 className="text-3xl font-instrument-serif text-[var(--color-text-primary)]">Gallery</h3>
+        <div className="mb-12">
+          <h3 className="text-3xl font-instrument-serif text-[var(--color-text-primary)]">
+            Project <span className="italic opacity-60">Gallery</span>
+          </h3>
         </div>
       </FadeUp>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {images.map((img, idx) => (
-          <FadeUp key={idx} delay={idx * 0.1}>
-            <div
-              className={`relative bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl overflow-hidden group ${
-                img.colSpan || "col-span-1"
-              } ${
-                img.aspectRatio || (img.featured === true || img.featured === 'mobile' ? "aspect-[9/19] max-w-[280px] mx-auto" : "aspect-[4/3]")
-              }`}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                quality={90}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover group-hover:opacity-100 opacity-90 transition-opacity duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 text-sm font-medium text-[var(--color-text-primary)] drop-shadow-md pointer-events-none">
-                {img.caption || img.alt}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {images.map((img, idx) => {
+          let colSpan = "col-span-1";
+          
+          // Logic: 
+          // 0, 1 = col-span-1
+          // 2+ = col-span-2 if featured, else col-span-1
+          // Last image if total count is odd = always col-span-2
+          const isLast = idx === images.length - 1;
+          const isOddTotal = images.length % 2 !== 0;
+
+          if (isLast && isOddTotal) {
+            colSpan = "md:col-span-2";
+          } else if (idx >= 2 && img.featured) {
+            colSpan = "md:col-span-2";
+          }
+
+          return (
+            <FadeUp key={idx} delay={idx * 0.08} className={colSpan}>
+              <div className="group relative overflow-hidden rounded-md border border-[var(--color-border)] aspect-video">
+                {/* Image layer */}
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Gradient overlay - CSS only */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease pointer-events-none"
+                  style={{ background: 'linear-gradient(transparent 40%, rgba(12,12,12,0.82))' }}
+                />
+
+                {/* Caption Reveal - CSS transitions */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-250 ease-out delay-50 pointer-events-none">
+                  {/* Amber accent line */}
+                  <div className="w-6 h-px mb-2 bg-[var(--color-accent)] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-200 ease" />
+                  
+                  {/* Caption text */}
+                  <p className="font-sans text-[13px] text-[var(--color-text-primary)] line-clamp-2">
+                    {img.caption || img.alt}
+                  </p>
+                </div>
               </div>
-            </div>
-          </FadeUp>
-        ))}
+            </FadeUp>
+          );
+        })}
       </div>
     </section>
   );

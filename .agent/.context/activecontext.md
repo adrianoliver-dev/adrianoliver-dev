@@ -5,13 +5,13 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B6.1
-- **Block Name:** Visual Polish: Section Transitions
+- **Block Number:** B6.2
+- **Block Name:** Performance Optimization
 - **Status:** IN_PROGRESS
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B5.8
-- **Block Name:** Copy Audit Fixes
+- **Block Number:** B6.1
+- **Block Name:** ProjectGallery Interactive Upgrade
 - **Completed Date:** 2026-03-19
 
 ## PROJECT STATE
@@ -57,3 +57,4 @@
 | B4.5  | Personal brand mark            | DONE         | 2026-03-19 | feat(portfolio-b4.5-brand-mark): geometric mark component, navbar logo redesign, favicon.svg |
 | B4.5b | Brand assets export page       | DONE         | 2026-03-19 | feat(portfolio-b4.5b-brand-assets): /brand export page |
 | B5.8  | Copy Audit Fixes + Hotfix     | DONE         | 2026-03-19 | feat(portfolio-b5.8-copy): fix 11 copy issues + hotfix Solnr restoration and Contact fix |
+| B6.1  | ProjectGallery Interactive Upgrade | DONE         | 2026-03-19 | feat(portfolio-b6.1-gallery): masonry layout, CSS caption reveal with amber line, hover zoom, FadeUp stagger |
