@@ -43,7 +43,7 @@ export default function CustomCursor() {
     }
 
     updateInteractives()
-    
+
     // Periodically check for new interactive elements (e.g. after page transitions)
     const observer = new MutationObserver(updateInteractives)
     observer.observe(document.body, { childList: true, subtree: true })
@@ -74,7 +74,7 @@ export default function CustomCursor() {
       ref={cursorRef}
       id="custom-cursor"
       className="cursor-dot"
-      style={{ willChange: 'transform', opacity: 0, pointerEvents: 'none' }}
+      style={{ willChange: 'transform', display: 'block' }}
       aria-hidden="true"
     />
   )

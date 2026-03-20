@@ -25,7 +25,9 @@
 }
 
 /* Base reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -67,12 +69,16 @@ body::after {
 }
 
 /* Typography defaults */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-serif), serif;
   font-weight: 400;
 }
 
-code, pre, .mono {
+code,
+pre,
+.mono {
   font-family: var(--font-mono), monospace;
 }
 
@@ -99,17 +105,15 @@ html {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: radial-gradient(
-    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    #D9770640 0%,
-    transparent 60%
-  );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      #D9770640 0%,
+      transparent 60%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
@@ -127,26 +131,38 @@ html {
 }
 
 /* Interactive transitions */
-a, button {
+a,
+button {
   transition-property: color, background-color, border-color, box-shadow, transform, opacity;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes videoPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.55; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
 }
+
 .video-pulse-circle {
   animation: videoPulse 3s ease-in-out infinite;
 }
+
 @media (prefers-reduced-motion: reduce) {
+
   .transition-opacity,
   .transition-transform,
   .transition-all {
     transition-duration: 0ms !important;
   }
 }
+
 /* Custom cursor base styles — Always present in DOM, JS controls visibility */
 .cursor-dot {
   position: fixed;
@@ -163,6 +179,7 @@ a, button {
   will-change: transform;
   transition: width 300ms ease, height 300ms ease,
               opacity 300ms ease, background 300ms ease;
+  display: block;
 }
 
 .cursor-dot.cursor-expand {
@@ -171,26 +188,21 @@ a, button {
   margin-left: -16px;
   margin-top: -16px;
   background: color-mix(in srgb, var(--color-accent) 4%, transparent);
+  opacity: 0.6;
 }
 
 /* Hide native cursor only when custom cursor is active and supported */
 @media (hover: hover) and (pointer: fine) {
-  .custom-cursor-active * { cursor: none !important; }
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
 }
 
 /* Visibility overrides */
 @media (prefers-reduced-motion: reduce) {
-  .cursor-dot, .scroll-line { display: none; }
+  .cursor-dot {
+    display: none;
+  }
 }
 
-@keyframes scrollLine {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(200%); }
-}
-.scroll-line {
-  animation: scrollLine 1.5s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cursor-dot, .scroll-line { display: none; }
-}
+/* Removed redundant reduced motion block */

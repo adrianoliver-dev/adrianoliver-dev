@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react"
 import { m } from "framer-motion"
 import MagneticButton from "@/components/ui/MagneticButton"
-import ScrollIndicator from "@/components/ui/ScrollIndicator"
 
 const CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%"
 const ORIGINAL = "Adrian Oliver"
@@ -13,14 +12,19 @@ export default function HeroAnimations() {
   // Glitch effect
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    if (prefersReduced) return
+    const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+      window.matchMedia('(max-width: 768px)').matches
+
+    if (prefersReduced || isMobile) {
+      return
+    }
 
     let iteration = 0
     let interval: NodeJS.Timeout
 
     const startGlitch = () => {
       clearInterval(interval)
-      
+
       interval = setInterval(() => {
         setDisplayName(
           ORIGINAL.split("")
@@ -42,8 +46,6 @@ export default function HeroAnimations() {
       }, 40)
     }
 
-    // Delay glitch to allow LCP on static text
-    // Delay glitch to allow LCP on static text
     const timeout = setTimeout(startGlitch, 200)
 
     return () => {
@@ -84,9 +86,9 @@ export default function HeroAnimations() {
           Engineer
         </span>
       </m.div>
-      
+
       {/* h1 with glitch */}
-      <m.h1 
+      <m.h1
         className="font-serif text-[clamp(5rem,11vw,9.5rem)] leading-[0.9] tracking-tight text-text-primary mt-4 relative z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -96,9 +98,9 @@ export default function HeroAnimations() {
       >
         <span aria-hidden="true" className="hover:drop-shadow-[0_0_20px_#D9770660] transition-all duration-300 inline-block">{displayName}</span>
       </m.h1>
-      
+
       {/* subtitle */}
-      <m.p 
+      <m.p
         className="mt-6 text-xl md:text-2xl leading-tight relative z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -107,9 +109,9 @@ export default function HeroAnimations() {
         <span className="font-serif text-text-secondary block">I build e-commerce and inventory systems</span>
         <span className="font-serif italic text-accent block mt-1">for apparel and retail brands — the kind that replaces spreadsheets and prevents overselling across locations.</span>
       </m.p>
-      
+
       {/* bio */}
-      <m.p 
+      <m.p
         className="font-mono text-text-secondary text-xs mt-4 relative z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -117,9 +119,9 @@ export default function HeroAnimations() {
       >
         Next.js 15 · TypeScript · Supabase · Tailwind v4 — Available for US/EU remote projects · GMT-4
       </m.p>
-      
+
       {/* CTAs */}
-      <m.div 
+      <m.div
         className="mt-8 gap-4 flex flex-wrap relative z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -138,8 +140,6 @@ export default function HeroAnimations() {
           Get In Touch
         </MagneticButton>
       </m.div>
-
-      <ScrollIndicator />
     </>
   )
 }
