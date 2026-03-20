@@ -10,16 +10,17 @@
 - **Status:** DONE (2026-03-19)
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B6.2d
-- **Block Name:** VideoDemo YouTube Embed Fix
+- **Block Number:** B6.3b
+- **Block Name:** Lukess Inventory VideoDemo Placeholder
 - **Completed Date:** 2026-03-19
-- **Commit:** fix(portfolio-videodemo): youtube iframe embed support
+- **Commit:** fix(portfolio-inventory): add VideoDemo placeholder
 - **Files:**
-  - src/components/projects/VideoDemo.tsx
-- **Summary:** Replaced native `<video>` element with a YouTube iframe in the `VideoDemo` component. Implemented a URL conversion utility to handle standard and shortened YouTube links and added support for autoplay, modestbranding, and related video parameters.
+  - src/app/projects/lukess-inventory-system/page.tsx
+- **Summary:** Added the `VideoDemo` component to the Lukess Inventory case study page as a placeholder (initially returning null), maintaining structural consistency with the Lukess Home case study.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
+| B6.3b | Lukess Inventory VideoDemo Placeholder   | DONE   | 2026-03-19 | fix(portfolio-inventory): placeholder |
 | B6.2d | VideoDemo YouTube Embed Fix              | DONE   | 2026-03-19 | fix(portfolio-videodemo): youtube embed |
 | B6.3  | Lukess Inventory Arch. Redesign          | DONE   | 2026-03-19 | feat(portfolio-b6.3-lukess-inventory): redesign |
 | B6.2c | Lukess Home Redesign Fixes (Hover/Scroll)| DONE   | 2026-03-19 | feat(portfolio-b6.2c-hover-effects): fixes |
