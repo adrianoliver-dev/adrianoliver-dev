@@ -23,8 +23,8 @@ export default function ProjectsGrid() {
           <ProjectCard
             title="Lukess Home"
             tagline="E-Commerce Platform · Next.js + Supabase"
-            description="Omnichannel retail engine with real-time stock sync at the database level. Built with Next.js 15 Server Components and Supabase RLS for maximum integrity."
-            tags={["Next.js 15", "TypeScript", "Supabase", "Tailwind v4", "Resend"]}
+            description="Omnichannel retail engine with real-time stock sync at the database level. Built with Next.js Server Components and Supabase RLS for maximum integrity."
+            tags={["Next.js", "TypeScript", "Supabase", "Tailwind v4", "Resend"]}
             href="/projects/lukess-home"
             status="live"
             featured={true}
@@ -43,7 +43,7 @@ export default function ProjectsGrid() {
               title="Lukess Inventory"
               tagline="POS + Inventory System · Real-time sync"
               description="Enterprise-grade ERP system with RBAC permissions, real-time POS ergonomics, and automated financial reporting for multi-location businesses."
-              tags={["Next.js 15", "Supabase Realtime", "PostgreSQL", "RBAC"]}
+              tags={["Next.js", "Supabase Realtime", "PostgreSQL", "RBAC"]}
               href="/projects/lukess-inventory-system"
               status="case-study"
               featured={true}
@@ -145,7 +145,7 @@ export default function ProjectsGrid() {
               premium cart experience. Not a template.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["Next.js 15", "Supabase", "Tailwind v4", "Framer Motion"].map((tag) => (
+              {["Next.js", "Supabase", "Tailwind v4", "Framer Motion"].map((tag) => (
                 <span
                   key={tag}
                   className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded border"

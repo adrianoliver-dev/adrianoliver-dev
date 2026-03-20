@@ -18,7 +18,7 @@ export default function Methodology() {
   ]
 
   const coreStack = [
-    { name: "Next.js 15", role: "Framework / SSR / Routing" },
+    { name: "Next.js", role: "Framework / SSR / Routing" },
     { name: "TypeScript", role: "Type safety" },
     { name: "Supabase", role: "Database / Auth / Realtime" },
     { name: "Tailwind CSS v4", role: "Styling system" },

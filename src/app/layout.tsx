@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: '%s | Adrian Oliver',
   },
   description:
-    'Full-stack developer specializing in Next.js 15, TypeScript, and Supabase. ' +
+    'Full-stack developer specializing in Next.js, TypeScript, and Supabase. ' +
     'I build production-ready e-commerce platforms and business web applications ' +
     'for US and EU clients. Remote, async-first.',
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     'e-commerce developer',
     'remote developer',
     'freelance web developer',
-    'Next.js 15',
+    'Next.js',
   ],
   authors: [{ name: 'Adrian Oliver', url: 'https://adrianoliver.dev' }],
   creator: 'Adrian Oliver',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: 'Adrian Oliver — Full-Stack Developer',
     description:
       'Production-ready e-commerce and business web apps. ' +
-      'Next.js 15 · TypeScript · Supabase. Remote, async-first.',
+      'Next.js · TypeScript · Supabase. Remote, async-first.',
     images: [
       {
         url: '/opengraph-image',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Adrian Oliver — Full-Stack Developer',
     description:
       'Production-ready e-commerce and business web apps. ' +
-      'Next.js 15 · TypeScript · Supabase.',
+      'Next.js · TypeScript · Supabase.',
     images: ['/opengraph-image'],
   },
   robots: {
@@ -114,7 +114,7 @@ export default function RootLayout({
                 url: 'https://adrianoliver.dev',
                 jobTitle: 'Full-Stack Developer',
                 description:
-                  'Full-stack developer specializing in Next.js 15, TypeScript, and Supabase. Building production-ready e-commerce and business web applications.',
+                  'Full-stack developer specializing in Next.js, TypeScript, and Supabase. Building production-ready e-commerce and business web applications.',
                 knowsAbout: [
                   'Next.js',
                   'TypeScript',

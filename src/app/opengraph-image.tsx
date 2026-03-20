@@ -50,7 +50,7 @@ export default function OGImage() {
             marginBottom: '48px',
           }}
         >
-          Next.js 15 · TypeScript · Supabase · Vercel
+          Next.js · TypeScript · Supabase · Vercel
         </div>
         <div
           style={{

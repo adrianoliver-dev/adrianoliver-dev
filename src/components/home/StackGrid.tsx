@@ -2,7 +2,7 @@ const stack = [
   {
     category: "Framework",
     items: [
-      { name: "Next.js 15", detail: "App Router · RSC" },
+      { name: "Next.js", detail: "App Router · RSC" },
       { name: "React 19", detail: "Server Components" },
     ]
   },

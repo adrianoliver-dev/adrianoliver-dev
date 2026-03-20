@@ -117,7 +117,7 @@ export default function HeroAnimations() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.35, duration: 0.5, ease: "easeOut" }}
       >
-        Next.js 15 · TypeScript · Supabase · Tailwind v4 — Available for US/EU remote projects · GMT-4
+        Next.js · TypeScript · Supabase · Tailwind v4 — Available for US/EU remote projects · GMT-4
       </m.p>
 
       {/* CTAs */}

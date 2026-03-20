@@ -28,7 +28,7 @@ export default function Services() {
                 Full-stack storefront systems built for conversion and scale. Catalog, checkout, order management, notification pipelines, and inventory sync — production-ready from day one.
               </p>
               <div className="flex flex-wrap gap-2 mt-auto">
-                {["Next.js 15", "Supabase", "WhatsApp API", "Resend", "Vercel"].map(tag => (
+                {["Next.js", "Supabase", "WhatsApp API", "Resend", "Vercel"].map(tag => (
                   <span key={tag} className="font-mono text-xs bg-border text-text-secondary px-2 py-1 rounded">
                     {tag}
                   </span>

@@ -7,7 +7,7 @@ export default function Footer() {
           © {year} Adrian Oliver
         </p>
         <p className="text-sm text-text-secondary">
-          Built with Next.js 15 · Deployed on Vercel
+          Built with Next.js · Deployed on Vercel
         </p>
       </div>
     </footer>

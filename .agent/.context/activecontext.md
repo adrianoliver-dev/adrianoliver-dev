@@ -1,6 +1,6 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
 **Last Updated:** 2026-03-20
-**Updated By:** Antigravity (B7.1b content & styling complete)
+**Updated By:** Antigravity (B7.1c purge & corrections complete)
 
 ---
 
@@ -10,24 +10,28 @@
 - **Status:** PLANNED
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B7.1b
-- **Block Name:** Blog Post Styling & Images
+- **Block Number:** B7.1c
+- **Block Name:** Content Corrections & Version Purge
 - **Completed Date:** 2026-03-20
-- **Commit:** feat(portfolio-b7.1b-blog-prose)
+- **Commit:** fix(portfolio-b7.1c)
 - **Files:**
-  - [MODIFY] package.json
-  - [MODIFY] src/app/globals.css
-  - [MODIFY] src/app/blog/[slug]/page.tsx
+  - [MODIFY] src/app/layout.tsx
+  - [MODIFY] src/components/home/HeroAnimations.tsx
+  - [MODIFY] src/components/layout/Footer.tsx
+  - [MODIFY] src/components/home/StackGrid.tsx
+  - [MODIFY] src/components/home/Services.tsx
+  - [MODIFY] src/components/home/ProjectsGrid.tsx
+  - [MODIFY] src/components/home/Methodology.tsx
+  - [MODIFY] src/app/opengraph-image.tsx
   - [MODIFY] src/content/blog/inventory-system-retail.mdx
-- **Summary:** Enhanced blog post visuals with premium prose CSS (typography plugin), added real project images and inline CTAs to the first blog post. Verified design on mobile/desktop via Browser Subagent.
+- **Summary:** Purged "Next.js 15" from all marketing copy (Hero, Footer, Meta, etc.) while keeping it in case studies. Corrected the first blog post content (Marcus narrative, POS/Order logic, Email notifications). Clean build and lint.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
+| B7.1c | [Purge & Corrections](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/layout.tsx) | DONE | 2026-03-20 | fix(portfolio-b7.1c) |
 | B7.1b | [Styling & Images](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/[slug]/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1b-blog-prose) |
 | B7.1  | [Blog Post #1](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/content/blog/inventory-system-retail.mdx) | DONE | 2026-03-20 | feat(portfolio-b7.1-blog-post-1) |
 | B7.0  | [Blog Infrastructure Rebuild](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/lib/blog.ts) | DONE | 2026-03-20 | feat(portfolio-b7.0-blog-infrastructure) |
-| B6.B  | [Cursor & LCP Performance Refinement](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/ui/CustomCursor.tsx) | DONE | 2026-03-20 | fb0b337 |
-| B6.A | [Performance & Visuals](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/home/HeroAnimations.tsx) | DONE | 2026-03-20 | LCP fix |
 
 ## PROJECT STATE
 
