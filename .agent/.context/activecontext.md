@@ -1,6 +1,6 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
 **Last Updated:** 2026-03-20
-**Updated By:** Antigravity (B7.1d visuals & utility complete)
+**Updated By:** Antigravity (B7.1e redesign complete)
 
 ---
 
@@ -10,23 +10,21 @@
 - **Status:** PLANNED
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B7.1d
-- **Block Name:** Blog List Visuals & Share Utility
+- **Block Number:** B7.1e
+- **Block Name:** Blog Card Redesign
 - **Completed Date:** 2026-03-20
-- **Commit:** feat(portfolio-b7.1d-blog-covers)
+- **Commit:** feat(portfolio-b7.1e-blog-cards)
 - **Files:**
+  - [MODIFY] src/content/blog/inventory-system-retail.mdx
   - [MODIFY] src/app/blog/page.tsx
-  - [NEW] src/components/blog/CopyLinkButton.tsx
-  - [MODIFY] src/app/blog/[slug]/page.tsx
-- **Summary:** Added dynamic thumbnails to blog post cards using the OG image route. Implemented a subtle "Copy Link" Client Component on the blog post header. Verified with clean build and lint.
+- **Summary:** Redesigned blog post cards with a stacked editorial layout, real cover images (Lukess dashboard for Post #1), and branded minimal fallbacks. Centered the blog feed with a `max-w-2xl` constraint. Clean build and lint.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
+| B7.1e | [Card Redesign](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1e-blog-cards) |
 | B7.1d | [Visuals & Share](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1d-blog-covers) |
 | B7.1c | [Purge & Corrections](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/layout.tsx) | DONE | 2026-03-20 | fix(portfolio-b7.1c) |
 | B7.1b | [Styling & Images](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/[slug]/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1b-blog-prose) |
-| B7.1  | [Blog Post #1](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/content/blog/inventory-system-retail.mdx) | DONE | 2026-03-20 | feat(portfolio-b7.1-blog-post-1) |
-| B7.0  | [Blog Infrastructure Rebuild](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/lib/blog.ts) | DONE | 2026-03-20 | feat(portfolio-b7.0-blog-infrastructure) |
 
 ## PROJECT STATE
 
@@ -62,3 +60,5 @@
 | B5.8  | Copy Audit Fixes + Hotfix     | DONE         | 2026-03-19 | feat(portfolio-b5.8) |
 | B6.1  | ProjectGallery Interactive Upgrade | DONE         | 2026-03-19 | feat(portfolio-b6.1) |
 | B6.B  | Cursor & LCP Performance Refinement | DONE | 2026-03-20 | fb0b337 |
+| B7.0  | Blog Infrastructure Rebuild | DONE | 2026-03-20 | feat(portfolio-b7.0) |
+| B7.1  | Blog Post #1 Content | DONE | 2026-03-20 | feat(portfolio-b7.1) |

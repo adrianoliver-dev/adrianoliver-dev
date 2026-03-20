@@ -15,83 +15,69 @@ export default function BlogPage() {
     <main className="min-h-screen py-32 px-6">
       <div className="mx-auto max-w-4xl">
         <FadeUp>
-          <div className="space-y-4 mb-24">
+          <div className="space-y-4 mb-24 text-center">
             <p className="font-mono text-[10px] text-[var(--color-accent)] uppercase tracking-[0.2em]">
               Writing & Perspective
             </p>
-            <h1 className="font-serif text-5xl md:text-7xl text-[var(--color-text-primary)] leading-tight">
-              Engineering <span className="italic">Thought</span>
+            <h1 className="font-serif text-5xl md:text-7xl text-[var(--color-text-primary)] leading-tight italic">
+              Engineering <span className="not-italic">Thought</span>
             </h1>
-            <p className="text-[var(--color-text-secondary)] text-xl font-light max-w-2xl leading-relaxed">
+            <p className="text-[var(--color-text-secondary)] text-xl font-light max-w-2xl mx-auto leading-relaxed">
               Practical architecture decisions for retail and e-commerce — written for founders who value speed and scale.
             </p>
           </div>
         </FadeUp>
 
-        <div className="space-y-16">
+        <div className="space-y-24">
           {posts.length > 0 ? (
             posts.map((post, i) => (
               <FadeUp key={post.slug} delay={i * 0.1}>
-                <Link prefetch={true} href={`/blog/${post.slug}`} className="group block">
-                  <article className="relative grid grid-cols-1 md:grid-cols-[1fr_2.5fr] gap-8 pb-16 border-b border-[var(--color-border)] transition-colors group-hover:border-[var(--color-accent)]/20">
+                <Link prefetch={true} href={`/blog/${post.slug}`} className="group block max-w-2xl mx-auto">
+                  <article className="space-y-8">
+                    {/* Visual Area: Image or Fallback */}
+                    {post.coverImage ? (
+                      <div className="relative w-full rounded-xl overflow-hidden border border-[var(--color-border)] group" style={{ aspectRatio: '16/9' }}>
+                        <Image
+                          src={post.coverImage}
+                          alt={post.title}
+                          fill
+                          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 672px"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background)] via-transparent to-transparent opacity-40" />
+                      </div>
+                    ) : (
+                      <div className="w-full rounded-xl flex items-center justify-center border border-[var(--color-border)] transition-colors group-hover:border-[var(--color-accent)]/30" style={{ aspectRatio: '16/9', background: 'var(--color-surface)' }}>
+                        <div className="w-12 h-px transition-all duration-300 group-hover:w-20" style={{ background: 'var(--color-accent)' }} />
+                      </div>
+                    )}
+
                     <div className="space-y-4">
-                      {/* Mobile Cover Image */}
-                      <div className="md:hidden relative w-full rounded-lg overflow-hidden mb-6 border border-[var(--color-border)] group" style={{ aspectRatio: '1200/630' }}>
-                        <Image
-                          src={`/blog/${post.slug}/opengraph-image`}
-                          alt={post.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="100vw"
-                        />
+                      <div className="flex items-center gap-4 text-[var(--color-text-secondary)]">
+                        <time className="font-mono text-[10px] uppercase tracking-widest">
+                          {new Date(post.date).toLocaleDateString("en-US", { 
+                            month: "long", 
+                            day: "numeric",
+                            year: "numeric" 
+                          })}
+                        </time>
+                        <span className="w-1 h-1 rounded-full bg-[var(--color-border)]" />
+                        <span className="font-mono text-[10px] uppercase tracking-widest">
+                          {post.readingTime} min read
+                        </span>
                       </div>
+
+                      <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors duration-300 leading-tight">
+                        {post.title}
+                      </h2>
                       
-                      <time className="font-mono text-[10px] text-[var(--color-text-secondary)] uppercase tracking-wider block">
-                        {new Date(post.date).toLocaleDateString("en-US", { 
-                          month: "long", 
-                          day: "numeric",
-                          year: "numeric" 
-                        })}
-                      </time>
-                      <div className="flex flex-wrap gap-2">
-                        {post.tags.slice(0, 2).map(tag => (
-                          <span 
-                            key={tag} 
-                            className="px-2 py-0.5 text-[9px] font-mono uppercase tracking-wider border border-[var(--color-border)] text-[var(--color-text-secondary)] rounded group-hover:border-[var(--color-accent)]/30 group-hover:text-[var(--color-accent)] transition-colors"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <span className="font-mono text-[9px] text-[var(--color-text-secondary)] uppercase block">
-                        {post.readingTime} min read
-                      </span>
-                    </div>
-
-                    <div className="space-y-6">
-                      {/* Desktop Cover Image */}
-                      <div className="hidden md:block relative w-full rounded-lg overflow-hidden border border-[var(--color-border)] group" style={{ aspectRatio: '1200/630' }}>
-                        <Image
-                          src={`/blog/${post.slug}/opengraph-image`}
-                          alt={post.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                      </div>
-
-                      <div className="space-y-4">
-                        <h2 className="font-serif text-3xl md:text-4xl text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors duration-300">
-                          {post.title}
-                        </h2>
-                        <p className="text-[var(--color-text-secondary)] text-lg font-light leading-relaxed line-clamp-2">
-                          {post.excerpt}
-                        </p>
-                        
-                        <div className="flex items-center gap-2 text-[var(--color-accent)] font-mono text-xs uppercase tracking-widest pt-4">
-                          <span>Read article</span>
-                          <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
-                        </div>
+                      <p className="text-[var(--color-text-secondary)] text-lg font-light leading-relaxed line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center gap-3 text-[var(--color-accent)] font-mono text-xs uppercase tracking-[0.2em] pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span>Read article</span>
+                        <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
                       </div>
                     </div>
                   </article>
@@ -99,15 +85,20 @@ export default function BlogPage() {
               </FadeUp>
             ))
           ) : (
-            <p className="text-[var(--color-text-secondary)] font-mono text-sm uppercase tracking-widest mt-12">
-               No architectural insights published yet.
-            </p>
+            <div className="text-center py-20 border border-dashed border-[var(--color-border)] rounded-xl max-w-2xl mx-auto">
+              <p className="text-[var(--color-text-secondary)] font-mono text-sm uppercase tracking-widest">
+                 No architectural insights published yet.
+              </p>
+            </div>
           )}
 
-          <div className="mt-12 p-8 border border-dashed border-[var(--color-border)] rounded-sm">
-            <p className="font-mono text-sm text-[var(--color-text-secondary)] leading-relaxed">
-              More technical deep dives on retail architecture, 
-              headless e-commerce, and inventory precision — coming soon.
+          <div className="mt-12 p-12 border border-dashed border-[var(--color-border)] rounded-xl max-w-2xl mx-auto text-center opacity-50">
+            <p className="font-mono text-xs text-[var(--color-text-secondary)] uppercase tracking-[0.3em] mb-4">
+              Coming Soon
+            </p>
+            <p className="text-[var(--color-text-secondary)] text-sm font-light leading-relaxed">
+              Technical deep dives on retail scaling, 
+              headless e-commerce, and precision inventory.
             </p>
           </div>
         </div>
