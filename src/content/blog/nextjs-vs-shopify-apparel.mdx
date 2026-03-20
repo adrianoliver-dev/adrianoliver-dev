@@ -1,0 +1,83 @@
+---
+title: "Next.js vs Shopify for Apparel Brands: An Honest Comparison"
+date: "2026-03-20"
+updated: "2026-03-20"
+excerpt: "Most comparisons assume you want to keep Shopify as the backend. This one doesn't. Here is when a fully custom Next.js system beats Shopify — and when it doesn't."
+author: "Adrian Oliver"
+tags: ["Next.js", "Shopify", "E-Commerce", "Architecture"]
+coverImage: "/images/projects/lukess-home/lukess-home_Home_page.png"
+---
+
+Most "Next.js vs Shopify" articles are really about headless Shopify — using Shopify as the commerce backend while building a custom frontend with Next.js. That comparison has its place, but it is not the one I am making here.
+
+The question I get from apparel founders is different: should we use Shopify at all, or should we build something custom from the ground up? This post is the honest answer to that question.
+
+## What Shopify actually gives you
+
+Shopify is not a template. For a standard clothing store, Shopify handles an enormous amount of work out of the box: product catalog management with variants, sizes, and colors; shopping cart and checkout; payment processing with Stripe and PayPal built in; order management; customer accounts; basic inventory tracking.
+
+The admin panel works. The checkout converts. If you are a solo founder launching your first apparel brand with no dedicated developer, Shopify is almost certainly the right choice. You can be selling in days.
+
+The cost is real but predictable: $39-399 per month depending on the plan, plus transaction fees if you do not use Shopify Payments. For a brand doing under $500K in annual revenue, this is usually the correct tradeoff.
+
+## Where Shopify starts to fail apparel brands
+
+The problems surface at a specific threshold — and they are almost always the same problems.
+
+**Multi-location inventory is an afterthought.** Shopify's native inventory tools were built for warehouses, not retail storefronts. Tracking stock across three physical locations, a warehouse, and an online store simultaneously requires either expensive apps or constant manual reconciliation. The apps add JavaScript to your storefront. The reconciliation costs hours.
+
+**The storefront performance ceiling is real.** A standard Shopify theme with the apps most apparel brands need — reviews, loyalty, size guides, popups, chat — regularly produces Lighthouse performance scores of 50-70 on mobile. Every 100 milliseconds of load time is roughly a 1% drop in conversion rate. At scale, this is significant.
+
+**You are renting, not owning.** Every piece of data lives in Shopify. Your customer relationships, your order history, your product catalog — all of it is behind Shopify's API. If Shopify changes their pricing, deprecates a feature, or goes down, you feel it. The monthly fee is also an operational cost that grows with your revenue.
+
+**Custom checkout logic is Shopify Plus territory.** If you need anything non-standard at checkout — custom discount logic, multi-currency with live rates, local payment methods — you are looking at a Shopify Plus plan at $2,000 per month.
+
+## What a custom Next.js system gives you instead
+
+The system we built for Lukess — a 4-location clothing retailer — is a full custom storefront built on Next.js with Supabase as the database layer. No Shopify. No monthly platform fee beyond hosting.
+
+![Lukess Home storefront — custom Next.js e-commerce with real-time inventory across 4 locations](/images/projects/lukess-home/lukess-home_Catalogo.png)
+
+Here is what that meant in practice:
+
+**Inventory is first-class.** Stock management was designed specifically for multi-location retail. The database enforces inventory rules at the transaction level — not at the application level. Overselling is architecturally impossible, not just prevented by application logic that could have bugs.
+
+**Performance with no ceiling.** The Lukess Home storefront scores 99/100 on PageSpeed desktop. There are no third-party app scripts loading on every page because there are no third-party apps. Every feature was built for this specific store.
+
+**The data is yours.** Everything lives in a Supabase PostgreSQL database that the business controls entirely. Customer emails, order history, inventory counts — all accessible via standard SQL, not through a vendor's API with rate limits and terms of service.
+
+**The monthly cost is hosting, not rent.** Vercel hosting for a Next.js project at this scale costs roughly $20/month. Supabase at this scale is free or near-free. The economics flip entirely once you are past the development cost.
+
+## The honest tradeoff
+
+A custom Next.js system costs significantly more to build. A standard Shopify store can be launched in a week. A custom system like Lukess took months of development. That development cost is real and has to be weighed against the platform cost savings and performance gains.
+
+The decision matrix looks like this:
+
+**Choose Shopify if:**
+- You are launching your first store and need to move fast
+- You have no dedicated developer on the team
+- You need the Shopify app ecosystem to function
+- Your annual revenue is under $500K and growth is uncertain
+
+**Choose a custom system if:**
+- You have two or more physical locations with shared inventory
+- Performance and custom UX are competitive advantages for your brand
+- You are paying for Shopify Plus features you should not need to rent
+- You want to own your data infrastructure long-term
+
+## The middle path worth knowing
+
+There is a third option: Shopify as the commerce backend, Next.js as the custom frontend. Shopify handles payments, checkout, and order management; Next.js handles everything the customer sees.
+
+This is called headless commerce, and it is legitimate for brands that need custom UX but do not want to rebuild checkout logic from scratch. Shopify even has their own framework for it — Hydrogen — though it uses Remix rather than Next.js.
+
+The tradeoff: you still pay Shopify's monthly fee, and you are still subject to their platform decisions. But you get full frontend control and a battle-tested checkout.
+
+---
+
+*The Lukess Home case study documents the custom architecture in detail, including the specific decisions behind the inventory system. [Read the full case study →](/projects/lukess-home)*
+
+---
+
+**If you are an apparel or retail brand evaluating whether Shopify is still the right platform as you scale, [let's talk](/contact). I have built both approaches and can give you an honest assessment for your specific situation.**

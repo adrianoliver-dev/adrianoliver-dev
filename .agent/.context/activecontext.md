@@ -1,30 +1,30 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
 **Last Updated:** 2026-03-20
-**Updated By:** Antigravity (B7.1e redesign complete)
+**Updated By:** Antigravity (B7.2 content delivery complete)
 
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B7.2
-- **Block Name:** Blog Post #2 & #3 (Strategic Payload)
+- **Block Number:** B7.3
+- **Block Name:** Blog Post #3 (Performance-as-a-Feature)
 - **Status:** PLANNED
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B7.1e
-- **Block Name:** Blog Card Redesign
+- **Block Number:** B7.2
+- **Block Name:** Blog Content Payload
 - **Completed Date:** 2026-03-20
-- **Commit:** feat(portfolio-b7.1e-blog-cards)
+- **Commit:** feat(portfolio-b7.2-blog-post-2)
 - **Files:**
   - [MODIFY] src/content/blog/inventory-system-retail.mdx
-  - [MODIFY] src/app/blog/page.tsx
-- **Summary:** Redesigned blog post cards with a stacked editorial layout, real cover images (Lukess dashboard for Post #1), and branded minimal fallbacks. Centered the blog feed with a `max-w-2xl` constraint. Clean build and lint.
+  - [NEW] src/content/blog/nextjs-vs-shopify-apparel.mdx
+- **Summary:** Fixed a duplicate image in the first blog post. Created the second strategic blog post "Next.js vs Shopify for Apparel Brands" with custom cover and relevant internal links. Verified with final static build.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
+| B7.2  | [Content Payload](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/content/blog/nextjs-vs-shopify-apparel.mdx) | DONE | 2026-03-20 | feat(portfolio-b7.2-blog-post-2) |
 | B7.1e | [Card Redesign](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1e-blog-cards) |
 | B7.1d | [Visuals & Share](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1d-blog-covers) |
 | B7.1c | [Purge & Corrections](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/layout.tsx) | DONE | 2026-03-20 | fix(portfolio-b7.1c) |
-| B7.1b | [Styling & Images](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/[slug]/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1b-blog-prose) |
 
 ## PROJECT STATE
 
@@ -35,8 +35,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B7.2
-- **Block Name:** Blog Post #2 & #3 (Strategic Payload)
+- **Block Number:** B7.3
+- **Block Name:** Blog Post #3 (Performance-as-a-Feature)
 
 ---
 
