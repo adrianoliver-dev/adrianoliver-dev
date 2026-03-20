@@ -5,27 +5,24 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B6.A
-- **Block Name:** Performance & Visual Upgrades
-- **Status:** DONE (2026-03-20)
+- **Block Number:** B7.1
+- **Block Name:** First Blog Content Payload
+- **Status:** PLANNED
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B6.A
-- **Block Name:** Performance & Visual Upgrades
+- **Block Number:** B7.0
+- **Block Name:** Blog Infrastructure Rebuild
 - **Completed Date:** 2026-03-20
-- **Commit:** feat(portfolio-b6.a-awwwards): LCP fix, defer scripts, custom cursor, countup, scroll indicator, modern browserslist
+- **Commit:** feat(portfolio-b7.0-blog-infrastructure)
 - **Files:**
-  - src/components/home/HeroAnimations.tsx
-  - src/app/layout.tsx
-  - src/components/analytics/GoogleAnalytics.tsx
-  - src/components/analytics/MicrosoftClarity.tsx
-  - package.json
-  - src/app/globals.css
-  - src/components/ui/CustomCursor.tsx
-  - src/components/ui/CountUp.tsx
-  - src/components/ui/ScrollIndicator.tsx
-  - src/components/home/Contact.tsx
-- **Summary:** Fixed 1470ms LCP delay in hero, deferred heavy third-party scripts, eliminated polyfills with modern browserslist. Added premium visual layer: custom amber cursor, SLA countup animation, hero scroll indicator, and responsive ambient glow.
+  - [NEW] src/lib/blog.ts
+  - [NEW] src/app/blog/[slug]/opengraph-image.tsx
+  - [NEW] src/content/blog/inventory-system-retail.mdx
+  - [MODIFY] src/app/blog/page.tsx
+  - [MODIFY] src/app/blog/[slug]/page.tsx
+  - [MODIFY] src/app/sitemap.ts
+  - [DELETE] src/content/blog/server-components-retail.mdx
+- **Summary:** Complete rebuild of blog infrastructure with dynamic OG images (Node.js runtime), perfect SEO foundations (BlogPosting schema + Breadcrumbs), sitemap integration, and a refined UI for both list and post pages.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
@@ -46,8 +43,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B6.B
-- **Block Name:** Blog Post Content Strategy
+- **Block Number:** B7.1
+- **Block Name:** First Blog Content Payload
 
 ---
 
