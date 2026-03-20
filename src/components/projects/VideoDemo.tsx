@@ -10,11 +10,22 @@ interface VideoDemoProps {
   title?: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function VideoDemo({ videoUrl, posterImage, title }: VideoDemoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   if (!videoUrl) return null;
+
+  function getEmbedUrl(url: string): string {
+    if (url.includes('/embed/')) return url;
+    const match = url.match(
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/
+    );
+    return match
+      ? `https://www.youtube.com/embed/${match[1]}`
+      : url;
+  }
+
+  const embedUrl = getEmbedUrl(videoUrl);
 
   return (
     <section className="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
@@ -23,12 +34,12 @@ export default function VideoDemo({ videoUrl, posterImage, title }: VideoDemoPro
         
         <div className="relative aspect-video bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl overflow-hidden group">
           {videoUrl && isPlaying ? (
-            <video 
-              src={videoUrl}
-              className="w-full h-full object-cover"
-              controls
-              autoPlay
-              controlsList="nodownload"
+            <iframe
+              src={`${embedUrl}?autoplay=1&rel=0&modestbranding=1`}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title={title || "Project walkthrough"}
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
