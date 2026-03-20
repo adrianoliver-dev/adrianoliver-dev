@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <main className="pt-32 pb-24 px-6 overflow-hidden">
       <div className="mx-auto max-w-6xl flex flex-col gap-24">
-        
+
         {/* Section 1: Hero */}
         <section>
           <FadeUp>
@@ -27,12 +27,10 @@ export default function AboutPage() {
               </h1>
               <div className="flex flex-col gap-6 text-lg text-text-secondary leading-relaxed">
                 <p>
-                  I transitioned from Economics to full-stack engineering 
-                  with one focus: building systems that solve real operational 
-                  problems for retail and e-commerce businesses.
-                </p>
-                <p>
-                  Based in Bolivia, working async with US and EU teams.
+                  I transitioned from Economics to full-stack engineering with one
+                  focus: building systems that solve real operational problems for
+                  retail and e-commerce businesses. Based in Bolivia, working async
+                  with US and EU teams.
                 </p>
               </div>
             </div>
@@ -41,22 +39,52 @@ export default function AboutPage() {
 
         <SectionDivider />
 
-        {/* Section 2: Terminal */}
+        {/* Section 2: Terminal + Engagement */}
         <section>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <FadeUp>
               <TerminalCard />
             </FadeUp>
             <FadeUp delay={0.1}>
-              <div className="flex flex-col gap-6 h-full justify-center">
-                <h2 className="font-serif text-3xl text-text-primary">
-                  Systems-first <em>mindset.</em>
-                </h2>
-                <p className="text-text-secondary leading-relaxed">
-                  I don&apos;t just write code; I design architectures that scale without 
-                  unnecessary complexity. From database schema optimization to 
-                  Type-safe API contracts, every layer is built for reliability.
-                </p>
+              <div className="flex flex-col gap-8 h-full justify-center">
+                <ul className="space-y-5">
+                  <li
+                    className="flex items-start gap-3 text-lg font-light"
+                    style={{ color: "var(--color-text-secondary)" }}
+                  >
+                    <span
+                      className="mt-1 text-sm flex-shrink-0"
+                      style={{ color: "var(--color-accent)" }}
+                    >
+                      →
+                    </span>
+                    Async-first. Every decision documented in writing.
+                  </li>
+                  <li
+                    className="flex items-start gap-3 text-lg font-light"
+                    style={{ color: "var(--color-text-secondary)" }}
+                  >
+                    <span
+                      className="mt-1 text-sm flex-shrink-0"
+                      style={{ color: "var(--color-accent)" }}
+                    >
+                      →
+                    </span>
+                    Weekly Loom walkthrough + written milestone update.
+                  </li>
+                  <li
+                    className="flex items-start gap-3 text-lg font-light"
+                    style={{ color: "var(--color-text-secondary)" }}
+                  >
+                    <span
+                      className="mt-1 text-sm flex-shrink-0"
+                      style={{ color: "var(--color-accent)" }}
+                    >
+                      →
+                    </span>
+                    60-day post-launch support included on all projects.
+                  </li>
+                </ul>
               </div>
             </FadeUp>
           </div>
@@ -64,36 +92,7 @@ export default function AboutPage() {
 
         <SectionDivider />
 
-        {/* Section 3: How I Engage */}
-        <section>
-          <FadeUp>
-            <div className="mb-12">
-              <p className="font-mono text-xs text-text-secondary uppercase tracking-widest mb-4">
-                How I engage
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl text-text-primary">
-                A focus on <em>transparency and results.</em>
-              </h2>
-            </div>
-            
-            <ul className="space-y-6">
-              {[
-                "Async-first. Every decision documented in writing.",
-                "Weekly Loom walkthrough + written milestone update.",
-                "60-day post-launch support included on all projects."
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-4 text-lg text-text-secondary group">
-                  <span className="text-accent mt-1 transition-transform group-hover:translate-x-1 duration-300">→</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </FadeUp>
-        </section>
-
-        <SectionDivider />
-
-        {/* Section 4: CTA */}
+        {/* Section 3: CTA */}
         <section className="py-12">
           <FadeUp>
             <div className="flex flex-col items-center text-center gap-10">

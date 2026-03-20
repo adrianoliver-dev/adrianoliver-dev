@@ -22,7 +22,7 @@ export default function BlogPage() {
               Engineering <em>Thought</em>
             </h1>
             <p className="text-[var(--color-text-secondary)] text-xl font-light max-w-2xl leading-relaxed">
-              Deep dives into the technical architecture of high-performance commerce and systems engineering.
+              Practical engineering decisions for retail and e-commerce — written for founders and builders.
             </p>
           </div>
         </FadeUp>

@@ -9,10 +9,11 @@ export default function Contact() {
           <div className="flex flex-col items-center text-center gap-10">
             <div className="flex flex-col gap-4">
               <h2 className="font-serif text-4xl md:text-5xl text-text-primary">
-                Ready to build <em>something?</em>
+                Have a retail or e-commerce problem that{' '}
+                <em>spreadsheets can&apos;t solve?</em>
               </h2>
               <p className="text-text-secondary text-lg">
-                Tell me what you&apos;re working on.
+                Tell me what you&apos;re building.
               </p>
             </div>
 
@@ -23,15 +24,30 @@ export default function Contact() {
               >
                 Start a project →
               </MagneticButton>
+            </div>
+          </div>
+        </FadeUp>
 
-              <div className="flex items-center gap-3 px-5 py-3 rounded-full border border-border bg-surface">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-code-green opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-code-green" />
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-wider text-text-primary">
-                  Available for new projects
-                </span>
+        {/* SLA Strip */}
+        <FadeUp delay={0.2}>
+          <div className="bg-surface border border-border rounded-2xl p-8 mt-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full">
+              <div className="flex flex-col text-center md:text-left">
+                <div className="font-mono text-3xl text-accent font-bold">{"< 30 min"}</div>
+                <div className="font-mono text-[10px] text-text-primary uppercase tracking-widest mt-2">Response time</div>
+                <div className="font-mono text-[10px] text-text-secondary uppercase mt-1">during business hours (GMT-4)</div>
+              </div>
+              
+              <div className="flex flex-col text-center md:text-left">
+                <div className="font-mono text-3xl text-accent font-bold">Weekly</div>
+                <div className="font-mono text-[10px] text-text-primary uppercase tracking-widest mt-2">Milestones</div>
+                <div className="font-mono text-[10px] text-text-secondary uppercase mt-1">Loom + written update</div>
+              </div>
+              
+              <div className="flex flex-col text-center md:text-left">
+                <div className="font-mono text-3xl text-accent font-bold">60 days</div>
+                <div className="font-mono text-[10px] text-text-primary uppercase tracking-widest mt-2">Post-launch</div>
+                <div className="font-mono text-[10px] text-text-secondary uppercase mt-1">included support</div>
               </div>
             </div>
           </div>

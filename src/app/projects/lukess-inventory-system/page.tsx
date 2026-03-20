@@ -238,7 +238,7 @@ export default function LukessInventoryCaseStudy() {
             From paper logs to a live ERP.
           </h2>
           <p className="text-[var(--color-text-secondary)] text-xl font-light leading-relaxed">
-            Before: three locations running on disconnected paper logs. No cross-location visibility. Purchasing made by memory. Returns unrecorded. Zero financial reporting.
+            Before: four locations running on disconnected paper logs. No cross-location visibility. Purchasing made by memory. Returns unrecorded. Zero financial reporting.
           </p>
           <p className="text-[var(--color-text-secondary)] text-xl mt-8 mb-16 font-light leading-relaxed">
             After: a 19-table PostgreSQL system where every stock movement, order state change, and staff action is logged and auditable. The POS receives online orders from the e-commerce storefront in real time and manages their full lifecycle &mdash; from payment confirmation to WhatsApp notification to completion. A loyalty engine generates a unique discount code automatically on delivery and sends it to the customer by email and WhatsApp in the same transaction. Financial reports are available instantly, exportable to PDF and Excel.

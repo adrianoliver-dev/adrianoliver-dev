@@ -10,7 +10,7 @@ const LINES = [
   { prefix: '~', command: 'cat stack.txt', delay: 2800 },
   { prefix: null, output: 'next.js 15 · typescript · supabase · tailwind v4', delay: 3400 },
   { prefix: '~', command: 'cat delivery.txt', delay: 4200 },
-  { prefix: null, output: 'two production systems shipped solo. zero downtime. high reliability.', delay: 4800 },
+  { prefix: null, output: 'two production systems shipped solo. zero downtime.', delay: 4800 },
   { prefix: '~', command: 'cat availability.txt', delay: 5400 },
   { prefix: null, output: 'available for remote projects — async-first, weekly milestones.', delay: 6000 },
   { prefix: '~', command: '', delay: 6800, cursor: true },

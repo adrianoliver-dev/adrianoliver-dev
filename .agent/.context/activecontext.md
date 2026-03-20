@@ -5,26 +5,21 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B5
-- **Block Name:** (TBD by user)
-- **Status:** PENDING
+- **Block Number:** B5.8
+- **Block Name:** Homepage Section Cleanup
+- **Status:** DONE (2026-03-19)
 
 ### Files Modified (final state)
-- `src/components/ui/BrandMark.tsx` [MODIFY]
-  - Added `width`, `height`, and `exportMode` props for PNG rendering.
-- `src/components/ui/BrandExportCard.tsx` [NEW]
-  - Client component for SVG → Canvas → PNG download.
-- `src/app/brand/page.tsx` [NEW]
-  - Brand assets export page at `/brand`.
-
-### Notes
-- `npm run lint` — 0 errors
-- `npm run build` — exit code 0
-- *Canvas API:* The export uses native browser Canvas API for high-quality PNG generation.
+- `src/app/page.tsx` [MODIFY]
+  - Removed duplicate `CurrentProject` section.
+- `src/components/home/CurrentProject.tsx` [DELETE]
+  - Deleted unused component file.
+- `src/components/home/Contact.tsx` [MODIFY]
+  - Overhauled SLA strip: removed redundant text, updated response time, 3-column layout.
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B4.5b
-- **Block Name:** Brand assets export page
+- **Block Number:** B5.7b
+- **Block Name:** Restore CurrentProject & fix SLA strip
 - **Completed Date:** 2026-03-19
 
 ## PROJECT STATE
@@ -36,8 +31,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B5
-- **Block Name:** (TBD by user)
+- **Block Number:** B6.0
+- **Block Name:** Visual Polish & Refinements
 
 ---
 

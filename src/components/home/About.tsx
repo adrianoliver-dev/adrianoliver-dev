@@ -1,5 +1,4 @@
 import TerminalCard from './TerminalCard'
-import StackGrid from './StackGrid'
 import FadeUp from '@/components/ui/FadeUp'
 
 export default function About() {
@@ -30,35 +29,21 @@ export default function About() {
             <TerminalCard />
           </FadeUp>
 
-          {/* Right — Copy + Stack */}
+          {/* Right — Copy */}
           <FadeUp delay={0.2}>
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-4">
                 <p className="text-text-secondary leading-relaxed">
-                  I approach engineering the way analysts approach systems — 
-                  every decision has a cost, every abstraction has a tradeoff. 
-                  That discipline shapes how I scope, build, and ship.
-                </p>
-                <p className="text-text-secondary leading-relaxed">
-                  I&apos;ve shipped two production systems solo: a full e-commerce 
-                  platform with WhatsApp Meta API checkout and a multi-role 
-                  POS inventory system with real-time sync across locations. 
+                  I&apos;ve shipped two production systems solo: a full e-commerce
+                  platform with WhatsApp Meta API checkout and a multi-role
+                  POS inventory system with real-time sync across locations.
                   Both are live. Both are documented.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  Available for remote projects with US and EU teams. 
-                  Synchronized overlap — async-first workflow, weekly milestones, 
-                  and every technical decision documented in writing.
+                  I approach engineering the way analysts approach systems —
+                  every decision has a cost, every abstraction has a tradeoff.
+                  That discipline shapes how I scope, build, and ship.
                 </p>
-              </div>
-
-              {/* Stack */}
-              <div>
-                <p className="font-mono text-xs text-text-secondary 
-                   uppercase tracking-widest mb-4">
-                  Current stack
-                </p>
-                <StackGrid />
               </div>
             </div>
           </FadeUp>

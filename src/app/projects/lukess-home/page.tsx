@@ -52,7 +52,7 @@ export default function LukessHomeCaseStudy() {
     },
     {
       title: "Edge Optimization",
-      description: "Server-side rendering at the edge ensures sub-500ms TTFB for global product discoverability.",
+      description: "Server Components and edge caching deliver fast initial loads without client-side data fetching overhead. The catalog renders on the server and ships as static HTML.",
     },
     {
       title: "Transaction Integrity",
@@ -172,7 +172,7 @@ export default function LukessHomeCaseStudy() {
                       border: "1px solid var(--color-accent)",
                     }}
                   >
-                    Production client
+                     Tested in production
                   </span>
                 </div>
               </footer>
