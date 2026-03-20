@@ -1,30 +1,32 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
 **Last Updated:** 2026-03-20
-**Updated By:** Antigravity (B7.2 content delivery complete)
+**Updated By:** Antigravity (Block 7 complete)
 
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B7.3
-- **Block Name:** Blog Post #3 (Performance-as-a-Feature)
+- **Block Number:** B8.1
+- **Block Name:** Outreach & Automation (Resend Integration)
 - **Status:** PLANNED
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B7.2
-- **Block Name:** Blog Content Payload
+- **Block Number:** B7.3
+- **Block Name:** Blog Content Payload Completion
 - **Completed Date:** 2026-03-20
-- **Commit:** feat(portfolio-b7.2-blog-post-2)
+- **Commit:** feat(portfolio-b7.3-blog-post-3)
 - **Files:**
   - [MODIFY] src/content/blog/inventory-system-retail.mdx
-  - [NEW] src/content/blog/nextjs-vs-shopify-apparel.mdx
-- **Summary:** Fixed a duplicate image in the first blog post. Created the second strategic blog post "Next.js vs Shopify for Apparel Brands" with custom cover and relevant internal links. Verified with final static build.
+  - [MODIFY] src/content/blog/nextjs-vs-shopify-apparel.mdx
+  - [MODIFY] src/app/layout.tsx
+  - [NEW] src/content/blog/ecommerce-checkout-ux.mdx
+- **Summary:** Finalized the initial 3-post blog payload. Backdated previous posts for a natural timeline. Enhanced site-wide metadata with better favicon support and a temporary OG image fallback. Verified with successful static build of all blog routes.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
+| B7.3  | [Payload Completion](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/content/blog/ecommerce-checkout-ux.mdx) | DONE | 2026-03-20 | feat(portfolio-b7.3-blog-post-3) |
 | B7.2  | [Content Payload](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/content/blog/nextjs-vs-shopify-apparel.mdx) | DONE | 2026-03-20 | feat(portfolio-b7.2-blog-post-2) |
 | B7.1e | [Card Redesign](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1e-blog-cards) |
 | B7.1d | [Visuals & Share](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1d-blog-covers) |
-| B7.1c | [Purge & Corrections](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/layout.tsx) | DONE | 2026-03-20 | fix(portfolio-b7.1c) |
 
 ## PROJECT STATE
 
@@ -35,8 +37,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B7.3
-- **Block Name:** Blog Post #3 (Performance-as-a-Feature)
+- **Block Number:** B8.1
+- **Block Name:** Outreach & Automation (Resend Integration)
 
 ---
 

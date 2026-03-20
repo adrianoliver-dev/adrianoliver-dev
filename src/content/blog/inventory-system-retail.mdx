@@ -1,7 +1,7 @@
 ---
 title: "How We Replaced 3 Spreadsheets with a Real-Time Inventory System for a 4-Location Clothing Store"
-date: "2026-03-20"
-updated: "2026-03-20"
+date: "2026-03-13"
+updated: "2026-03-13"
 excerpt: "A clothing retailer was running four locations on WhatsApp messages and end-of-week spreadsheets. Overselling happened weekly. Here is exactly what we built to fix it — and how the architecture prevents it from ever happening again."
 author: "Adrian Oliver"
 tags: ["Inventory Management", "Retail Systems", "Supabase", "Next.js", "PostgreSQL"]
@@ -34,7 +34,7 @@ The business was growing. The system was not.
 
 The solution was a custom ERP and point-of-sale system built on a 19-table PostgreSQL schema, deployed on Next.js with Supabase as the database layer.
 
-![Business Intelligence Center — real-time dashboard with revenue KPIs and low-stock alerts across all 4 locations](/images/projects/lukess-inventory/inventory_dashboard.png)
+![Business Intelligence Center — real-time dashboard with revenue KPIs and low-stock alerts across all 4 locations](/images/projects/lukess-inventory/inventory_list_inventory.png)
 
 The most important design decision was this: **stock is never decremented directly on sale**. Instead, every sale triggers a database function that reserves the stock atomically — checking availability and reducing the count in a single transaction. If two sales happen simultaneously for the last unit in stock, one succeeds and one fails. Not both succeed, as they would in a spreadsheet system.
 

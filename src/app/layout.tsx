@@ -45,10 +45,10 @@ export const metadata: Metadata = {
       'Next.js · TypeScript · Supabase. Remote, async-first.',
     images: [
       {
-        url: '/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: 'Adrian Oliver — Full-Stack Developer',
+        url: 'https://adrianoliver.dev/favicon.svg',
+        width: 32,
+        height: 32,
+        alt: 'Adrian Oliver',
       },
     ],
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     description:
       'Production-ready e-commerce and business web apps. ' +
       'Next.js · TypeScript · Supabase.',
-    images: ['/opengraph-image'],
+    images: ['/favicon.svg'],
   },
   robots: {
     index: true,
@@ -72,7 +72,14 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/favicon.svg' },
+    ],
+    shortcut: '/favicon.svg',
   },
 }
 
