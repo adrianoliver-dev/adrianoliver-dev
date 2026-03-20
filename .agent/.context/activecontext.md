@@ -5,21 +5,13 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B5.8
-- **Block Name:** Homepage Section Cleanup
-- **Status:** DONE (2026-03-19)
-
-### Files Modified (final state)
-- `src/app/page.tsx` [MODIFY]
-  - Removed duplicate `CurrentProject` section.
-- `src/components/home/CurrentProject.tsx` [DELETE]
-  - Deleted unused component file.
-- `src/components/home/Contact.tsx` [MODIFY]
-  - Overhauled SLA strip: removed redundant text, updated response time, 3-column layout.
+- **Block Number:** B6.1
+- **Block Name:** Visual Polish: Section Transitions
+- **Status:** IN_PROGRESS
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B5.7b
-- **Block Name:** Restore CurrentProject & fix SLA strip
+- **Block Number:** B5.8
+- **Block Name:** Copy Audit Fixes
 - **Completed Date:** 2026-03-19
 
 ## PROJECT STATE
@@ -31,8 +23,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B6.0
-- **Block Name:** Visual Polish & Refinements
+- **Block Number:** B6.2
+- **Block Name:** Performance Optimization
 
 ---
 
@@ -64,3 +56,4 @@
 | B3fix | Lukess Inventory Next.js 15 Fix | DONE         | 2026-03-19 | fix(portfolio-b4-solnr-blog): update Next.js version to 15 in lukess inventory metadata |
 | B4.5  | Personal brand mark            | DONE         | 2026-03-19 | feat(portfolio-b4.5-brand-mark): geometric mark component, navbar logo redesign, favicon.svg |
 | B4.5b | Brand assets export page       | DONE         | 2026-03-19 | feat(portfolio-b4.5b-brand-assets): /brand export page |
+| B5.8  | Copy Audit Fixes + Hotfix     | DONE         | 2026-03-19 | feat(portfolio-b5.8-copy): fix 11 copy issues + hotfix Solnr restoration and Contact fix |

@@ -52,31 +52,6 @@ export default function Contact() {
             </div>
           </div>
         </FadeUp>
-
-        {/* SLA Strip */}
-        <FadeUp delay={0.2}>
-          <div className="bg-surface border border-border rounded-2xl p-8 mt-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full">
-              <div className="flex flex-col text-center md:text-left">
-                <div className="font-mono text-3xl text-accent font-bold">{"< 30 min"}</div>
-                <div className="font-mono text-[10px] text-text-primary uppercase tracking-widest mt-2">Response time</div>
-                <div className="font-mono text-[10px] text-text-secondary uppercase mt-1">during business hours (GMT-4)</div>
-              </div>
-              
-              <div className="flex flex-col text-center md:text-left">
-                <div className="font-mono text-3xl text-accent font-bold">Weekly</div>
-                <div className="font-mono text-[10px] text-text-primary uppercase tracking-widest mt-2">Milestones</div>
-                <div className="font-mono text-[10px] text-text-secondary uppercase mt-1">Loom + written update</div>
-              </div>
-              
-              <div className="flex flex-col text-center md:text-left">
-                <div className="font-mono text-3xl text-accent font-bold">60 days</div>
-                <div className="font-mono text-[10px] text-text-primary uppercase tracking-widest mt-2">Post-launch</div>
-                <div className="font-mono text-[10px] text-text-secondary uppercase mt-1">included support</div>
-              </div>
-            </div>
-          </div>
-        </FadeUp>
       </div>
     </section>
   )
