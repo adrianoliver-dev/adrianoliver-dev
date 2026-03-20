@@ -5,23 +5,25 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B6.2b
-- **Block Name:** Lukess Home Case Study Architectural Redesign
+- **Block Number:** B6.2c
+- **Block Name:** Lukess Home Case Study Redesign Fixes (Hover & Scroll)
 - **Status:** DONE (2026-03-19)
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B6.2b
-- **Block Name:** Lukess Home Case Study Architectural Redesign
+- **Block Number:** B6.2c
+- **Block Name:** Lukess Home Case Study Redesign Fixes (Hover & Scroll)
 - **Completed Date:** 2026-03-19
-- **Commit:** feat(portfolio-b6.2b-lukess-home): full case study redesign — narrative scroll, device frames, remove SQL, fix scroll bug, two-column problem layout, hidden video
+- **Commit:** feat(portfolio-b6.2c-hover-effects): CSS group dimming, border glow, mobile touch feedback, Lenis scroll-to-top fix
 - **Files:**
   - src/app/projects/lukess-home/page.tsx
-  - src/components/projects/VideoDemo.tsx
   - src/components/ui/ScrollToTop.tsx
-- **Summary:** Architectural redesign of Lukess Home case study focusing on narrative-driven screenshots, device frames simulation, and professional storytelling. Fixed scroll position conflict and removed code-heavy sections.
+  - src/components/providers/SmoothScrollProvider.tsx
+  - src/app/globals.css
+- **Summary:** Applied definitive Lenis scroll fix by exposing the instance to window. Implemented CSS-based group dimming focus effect on narrative rows and border glows using color-mix. Added mobile touch feedback and accessibility overrides for preferred-reduced-motion.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
+| B6.2c | Lukess Home Redesign Fixes (Hover/Scroll)| DONE   | 2026-03-19 | feat(portfolio-b6.2c-hover-effects): fixes |
 | B6.2b | Lukess Home Case Study Arch. Redesign    | DONE   | 2026-03-19 | feat(portfolio-b6.2b-lukess-home): redesign |
 
 ## PROJECT STATE

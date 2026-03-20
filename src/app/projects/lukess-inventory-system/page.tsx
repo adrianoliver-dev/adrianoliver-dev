@@ -1,43 +1,22 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import ProjectHero from "@/components/projects/ProjectHero";
 import TechBento from "@/components/projects/TechBento";
 import ProjectMetric from "@/components/projects/ProjectMetric";
-import TechnicalSnippet from "@/components/projects/TechnicalSnippet";
 import FadeUp from "@/components/ui/FadeUp";
-import ProjectGallery from "@/components/projects/ProjectGallery";
-import VideoDemo from "@/components/projects/VideoDemo";
 import MagneticButton from "@/components/ui/MagneticButton";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Lukess Inventory | Enterprise ERP Case Study",
   description: "Advanced inventory management and POS system built with Next.js 15 and Supabase.",
 };
 
-const RBAC_POLICY_CODE = `-- Granular RBAC using Row Level Security
-ALTER TABLE inventory ENABLE ROW LEVEL SECURITY;
-
--- Dynamic manager-level access control
-CREATE POLICY "Managers can update stock"
-ON inventory FOR UPDATE
-TO authenticated
-USING ( 
-  auth.uid() IN (
-    SELECT user_id FROM staff_roles 
-    WHERE role IN ('manager', 'admin')
-  )
-);
-
--- Public read-only for catalog sync
-CREATE POLICY "Public read access"
-ON inventory FOR SELECT
-TO anon, authenticated
-USING (true);`;
-
 export default function LukessInventoryCaseStudy() {
   const metadata = [
-    { label: "Role", value: "Systems Architect" },
-    { label: "Stack", value: "Next.js 15 · TypeScript · Supabase · Recharts" },
-    { label: "Type", value: "Internal ERP / POS" },
+    { label: "Role",   value: "Systems Architect" },
+    { label: "Stack",  value: "Next.js 15 · TypeScript · Supabase · Recharts" },
+    { label: "Type",   value: "Internal ERP / POS" },
     { label: "Access", value: "Role-gated — 3 permission levels" },
   ];
 
@@ -48,69 +27,94 @@ export default function LukessInventoryCaseStudy() {
     { value: "3", suffix: " roles", label: "RBAC — admin · manager · staff" },
   ];
 
-  const features = [
-    {
-      title: "Reactive POS",
-      description: "A low-latency point-of-sale interface optimized for high-speed physical transactions with optimistic state reconciliation.",
-      colSpan: "col-span-1" as const,
-    },
-    {
-      title: "Granular RBAC",
-      description: "Hardware-level security and dynamic permissions via Supabase Auth and PostgreSQL policies (RLS).",
-      colSpan: "col-span-2" as const,
-    },
-    {
-      title: "Supply Intelligence",
-      description: "Automated low-stock alerts with configurable threshold rules per SKU and location. When stock falls below the minimum, the dashboard surfaces it in the Business Intelligence Center immediately.",
-      colSpan: "col-span-2" as const,
-    },
+  const infrastructureFeatures = [
     {
       title: "Loyalty Engine",
-      description: "On order completion, the system generates a unique discount code &mdash; configurable percentage, single-use, 7-day expiry &mdash; and delivers it simultaneously by email and WhatsApp in the same transaction. Zero manual steps.",
+      description: "On order completion, the system automatically generates a unique discount code — configurable percentage, single-use, 7-day expiry — and sends it to the customer simultaneously by email and WhatsApp. Zero manual steps.",
+    },
+    {
+      title: "Audit Trail",
+      description: "Every stock movement, order state change, and staff action is logged with a timestamp and user ID. The record is immutable — no row can be deleted, only marked. Full accountability without spreadsheets.",
     },
   ];
 
   return (
     <article className="bg-[var(--color-background)] min-h-screen">
+      <ScrollToTop />
+      
       <ProjectHero
         title="Inventory"
         italicWord="System"
         description="An enterprise-grade ERP solution designed for complex multi-node retail environments. This system unifies real-time tracking, financial reporting, and staff management into a single immutable source of truth."
         metadata={metadata}
-        liveUrl="https://inventory.adrianoliver.dev"
       />
 
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto py-32">
+      {/* Metrics Section */}
+      <section className="px-6 lg:px-12 max-w-7xl mx-auto pt-24 pb-12">
         <FadeUp>
           <ProjectMetric metrics={metrics} />
         </FadeUp>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mt-32">
-          <FadeUp delay={0.1}>
-            <div className="space-y-8">
-              <h2 className="text-4xl font-instrument-serif italic text-[var(--color-text-primary)]">The Operations Problem</h2>
-              <div className="space-y-6 text-[var(--color-text-secondary)] text-xl leading-relaxed font-light">
-                <p>
-                  Before this system, stock records lived in paper logs and end-of-week spreadsheets. A return at one location never reached the others. Purchasing decisions were reactive &mdash; they only knew they were out of stock when the shelf was empty. No audit trail. No financial visibility.
-                </p>
-                <p>
-                  I built a custom ERP and POS from scratch on a 19-table PostgreSQL schema with row-level security. Stock is not decremented on sale &mdash; it is reserved via a database trigger, preventing overselling even when a physical sale and an online order compete for the same unit simultaneously. A 7-state order machine manages every transition from placement to delivery, triggering automated email and WhatsApp notifications on each state change &mdash; email via Resend for standard transactional workflows, WhatsApp via direct Meta Business API integration with no Twilio dependency. Three roles &mdash; admin, manager, staff &mdash; are enforced at the database level via RLS and at the application level via Next.js Edge middleware.
-                </p>
-              </div>
-            </div>
-          </FadeUp>
-        </div>
       </section>
 
-      <TechnicalSnippet 
-        title="Dynamic Access Control"
-        subtitle="Supabase / PostgreSQL Row Level Security"
-        code={RBAC_POLICY_CODE}
-      />
+      {/* SECTION A: The Problem */}
+      <FadeUp delay={0.1}>
+        <section className="py-24 px-6">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+              {/* Left Column: Text */}
+              <div className="space-y-6">
+                <span className="font-mono text-xs text-[var(--color-text-secondary)] uppercase tracking-widest mb-4 block">
+                  The Problem
+                </span>
+                <h2 className="font-serif text-3xl md:text-4xl text-[var(--color-text-primary)] leading-tight">
+                  The Operations Problem
+                </h2>
+                <div className="space-y-6 text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  <p>
+                    Before this system, stock records lived in paper logs and end-of-week spreadsheets. A return at one location never reached the others. Purchasing decisions were reactive &mdash; they only knew they were out of stock when the shelf was empty. No audit trail. No financial visibility.
+                  </p>
+                  <p>
+                    I built a custom ERP and POS from scratch on a 19-table PostgreSQL schema with row-level security. Stock is not decremented on sale &mdash; it is reserved via a database trigger, preventing overselling even when a physical sale and an online order compete for the same unit simultaneously. A 7-state order machine manages every transition from placement to delivery, triggering automated email and WhatsApp notifications on each state change &mdash; email via Resend for standard transactional workflows, WhatsApp via direct Meta Business API integration with no Twilio dependency. Three roles &mdash; admin, manager, staff &mdash; are enforced at the database level via RLS and at the application level via Next.js Edge middleware.
+                  </p>
+                </div>
+              </div>
 
-      {/* Client Testimonial */}
-      <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto">
-        <FadeUp>
+              {/* Right Column: Image */}
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-inventory/inventory_dashboard.png" 
+                  alt="Business Intelligence Center" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </FadeUp>
+
+      {/* SECTION B: The Solution */}
+      <FadeUp delay={0.1}>
+        <section className="py-16 px-6">
+          <div className="mx-auto max-w-3xl">
+            <span className="font-mono text-xs text-[var(--color-text-secondary)] uppercase tracking-widest mb-4 block">
+              The Solution
+            </span>
+            <div className="space-y-6 text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+              <p>
+                The backend utilizes Supabase (PostgreSQL) as the source of truth, leveraging Row Level Security (RLS) to enforce data boundaries between storefronts and warehouse staff. Every transaction is auditable, and permissions are managed dynamically based on staff roles.
+              </p>
+              <p>
+                The frontend is built with Next.js 15, providing a low-latency Point of Sale interface that remains high-performing even on basic tablet hardware used in physical retail locations. Real-time observability through Recharts dashboards gives the owner instant financial clarity.
+              </p>
+            </div>
+          </div>
+        </section>
+      </FadeUp>
+
+      {/* SECTION C: Testimonial */}
+      <FadeUp delay={0.15}>
+        <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto">
           <div
             className="relative rounded-2xl p-10 border"
             style={{
@@ -118,7 +122,6 @@ export default function LukessInventoryCaseStudy() {
               background: "var(--color-surface)",
             }}
           >
-            {/* Amber quote mark */}
             <span
               className="font-serif text-8xl leading-none absolute -top-6 left-8 select-none"
               style={{ color: "var(--color-accent)", opacity: 0.4 }}
@@ -180,73 +183,166 @@ export default function LukessInventoryCaseStudy() {
               </footer>
             </blockquote>
           </div>
+        </section>
+      </FadeUp>
+
+      {/* SECTION D: Narrative screenshots */}
+      <div className="group/rows">
+        {/* Row 1 */}
+        <FadeUp delay={0.1}>
+          <div className="py-16 px-6 transition-opacity duration-500 group-hover/rows:opacity-50 hover:!opacity-100">
+            <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)] hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-accent)_12%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-inventory/inventory_POS_view.png" 
+                  alt="Point of Sale Interface" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+                  Point of Sale
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  A sale at the physical store updates online inventory in the same database transaction — the customer on the website cannot buy what was just sold in-store. No sync delay, no reconciliation needed.
+                </p>
+              </div>
+            </div>
+          </div>
         </FadeUp>
-      </section>
 
-      <VideoDemo 
-        title="ERP System Demonstration"
-        posterImage="/images/projects/lukess-inventory/inventory_POS_view.png"
-      />
+        {/* Row 2 */}
+        <FadeUp delay={0.1}>
+          <div className="py-16 px-6 transition-opacity duration-500 group-hover/rows:opacity-50 hover:!opacity-100">
+            <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+                  Live Inventory
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  Every SKU, every size, every location — visible in one table with live counts. A manager at one storefront can see stock at the other two without making a phone call.
+                </p>
+              </div>
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group order-1 md:order-2 transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)] hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-accent)_12%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-inventory/inventory_list_inventory.png" 
+                  alt="Live Inventory" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+            </div>
+          </div>
+        </FadeUp>
 
-      <ProjectGallery 
-        images={[
-          {
-            src: "/images/projects/lukess-inventory/inventory_dashboard.png",
-            alt: "Business Intelligence Center",
-            caption: "Real-time dashboard — revenue KPIs, low-stock alerts, and sales activity across all locations",
-            colSpan: "col-span-1 lg:col-span-2"
-          },
-          {
-            src: "/images/projects/lukess-inventory/inventory_POS_view.png",
-            alt: "Point of Sale Interface",
-            caption: "Touch-optimized POS — SKU search, variant selection, and one-tap sale confirmation with confetti",
-            colSpan: "col-span-1"
-          },
-          {
-            src: "/images/projects/lukess-inventory/inventory_reports.png",
-            alt: "Financial Reports",
-            caption: "Date-range reports — revenue, margin, and sales broken down by channel, location, and staff member",
-            colSpan: "col-span-1"
-          },
-          {
-            src: "/images/projects/lukess-inventory/inventory_list_inventory.png",
-            alt: "Inventory Data Table",
-            caption: "Live inventory table — stock per SKU per location, bulk label printing, and inline stock editing",
-            colSpan: "col-span-2"
-          },
-          {
-            src: "/images/projects/lukess-inventory/inventory_edit_product.png",
-            alt: "Product Management Panel",
-            caption: "Product editor — full variant management, category assignment, and multi-image upload to Supabase Storage",
-            colSpan: "col-span-1 lg:col-span-2"
-          },
-          {
-            src: "/images/projects/lukess-inventory/inventory_reports_2.png",
-            alt: "Advanced Analytics",
-            caption: "Advanced analytics — sales by category, discount impact, staff performance, and exportable to PDF and Excel",
-            colSpan: "col-span-1"
-          },
-        ]} 
-      />
+        {/* Row 3 */}
+        <FadeUp delay={0.1}>
+          <div className="py-16 px-6 transition-opacity duration-500 group-hover/rows:opacity-50 hover:!opacity-100">
+            <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)] hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-accent)_12%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-inventory/inventory_edit_product.png" 
+                  alt="Product Management" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+                  Product Management
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  Products are created once and sync to the storefront automatically. Images upload directly to Supabase Storage — no external CDN configuration required.
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeUp>
 
-      <TechBento sectionTitle="Infrastructure Core" features={features} />
+        {/* Row 4 */}
+        <FadeUp delay={0.1}>
+          <div className="py-16 px-6 transition-opacity duration-500 group-hover/rows:opacity-50 hover:!opacity-100">
+            <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+                  Financial Reporting
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  The owner can filter sales by date range, location, or staff member — and export the result to PDF or Excel in one click. No spreadsheet assembly required.
+                </p>
+              </div>
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group order-1 md:order-2 transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)] hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-accent)_12%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-inventory/inventory_reports.png" 
+                  alt="Financial Reports" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+            </div>
+          </div>
+        </FadeUp>
 
+        {/* Row 5 */}
+        <FadeUp delay={0.1}>
+          <div className="py-16 px-6 transition-opacity duration-500 group-hover/rows:opacity-50 hover:!opacity-100">
+            <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)] hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-accent)_12%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-inventory/inventory_reports_2.png" 
+                  alt="Advanced Analytics" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+                  Advanced Analytics
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  Sales broken down by category, discount impact, and staff performance — all from the same Recharts dashboard. Data that took days to compile manually is now always current.
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeUp>
+      </div>
+
+      {/* SECTION F: Infrastructure */}
+      <FadeUp delay={0.1}>
+        <TechBento sectionTitle="Strategic Engineering" features={infrastructureFeatures} />
+      </FadeUp>
+
+      {/* SECTION G: Results */}
       <section className="py-48 px-6 lg:px-12 text-center max-w-4xl mx-auto">
-        <FadeUp>
-          <span className="font-mono text-xs text-[var(--color-accent)] uppercase tracking-[0.3em] mb-8 block">Results</span>
-          <h2 className="text-5xl md:text-7xl font-instrument-serif italic text-[var(--color-text-primary)] mb-12 leading-tight">
-            From paper logs to a live ERP.
+        <FadeUp delay={0.1}>
+          <span className="font-mono text-xs text-[var(--color-accent)] uppercase tracking-widest mb-8 block">Results</span>
+          <h2 className="text-5xl md:text-7xl font-serif text-[var(--color-text-primary)] mb-12 leading-tight">
+            What changed.
           </h2>
-          <p className="text-[var(--color-text-secondary)] text-xl font-light leading-relaxed">
-            Before: four locations running on disconnected paper logs. No cross-location visibility. Purchasing made by memory. Returns unrecorded. Zero financial reporting.
-          </p>
-          <p className="text-[var(--color-text-secondary)] text-xl mt-8 mb-16 font-light leading-relaxed">
-            After: a 19-table PostgreSQL system where every stock movement, order state change, and staff action is logged and auditable. The POS receives online orders from the e-commerce storefront in real time and manages their full lifecycle &mdash; from payment confirmation to WhatsApp notification to completion. A loyalty engine generates a unique discount code automatically on delivery and sends it to the customer by email and WhatsApp in the same transaction. Financial reports are available instantly, exportable to PDF and Excel.
-          </p>
+          
+          <div className="space-y-12 max-w-2xl mx-auto text-left mb-16">
+            <div className="border-l-2 border-[var(--color-border)] pl-6 text-[var(--color-text-secondary)]">
+              <p className="text-lg font-light leading-relaxed">
+                Before: four locations running on disconnected paper logs. No cross-location visibility. Purchasing made by memory. Returns unrecorded. Zero financial reporting.
+              </p>
+            </div>
+
+            <div className="w-12 h-px bg-[var(--color-accent)] opacity-60 my-6 ml-6" />
+
+            <div className="border-l-2 border-[var(--color-accent)] pl-6 text-[var(--color-text-primary)]">
+              <p className="text-lg font-light leading-relaxed">
+                After: a 19-table PostgreSQL system where every stock movement, order state change, and staff action is logged and auditable. The POS receives online orders from the e-commerce storefront in real time and manages their full lifecycle &mdash; from payment confirmation to WhatsApp notification to completion. A loyalty engine generates a unique discount code automatically on delivery and sends it to the customer by email and WhatsApp in the same transaction. Financial reports are available instantly, exportable to PDF and Excel.
+              </p>
+            </div>
+          </div>
+
+          {/* SECTION H: CTAs */}
           <div className="flex justify-center flex-col md:flex-row gap-6 items-center">
             <MagneticButton
               href="/contact"
-              className="bg-[var(--color-accent)] text-black px-6 py-3 text-sm font-medium hover:opacity-90 transition-all duration-300 shadow-[0_0_40px_var(--color-accent-glow)]"
+              className="bg-[var(--color-accent)] text-black px-8 py-4 text-sm font-medium hover:bg-amber-500 transition-all duration-300 shadow-[0_0_40px_rgba(217,119,6,0.2)] hover:shadow-[0_0_60px_rgba(217,119,6,0.3)] rounded-full"
             >
               Request a custom system
             </MagneticButton>
@@ -254,7 +350,7 @@ export default function LukessInventoryCaseStudy() {
               href="https://lukess-inventory-system.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[var(--color-border)] text-[var(--color-text-primary)] px-6 py-3 text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors duration-200"
+              className="border border-[var(--color-border)] text-[var(--color-text-primary)] px-8 py-4 text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors duration-200 rounded-full"
             >
               View live system →
             </MagneticButton>
