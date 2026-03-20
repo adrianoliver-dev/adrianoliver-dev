@@ -9,6 +9,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
 import ClientSideProviders from '@/components/providers/ClientSideProviders'
+import CustomCursor from "@/components/ui/CustomCursor"
+import { Suspense } from "react"
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://adrianoliver.dev'),
@@ -86,6 +88,9 @@ export default function RootLayout({
     >
       <body>
         <ClientSideProviders>
+          <Suspense fallback={null}>
+            <CustomCursor />
+          </Suspense>
           <Navbar />
           <main>
             <PageTransition>
@@ -148,6 +153,7 @@ export default function RootLayout({
                     'Wednesday',
                     'Thursday',
                     'Friday',
+                    'Saturday',
                   ],
                   opens: '09:00',
                   closes: '18:00',

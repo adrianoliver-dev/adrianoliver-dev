@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react"
 import { m } from "framer-motion"
 import MagneticButton from "@/components/ui/MagneticButton"
+import ScrollIndicator from "@/components/ui/ScrollIndicator"
 
 const CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%"
 const ORIGINAL = "Adrian Oliver"
@@ -43,9 +44,13 @@ export default function HeroAnimations() {
       }, 40)
     }
 
-    startGlitch()
+    // Delay glitch to allow LCP on static text
+    const timeout = setTimeout(startGlitch, 150)
 
-    return () => clearInterval(interval)
+    return () => {
+      clearInterval(interval)
+      clearTimeout(timeout)
+    }
   }, [])
 
   return (
@@ -53,13 +58,12 @@ export default function HeroAnimations() {
       {/* Static amber ambient — hero only */}
       <div
         aria-hidden="true"
+        className="w-[400px] h-[300px] md:w-[800px] md:h-[500px]"
         style={{
           position: 'fixed',
           top: '0',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '800px',
-          height: '500px',
           background:
             'radial-gradient(ellipse at 50% 0%, rgba(217,119,6,0.13) 0%, transparent 70%)',
           pointerEvents: 'none',
@@ -89,6 +93,7 @@ export default function HeroAnimations() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
         aria-label="Adrian Oliver"
+        data-lcp-text="true"
       >
         <span ref={nameRef} aria-hidden="true" className="hover:drop-shadow-[0_0_20px_#D9770660] transition-all duration-300 inline-block">{ORIGINAL}</span>
       </m.h1>
@@ -134,6 +139,8 @@ export default function HeroAnimations() {
           Get In Touch
         </MagneticButton>
       </m.div>
+
+      <ScrollIndicator />
     </>
   )
 }

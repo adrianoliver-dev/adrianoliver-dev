@@ -1,25 +1,36 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
-**Last Updated:** 2026-03-19
-**Updated By:** Antigravity (B2 fully complete)
+**Last Updated:** 2026-03-20
+**Updated By:** Antigravity (B6.A fully complete)
 
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B6.3
-- **Block Name:** Lukess Inventory Case Study Architectural Redesign
-- **Status:** DONE (2026-03-19)
+- **Block Number:** B6.A
+- **Block Name:** Performance & Visual Upgrades
+- **Status:** DONE (2026-03-20)
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B6.3b
-- **Block Name:** Lukess Inventory VideoDemo Placeholder
-- **Completed Date:** 2026-03-19
-- **Commit:** fix(portfolio-inventory): add VideoDemo placeholder
+- **Block Number:** B6.A
+- **Block Name:** Performance & Visual Upgrades
+- **Completed Date:** 2026-03-20
+- **Commit:** feat(portfolio-b6.a-awwwards): LCP fix, defer scripts, custom cursor, countup, scroll indicator, modern browserslist
 - **Files:**
-  - src/app/projects/lukess-inventory-system/page.tsx
-- **Summary:** Added the `VideoDemo` component to the Lukess Inventory case study page as a placeholder (initially returning null), maintaining structural consistency with the Lukess Home case study.
+  - src/components/home/HeroAnimations.tsx
+  - src/app/layout.tsx
+  - src/components/analytics/GoogleAnalytics.tsx
+  - src/components/analytics/MicrosoftClarity.tsx
+  - package.json
+  - src/app/globals.css
+  - src/components/ui/CustomCursor.tsx
+  - src/components/ui/CountUp.tsx
+  - src/components/ui/ScrollIndicator.tsx
+  - src/components/home/Contact.tsx
+- **Summary:** Fixed 1470ms LCP delay in hero, deferred heavy third-party scripts, eliminated polyfills with modern browserslist. Added premium visual layer: custom amber cursor, SLA countup animation, hero scroll indicator, and responsive ambient glow.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
+| B6.A  | Performance & Visual Upgrades           | DONE   | 2026-03-20 | feat(portfolio-b6.a-awwwards): performance |
+| B6.4  | Solnr Studio Case Study Polish           | DONE   | 2026-03-19 | feat(portfolio-b6.4-solnr): polish |
 | B6.3b | Lukess Inventory VideoDemo Placeholder   | DONE   | 2026-03-19 | fix(portfolio-inventory): placeholder |
 | B6.2d | VideoDemo YouTube Embed Fix              | DONE   | 2026-03-19 | fix(portfolio-videodemo): youtube embed |
 | B6.3  | Lukess Inventory Arch. Redesign          | DONE   | 2026-03-19 | feat(portfolio-b6.3-lukess-inventory): redesign |
@@ -35,8 +46,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B6.3
-- **Block Name:** Performance Optimization
+- **Block Number:** B6.B
+- **Block Name:** Blog Post Content Strategy
 
 ---
 

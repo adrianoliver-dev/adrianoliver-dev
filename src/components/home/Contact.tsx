@@ -1,5 +1,6 @@
 import FadeUp from '@/components/ui/FadeUp'
 import MagneticButton from '@/components/ui/MagneticButton'
+import { CountUp } from '@/components/ui/CountUp'
 
 export default function Contact() {
   return (
@@ -45,7 +46,9 @@ export default function Contact() {
               </div>
               
               <div className="flex flex-col text-center md:text-left">
-                <div className="font-mono text-3xl text-accent font-bold">60 days</div>
+                <div className="font-mono text-3xl text-accent font-bold">
+                  <CountUp end={60} suffix=" days" />
+                </div>
                 <div className="font-mono text-[10px] text-text-primary uppercase tracking-widest mt-2">Post-launch</div>
                 <div className="font-mono text-[10px] text-text-secondary uppercase mt-1">included support</div>
               </div>
