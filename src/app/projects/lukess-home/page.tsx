@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import ProjectHero from "@/components/projects/ProjectHero";
 import TechBento from "@/components/projects/TechBento";
 import ProjectMetric from "@/components/projects/ProjectMetric";
@@ -100,15 +101,17 @@ export default function LukessHomeCaseStudy() {
         </div>
       </section>
 
-      <TechnicalSnippet 
-        title="Atomic Inventory Control"
-        subtitle="PostgreSQL / PL/pgSQL Trigger"
-        code={DB_TRIGGER_CODE}
-      />
+      <FadeUp delay={0.1}>
+        <TechnicalSnippet 
+          title="Atomic Inventory Control"
+          subtitle="PostgreSQL / PL/pgSQL Trigger"
+          code={DB_TRIGGER_CODE}
+        />
+      </FadeUp>
 
       {/* Client Testimonial */}
       <section className="py-24 px-6 lg:px-12 max-w-4xl mx-auto">
-        <FadeUp>
+        <FadeUp delay={0.15}>
           <div
             className="relative rounded-2xl p-10 border"
             style={{
@@ -190,72 +193,104 @@ export default function LukessHomeCaseStudy() {
       <ProjectGallery 
         images={[
           {
-            src: "/images/projects/lukess-home/lukess-home_Home_page%20hero.png",
-            alt: "Home Page Hero View",
-            caption: "Homepage hero with animated banner CMS and trust signals",
-            colSpan: "col-span-1 lg:col-span-2",
-          },
-          {
-            src: "/images/projects/lukess-home/lukess-home_cart_drawer.png",
-            alt: "Cart Drawer overlay",
-            caption: "Slide-in cart drawer with Framer Motion animations",
-            colSpan: "col-span-1",
+            src: "/images/projects/lukess-home/lukess-home_Home_page.png",
+            alt: "Homepage hero",
+            caption: "Homepage hero with animated banner CMS, trust signals, and real-time stock indicators",
+            featured: false
           },
           {
             src: "/images/projects/lukess-home/lukess-home_Catalogo.png",
-            alt: "Global Catalog View",
-            caption: "Product catalog with multi-category navigation",
-            colSpan: "col-span-1",
+            alt: "Product catalog",
+            caption: "Product catalog — multi-category grid with brand filtering and price display",
+            featured: false
           },
           {
             src: "/images/projects/lukess-home/lukess-home_catalogo_con_filtros.png",
-            alt: "Catalog view with active filters",
-            caption: "Dynamic filters with URL-based state — deep-linkable",
-            colSpan: "col-span-2",
+            alt: "Catalog with active filters",
+            caption: "URL-based filters — category, price range, and size stored in query params for deep-linking",
+            featured: true
           },
           {
             src: "/images/projects/lukess-home/lukess-home_page_product.png",
-            alt: "Detailed Product View",
-            caption: "Product detail page with size selector and gallery",
-            colSpan: "col-span-2",
+            alt: "Product detail page",
+            caption: "Product detail page — size selector, image gallery with fade transitions, and add-to-cart validation",
+            featured: false
           },
           {
-            src: "/images/projects/lukess-home/lukess-home_catalogo_mobile.png",
-            alt: "Mobile Catalog",
-            caption: "Responsive mobile catalog — optimized layout",
-            colSpan: "col-span-1",
-            aspectRatio: "aspect-[9/19]",
-          },
-          {
-            src: "/images/projects/lukess-home/lukess-home_page_product_mobile.png",
-            alt: "Mobile Product View",
-            caption: "Mobile PDP with sticky add-to-cart",
-            colSpan: "col-span-1",
-            aspectRatio: "aspect-[9/19]",
-          },
+            src: "/images/projects/lukess-home/lukess-home_cart_drawer.png",
+            alt: "Cart drawer",
+            caption: "Slide-in cart drawer — Framer Motion animations, discount code input, and real-time stock validation",
+            featured: false
+          }
         ]} 
       />
 
-      <TechBento sectionTitle="Strategic Engineering" features={features} />
+      {/* Mobile experience section */}
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <FadeUp delay={0.1}>
+          <div className="mb-8 text-center lg:text-left">
+            <span className="font-mono text-xs text-[var(--color-text-secondary)] uppercase tracking-[0.3em]">
+              Mobile experience
+            </span>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="aspect-[9/19] border border-[var(--color-border)] rounded-xl overflow-hidden relative">
+              <Image 
+                src="/images/projects/lukess-home/lukess-home_catalogo_mobile.png" 
+                alt="Mobile catalog" 
+                fill 
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="aspect-[9/19] border border-[var(--color-border)] rounded-xl overflow-hidden relative">
+              <Image 
+                src="/images/projects/lukess-home/lukess-home_page_product_mobile.png" 
+                alt="Mobile product detail" 
+                fill 
+                className="object-cover object-top"
+              />
+            </div>
+          </div>
+          
+          <p className="text-center font-mono text-[10px] text-[var(--color-text-secondary)] mt-8 uppercase tracking-widest">
+            Fully responsive — optimized layouts for mobile-first browsing
+          </p>
+        </FadeUp>
+      </section>
+
+      <FadeUp delay={0.1}>
+        <TechBento sectionTitle="Strategic Engineering" features={features} />
+      </FadeUp>
 
       <section className="py-48 px-6 lg:px-12 text-center max-w-4xl mx-auto">
-        <FadeUp>
+        <FadeUp delay={0.1}>
           <span className="font-mono text-xs text-[var(--color-accent)] uppercase tracking-[0.3em] mb-8 block">Results</span>
           <h2 className="text-5xl md:text-7xl font-instrument-serif italic text-[var(--color-text-primary)] mb-12 leading-tight">
             From spreadsheets to real-time omnichannel.
           </h2>
-          <p className="text-[var(--color-text-secondary)] text-xl mb-8 font-light leading-relaxed">
-            Before: four disconnected locations running on spreadsheets. Manual
-            reconciliation every night. No visibility between stores. No online presence.
-          </p>
-          <p className="text-[var(--color-text-secondary)] text-xl mb-16 font-light leading-relaxed mt-8">
-            After: atomic PostgreSQL triggers preventing race conditions across all
-            locations in a single transaction. Real-time stock sync from a shared
-            Supabase instance powering both the storefront and the admin POS system.
-            Three checkout paths &mdash; QR bank transfer, cash pickup, and Stripe &mdash; each
-            triggering automatic WhatsApp and email notifications. Guest checkout with
-            no account required: just a name and a phone number.
-          </p>
+          
+          <div className="space-y-12 max-w-2xl mx-auto text-left mb-16">
+            <div className="border-l-2 border-[var(--color-border)] pl-6 text-[var(--color-text-secondary)]">
+              <p className="text-lg font-light leading-relaxed">
+                Before: four disconnected locations running on spreadsheets. Manual
+                reconciliation every night. No visibility between stores. No online presence.
+              </p>
+            </div>
+
+            <div className="w-12 h-px bg-[var(--color-accent)] opacity-60 my-6 ml-6" />
+
+            <div className="border-l-2 border-[var(--color-accent)] pl-6 text-[var(--color-text-primary)]">
+              <p className="text-lg font-light leading-relaxed">
+                After: atomic PostgreSQL triggers preventing race conditions across all
+                locations in a single transaction. Real-time stock sync from a shared
+                Supabase instance powering both the storefront and the admin POS system.
+                Three checkout paths &mdash; QR bank transfer, cash pickup, and Stripe &mdash; each
+                triggering automatic WhatsApp and email notifications. Guest checkout with
+                no account required: just a name and a phone number.
+              </p>
+            </div>
+          </div>
           <div className="flex justify-center flex-col md:flex-row gap-6 items-center">
             <MagneticButton
               href="/contact"

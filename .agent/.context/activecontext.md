@@ -5,14 +5,17 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B6.2
+- **Block Number:** B6.3
 - **Block Name:** Performance Optimization
 - **Status:** IN_PROGRESS
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B6.1
-- **Block Name:** ProjectGallery Interactive Upgrade
+- **Block Number:** B6.2
+- **Block Name:** Lukess Home Case Study Interactive Layout
 - **Completed Date:** 2026-03-19
+- **Commit:** feat(portfolio-b6.2-lukess-home): interactive gallery with mobile experience and visual results treatment
+- **Files:** src/app/projects/lukess-home/page.tsx
+- **Summary:** Upgraded Lukess Home project page with correct gallery images, a new mobile experience section, and visual 'before/after' markers in the results section. Applied staggered FadeUp animations to all major sections. fix: nested section layout bug.
 
 ## PROJECT STATE
 
@@ -23,7 +26,7 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B6.2
+- **Block Number:** B6.3
 - **Block Name:** Performance Optimization
 
 ---
