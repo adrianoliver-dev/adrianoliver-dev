@@ -7,7 +7,7 @@ interface CountUpProps {
   suffix?: string
 }
 
-export function CountUp({ end, duration = 1500, suffix = '' }: CountUpProps) {
+export function CountUp({ end, duration = 2000, suffix = '' }: CountUpProps) {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLSpanElement>(null)
   const started = useRef(false)

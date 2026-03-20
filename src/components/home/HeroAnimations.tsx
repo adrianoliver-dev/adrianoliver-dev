@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useEffect, useState } from "react"
 import { m } from "framer-motion"
 import MagneticButton from "@/components/ui/MagneticButton"
 import ScrollIndicator from "@/components/ui/ScrollIndicator"
@@ -8,12 +8,12 @@ const CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%"
 const ORIGINAL = "Adrian Oliver"
 
 export default function HeroAnimations() {
-  const nameRef = useRef<HTMLSpanElement>(null)
+  const [displayName, setDisplayName] = useState(ORIGINAL)
 
   // Glitch effect
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    if (prefersReduced || !nameRef.current) return
+    if (prefersReduced) return
 
     let iteration = 0
     let interval: NodeJS.Timeout
@@ -22,30 +22,29 @@ export default function HeroAnimations() {
       clearInterval(interval)
       
       interval = setInterval(() => {
-        if (!nameRef.current) return
-
-        nameRef.current.innerText = ORIGINAL.split("")
-          .map((letter, index) => {
-            if (index < iteration) {
-              return ORIGINAL[index]
-            }
-            return CHARSET[Math.floor(Math.random() * CHARSET.length)]
-          })
-          .join("")
+        setDisplayName(
+          ORIGINAL.split("")
+            .map((letter, index) => {
+              if (index < iteration) {
+                return ORIGINAL[index]
+              }
+              return CHARSET[Math.floor(Math.random() * CHARSET.length)]
+            })
+            .join("")
+        )
 
         iteration += 0.65
 
         if (iteration >= ORIGINAL.length) {
           clearInterval(interval)
-          if (nameRef.current) {
-            nameRef.current.innerText = ORIGINAL
-          }
+          setDisplayName(ORIGINAL)
         }
       }, 40)
     }
 
     // Delay glitch to allow LCP on static text
-    const timeout = setTimeout(startGlitch, 150)
+    // Delay glitch to allow LCP on static text
+    const timeout = setTimeout(startGlitch, 200)
 
     return () => {
       clearInterval(interval)
@@ -95,7 +94,7 @@ export default function HeroAnimations() {
         aria-label="Adrian Oliver"
         data-lcp-text="true"
       >
-        <span ref={nameRef} aria-hidden="true" className="hover:drop-shadow-[0_0_20px_#D9770660] transition-all duration-300 inline-block">{ORIGINAL}</span>
+        <span aria-hidden="true" className="hover:drop-shadow-[0_0_20px_#D9770660] transition-all duration-300 inline-block">{displayName}</span>
       </m.h1>
       
       {/* subtitle */}

@@ -147,34 +147,40 @@ a, button {
     transition-duration: 0ms !important;
   }
 }
-/* Custom cursor */
-@media (hover: hover) and (pointer: fine) {
-  * { cursor: none !important; }
-  
-  .cursor-dot {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid var(--color-accent);
-    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
-    pointer-events: none;
-    z-index: 99999;
-    transition: width 300ms ease, height 300ms ease,
-                opacity 300ms ease, background 300ms ease;
-    will-change: transform;
-  }
+/* Custom cursor base styles — Always present in DOM, JS controls visibility */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  will-change: transform;
+  transition: width 300ms ease, height 300ms ease,
+              opacity 300ms ease, background 300ms ease;
+}
 
-  .cursor-dot.cursor-expand {
-    width: 64px;
-    height: 64px;
-    margin-left: -16px;
-    margin-top: -16px;
-    background: color-mix(in srgb, var(--color-accent) 4%, transparent);
-    opacity: 0.6;
-  }
+.cursor-dot.cursor-expand {
+  width: 64px;
+  height: 64px;
+  margin-left: -16px;
+  margin-top: -16px;
+  background: color-mix(in srgb, var(--color-accent) 4%, transparent);
+}
+
+/* Hide native cursor only when custom cursor is active and supported */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-active * { cursor: none !important; }
+}
+
+/* Visibility overrides */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot, .scroll-line { display: none; }
 }
 
 @keyframes scrollLine {

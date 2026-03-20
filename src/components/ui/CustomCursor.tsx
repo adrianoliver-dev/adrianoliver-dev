@@ -7,20 +7,27 @@ export default function CustomCursor() {
   const target = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
-    // Hide on touch devices
-    if ('ontouchstart' in window) return
+    // Hide only on devices that strictly do not support hover (touch-only)
+    const canHover = window.matchMedia('(hover: hover)').matches
+    if (!canHover) return
 
     const cursor = cursorRef.current
     if (!cursor) return
 
+    let hasMovedOnce = false
     const onMove = (e: MouseEvent) => {
       target.current = { x: e.clientX, y: e.clientY }
+      if (!hasMovedOnce) {
+        hasMovedOnce = true
+        if (cursor) cursor.style.opacity = '1'
+      }
     }
 
     const onEnterInteractive = () => cursor.classList.add('cursor-expand')
     const onLeaveInteractive = () => cursor.classList.remove('cursor-expand')
 
     document.addEventListener('mousemove', onMove)
+    document.documentElement.classList.add('custom-cursor-active')
 
     // Add expand class on interactive elements
     const updateInteractives = () => {
@@ -56,6 +63,7 @@ export default function CustomCursor() {
 
     return () => {
       document.removeEventListener('mousemove', onMove)
+      document.documentElement.classList.remove('custom-cursor-active')
       cancelAnimationFrame(raf)
       observer.disconnect()
     }
@@ -64,7 +72,9 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
+      id="custom-cursor"
       className="cursor-dot"
+      style={{ willChange: 'transform', opacity: 0, pointerEvents: 'none' }}
       aria-hidden="true"
     />
   )

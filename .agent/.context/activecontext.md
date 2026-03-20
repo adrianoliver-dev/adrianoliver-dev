@@ -29,7 +29,7 @@
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
-| B6.A  | Performance & Visual Upgrades           | DONE   | 2026-03-20 | feat(portfolio-b6.a-awwwards): performance |
+| B6.A | [Performance & Visuals](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/home/HeroAnimations.tsx) | 2026-03-20 | LCP fix (static reveal), script deferral, custom cursor (overflow fix), countup/scroll tuning, modern browserslist. |
 | B6.4  | Solnr Studio Case Study Polish           | DONE   | 2026-03-19 | feat(portfolio-b6.4-solnr): polish |
 | B6.3b | Lukess Inventory VideoDemo Placeholder   | DONE   | 2026-03-19 | fix(portfolio-inventory): placeholder |
 | B6.2d | VideoDemo YouTube Embed Fix              | DONE   | 2026-03-19 | fix(portfolio-videodemo): youtube embed |

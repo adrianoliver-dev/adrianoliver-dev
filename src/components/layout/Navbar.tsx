@@ -4,6 +4,7 @@ import { useState, useEffect, useSyncExternalStore } from "react"
 import Link from "next/link"
 import * as m from "framer-motion/m"
 import { AnimatePresence } from "framer-motion"
+import { usePathname } from "next/navigation"
 import BrandMark from "@/components/ui/BrandMark"
 
 const navLinks = [
@@ -28,6 +29,7 @@ function useReducedMotion() {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const shouldReduceMotion = useReducedMotion()
+  const pathname = usePathname()
 
   // Lock scroll when menu is open
   useEffect(() => {
@@ -40,6 +42,20 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen)
   const closeMenu = () => setIsOpen(false)
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault()
+      // Use Lenis if available, fallback to native
+      const lenis = (window as unknown as { __lenis?: { scrollTo: (target: number | string | HTMLElement, options?: Record<string, unknown>) => void } }).__lenis
+      if (lenis) {
+        lenis.scrollTo(0, { immediate: false, duration: 1.2 })
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    }
+    closeMenu()
+  }
 
   const menuVariants = {
     initial: { x: "100%" },
@@ -70,7 +86,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between">
         <Link
           href="/"
-          onClick={closeMenu}
+          onClick={handleLogoClick}
           className="flex items-center group decoration-transparent relative z-[60]"
         >
           <BrandMark size={26} />
