@@ -7,9 +7,10 @@ export const contentType = 'image/png'
 export default async function Image({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const post = getPostBySlug(params.slug)
+  const resolvedParams = await params
+  const post = getPostBySlug(resolvedParams.slug)
   const title = post?.title ?? 'Blog — Adrian Oliver'
   const date = post?.date ?? ''
 

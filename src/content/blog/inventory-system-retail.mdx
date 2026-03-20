@@ -1,11 +1,84 @@
 ---
-title: "How We Replaced 3 Spreadsheets with a Real-Time Inventory System"
+title: "How We Replaced 3 Spreadsheets with a Real-Time Inventory System for a 4-Location Clothing Store"
 date: "2026-03-20"
 updated: "2026-03-20"
-excerpt: "A 4-location clothing store was running their entire operation on WhatsApp messages and end-of-week spreadsheets. Here is what we built to replace that — and how it works."
+excerpt: "A clothing retailer in Santa Cruz was running four locations on WhatsApp messages and end-of-week spreadsheets. Overselling happened weekly. Here is exactly what we built to fix it — and how the architecture prevents it from ever happening again."
 author: "Adrian Oliver"
-tags: ["Inventory", "Supabase", "Retail", "PostgreSQL"]
-coverImage: "/images/blog/inventory-system-retail.png"
+tags: ["Inventory Management", "Retail Systems", "Supabase", "Next.js", "PostgreSQL"]
+coverImage: "/images/blog/inventory-system-retail-cover.png"
 ---
 
-This case study is coming soon. Subscribe or check back shortly.
+Rodrigo ran a clothing store across four locations — three storefronts and a central warehouse. On paper, the business worked. In practice, the back-office was chaos.
+
+Every night, the manager at each location would WhatsApp the day's sales to a central number. Someone would manually update a shared spreadsheet. By the time the spreadsheet was updated, it was already wrong — because the next morning had already started.
+
+Returns at one location never made it into the other locations' counts. Warehouse stock was always a guess. And at least once a week, a customer would order something online, pay, and then get a call saying the item was actually out of stock.
+
+This is not an unusual story for multi-location retail. It is, in fact, the default.
+
+## The real cost of the spreadsheet system
+
+The spreadsheet problem is not just inconvenient. It is expensive in ways that are hard to quantify until you add them up:
+
+**Overselling** costs you the customer relationship, not just the refund. When someone pays for something and you call them to say you don't have it, they don't come back.
+
+**Manual reconciliation** takes 2-3 hours at the end of every week. Multiply that by 52 weeks and you have an entire month of labor spent copying numbers between spreadsheets.
+
+**Purchasing blind** means you only know you're out of stock when the shelf is empty. You reorder based on memory and instinct, not data.
+
+**No audit trail** means when a discrepancy appears — and it always does — there is no way to know where it came from.
+
+The business was growing. The system was not.
+
+## What we built
+
+The solution was a custom ERP and point-of-sale system built on a 19-table PostgreSQL schema, deployed on Next.js 15 with Supabase as the database layer.
+
+The most important design decision was this: **stock is never decremented directly on sale**. Instead, every sale triggers a database function that reserves the stock atomically — checking availability and reducing the count in a single transaction. If two sales happen simultaneously for the last unit in stock, one succeeds and one fails. Not both succeed, as they would in a spreadsheet system.
+
+This is the fundamental technical guarantee that the business needed. Not faster spreadsheets. Not better WhatsApp groups. A database-enforced contract that makes overselling architecturally impossible.
+
+## How the system works day to day
+
+Every morning, the manager at each location opens the POS interface on a tablet. They can see live stock counts across all four locations. When a sale is processed, inventory updates everywhere in real time — the online storefront included.
+
+When an order comes in online, the POS at the nearest storefront receives it immediately and manages the full lifecycle: from payment confirmation to picking to delivery, with automated WhatsApp notifications sent to the customer at each state change.
+
+At the end of the day, there is no reconciliation. The numbers are already correct.
+
+The owner has a dashboard that shows revenue by location, low-stock alerts by SKU, and financial reports that can be exported to PDF or Excel in one click. What previously took a full weekend to compile manually is now available instantly.
+
+## The architecture decisions that made this possible
+
+**PostgreSQL triggers instead of application logic.** The stock reservation happens at the database level, not in the application. This means it cannot be bypassed — not by a bug in the application, not by two simultaneous API calls, not by anything.
+
+**Row-Level Security for multi-role access.** Staff at one location can process sales but cannot see the financial reports. Managers can adjust stock but cannot delete products. The owner has full access. These permissions are enforced at the database level, not just in the UI.
+
+**Supabase Realtime for live sync.** When a sale happens at Location A, the inventory count at Location B updates without anyone refreshing the page. This is websocket-based, not polling — the latency is under 200 milliseconds.
+
+**No third-party inventory platform.** Every feature in the system was built specifically for this business's workflow. There is no monthly SaaS subscription, no per-location pricing, and no features that exist only to justify a pricing tier.
+
+## What changed
+
+Before the system, the business was running on three disconnected spreadsheets, WhatsApp messages, and best guesses. Returns were unrecorded. Purchasing was reactive. Financial visibility was zero.
+
+After: every stock movement, every sale, every return, and every staff action is logged with a timestamp and user ID. The record is immutable. The owner knows exactly what is in stock at every location, in real time, from any device.
+
+The WhatsApp notification on every order state change — confirmed, picked, on the way, delivered — was the feature the team found most immediately useful. Not because it was the most technically complex, but because it eliminated an entire category of customer service calls.
+
+## Is this the right solution for your business?
+
+A custom inventory system makes sense when:
+
+- You have more than two locations managing shared stock
+- Overselling is a recurring problem with real customer impact
+- You are spending significant staff time on manual reconciliation
+- You need financial reporting that reflects real-time data, not end-of-week summaries
+
+It does not make sense when you have a single location, low order volume, or a business model where stock discrepancies are rare and low-stakes.
+
+If you recognize your business in the first list, the spreadsheet system is not a temporary problem. It is a permanent drag on your operations that grows more expensive as you scale.
+
+The system described in this post is live. You can see the full technical breakdown in the [Lukess Inventory case study](/projects/lukess-inventory-system).
+
+If you are dealing with a similar problem and want to understand what a solution would look like for your specific business, [start a conversation here](/contact).

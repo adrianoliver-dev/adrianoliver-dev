@@ -5,24 +5,19 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B7.1
-- **Block Name:** First Blog Content Payload
+- **Block Number:** B7.2
+- **Block Name:** Blog Post #2 & #3 (Strategic Payload)
 - **Status:** PLANNED
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B7.0
-- **Block Name:** Blog Infrastructure Rebuild
+- **Block Number:** B7.1
+- **Block Name:** First Blog Content (Founder-Oriented)
 - **Completed Date:** 2026-03-20
-- **Commit:** feat(portfolio-b7.0-blog-infrastructure)
+- **Commit:** feat(portfolio-b7.1-blog-post-1)
 - **Files:**
-  - [NEW] src/lib/blog.ts
-  - [NEW] src/app/blog/[slug]/opengraph-image.tsx
-  - [NEW] src/content/blog/inventory-system-retail.mdx
-  - [MODIFY] src/app/blog/page.tsx
-  - [MODIFY] src/app/blog/[slug]/page.tsx
-  - [MODIFY] src/app/sitemap.ts
-  - [DELETE] src/content/blog/server-components-retail.mdx
-- **Summary:** Complete rebuild of blog infrastructure with dynamic OG images (Node.js runtime), perfect SEO foundations (BlogPosting schema + Breadcrumbs), sitemap integration, and a refined UI for both list and post pages.
+  - [MODIFY] src/content/blog/inventory-system-retail.mdx
+  - [MODIFY] src/app/blog/[slug]/opengraph-image.tsx
+- **Summary:** Published the first full-length blog post ("How We Replaced 3 Spreadsheets..."). Fixed a params-await bug in the OG image generator. Verified rendering, dynamic metadata, and JSON-LD schema via Browser Subagent.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
