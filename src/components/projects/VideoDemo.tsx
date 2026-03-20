@@ -14,32 +14,7 @@ interface VideoDemoProps {
 export default function VideoDemo({ videoUrl, posterImage, title }: VideoDemoProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  if (!videoUrl) {
-    return (
-      <section className="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
-        <FadeUp>
-
-          <div 
-            className="w-full min-h-[280px] flex flex-col items-center justify-center gap-4 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl"
-          >
-            <div className="video-pulse-circle w-16 h-16 border-[1.5px] border-[var(--color-accent)] rounded-full flex items-center justify-center">
-              <svg viewBox="0 0 36 32" className="w-8 h-8 fill-[var(--color-accent)] opacity-80" aria-hidden="true">
-                <path d="M10,6 L10,26 L26,16 Z" />
-              </svg>
-            </div>
-            <div className="flex flex-col items-center gap-1">
-              <span className="font-sans text-[14px] text-[var(--color-text-secondary)] tracking-[0.02em]">
-                Video walkthrough
-              </span>
-              <span className="font-mono text-[11px] text-[var(--color-accent)] opacity-65 uppercase tracking-[0.08em]">
-                Coming soon
-              </span>
-            </div>
-          </div>
-        </FadeUp>
-      </section>
-    );
-  }
+  if (!videoUrl) return null;
 
   return (
     <section className="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
