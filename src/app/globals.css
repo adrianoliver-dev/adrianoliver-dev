@@ -141,5 +141,9 @@ a, button {
   animation: videoPulse 3s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-  .video-pulse-circle { animation: none !important; }
+  .transition-opacity,
+  .transition-transform,
+  .transition-all {
+    transition-duration: 0ms !important;
+  }
 }

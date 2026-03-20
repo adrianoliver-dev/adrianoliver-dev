@@ -7,7 +7,19 @@ import { useEffect } from 'react'
  */
 export default function ScrollToTop() {
   useEffect(() => { 
-    window.scrollTo(0, 0) 
+    // Small delay to ensure Lenis is initialized before scrolling
+    const timer = setTimeout(() => {
+      // Try Lenis first (stored on window by SmoothScrollProvider)
+      const lenis = window.__lenis
+      if (lenis) {
+        lenis.scrollTo(0, { immediate: true })
+      } else {
+        // Fallback to native scroll
+        window.scrollTo({ top: 0, behavior: 'instant' })
+      }
+    }, 50)
+    
+    return () => clearTimeout(timer)
   }, [])
   
   return null

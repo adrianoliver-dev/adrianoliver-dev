@@ -85,12 +85,12 @@ export default function LukessHomeCaseStudy() {
               </div>
 
               {/* Right Column: Image */}
-              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)]">
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)]">
                 <Image 
                   src="/images/projects/lukess-home/lukess-home_Home_page.png" 
                   alt="Lukess Home Architecture Challenge"
                   fill 
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </div>
@@ -182,101 +182,103 @@ export default function LukessHomeCaseStudy() {
       <VideoDemo />
 
       {/* SECTION D: Narrative screenshots */}
-      {/* Row 1 */}
-      <FadeUp delay={0.1}>
-        <div className="py-16 px-6">
-          <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group">
-              <Image 
-                src="/images/projects/lukess-home/lukess-home_Catalogo.png" 
-                alt="Product Catalog" 
-                fill 
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
-              />
-            </div>
-            <div>
-              <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
-                Product Catalog
-              </p>
-              <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
-                The catalog renders server-side with no client hydration delay. 26 SKUs across multiple categories, each with real-time stock status pulled directly from the database.
-              </p>
+      <div className="group/rows">
+        {/* Row 1 */}
+        <FadeUp delay={0.1}>
+          <div className="py-16 px-6 transition-opacity duration-500 group-hover/rows:opacity-50 hover:!opacity-100">
+            <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)] hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-accent)_12%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-home/lukess-home_Catalogo.png" 
+                  alt="Product Catalog" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+                  Product Catalog
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  The catalog renders server-side with no client hydration delay. 26 SKUs across multiple categories, each with real-time stock status pulled directly from the database.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </FadeUp>
+        </FadeUp>
 
-      {/* Row 2 */}
-      <FadeUp delay={0.1}>
-        <div className="py-16 px-6">
-          <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
-                URL-Based Filters
-              </p>
-              <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
-                Filter state lives in the URL — not in React state. A customer can share an exact filtered view via WhatsApp link. No JavaScript required to render the filtered results.
-              </p>
-            </div>
-            <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group order-1 md:order-2">
-              <Image 
-                src="/images/projects/lukess-home/lukess-home_catalogo_con_filtros.png" 
-                alt="URL-Based Filters" 
-                fill 
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
-              />
+        {/* Row 2 */}
+        <FadeUp delay={0.1}>
+          <div className="py-16 px-6 transition-opacity duration-500 group-hover/rows:opacity-50 hover:!opacity-100">
+            <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+                  URL-Based Filters
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  Filter state lives in the URL — not in React state. A customer can share an exact filtered view via WhatsApp link. No JavaScript required to render the filtered results.
+                </p>
+              </div>
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group order-1 md:order-2 transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)] hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-accent)_12%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-home/lukess-home_catalogo_con_filtros.png" 
+                  alt="URL-Based Filters" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </FadeUp>
+        </FadeUp>
 
-      {/* Row 3 */}
-      <FadeUp delay={0.1}>
-        <div className="py-16 px-6">
-          <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group">
-              <Image 
-                src="/images/projects/lukess-home/lukess-home_page_product.png" 
-                alt="Product Detail" 
-                fill 
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
-              />
-            </div>
-            <div>
-              <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
-                Product Detail
-              </p>
-              <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
-                Size selection is enforced before checkout — the add-to-cart button is disabled until a size is chosen. This eliminates the main source of wrong-size returns.
-              </p>
+        {/* Row 3 */}
+        <FadeUp delay={0.1}>
+          <div className="py-16 px-6 transition-opacity duration-500 group-hover/rows:opacity-50 hover:!opacity-100">
+            <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)] hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-accent)_12%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-home/lukess-home_page_product.png" 
+                  alt="Product Detail" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+                  Product Detail
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  Size selection is enforced before checkout — the add-to-cart button is disabled until a size is chosen. This eliminates the main source of wrong-size returns.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </FadeUp>
+        </FadeUp>
 
-      {/* Row 4 */}
-      <FadeUp delay={0.1}>
-        <div className="py-16 px-6">
-          <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
-                Cart & Checkout
-              </p>
-              <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
-                The cart validates stock in real time. If the last unit sells while a customer is reviewing their cart, they know before paying — not after.
-              </p>
-            </div>
-            <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group order-1 md:order-2">
-              <Image 
-                src="/images/projects/lukess-home/lukess-home_cart_drawer.png" 
-                alt="Cart & Checkout" 
-                fill 
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
-              />
+        {/* Row 4 */}
+        <FadeUp delay={0.1}>
+          <div className="py-16 px-6 transition-opacity duration-500 group-hover/rows:opacity-50 hover:!opacity-100">
+            <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <p className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+                  Cart & Checkout
+                </p>
+                <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed font-light">
+                  The cart validates stock in real time. If the last unit sells while a customer is reviewing their cart, they know before paying — not after.
+                </p>
+              </div>
+              <div className="relative aspect-[5/3] rounded-xl overflow-hidden border border-[var(--color-border)] group order-1 md:order-2 transition-all duration-500 hover:border-[color-mix(in_srgb,var(--color-accent)_40%,transparent)] hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-accent)_12%,transparent)]">
+                <Image 
+                  src="/images/projects/lukess-home/lukess-home_cart_drawer.png" 
+                  alt="Cart & Checkout" 
+                  fill 
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </FadeUp>
+        </FadeUp>
+      </div>
 
       {/* SECTION E: Mobile device showcase */}
       <FadeUp delay={0.1}>
@@ -288,7 +290,7 @@ export default function LukessHomeCaseStudy() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
               {/* Mobile Frame 1 */}
-              <div className="relative mx-auto w-full" style={{ maxWidth: "280px" }}>
+              <div className="relative mx-auto w-full active:scale-[0.98] transition-transform duration-150 cursor-zoom-in" style={{ maxWidth: "280px" }}>
                 <div className="rounded-[2rem] overflow-hidden border-2 border-[var(--color-border)] bg-[var(--color-surface)]">
                   <div className="flex items-center gap-1.5 px-4 py-3 border-b border-[var(--color-border)]">
                     <span className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--color-border)" }} />
@@ -307,7 +309,7 @@ export default function LukessHomeCaseStudy() {
               </div>
 
               {/* Mobile Frame 2 */}
-              <div className="relative mx-auto w-full" style={{ maxWidth: "280px" }}>
+              <div className="relative mx-auto w-full active:scale-[0.98] transition-transform duration-150 cursor-zoom-in" style={{ maxWidth: "280px" }}>
                 <div className="rounded-[2rem] overflow-hidden border-2 border-[var(--color-border)] bg-[var(--color-surface)]">
                   <div className="flex items-center gap-1.5 px-4 py-3 border-b border-[var(--color-border)]">
                     <span className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--color-border)" }} />

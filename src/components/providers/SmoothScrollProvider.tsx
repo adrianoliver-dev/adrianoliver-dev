@@ -2,6 +2,12 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 
+declare global {
+  interface Window {
+    __lenis?: Lenis;
+  }
+}
+
 export default function SmoothScrollProvider({
   children,
 }: {
@@ -13,6 +19,9 @@ export default function SmoothScrollProvider({
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     })
+
+    // Expose Lenis instance to window for external access (e.g., ScrollToTop)
+    window.__lenis = lenis
 
     function raf(time: number) {
       lenis.raf(time)
