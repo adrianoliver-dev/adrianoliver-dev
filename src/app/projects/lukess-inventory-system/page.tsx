@@ -6,6 +6,7 @@ import ProjectMetric from "@/components/projects/ProjectMetric";
 import FadeUp from "@/components/ui/FadeUp";
 import MagneticButton from "@/components/ui/MagneticButton";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import VideoDemo from "@/components/projects/VideoDemo";
 
 export const metadata: Metadata = {
   title: "Lukess Inventory | Enterprise ERP Case Study",
@@ -185,6 +186,9 @@ export default function LukessInventoryCaseStudy() {
           </div>
         </section>
       </FadeUp>
+      
+      {/* Video Demo Placeholder */}
+      <VideoDemo />
 
       {/* SECTION D: Narrative screenshots */}
       <div className="group/rows">

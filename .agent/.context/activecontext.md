@@ -10,16 +10,17 @@
 - **Status:** DONE (2026-03-19)
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B6.3
-- **Block Name:** Lukess Inventory Case Study Architectural Redesign
+- **Block Number:** B6.2d
+- **Block Name:** VideoDemo YouTube Embed Fix
 - **Completed Date:** 2026-03-19
-- **Commit:** feat(portfolio-b6.3-lukess-inventory): full redesign — narrative scroll, remove SQL, group dimming, 2-point infra, before/after results, no live link in hero
+- **Commit:** fix(portfolio-videodemo): youtube iframe embed support
 - **Files:**
-  - src/app/projects/lukess-inventory-system/page.tsx
-- **Summary:** Complete architectural redesign of the Lukess Inventory case study. Replaced technical SQL snippets with business-focused narrative. Implemented alternating narrative rows with group dimming hover focus and border glows. Simplified infrastructure section to two key points and applied a before/after visual treatment to results.
+  - src/components/projects/VideoDemo.tsx
+- **Summary:** Replaced native `<video>` element with a YouTube iframe in the `VideoDemo` component. Implemented a URL conversion utility to handle standard and shortened YouTube links and added support for autoplay, modestbranding, and related video parameters.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
+| B6.2d | VideoDemo YouTube Embed Fix              | DONE   | 2026-03-19 | fix(portfolio-videodemo): youtube embed |
 | B6.3  | Lukess Inventory Arch. Redesign          | DONE   | 2026-03-19 | feat(portfolio-b6.3-lukess-inventory): redesign |
 | B6.2c | Lukess Home Redesign Fixes (Hover/Scroll)| DONE   | 2026-03-19 | feat(portfolio-b6.2c-hover-effects): fixes |
 | B6.2b | Lukess Home Case Study Arch. Redesign    | DONE   | 2026-03-19 | feat(portfolio-b6.2b-lukess-home): redesign |
