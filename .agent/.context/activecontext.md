@@ -1,6 +1,6 @@
 # activecontext.md — adrianoliver.dev (Portfolio)
 **Last Updated:** 2026-03-20
-**Updated By:** Antigravity (B7.1 content complete)
+**Updated By:** Antigravity (B7.1b content & styling complete)
 
 ---
 
@@ -10,29 +10,29 @@
 - **Status:** PLANNED
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B7.1
-- **Block Name:** First Blog Content (Founder-Oriented)
+- **Block Number:** B7.1b
+- **Block Name:** Blog Post Styling & Images
 - **Completed Date:** 2026-03-20
-- **Commit:** feat(portfolio-b7.1-blog-post-1)
+- **Commit:** feat(portfolio-b7.1b-blog-prose)
 - **Files:**
+  - [MODIFY] package.json
+  - [MODIFY] src/app/globals.css
+  - [MODIFY] src/app/blog/[slug]/page.tsx
   - [MODIFY] src/content/blog/inventory-system-retail.mdx
-  - [MODIFY] src/app/blog/[slug]/opengraph-image.tsx
-- **Summary:** Published the first full-length blog post ("How We Replaced 3 Spreadsheets..."). Fixed a params-await bug in the OG image generator. Verified rendering, dynamic metadata, and JSON-LD schema via Browser Subagent.
+- **Summary:** Enhanced blog post visuals with premium prose CSS (typography plugin), added real project images and inline CTAs to the first blog post. Verified design on mobile/desktop via Browser Subagent.
 
 | Block | Name                                     | Status | Date       | Commit |
 |-------|------------------------------------------|--------|------------|--------|
+| B7.1b | [Styling & Images](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/[slug]/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1b-blog-prose) |
 | B7.1  | [Blog Post #1](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/content/blog/inventory-system-retail.mdx) | DONE | 2026-03-20 | feat(portfolio-b7.1-blog-post-1) |
 | B7.0  | [Blog Infrastructure Rebuild](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/lib/blog.ts) | DONE | 2026-03-20 | feat(portfolio-b7.0-blog-infrastructure) |
 | B6.B  | [Cursor & LCP Performance Refinement](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/ui/CustomCursor.tsx) | DONE | 2026-03-20 | fb0b337 |
 | B6.A | [Performance & Visuals](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/home/HeroAnimations.tsx) | DONE | 2026-03-20 | LCP fix |
-| B6.4  | Solnr Studio Case Study Polish           | DONE   | 2026-03-19 | feat(portfolio-b6.4-solnr): polish |
-| B6.3  | Lukess Inventory Arch. Redesign          | DONE   | 2026-03-19 | feat(portfolio-b6.3-lukess-inventory): redesign |
-| B6.2b | Lukess Home Case Study Arch. Redesign    | DONE   | 2026-03-19 | feat(portfolio-b6.2b-lukess-home): redesign |
 
 ## PROJECT STATE
 
 - **Repo:** adrianoliver-dev/adrianoliver-dev
-- **Stack Installed:** Next.js 15, TypeScript, Tailwind v4, Framer Motion, Vanilla Tilt, Resend, MDX libs, Lenis.
+- **Stack Installed:** Next.js 15, TypeScript, Tailwind v4, Framer Motion, Vanilla Tilt, Resend, MDX libs, Lenis, @tailwindcss/typography.
 - **MCPs Available:** GitHub, Supabase, Notion.
 
 ---

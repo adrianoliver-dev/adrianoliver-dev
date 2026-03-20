@@ -149,13 +149,31 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </FadeUp>
 
         <FadeUp delay={0.2}>
-          <div className="prose prose-invert prose-lg max-w-none 
-            prose-headings:font-serif prose-headings:font-normal 
-            prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline 
-            prose-pre:bg-[var(--color-surface)] prose-pre:border prose-pre:border-[var(--color-border)] 
-            prose-img:rounded-2xl prose-strong:text-[var(--color-text-primary)]
-            prose-code:text-[var(--color-accent)] prose-code:bg-[var(--color-surface)] prose-code:px-1 prose-code:rounded prose-code:before:content-[''] prose-code:after:content-['']"
-          >
+          <div className="
+            prose prose-invert max-w-none
+            prose-headings:font-serif prose-headings:font-normal
+            prose-headings:text-[var(--color-text-primary)]
+            prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6
+            prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4
+            prose-p:text-[var(--color-text-secondary)]
+            prose-p:text-lg prose-p:leading-[1.85]
+            prose-p:mb-8
+            prose-strong:text-[var(--color-text-primary)]
+            prose-strong:font-medium
+            prose-a:text-[var(--color-accent)]
+            prose-a:no-underline hover:prose-a:underline
+            prose-img:rounded-xl prose-img:border
+            prose-img:border-[var(--color-border)]
+            prose-ul:text-[var(--color-text-secondary)]
+            prose-ul:text-lg prose-li:mb-2
+            prose-ol:text-[var(--color-text-secondary)]
+            prose-blockquote:border-l-[var(--color-accent)]
+            prose-blockquote:text-[var(--color-text-secondary)]
+            prose-code:text-[var(--color-accent)]
+            prose-code:bg-[var(--color-surface)]
+            prose-code:px-1.5 prose-code:py-0.5
+            prose-code:rounded prose-code:text-sm
+          ">
             <MDXRemote source={post.content} />
           </div>
           

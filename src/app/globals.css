@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   /* Backgrounds */
@@ -206,3 +207,8 @@ button {
 }
 
 /* Removed redundant reduced motion block */
+
+.prose hr {
+  border-color: var(--color-border);
+  margin: 3rem 0;
+}
