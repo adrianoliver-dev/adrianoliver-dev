@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import FadeUp from '@/components/ui/FadeUp'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import CopyLinkButton from '@/components/blog/CopyLinkButton'
 
 export async function generateStaticParams() {
   const posts = getAllPosts()
@@ -143,6 +144,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <span className="font-mono text-xs text-[var(--color-text-primary)]">
                   {post.readingTime} min read
                 </span>
+              </div>
+              <div className="flex-grow" />
+              <div className="flex items-center">
+                <CopyLinkButton />
               </div>
             </div>
           </div>

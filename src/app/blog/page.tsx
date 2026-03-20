@@ -1,5 +1,6 @@
 import FadeUp from "@/components/ui/FadeUp"
 import Link from 'next/link'
+import Image from 'next/image'
 import { getAllPosts } from '@/lib/blog'
 
 export const metadata = {
@@ -34,6 +35,17 @@ export default function BlogPage() {
                 <Link prefetch={true} href={`/blog/${post.slug}`} className="group block">
                   <article className="relative grid grid-cols-1 md:grid-cols-[1fr_2.5fr] gap-8 pb-16 border-b border-[var(--color-border)] transition-colors group-hover:border-[var(--color-accent)]/20">
                     <div className="space-y-4">
+                      {/* Mobile Cover Image */}
+                      <div className="md:hidden relative w-full rounded-lg overflow-hidden mb-6 border border-[var(--color-border)] group" style={{ aspectRatio: '1200/630' }}>
+                        <Image
+                          src={`/blog/${post.slug}/opengraph-image`}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="100vw"
+                        />
+                      </div>
+                      
                       <time className="font-mono text-[10px] text-[var(--color-text-secondary)] uppercase tracking-wider block">
                         {new Date(post.date).toLocaleDateString("en-US", { 
                           month: "long", 
@@ -56,17 +68,30 @@ export default function BlogPage() {
                       </span>
                     </div>
 
-                    <div className="space-y-4">
-                      <h2 className="font-serif text-3xl md:text-4xl text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors duration-300">
-                        {post.title}
-                      </h2>
-                      <p className="text-[var(--color-text-secondary)] text-lg font-light leading-relaxed line-clamp-2">
-                        {post.excerpt}
-                      </p>
-                      
-                      <div className="flex items-center gap-2 text-[var(--color-accent)] font-mono text-xs uppercase tracking-widest pt-4">
-                        <span>Read article</span>
-                        <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
+                    <div className="space-y-6">
+                      {/* Desktop Cover Image */}
+                      <div className="hidden md:block relative w-full rounded-lg overflow-hidden border border-[var(--color-border)] group" style={{ aspectRatio: '1200/630' }}>
+                        <Image
+                          src={`/blog/${post.slug}/opengraph-image`}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </div>
+
+                      <div className="space-y-4">
+                        <h2 className="font-serif text-3xl md:text-4xl text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors duration-300">
+                          {post.title}
+                        </h2>
+                        <p className="text-[var(--color-text-secondary)] text-lg font-light leading-relaxed line-clamp-2">
+                          {post.excerpt}
+                        </p>
+                        
+                        <div className="flex items-center gap-2 text-[var(--color-accent)] font-mono text-xs uppercase tracking-widest pt-4">
+                          <span>Read article</span>
+                          <span className="transition-transform duration-300 group-hover:translate-x-2">→</span>
+                        </div>
                       </div>
                     </div>
                   </article>
