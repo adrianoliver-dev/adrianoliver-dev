@@ -1,37 +1,79 @@
-# Adrian Oliver
+Adrian Oliver — adrianoliver.dev
+Full-Stack Developer · E-Commerce & Inventory Systems
+About
+Adrian Oliver is a full-stack developer specialized in
+building e-commerce platforms and inventory management
+systems for apparel and retail brands.
+Stack: Next.js, TypeScript, Supabase, PostgreSQL,
+Tailwind CSS, Framer Motion, Resend, WhatsApp Meta API.
+Available for US and EU remote projects. Async-first.
+Contact: hello@adrianoliver.dev
+Profiles
 
-> Full-stack developer specializing in Next.js 15, TypeScript, and Supabase.
-> Building production-ready e-commerce platforms and business web applications
-> for US and EU remote clients. Async-first. GMT-4 timezone.
+Portfolio: https://adrianoliver.dev
+GitHub: https://github.com/adrianoliver-dev
+LinkedIn: https://www.linkedin.com/in/adrianoliver-dev
+X: https://x.com/adrianoliver_
+Upwork: https://www.upwork.com/freelancers/~0144ace41cb9797f02
 
-## Services
+Projects
+Lukess Home — Omnichannel E-Commerce Platform
+URL: https://adrianoliver.dev/projects/lukess-home
+Live: https://store.adrianoliver.dev
+Stack: Next.js, TypeScript, Supabase, Resend, WhatsApp Meta API
+Description: Full e-commerce system for a 4-location clothing
+retailer. Atomic PostgreSQL triggers preventing overselling
+across all locations simultaneously. 3 checkout methods
+(Stripe, QR bank transfer, cash pickup). 10 email templates
+via Resend. 9 WhatsApp Meta API approved templates.
+Real-time inventory sync. 99/100 PageSpeed desktop.
+Lukess Inventory — Custom ERP + POS System
+URL: https://adrianoliver.dev/projects/lukess-inventory-system
+Live: https://inventory.adrianoliver.dev
+Stack: Next.js, TypeScript, Supabase, PostgreSQL, Recharts
+Description: Enterprise ERP and POS for multi-location retail.
+19-table PostgreSQL schema with row-level security. 7-state
+order machine with automated email and WhatsApp notifications.
+3 roles (admin, manager, staff) enforced at the database level
+via RLS and Next.js Edge middleware. Recharts dashboards
+exportable to PDF and Excel. Immutable audit trail.
+Solnr Studio — Luxury E-Commerce (In Development)
+URL: https://adrianoliver.dev/projects/solnr-studio
+Description: Quiet luxury menswear e-commerce showcase.
+Editorial catalog, animated cart drawer, dark-mode-first
+design system. Stack: Next.js, Supabase, Tailwind CSS v4,
+Framer Motion.
+Blog Posts
+How We Replaced 3 Spreadsheets with a Real-Time Inventory System
+URL: https://adrianoliver.dev/blog/inventory-system-retail
+Published: 2026-03-13
+Tags: Inventory Management, Retail Systems, Supabase, PostgreSQL
+Summary: A 4-location clothing retailer replaced manual
+spreadsheets with a custom ERP built on PostgreSQL triggers
+that prevent overselling at the database level.
+Next.js vs Shopify for Apparel Brands: An Honest Comparison
+URL: https://adrianoliver.dev/blog/nextjs-vs-shopify-apparel
+Published: 2026-03-17
+Tags: Next.js, Shopify, E-Commerce, Architecture
+Summary: When a fully custom Next.js system beats Shopify
+for apparel brands — and when it doesn't. Covers multi-location
+inventory, performance, data ownership, and total cost.
+5 Checkout UX Mistakes That Kill Apparel E-Commerce Conversions
+URL: https://adrianoliver.dev/blog/ecommerce-checkout-ux
+Published: 2026-03-20
+Tags: E-Commerce, UX, Checkout, Conversion
+Summary: The five most common checkout mistakes in apparel
+e-commerce and how to fix them: forced registration, missing
+size guides, too many form fields, hidden shipping costs,
+and payment method mismatch.
+Services
 
-- E-Commerce Architecture: full-stack storefront systems, checkout flows,
-  order management, WhatsApp Meta API and Resend notification pipelines
-- Business Web Applications: POS systems, inventory management, RBAC dashboards,
-  real-time data sync with Supabase
-- Technical Consulting: architecture review, stack selection, system design
+Custom e-commerce development (Next.js + Supabase)
+Inventory and POS systems for multi-location retail
+Business web applications with real-time data and RBAC
+Technical consulting for retail and apparel brands
 
-## Stack
-
-- Framework: Next.js 15 App Router, React 19, TypeScript (strict)
-- Database: Supabase (PostgreSQL, RLS, Realtime), raw SQL, RPC
-- Styling: Tailwind CSS v4, Framer Motion (LazyMotion)
-- APIs: Resend (transactional email), WhatsApp Meta API
-- Deploy: Vercel (Edge, CI/CD)
-
-## Production Work
-
-- Lukess Home: https://adrianoliver.dev/work/lukess-home
-  Full e-commerce platform. Next.js 15 + Supabase + WhatsApp checkout.
-  Built solo in ~23 days. Live in production.
-
-- Lukess Inventory: https://adrianoliver.dev/work/lukess-inventory
-  Multi-role POS and inventory system. RBAC, real-time sync,
-  multi-location support. Built solo. Live in production.
-
-## Availability
-
-Open to new remote projects. Async-first workflow.
-Weekly milestones. GMT-4 timezone.
-Contact: adrianoliver.dev@gmail.com
+Contact
+Email: hello@adrianoliver.dev
+Portfolio: https://adrianoliver.dev/contact
+Response time: under 30 minutes during business hours GMT-4

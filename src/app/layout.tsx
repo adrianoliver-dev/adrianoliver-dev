@@ -11,6 +11,7 @@ import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
 import ClientSideProviders from '@/components/providers/ClientSideProviders'
 import CustomCursor from "@/components/ui/CustomCursor"
 import { Suspense } from "react"
+import ChatWidget from "@/components/chat/ChatWidget"
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://adrianoliver.dev'),
@@ -45,9 +46,9 @@ export const metadata: Metadata = {
       'Next.js · TypeScript · Supabase. Remote, async-first.',
     images: [
       {
-        url: 'https://adrianoliver.dev/favicon.svg',
-        width: 32,
-        height: 32,
+        url: 'https://adrianoliver.dev/icon.png',
+        width: 400,
+        height: 400,
         alt: 'Adrian Oliver',
       },
     ],
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     description:
       'Production-ready e-commerce and business web apps. ' +
       'Next.js · TypeScript · Supabase.',
-    images: ['/favicon.svg'],
+    images: ['/icon.png'],
   },
   robots: {
     index: true,
@@ -73,13 +74,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/icon.png', type: 'image/png', sizes: '400x400' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: '32x32' },
     ],
     apple: [
-      { url: '/favicon.svg' },
+      { url: '/apple-icon.png', type: 'image/png', sizes: '400x400' },
     ],
-    shortcut: '/favicon.svg',
+    shortcut: '/icon.png',
   },
 }
 
@@ -105,6 +106,9 @@ export default function RootLayout({
             </PageTransition>
           </main>
           <Footer />
+          <Suspense fallback={null}>
+            <ChatWidget />
+          </Suspense>
         </ClientSideProviders>
         <Analytics />
         <SpeedInsights />
@@ -119,29 +123,48 @@ export default function RootLayout({
                 '@type': 'Person',
                 name: 'Adrian Oliver',
                 url: 'https://adrianoliver.dev',
-                jobTitle: 'Full-Stack Developer',
-                description:
-                  'Full-stack developer specializing in Next.js, TypeScript, and Supabase. Building production-ready e-commerce and business web applications.',
+                email: 'hello@adrianoliver.dev',
+                jobTitle: 'E-Commerce & Inventory Systems Developer',
+                description: 'Full-stack developer building e-commerce platforms and inventory management systems for apparel and retail brands. Available for US and EU remote projects.',
+                sameAs: [
+                  'https://github.com/adrianoliver-dev',
+                  'https://www.linkedin.com/in/adrianoliver-dev',
+                  'https://x.com/adrianoliver_',
+                  'https://www.upwork.com/freelancers/~0144ace41cb9797f02',
+                  'https://adrianoliver.dev',
+                ],
                 knowsAbout: [
                   'Next.js',
                   'TypeScript',
                   'Supabase',
                   'PostgreSQL',
+                  'E-Commerce Development',
+                  'Inventory Management Systems',
                   'React',
                   'Tailwind CSS',
-                  'E-commerce Development',
-                  'Full-Stack Web Development',
                 ],
-                sameAs: ['https://github.com/adrianoliver-dev'],
+                worksFor: {
+                  '@type': 'Organization',
+                  name: 'Freelance',
+                },
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Santa Cruz de la Sierra',
+                  addressCountry: 'BO',
+                },
               },
               {
                 '@context': 'https://schema.org',
                 '@type': 'ProfessionalService',
-                name: 'Adrian Oliver — Dev & Freelance',
-                image: 'https://adrianoliver.dev/opengraph-image',
-                '@id': 'https://adrianoliver.dev',
+                name: 'Adrian Oliver — E-Commerce & Inventory Systems',
                 url: 'https://adrianoliver.dev',
-                telephone: '',
+                description: 'Custom e-commerce platforms and inventory management systems for apparel and retail brands. Built on Next.js and Supabase.',
+                image: 'https://adrianoliver.dev/icon.png',
+                email: 'hello@adrianoliver.dev',
+                founder: {
+                  '@type': 'Person',
+                  name: 'Adrian Oliver',
+                },
                 address: {
                   '@type': 'PostalAddress',
                   addressLocality: 'Santa Cruz de la Sierra',
@@ -166,14 +189,34 @@ export default function RootLayout({
                   closes: '18:00',
                 },
                 priceRange: '$$$',
-                offers: {
-                  '@type': 'Offer',
-                  itemOffered: {
-                    '@type': 'Service',
-                    name: 'Full-Stack Web Development',
-                    description: 'E-commerce platforms and business web applications.',
-                  },
-                  areaServed: ['US', 'EU'],
+                areaServed: ['US', 'EU', 'Worldwide'],
+                serviceType: [
+                  'E-Commerce Development',
+                  'Inventory System Architecture',
+                  'POS System Development',
+                  'Technical Consulting',
+                ],
+                hasOfferCatalog: {
+                  '@type': 'OfferCatalog',
+                  name: 'Development Services',
+                  itemListElement: [
+                    {
+                      '@type': 'Offer',
+                      itemOffered: {
+                        '@type': 'Service',
+                        name: 'Custom E-Commerce Platform',
+                        description: 'Full-stack storefront with real-time inventory, multiple checkout methods, and automated notifications.',
+                      },
+                    },
+                    {
+                      '@type': 'Offer',
+                      itemOffered: {
+                        '@type': 'Service',
+                        name: 'Inventory Management System',
+                        description: 'Custom ERP and POS for multi-location retail with RBAC, audit trail, and financial reporting.',
+                      },
+                    },
+                  ],
                 },
               },
             ]),

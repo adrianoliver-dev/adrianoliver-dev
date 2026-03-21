@@ -371,21 +371,29 @@ export default function LukessHomeCaseStudy() {
           </div>
 
           {/* SECTION H: CTAs */}
-          <div className="flex justify-center flex-col md:flex-row gap-6 items-center">
-            <MagneticButton
-              href="/contact"
-              className="bg-[var(--color-accent)] text-black px-8 py-4 text-sm font-medium hover:bg-amber-500 transition-all duration-300 shadow-[0_0_40px_rgba(217,119,6,0.2)] hover:shadow-[0_0_60px_rgba(217,119,6,0.3)] rounded-full"
-            >
-              Start your build
-            </MagneticButton>
-            <MagneticButton
-              href="https://lukess-home.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[var(--color-border)] text-[var(--color-text-primary)] px-8 py-4 text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors duration-200 rounded-full"
-            >
-              View live deployment →
-            </MagneticButton>
+          <div className="flex justify-center flex-col items-center">
+            <p className="font-mono text-xs text-center mb-6 max-w-sm"
+              style={{ color: "var(--color-text-secondary)" }}>
+              Demo store — products and prices are illustrative.
+              Built for a 4-location retailer in Santa Cruz, Bolivia.
+            </p>
+            
+            <div className="flex flex-col md:flex-row gap-6 items-center">
+              <MagneticButton
+                href="/contact"
+                className="bg-[var(--color-accent)] text-black px-8 py-4 text-sm font-medium hover:bg-amber-500 transition-all duration-300 shadow-[0_0_40px_rgba(217,119,6,0.2)] hover:shadow-[0_0_60px_rgba(217,119,6,0.3)] rounded-full"
+              >
+                Start your build
+              </MagneticButton>
+              <MagneticButton
+                href="https://lukess-home.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-[var(--color-border)] text-[var(--color-text-primary)] px-8 py-4 text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors duration-200 rounded-full"
+              >
+                View live deployment →
+              </MagneticButton>
+            </div>
           </div>
         </FadeUp>
       </section>

@@ -5,25 +5,29 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B8.1
-- **Block Name:** Outreach & Automation (Resend Integration)
-- **Status:** PLANNED
+- **Block Number:** B8.3
+- **Block Name:** AI Chatbot Widget UI
+- **Status:** DONE
+- **Completed Date:** 2026-03-21
 
 ## LAST COMPLETED BLOCK
-- **Block Number:** B7.3
-- **Block Name:** Blog Content Payload Completion
-- **Completed Date:** 2026-03-20
-- **Commit:** feat(portfolio-b7.3-blog-post-3)
+- **Block Number:** B8.3
+- **Block Name:** AI Chatbot Widget UI
+- **Completed Date:** 2026-03-21
+- **Commit:** fix(chat): trigger position, panel open bug, BrandMark trigger
 - **Files:**
-  - [MODIFY] src/content/blog/inventory-system-retail.mdx
-  - [MODIFY] src/content/blog/nextjs-vs-shopify-apparel.mdx
+  - [NEW] src/components/chat/ChatTrigger.tsx
+  - [NEW] src/components/chat/ChatMessage.tsx
+  - [NEW] src/components/chat/ChatWidget.tsx
   - [MODIFY] src/app/layout.tsx
-  - [NEW] src/content/blog/ecommerce-checkout-ux.mdx
-- **Summary:** Finalized the initial 3-post blog payload. Backdated previous posts for a natural timeline. Enhanced site-wide metadata with better favicon support and a temporary OG image fallback. Verified with successful static build of all blog routes.
+  - [MODIFY] package.json
+  - [MODIFY] src/app/api/chat/route.ts
+- **Summary:** Built a premium AI chatbot widget with a sidebar panel layout, streaming display, suggested questions, and BrandMark pill trigger. Fixed critical positioning bug (moved to bottom-right) and optimized `AnimatePresence` state management for reliable panel opening. Integrated `BrandMark` directly into the trigger button for a more branded visual.
 
-| Block | Name                                     | Status | Date       | Commit |
-|-------|------------------------------------------|--------|------------|--------|
-| B7.3  | [Payload Completion](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/content/blog/ecommerce-checkout-ux.mdx) | DONE | 2026-03-20 | feat(portfolio-b7.3-blog-post-3) |
+| B7.5h | Footer Hotfix      | DONE | 2026-03-21 | fix(footer): remove nav duplication |
+| B7.5  | [Footer & Banner](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/layout/Footer.tsx) | DONE | 2026-03-21 | feat(portfolio-b7.5-footer-social) |
+| B7.4  | [JSON-LD & Robots](file:///c:/AdrianOliver-dev/adrianoliver-dev/public/robots.txt) | DONE | 2026-03-21 | feat(portfolio-b7.4-jsonld-robots) |
+| B7.3a | [Favicon & LLMs](file:///c:/AdrianOliver-dev/adrianoliver-dev/public/llms.txt) | DONE | 2026-03-21 | feat(portfolio-b7.3a-favicon-llms) |
 | B7.2  | [Content Payload](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/content/blog/nextjs-vs-shopify-apparel.mdx) | DONE | 2026-03-20 | feat(portfolio-b7.2-blog-post-2) |
 | B7.1e | [Card Redesign](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1e-blog-cards) |
 | B7.1d | [Visuals & Share](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/app/blog/page.tsx) | DONE | 2026-03-20 | feat(portfolio-b7.1d-blog-covers) |
@@ -37,8 +41,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B8.1
-- **Block Name:** Outreach & Automation (Resend Integration)
+- **Block Number:** B8.4
+- **Block Name:** AI Chatbot Polishing & Mobile Optimization
 
 ---
 
