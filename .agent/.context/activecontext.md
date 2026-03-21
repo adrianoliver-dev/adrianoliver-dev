@@ -9,20 +9,16 @@
 - **Block Name:** AI Chatbot Widget UI
 - **Status:** DONE
 - **Completed Date:** 2026-03-21
-
-## LAST COMPLETED BLOCK
-- **Block Number:** B8.3
-- **Block Name:** AI Chatbot Widget UI
-- **Completed Date:** 2026-03-21
-- **Commit:** fix(chat): trigger position, panel open bug, BrandMark trigger
+- **Commit:** feat(portfolio-b8.3-chat-complete): Gemini 2.5 streaming, scroll fixes, fixed-height textarea
 - **Files:**
   - [NEW] src/components/chat/ChatTrigger.tsx
   - [NEW] src/components/chat/ChatMessage.tsx
   - [NEW] src/components/chat/ChatWidget.tsx
+  - [NEW] src/app/api/chat/route.ts
+  - [NEW] src/lib/chat-knowledge.ts
   - [MODIFY] src/app/layout.tsx
-  - [MODIFY] package.json
-  - [MODIFY] src/app/api/chat/route.ts
-- **Summary:** Built a premium AI chatbot widget with a sidebar panel layout, streaming display, suggested questions, and BrandMark pill trigger. Fixed critical positioning bug (moved to bottom-right) and optimized `AnimatePresence` state management for reliable panel opening. Integrated `BrandMark` directly into the trigger button for a more branded visual.
+  - [MODIFY] src/app/globals.css
+- **Summary:** Completed the AI chatbot integration (Block 8.3). Implemented a streaming RAG-style assistant using Gemini 2.5 Flash with sliding window history (20 messages). Designed a premium sidebar UI with `framer-motion` animations and a `BrandMark` pill trigger. Resolved critical scroll propagation issues caused by Lenis conflict using `data-lenis-prevent` and `isolation: isolate`. Finalized the input area with a 7-line fixed-height textarea (168px) for stable typing UX.
 
 | B7.5h | Footer Hotfix      | DONE | 2026-03-21 | fix(footer): remove nav duplication |
 | B7.5  | [Footer & Banner](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/layout/Footer.tsx) | DONE | 2026-03-21 | feat(portfolio-b7.5-footer-social) |
