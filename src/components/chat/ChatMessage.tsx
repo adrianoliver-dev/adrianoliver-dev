@@ -23,19 +23,19 @@ export default function ChatMessage({ message }: ChatMessageProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.2 }}
-      className={`flex ${isAssistant ? 'justify-start' : 'justify-end'} w-full`}
+      className={`flex \${isAssistant ? 'justify-start' : 'justify-end'} w-full`}
     >
       <div
         className={`
           max-w-[85%] px-4 py-3 text-sm
-          ${isAssistant 
+          \${isAssistant 
             ? 'bg-[var(--color-background)] border border-[var(--color-border)] text-[var(--color-text-secondary)] rounded-2xl rounded-bl-sm font-sans' 
             : 'bg-[color-mix(in_srgb,var(--color-accent)_10%,transparent)] border border-[color-mix(in_srgb,var(--color-accent)_30%,transparent)] text-[var(--color-text-primary)] rounded-2xl rounded-br-sm font-sans'
           }
         `}
       >
         <div className="whitespace-pre-wrap leading-relaxed">
-          {message.content}
+          {renderContent(message.content)}
           {message.streaming && (
             <m.span
               animate={{ opacity: [1, 0] }}
@@ -49,6 +49,27 @@ export default function ChatMessage({ message }: ChatMessageProps) {
       </div>
     </m.div>
   )
+}
+
+function renderContent(content: string) {
+  const parts = content.split(/(adrianoliver\\.dev\\/[^\\s]+)/g)
+  return parts.map((part, i) => {
+    if (part.match(/^adrianoliver\\.dev\\//)) {
+      return (
+        <a
+          key={i}
+          href={`https://\${part}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-dotted hover:no-underline transition-all"
+          style={{ color: 'var(--color-accent)' }}
+        >
+          {part}
+        </a>
+      )
+    }
+    return <span key={i}>{part}</span>
+  })
 }
 
 export function TypingIndicator() {
