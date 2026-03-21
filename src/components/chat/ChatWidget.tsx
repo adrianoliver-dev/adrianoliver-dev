@@ -16,9 +16,9 @@ interface Message {
 }
 
 const SUGGESTED_QUESTIONS = [
+  "What projects have you built?",
   "How did you prevent overselling in Lukess?",
-  "What would a custom inventory system cost?",
-  "Can you work with US/EU clients remotely?",
+  "What would a custom e-commerce system cost?",
 ]
 
 export default function ChatWidget() {
@@ -50,7 +50,7 @@ export default function ChatWidget() {
         setMessages([{
           id: 'welcome',
           role: 'assistant',
-          content: "Hey 👋 I'm Adrian's AI — I know his projects inside out.\\n\\nAsk me anything: how the inventory system prevents overselling, what a project would cost, or whether Adrian's available for your timeline.",
+          content: "Hey! I know Adrian's work inside out — his projects, stack, blog posts, and how he works.\\n\\nAsk me anything, whether you're a founder with a retail problem, a developer curious about the architecture, or a recruiter evaluating fit.",
           streaming: false,
         }])
       }, 600)
@@ -276,6 +276,20 @@ export default function ChatWidget() {
                     <ChatMessage key={m.id} message={m} />
                   ))}
                 </AnimatePresence>
+
+                {messages.length === 1 && messages[0].id === 'welcome' && (
+                  <div className="flex flex-col gap-2 px-4 pb-2">
+                    {SUGGESTED_QUESTIONS.map((q, i) => (
+                      <button
+                        key={i}
+                        onClick={() => handleSend(q)}
+                        className="text-left p-3 text-xs font-mono border border-[var(--color-border)] rounded-xl hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all active:scale-95"
+                      >
+                        {q}
+                      </button>
+                    ))}
+                  </div>
+                )}
 
                 {isLoading && messages[messages.length - 1]?.role === 'user' && (
                   <TypingIndicator />
