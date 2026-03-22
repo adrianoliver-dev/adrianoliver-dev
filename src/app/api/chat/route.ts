@@ -7,6 +7,56 @@ export const runtime = 'edge'
 // Simple in-memory rate limiter
 const requestCounts = new Map<string, { count: number; resetTime: number }>()
 
+const MODELS = ['gemini-2.5-flash', 'gemini-2.5-flash-lite']
+
+interface ChatMessage {
+  role: string
+  content: string
+}
+
+async function tryWithFallback(ai: GoogleGenAI, sanitizedMessages: ChatMessage[], systemPrompt: string) {
+  for (const model of MODELS) {
+    try {
+      const history = sanitizedMessages
+        .slice(0, -1)
+        .map((msg: { role: string; content: string }) => ({
+          role: msg.role,
+          parts: [{ text: msg.content }],
+        }))
+
+      const lastMessage = sanitizedMessages[sanitizedMessages.length - 1]
+
+      const chat = ai.chats.create({
+        model,
+        config: {
+          systemInstruction: systemPrompt,
+          maxOutputTokens: 1024,
+          temperature: 0.7,
+        },
+        history,
+      })
+      
+      const response = await chat.sendMessageStream({
+        message: lastMessage.content,
+      })
+      
+      return response
+    } catch (error) {
+      const err = error as { status?: number; message?: string }
+      const isRateLimit = err?.status === 429 || 
+        err?.message?.toLowerCase().includes('quota') ||
+        err?.message?.toLowerCase().includes('rate')
+      
+      if (isRateLimit && model !== MODELS[MODELS.length - 1]) {
+        console.warn(`Rate limit hit on \${model}, falling back to next...`)
+        continue // try next model
+      }
+      throw error
+    }
+  }
+  throw new Error('All models failed')
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json()
@@ -52,30 +102,7 @@ export async function POST(req: NextRequest) {
 
     const ai = new GoogleGenAI({ apiKey })
 
-    // Convert messages to Gemini format
-    // Filter out system prompt if it exists in history, we'll use systemInstruction instead
-    const history = sanitizedMessages
-      .slice(0, -1)
-      .map((msg: { role: string; content: string }) => ({
-        role: msg.role,
-        parts: [{ text: msg.content }],
-      }))
-
-    const lastMessage = sanitizedMessages[sanitizedMessages.length - 1]
-
-    const chat = ai.chats.create({
-      model: 'gemini-2.5-flash',
-      config: {
-        systemInstruction: PORTFOLIO_SYSTEM_PROMPT,
-        maxOutputTokens: 1024,
-        temperature: 0.7,
-      },
-      history,
-    })
-
-    const response = await chat.sendMessageStream({
-      message: lastMessage.content,
-    })
+    const response = await tryWithFallback(ai, sanitizedMessages, PORTFOLIO_SYSTEM_PROMPT)
 
     const stream = new ReadableStream({
       async start(controller) {
@@ -105,8 +132,11 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error('Chat API error:', error)
     return new Response(
-      JSON.stringify({ error: 'Internal Server Error' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
+      "I'm at capacity right now — please try again in a few minutes, or reach Adrian directly at hello@adrianoliver.dev",
+      { 
+        status: 200, // return 200 so the frontend displays it as a message
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+      }
     )
   }
 }
