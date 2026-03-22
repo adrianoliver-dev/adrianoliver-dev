@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import * as m from 'framer-motion/m'
 
 interface Message {
@@ -33,6 +34,7 @@ export default function ChatMessage({ message }: ChatMessageProps) {
             : 'bg-[color-mix(in_srgb,var(--color-accent)_10%,transparent)] border border-[color-mix(in_srgb,var(--color-accent)_30%,transparent)] text-[var(--color-text-primary)] rounded-2xl rounded-br-sm font-sans'
           }
         `}
+        style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
       >
         <div className="whitespace-pre-wrap leading-relaxed">
           {renderContent(message.content)}
@@ -52,13 +54,31 @@ export default function ChatMessage({ message }: ChatMessageProps) {
 }
 
 function renderContent(content: string) {
-  const parts = content.split(/(adrianoliver\\.dev\\/[^\\s]+)/g)
+  const urlRegex = /(https?:\/\/[^\s]+|adrianoliver\.dev\/[^\s]+)/g
+  const parts = content.split(urlRegex)
+  
   return parts.map((part, i) => {
-    if (part.match(/^adrianoliver\\.dev\\//)) {
+    // Internal portfolio link
+    const internalMatch = part.match(/^(?:https?:\/\/)?adrianoliver\.dev(\/[^\s]*)/)
+    if (internalMatch) {
+      const path = internalMatch[1] || '/'
+      return (
+        <Link
+          key={i}
+          href={path}
+          className="underline decoration-dotted hover:no-underline transition-all"
+          style={{ color: 'var(--color-accent)' }}
+        >
+          {part}
+        </Link>
+      )
+    }
+    // External link
+    if (part.match(/^https?:\/\//)) {
       return (
         <a
           key={i}
-          href={`https://\${part}`}
+          href={part}
           target="_blank"
           rel="noopener noreferrer"
           className="underline decoration-dotted hover:no-underline transition-all"
