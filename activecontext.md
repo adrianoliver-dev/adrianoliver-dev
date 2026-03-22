@@ -17,7 +17,7 @@
 ## PROJECT STATE
 
 - **Repo:** adrianoliver-dev/adrianoliver-dev
-- **Stack Installed:** Next.js 15, TypeScript, Tailwind v4, Framer Motion, Vanilla Tilt, Resend, MDX libs, Lenis.
+- **Stack Installed:** Next.js, TypeScript, Tailwind v4, Framer Motion, Vanilla Tilt, Resend, MDX libs, Lenis.
 - **MCPs Available:** GitHub, Supabase, Notion.
 
 ---

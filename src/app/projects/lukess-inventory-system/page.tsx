@@ -10,13 +10,13 @@ import VideoDemo from "@/components/projects/VideoDemo";
 
 export const metadata: Metadata = {
   title: "Lukess Inventory | Enterprise ERP Case Study",
-  description: "Advanced inventory management and POS system built with Next.js 15 and Supabase.",
+  description: "Advanced inventory management and POS system built with Next.js and Supabase.",
 };
 
 export default function LukessInventoryCaseStudy() {
   const metadata = [
     { label: "Role",   value: "Systems Architect" },
-    { label: "Stack",  value: "Next.js 15 · TypeScript · Supabase · Recharts" },
+    { label: "Stack",  value: "Next.js · TypeScript · Supabase · Recharts" },
     { label: "Type",   value: "Internal ERP / POS" },
     { label: "Access", value: "Role-gated — 3 permission levels" },
   ];
@@ -106,7 +106,7 @@ export default function LukessInventoryCaseStudy() {
                 The backend utilizes Supabase (PostgreSQL) as the source of truth, leveraging Row Level Security (RLS) to enforce data boundaries between storefronts and warehouse staff. Every transaction is auditable, and permissions are managed dynamically based on staff roles.
               </p>
               <p>
-                The frontend is built with Next.js 15, providing a low-latency Point of Sale interface that remains high-performing even on basic tablet hardware used in physical retail locations. Real-time observability through Recharts dashboards gives the owner instant financial clarity.
+                The frontend is built with Next.js, providing a low-latency Point of Sale interface that remains high-performing even on basic tablet hardware used in physical retail locations. Real-time observability through Recharts dashboards gives the owner instant financial clarity.
               </p>
             </div>
           </div>

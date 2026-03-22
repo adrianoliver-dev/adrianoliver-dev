@@ -2,11 +2,11 @@
 
 **High-performance e-commerce and inventory systems for apparel and retail brands.**
 
-This is the source code for my personal portfolio, built to showcase measurable results and technical depth for US/EU freelance clients.
+This is the source code for my personal portfolio, built to showcase measurable results and technical depth for international freelance clients.
 
 ## 🚀 Stack
 
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router, Server Components)
+- **Framework:** [Next.js](https://nextjs.org/) (App Router, Server Components)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Database / Auth:** [Supabase](https://supabase.com/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/) (LazyMotion), [Lenis](https://lenis.darkroom.engineering/) (Smooth Scroll)

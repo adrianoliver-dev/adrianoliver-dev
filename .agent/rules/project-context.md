@@ -9,14 +9,14 @@ trigger: always_on
 - **Repo:** adrianoliver-dev/adrianoliver-dev
 - **Live Domain:** https://adrianoliver.dev
 - **Developer:** Adrian Oliver — Full-Stack Developer (Santa Cruz de la Sierra, Bolivia)
-- **Goal:** Use this portfolio as main asset to reach $800+/month remote freelance income (US/EU) in <= 5 months.
-- **Target Clients:** SMB owners, startup founders, technical leads in US/EU looking for:
+- **Goal:** Use this portfolio as main asset to reach $800+/month remote freelance income in <= 5 months.
+- **Target Clients:** SMB owners, startup founders, technical leads looking for:
   - High-performance e-commerce
   - Custom business dashboards (inventory / POS / internal tools)
 
 ## Tech Stack (MANDATORY)
 
-- **Framework:** Next.js 15 App Router (React Server Components by default)
+- **Framework:** Next.js App Router (React Server Components by default)
 - **Language:** TypeScript strict (no `any`, no implicit `any`)
 - **Styling:** Tailwind CSS v4 (Oxide, `@theme` config, no `tailwind.config.js`)
 - **Animations:** Framer Motion (LazyMotion + `domAnimation` + `m.*`), CSS transitions, Vanilla Tilt

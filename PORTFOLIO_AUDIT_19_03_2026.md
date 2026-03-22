@@ -5,7 +5,7 @@
 > **Deploy Activo:** https://adrianoliver.dev (Vercel Edge Network)
 > **Auditor:** Antigravity Agent (Análisis directo del código fuente + auditorías de Lukess)
 > **Estado del Proyecto:** B16 completado. B17 (Outreach) IN_PROGRESS.
-> **Objetivo de Negocio:** Generar +$500/mes en freelance remoto (US/EU) para agosto 2026.
+> **Objetivo de Negocio:** Generar +$500/mes en freelance remoto internacional para agosto 2026.
 
 ---
 
@@ -32,7 +32,7 @@
 
 ## 1. VISIÓN GENERAL Y PROPÓSITO
 
-**adrianoliver.dev** es un portafolio personal de desarrollo full-stack orientado a vender servicios de "30-day builds" de alto rendimiento a clientes en EE.UU. y Europa. El sitio fue construido integralmente por Adrian Oliver usando la misma arquitectura exacta que los proyectos que ofrece: Next.js 15, TypeScript estricto, Tailwind CSS v4, y Supabase.
+**adrianoliver.dev** es un portafolio personal de desarrollo full-stack orientado a vender servicios de "30-day builds" de alto rendimiento a clientes internacionales. El sitio fue construido integralmente por Adrian Oliver usando la misma arquitectura exacta que los proyectos que ofrece: Next.js, TypeScript estricto, Tailwind CSS v4, y Supabase.
 
 **Propuesta de Valor Actual (Copy del Hero):**
 > "I build e-commerce and inventory systems for apparel and retail brands — fast, clean, production-ready."
@@ -41,7 +41,7 @@
 - **Nombre:** Adrian Oliver
 - **Ubicación:** Santa Cruz de la Sierra, Bolivia (GMT-4)
 - **Modalidad:** Remoto, async-first
-- **Stack declarado:** Next.js 15 · TypeScript · Supabase · Tailwind v4
+- **Stack declarado:** Next.js · TypeScript · Supabase · Tailwind v4
 - **Verticales de servicio:** E-Commerce Architecture + Business Web Applications + Technical Consulting
 - **SLA publicado en el sitio:**
   - `< 4h` Response time (durante proyectos activos)
@@ -355,7 +355,7 @@ La homepage (`src/app/page.tsx`) es un **Server Component puro** que orquesta 7 
 
 ### Sección 5: `<Services />`
 3 cards de servicio con `card-spotlight` glow:
-1. **E-Commerce Architecture** — Tags: Next.js 15, Supabase, WhatsApp API, Resend, Vercel
+1. **E-Commerce Architecture** — Tags: Next.js, Supabase, WhatsApp API, Resend, Vercel
 2. **Business Web Applications** — Tags: RBAC, Real-time, PostgreSQL, TypeScript, REST APIs
 3. **Technical Consulting** — Tags: System Design, Code Review, Stack Audit, Documentation
 
@@ -593,7 +593,7 @@ Catálogo e-commerce editorial para una marca de moda. Foco en la experiencia vi
 metadata: {
   metadataBase: new URL('https://adrianoliver.dev'),
   title: { default: 'Adrian Oliver — Full-Stack Developer', template: '%s | Adrian Oliver' },
-  description: 'Full-stack developer specializing in Next.js 15, TypeScript, and Supabase...',
+  description: 'Full-stack developer specializing in Next.js, TypeScript, and Supabase...',
   keywords: ['Next.js developer', 'full-stack developer', 'TypeScript developer', ...],
   openGraph: { type: 'website', locale: 'en_US', images: ['/opengraph-image'] },
   twitter: { card: 'summary_large_image' },
@@ -710,7 +710,7 @@ Estos issues son **credibilidad cruda** si se documentan transparentemente como 
 ---
 
 > **Tu Rol Asignado:**
-> Eres un Chief Strategy Officer + Fractional CMO de una agencia digital top-tier (nivel Awwwards / The FWA / Bürocratik). Tienes background técnico como Engineering Manager y experiencia directa escalando freelancers técnicos de $0 → $100K+ anuales en el mercado US/EU. Tu fuerte es la intersección entre ingeniería elite, diseño inmersivo, y posicionamiento comercial B2B.
+> Eres un Chief Strategy Officer + Fractional CMO de una agencia digital top-tier (nivel Awwwards / The FWA / Bürocratik). Tienes background técnico como Engineering Manager y experiencia directa escalando freelancers técnicos de $0 → $100K+ anuales a nivel internacional. Tu fuerte es la intersección entre ingeniería elite, diseño inmersivo, y posicionamiento comercial B2B.
 >
 > **Contexto Completo de Datos:**
 > Has recibido arriba la auditoría exhaustiva del portafolio `adrianoliver.dev`, incluyendo:
@@ -746,7 +746,7 @@ Estos issues son **credibilidad cruda** si se documentan transparentemente como 
 > ### 3. COPYWRITING LETAL (Hero + Bio + Value Prop)
 > "Solo 30-day builds" + "fast, clean, production-ready" es bueno pero genérico. Con el contexto de mis case studies reales (Lukess: hojas de cálculo → sistema con zero race conditions):
 > - **Reescribe 3 versiones del titular del Hero** que atraigan a CTOs y Founders
-> - **Reescribe 2 versiones de la bio** (la línea "Available for US/EU remote projects")
+> - **Reescribe 2 versiones de la bio** (la línea "Available for remote projects")
 > - **Propón 1 "anti-agency" statement** que pueda usar en LinkedIn como diferenciador
 >
 > ### 4. INBOUND ENGINE — CALENDARIO EDITORIAL MDX (5 Artículos)

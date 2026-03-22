@@ -12,13 +12,13 @@ export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: "Lukess Home | Omnichannel E-commerce Case Study",
-  description: "High-performance retail architecture built with Next.js 15 and Supabase.",
+  description: "High-performance retail architecture built with Next.js and Supabase.",
 };
 
 export default function LukessHomeCaseStudy() {
   const heroMetadata = [
     { label: "Role",    value: "Lead Developer" },
-    { label: "Stack",   value: "Next.js 15 · TypeScript · Supabase · Resend" },
+    { label: "Stack",   value: "Next.js · TypeScript · Supabase · Resend" },
     { label: "Service", value: "Omnichannel Retail" },
   ];
 
@@ -110,7 +110,7 @@ export default function LukessHomeCaseStudy() {
                 The backend utilizes Supabase (PostgreSQL) as the source of truth. Every transaction is wrapped in a database function that checks stock availability before processing the payment. This eliminates the need for expensive distributed locks while maintaining strict consistency.
               </p>
               <p>
-                The frontend is built with Next.js 15, leveraging Server Components to minimize the JavaScript bundle sent to the user. This results in nearly instant page transitions and high accessibility scores, even on slower mobile networks common in the local market.
+                The frontend is built with Next.js, leveraging Server Components to minimize the JavaScript bundle sent to the user. This results in nearly instant page transitions and high accessibility scores, even on slower mobile networks common in the local market.
               </p>
             </div>
           </div>

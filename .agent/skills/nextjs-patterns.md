@@ -2,7 +2,7 @@
 trigger: always_on
 ---
 
-# Skill: Next.js 15 App Router Patterns — adrianoliver.dev
+# Skill: Next.js App Router Patterns — adrianoliver.dev
 
 ## Server vs Client Components
 
@@ -57,7 +57,7 @@ typescript
 // Example: app/projects/lukess-home/page.tsx
 export const metadata = {
   title: "Lukess Home — Case Study",
-  description: "Full-stack e-commerce built in 30 days with Next.js 15 and Supabase."
+  description: "Full-stack e-commerce built in 30 days with Next.js and Supabase."
 }
 Image Handling
 ALWAYS use next/image (Image from "next/image").

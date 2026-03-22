@@ -36,7 +36,7 @@ export default function Contact() {
               <div className="flex flex-col text-center md:text-left">
                 <div className="font-mono text-3xl text-accent font-bold">{"< 30 min"}</div>
                 <div className="font-mono text-[10px] text-text-primary uppercase tracking-widest mt-2">Response time</div>
-                <div className="font-mono text-[10px] text-text-secondary uppercase mt-1">during business hours (GMT-4)</div>
+                <div className="font-mono text-[10px] text-text-secondary uppercase mt-1">during business hours</div>
               </div>
               
               <div className="flex flex-col text-center md:text-left">

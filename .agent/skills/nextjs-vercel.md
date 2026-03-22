@@ -1,7 +1,7 @@
 ---
 trigger: model_decision
 name: nextjs-vercel
-description: Patterns and best practices for deploying Next.js 15 App Router applications on Vercel. Focuses on edge functions, image optimization, analytics, and performance.
+description: Patterns and best practices for deploying Next.js App Router applications on Vercel. Focuses on edge functions, image optimization, analytics, and performance.
 risk: safe
 source: community
 date_added: '2026-03-11'
@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
 
 ### 4. Cache & ISR (Incremental Static Regeneration)
 
-Next.js 15 App Router caching on Vercel:
+Next.js App Router caching on Vercel:
 - Pages are static by default.
 - Use `export const revalidate = 3600;` for ISR (revalidates every hour).
 - Use `export const dynamic = 'force-dynamic';` only if absolutely needed for real-time uncacheable data.
