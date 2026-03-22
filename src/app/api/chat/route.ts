@@ -9,8 +9,8 @@ const requestCounts = new Map<string, { count: number; resetTime: number }>()
 
 const MODELS = [
   'gemini-2.5-flash',
-  'gemini-3.1-flash-lite-preview', // 500 RPD free, launched March 3 2026
-  'gemini-2.5-flash-lite',         // last resort
+  'gemini-2.5-flash-lite',
+  'gemini-3.1-flash-lite-preview',
 ]
 
 interface ChatMessage {

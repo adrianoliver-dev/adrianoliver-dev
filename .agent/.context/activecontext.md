@@ -58,7 +58,7 @@
 | B4.5  | Personal brand mark            | DONE         | 2026-03-19 | feat(portfolio-b4.5) |
 | B4.5b | Brand assets export page       | DONE         | 2026-03-19 | feat(portfolio-b4.5b) |
 | B5.8  | Copy Audit Fixes + Hotfix     | DONE         | 2026-03-19 | feat(portfolio-b5.8) |
-| B8.5 | Chatbot Final Reliability & UX Fixes | DONE | 2026-03-22 | feat(portfolio-b8.5-chat-complete) |
+| B8.5 | Chatbot Final Reliability & UX Fixes | DONE | 2026-03-22 | fix(chat-final) |
 | B8.4 | AI Chatbot Reliability & Tone | DONE | 2026-03-22 | feat(portfolio-b8.4-chat-enhanced) |
 | B8.3 | AI Chatbot Widget UI | DONE | 2026-03-21 | feat(portfolio-b8.3-chat-complete) |
 | B7.1h | [Footer & Banner](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/layout/Footer.tsx) | DONE | 2026-03-21 | feat(portfolio-b7.5-footer-social) |
