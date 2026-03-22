@@ -11,12 +11,28 @@ interface Message {
   streaming?: boolean
 }
 
+// Clean URL regex — stops at space, ), ], common trailing punctuation
+// but allows dots in the middle of URLs
+const KNOWN_EXTERNAL_DOMAINS = [
+  'github.com',
+  'linkedin.com',
+  'x.com',
+  'upwork.com',
+  'twitter.com',
+]
+
+function isKnownExternalDomain(url: string): boolean {
+  return KNOWN_EXTERNAL_DOMAINS.some(domain => 
+    url.startsWith(domain) || url.startsWith('www.' + domain)
+  )
+}
+
 function renderTextWithLinks(text: string, keyPrefix: string): React.ReactNode[] {
   const result: React.ReactNode[] = []
   
   // Step 1: Process markdown links [label](url) FIRST
   // This regex matches [any text](url) — the most complete pattern
-  const mdLinkRegex = /\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g
+  const mdLinkRegex = /\[([^\]]+)\]\(([^\)]+)\)/g
   let lastIndex = 0
   let match
   
@@ -28,7 +44,7 @@ function renderTextWithLinks(text: string, keyPrefix: string): React.ReactNode[]
     }
     
     const label = match[1]
-    const url = match[2]
+    let url = match[2]
     const isInternal = url.includes('adrianoliver.dev')
     
     if (isInternal) {
@@ -41,6 +57,9 @@ function renderTextWithLinks(text: string, keyPrefix: string): React.ReactNode[]
         </Link>
       )
     } else {
+      if (!url.startsWith('http') && isKnownExternalDomain(url)) {
+        url = `https://${url}`
+      }
       result.push(
         <a key={`${keyPrefix}-ml${match.index}`} href={url}
           target="_blank" rel="noopener noreferrer"
@@ -67,7 +86,7 @@ function renderTextWithLinks(text: string, keyPrefix: string): React.ReactNode[]
 function renderBareUrls(text: string, keyPrefix: string): React.ReactNode[] {
   // Matches URLs, stops before ), ], common trailing punctuation
   // But allows dots in the MIDDLE of the URL
-  const bareUrlRegex = /(?<!\()(?<!\[)((?:https?:\/\/)?adrianoliver\.dev\/[^\s\)\]\.,`*]+|https?:\/\/[^\s\)\]\.,`*]+)/g
+  const bareUrlRegex = /(?<!\()(?<!\[)((?:https?:\/\/)?adrianoliver\.dev\/[^\s\)\]\.,`*]+|https?:\/\/[^\s\)\]\.,`*]+|(?:www\.)?(?:github\.com|linkedin\.com|x\.com|upwork\.com|twitter\.com)\/[^\s\)\]\.,`*]+)/g
   const parts = text.split(bareUrlRegex)
   
   return parts.map((part, i) => {
@@ -81,6 +100,19 @@ function renderBareUrls(text: string, keyPrefix: string): React.ReactNode[] {
         </Link>
       )
     }
+
+    // Known external domain without https://
+    if (!part.startsWith('http') && isKnownExternalDomain(part)) {
+      return (
+        <a key={`${keyPrefix}-${i}`} href={`https://${part}`}
+          target="_blank" rel="noopener noreferrer"
+          className="underline decoration-dotted hover:no-underline font-mono text-xs"
+          style={{ color: 'var(--color-accent)' }}>
+          {part}
+        </a>
+      )
+    }
+
     if (part.match(/^https?:\/\//)) {
       return (
         <a key={`${keyPrefix}-${i}`} href={part}
@@ -110,18 +142,19 @@ function parseMarkdown(content: string): React.ReactNode[] {
   const result: React.ReactNode[] = []
   let listBuffer: React.ReactNode[] = []
   let isNumbered = false
+  let keyCounter = 0
 
   const flushList = () => {
     if (listBuffer.length === 0) return
     if (isNumbered) {
       result.push(
-        <ol key={result.length} style={{ paddingLeft: '1.25rem', margin: '4px 0', listStyleType: 'decimal' }}>
+        <ol key={`list-${keyCounter++}`} style={{ paddingLeft: '1.25rem', margin: '4px 0', listStyleType: 'decimal' }}>
           {listBuffer}
         </ol>
       )
     } else {
       result.push(
-        <ul key={result.length} style={{ paddingLeft: '1.25rem', margin: '4px 0', listStyleType: 'disc' }}>
+        <ul key={`list-${keyCounter++}`} style={{ paddingLeft: '1.25rem', margin: '4px 0', listStyleType: 'disc' }}>
           {listBuffer}
         </ul>
       )

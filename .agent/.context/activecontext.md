@@ -9,13 +9,13 @@
 - **Block Name:** Chatbot Final Reliability & UX Fixes
 - **Status:** DONE
 - **Completed Date:** 2026-03-22
-- **Commit:** feat(portfolio-b8.5-chat-complete): final stability and accuracy fixes
+- **Commit:** fix(chat): md link parser, plain URL instructions, model order 3.1-first, Clear/X button styling, bigger scroll arrow
 - **Files:**
-  - [MODIFY] src/app/api/chat/route.ts
-  - [MODIFY] src/lib/chat-knowledge.ts
-  - [MODIFY] src/components/chat/ChatWidget.tsx
   - [MODIFY] src/components/chat/ChatMessage.tsx
-- **Summary:** Finalized Block 8.5 with stability and accuracy fixes. Sanitized session persistence messaging, implemented custom markdown/link parsing, and completed a truthfulness audit of the knowledge base (PageSpeed, Upwork, Projects). Verified with 0 build/lint errors.
+  - [MODIFY] src/lib/chat-knowledge.ts
+  - [MODIFY] src/app/api/chat/route.ts
+  - [MODIFY] src/components/chat/ChatWidget.tsx
+- **Summary:** Completed final fixes for Block 8.5: custom markdown/link parsing, link syntax instructions, model priority, and chat widget button styling. Verified with 0 build/lint errors.
 - **Next Block:** B8.6 — Final UI/UX Polish & Copy Audit
 
 | B7.5h | Footer Hotfix      | DONE | 2026-03-21 | fix(footer): remove nav duplication |
