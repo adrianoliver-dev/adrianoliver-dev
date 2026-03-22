@@ -8,9 +8,9 @@ export const runtime = 'edge'
 const requestCounts = new Map<string, { count: number; resetTime: number }>()
 
 const MODELS = [
-  'gemini-2.5-flash',
-  'gemini-2.5-flash-lite',
-  'gemini-3.1-flash-lite-preview',
+  'gemini-3.1-flash-lite-preview',  // 500 RPD, best quality/speed ratio
+  'gemini-2.5-flash',               // 20 RPD fallback
+  'gemini-2.5-flash-lite',          // last resort
 ]
 
 interface ChatMessage {

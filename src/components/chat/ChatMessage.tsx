@@ -11,51 +11,98 @@ interface Message {
   streaming?: boolean
 }
 
-// Clean URL regex — stops at space, ), ], common trailing punctuation
-// but allows dots in the middle of URLs
-const URL_REGEX = /((?:https?:\/\/)?adrianoliver\.dev\/[^\s\)\]\.,\)]+(?:\.[^\s\)\]\.,]+)*|https?:\/\/[^\s\)\]\.,]+(?:\.[^\s\)\]\.,]+)*)/g
+function renderTextWithLinks(text: string, keyPrefix: string): React.ReactNode[] {
+  const result: React.ReactNode[] = []
+  
+  // Step 1: Process markdown links [label](url) FIRST
+  // This regex matches [any text](url) — the most complete pattern
+  const mdLinkRegex = /\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g
+  let lastIndex = 0
+  let match
+  
+  while ((match = mdLinkRegex.exec(text)) !== null) {
+    // Text before this match
+    if (match.index > lastIndex) {
+      const before = text.slice(lastIndex, match.index)
+      result.push(...renderBoldAndPlain(before, `${keyPrefix}-b${match.index}`))
+    }
+    
+    const label = match[1]
+    const url = match[2]
+    const isInternal = url.includes('adrianoliver.dev')
+    
+    if (isInternal) {
+      const path = url.replace(/^https?:\/\/adrianoliver\.dev/, '') || '/'
+      result.push(
+        <Link key={`${keyPrefix}-ml${match.index}`} href={path}
+          className="underline decoration-dotted hover:no-underline font-mono text-xs"
+          style={{ color: 'var(--color-accent)' }}>
+          {label}
+        </Link>
+      )
+    } else {
+      result.push(
+        <a key={`${keyPrefix}-ml${match.index}`} href={url}
+          target="_blank" rel="noopener noreferrer"
+          className="underline decoration-dotted hover:no-underline font-mono text-xs"
+          style={{ color: 'var(--color-accent)' }}>
+          {label}
+        </a>
+      )
+    }
+    lastIndex = match.index + match[0].length
+  }
+  
+  // Remaining text after last match
+  if (lastIndex < text.length) {
+    const remaining = text.slice(lastIndex)
+    // Step 2: Process bare URLs in remaining text
+    result.push(...renderBareUrls(remaining, `${keyPrefix}-r${lastIndex}`))
+  }
+  
+  return result.length > 0 ? result : renderBoldAndPlain(text, keyPrefix)
+}
 
-function renderTextWithLinks(text: string): React.ReactNode[] {
-  const parts = text.split(URL_REGEX)
+// Process bare URLs (not wrapped in markdown syntax)
+function renderBareUrls(text: string, keyPrefix: string): React.ReactNode[] {
+  // Matches URLs, stops before ), ], common trailing punctuation
+  // But allows dots in the MIDDLE of the URL
+  const bareUrlRegex = /(?<!\()(?<!\[)((?:https?:\/\/)?adrianoliver\.dev\/[^\s\)\]\.,`*]+|https?:\/\/[^\s\)\]\.,`*]+)/g
+  const parts = text.split(bareUrlRegex)
+  
   return parts.map((part, i) => {
-    // Internal link
     const internalMatch = part.match(/^(?:https?:\/\/)?adrianoliver\.dev(\/[^\s]*)/)
     if (internalMatch) {
       return (
-        <Link
-          key={i}
-          href={internalMatch[1] || '/'}
+        <Link key={`${keyPrefix}-${i}`} href={internalMatch[1] || '/'}
           className="underline decoration-dotted hover:no-underline font-mono text-xs"
-          style={{ color: 'var(--color-accent)' }}
-        >
+          style={{ color: 'var(--color-accent)' }}>
           {part}
         </Link>
       )
     }
-    // External link
     if (part.match(/^https?:\/\//)) {
       return (
-        <a
-          key={i}
-          href={part}
-          target="_blank"
-          rel="noopener noreferrer"
+        <a key={`${keyPrefix}-${i}`} href={part}
+          target="_blank" rel="noopener noreferrer"
           className="underline decoration-dotted hover:no-underline font-mono text-xs"
-          style={{ color: 'var(--color-accent)' }}
-        >
+          style={{ color: 'var(--color-accent)' }}>
           {part}
         </a>
       )
     }
-    // Bold: **text**
-    const boldParts = part.split(/\*\*(.*?)\*\*/g)
-    if (boldParts.length > 1) {
-      return boldParts.map((bp, j) =>
-        j % 2 === 1 ? <strong key={`${i}-${j}`}>{bp}</strong> : bp
-      )
-    }
-    return part
-  })
+    return renderBoldAndPlain(part, `${keyPrefix}-${i}`)
+  }).flat()
+}
+
+// Bold **text** and plain text
+function renderBoldAndPlain(text: string, keyPrefix: string): React.ReactNode[] {
+  const parts = text.split(/\*\*(.*?)\*\*/g)
+  return parts.map((part, i) =>
+    i % 2 === 1
+      ? <strong key={`${keyPrefix}-bold-${i}`}>{part}</strong>
+      : part || null
+  ).filter(Boolean) as React.ReactNode[]
 }
 
 function parseMarkdown(content: string): React.ReactNode[] {
@@ -100,7 +147,7 @@ function parseMarkdown(content: string): React.ReactNode[] {
       isNumbered = true
       listBuffer.push(
         <li key={i} style={{ marginBottom: '2px' }}>
-          {renderTextWithLinks(numberedMatch[2])}
+          {renderTextWithLinks(numberedMatch[2], `line-${i}`)}
         </li>
       )
       return
@@ -111,7 +158,7 @@ function parseMarkdown(content: string): React.ReactNode[] {
       if (isNumbered) { flushList(); isNumbered = false }
       listBuffer.push(
         <li key={i} style={{ marginBottom: '2px' }}>
-          {renderTextWithLinks(bulletMatch[1])}
+          {renderTextWithLinks(bulletMatch[1], `line-${i}`)}
         </li>
       )
       return
@@ -126,7 +173,7 @@ function parseMarkdown(content: string): React.ReactNode[] {
     flushList()
     result.push(
       <p key={i} style={{ margin: '2px 0', lineHeight: '1.6' }}>
-        {renderTextWithLinks(line)}
+        {renderTextWithLinks(line, `line-${i}`)}
       </p>
     )
   })
