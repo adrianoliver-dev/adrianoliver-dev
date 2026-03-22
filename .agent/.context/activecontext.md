@@ -5,19 +5,23 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B8.5
-- **Block Name:** Chatbot Final Reliability & UX Fixes
+- **Block Number:** B8.6
+- **Block Name:** Final UI/UX Polish & Copy Audit
 - **Status:** DONE
 - **Completed Date:** 2026-03-22
-- **Commit:** fix(chat): md link parser, plain URL instructions, model order 3.1-first, Clear/X button styling, bigger scroll arrow
+- **Commit:** fix(portfolio-b8.6-copy-audit): remove US/EU from all copy, remove Next.js 15 from non-case-study pages, fix About bio and terminal stack line
 - **Files:**
-  - [MODIFY] src/components/chat/ChatMessage.tsx
-  - [MODIFY] src/lib/chat-knowledge.ts
-  - [MODIFY] src/app/api/chat/route.ts
-  - [MODIFY] src/components/chat/ChatWidget.tsx
-- **Summary:** Completed final fixes for Block 8.5: custom markdown/link parsing, link syntax instructions, model priority, and chat widget button styling. Verified with 0 build/lint errors.
-- **Next Block:** B8.6 — Final UI/UX Polish & Copy Audit
+  - [MODIFY] src/components/home/Methodology.tsx
+  - [MODIFY] src/components/home/HeroAnimations.tsx
+  - [MODIFY] src/app/about/page.tsx
+  - [MODIFY] src/app/layout.tsx
+  - [MODIFY] public/llms.txt
+  - [MODIFY] src/components/home/TerminalCard.tsx
+  - [MODIFY] src/app/projects/solnr-studio/page.tsx
+- **Summary:** Completed B8.6 copy audit by removing US/EU phrasing across the codebase and Next.js 15 from non-case-study pages. Updated About page bio and terminal stack.
+- **Next Block:** B9 — GitHub READMEs + outreach
 
+| B8.5  | Chatbot Final Fixes | DONE | 2026-03-22 | fix(chat): external links clickable |
 | B7.5h | Footer Hotfix      | DONE | 2026-03-21 | fix(footer): remove nav duplication |
 | B7.5  | [Footer & Banner](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/layout/Footer.tsx) | DONE | 2026-03-21 | feat(portfolio-b7.5-footer-social) |
 | B7.4  | [JSON-LD & Robots](file:///c:/AdrianOliver-dev/adrianoliver-dev/public/robots.txt) | DONE | 2026-03-21 | feat(portfolio-b7.4-jsonld-robots) |
@@ -35,8 +39,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B8.6
-- **Block Name:** Final UI/UX Polish & Copy Audit
+- **Block Number:** B9
+- **Block Name:** GitHub READMEs + outreach
 
 ---
 
@@ -44,6 +48,7 @@
 
 | Block | Name                    | Status       | Date       | Commit |
 |-------|-------------------------|--------------|------------|--------|
+| B8.6  | Final UI/UX Polish & Copy Audit | DONE | 2026-03-22 | fix(portfolio-b8.6-copy-audit) |
 | B0    | Foundation & Setup      | DONE         | 2026-03-11 | chore: complete block B0 |
 | B1    | Global Layout & Fonts   | DONE         | 2026-03-11 | feat(portfolio-b1) |
 | B2    | Hero Section            | DONE         | 2026-03-11 | feat(portfolio-b2) |

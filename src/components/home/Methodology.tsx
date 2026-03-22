@@ -13,7 +13,7 @@ export default function Methodology() {
     {
       number: "03",
       title: "Zero-friction workflow",
-      description: "Async-first communication tailored for US/EU timezones. Weekly Loom demos, written logs, and staged deployments keep you in the loop 24/7."
+      description: "Async-first communication tailored for your timezones. Weekly Loom demos, written logs, and staged deployments keep you in the loop 24/7."
     }
   ]
 

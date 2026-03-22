@@ -8,7 +8,7 @@ const LINES = [
   { prefix: '~', command: 'cat focus.txt', delay: 1400 },
   { prefix: null, output: 'e-commerce systems · business web apps · inventory platforms', delay: 2000 },
   { prefix: '~', command: 'cat stack.txt', delay: 2800 },
-  { prefix: null, output: 'next.js 15 · typescript · supabase · tailwind v4', delay: 3400 },
+  { prefix: null, output: 'next.js · typescript · supabase · tailwind v4', delay: 3400 },
   { prefix: '~', command: 'cat delivery.txt', delay: 4200 },
   { prefix: null, output: 'two production systems shipped solo. zero downtime.', delay: 4800 },
   { prefix: '~', command: 'cat availability.txt', delay: 5400 },

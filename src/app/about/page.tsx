@@ -6,7 +6,7 @@ import SectionDivider from "@/components/ui/SectionDivider"
 
 export const metadata: Metadata = {
   title: "About | Adrian Oliver",
-  description: "Full-stack developer building e-commerce and inventory systems for apparel and retail brands. Based in Bolivia, available for US/EU remote projects.",
+  description: "Full-stack developer building e-commerce and inventory systems for apparel and retail brands. Based in Bolivia, available for remote, async-first projects.",
 }
 
 export default function AboutPage() {
@@ -29,8 +29,8 @@ export default function AboutPage() {
                 <p>
                   I transitioned from Economics to full-stack engineering with one
                   focus: building systems that solve real operational problems for
-                  retail and e-commerce businesses. Based in Bolivia, working async
-                  with US and EU teams.
+                  retail and e-commerce businesses. Based in Santa Cruz, Bolivia — available for remote projects worldwide,
+                  async-first.
                 </p>
               </div>
             </div>

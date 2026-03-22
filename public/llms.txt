@@ -6,7 +6,7 @@ building e-commerce platforms and inventory management
 systems for apparel and retail brands.
 Stack: Next.js, TypeScript, Supabase, PostgreSQL,
 Tailwind CSS, Framer Motion, Resend, WhatsApp Meta API.
-Available for US and EU remote projects. Async-first.
+Available for international remote projects.
 Contact: hello@adrianoliver.dev
 Profiles
 

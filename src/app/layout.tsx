@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     'Full-stack developer specializing in Next.js, TypeScript, and Supabase. ' +
     'I build production-ready e-commerce platforms and business web applications ' +
-    'for US and EU clients. Remote, async-first.',
+    'for clients. Remote, async-first.',
   keywords: [
     'Next.js developer',
     'full-stack developer',
@@ -125,7 +125,7 @@ export default function RootLayout({
                 url: 'https://adrianoliver.dev',
                 email: 'hello@adrianoliver.dev',
                 jobTitle: 'E-Commerce & Inventory Systems Developer',
-                description: 'Full-stack developer building e-commerce platforms and inventory management systems for apparel and retail brands. Available for US and EU remote projects.',
+                description: 'Full-stack developer building e-commerce platforms and inventory management systems for apparel and retail brands. Available for remote, async-first projects.',
                 sameAs: [
                   'https://github.com/adrianoliver-dev',
                   'https://www.linkedin.com/in/adrianoliver-dev',

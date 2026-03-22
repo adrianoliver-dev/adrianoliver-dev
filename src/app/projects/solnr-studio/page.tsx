@@ -9,13 +9,13 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: "Solnr Studio | Luxury E-commerce Architecture",
-  description: "Next.js 15 e-commerce architecture designed for a premium dark-mode aesthetic.",
+  description: "Next.js e-commerce architecture designed for a premium dark-mode aesthetic.",
 };
 
 export default function SolnrStudioCaseStudy() {
   const metadata = [
     { label: "Status", value: "In Development" },
-    { label: "Stack",  value: "Next.js 15 · Supabase · Tailwind v4 · Framer Motion" },
+    { label: "Stack",  value: "Next.js · Supabase · Tailwind v4 · Framer Motion" },
     { label: "Brand",  value: "Quiet luxury menswear · Austin, TX" }
   ];
 
@@ -26,7 +26,7 @@ export default function SolnrStudioCaseStudy() {
       <ProjectHero
         title="Solnr"
         italicWord="Studio"
-        description="An ongoing exploration in luxury e-commerce. Focused on high-fidelity animations, deep dark-mode aesthetics, and Next.js 15 Server Components for zero-compromise performance."
+        description="An ongoing exploration in luxury e-commerce. Focused on high-fidelity animations, deep dark-mode aesthetics, and Next.js Server Components for zero-compromise performance."
         metadata={metadata}
       />
 
