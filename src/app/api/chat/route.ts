@@ -7,7 +7,11 @@ export const runtime = 'edge'
 // Simple in-memory rate limiter
 const requestCounts = new Map<string, { count: number; resetTime: number }>()
 
-const MODELS = ['gemini-2.5-flash', 'gemini-2.5-flash-lite']
+const MODELS = [
+  'gemini-2.5-flash',
+  'gemini-3.1-flash-lite-preview', // 500 RPD free, launched March 3 2026
+  'gemini-2.5-flash-lite',         // last resort
+]
 
 interface ChatMessage {
   role: string
@@ -132,7 +136,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error('Chat API error:', error)
     return new Response(
-      "I'm at capacity right now — please try again in a few minutes, or reach Adrian directly at hello@adrianoliver.dev",
+      "I'm at capacity right now — try again in a few minutes, or reach Adrian directly at hello@adrianoliver.dev 👋",
       { 
         status: 200, // return 200 so the frontend displays it as a message
         headers: { 'Content-Type': 'text/plain; charset=utf-8' }

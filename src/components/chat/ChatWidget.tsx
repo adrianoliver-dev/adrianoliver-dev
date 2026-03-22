@@ -50,13 +50,38 @@ export default function ChatWidget() {
         setMessages([{
           id: 'welcome',
           role: 'assistant',
-          content: "Hey! I know Adrian's work inside out — his projects, stack, blog posts, and how he works.\\n\\nAsk me anything, whether you're a founder with a retail problem, a developer curious about the architecture, or a recruiter evaluating fit.",
+          content: "Hey! I know Adrian's work inside out — his projects, stack, blog posts, and how he works.\n\nAsk me anything, whether you're a founder with a retail problem, a developer curious about the architecture, or a recruiter evaluating fit.",
           streaming: false,
         }])
       }, 600)
       return () => clearTimeout(timer)
     }
   }, [isOpen, messages.length])
+
+  // Session persistence
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem('chat_messages')
+      if (saved) {
+        const parsed = JSON.parse(saved)
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setMessages(parsed)
+        }
+      }
+    } catch {
+      // silently fail
+    }
+  }, [])
+
+  useEffect(() => {
+    try {
+      if (messages.length > 0) {
+        sessionStorage.setItem('chat_messages', JSON.stringify(messages))
+      }
+    } catch {
+      // silently fail
+    }
+  }, [messages])
 
   // Feature 2 — Sound effects via Web Audio API
   const playSound = (type: 'send' | 'receive') => {
@@ -124,7 +149,6 @@ export default function ChatWidget() {
     setMessages(prev => [...prev, assistantMessage])
     
     try {
-      // Build messages for API (limited to last 20 total)
       const apiMessages = [...messages, userMessage]
         .slice(-20)
         .map(m => ({ 
@@ -141,7 +165,7 @@ export default function ChatWidget() {
       if (!response.ok) throw new Error('API error')
       
       const reader = response.body?.getReader()
-      const decoder = new TextDecoder()
+      const decoder = new TextEncoder()
       let accumulated = ''
       
       if (reader) {
@@ -210,23 +234,35 @@ export default function ChatWidget() {
                 ease: [0.22, 1, 0.36, 1],
                 opacity: { duration: 0.2 }
               }}
-              className="fixed top-0 right-0 bottom-0 z-[8000] w-full md:w-[380px] bg-[var(--color-surface)] border-l border-[var(--color-border)] shadow-2xl flex flex-col chat-panel"
-              role="dialog"
-              aria-label="Portfolio AI assistant"
-            >
-              {/* Header */}
-              <div className="p-4 border-b border-[var(--color-border)] flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <BrandMark size={20} />
-                  <div>
-                    <h3 className="font-serif text-lg text-[var(--color-text-primary)] leading-none">
-                      Ask Adrian&apos;s AI
-                    </h3>
-                    <p className="font-mono text-[10px] text-[var(--color-text-secondary)] mt-1 uppercase tracking-wider">
-                      Ask about my work, stack, or how I can help
-                    </p>
-                  </div>
+            className="fixed top-0 right-0 bottom-0 z-[8000] w-full md:w-[380px] bg-[var(--color-surface)] border-l border-[var(--color-border)] shadow-2xl flex flex-col chat-panel"
+            role="dialog"
+            aria-label="Portfolio AI assistant"
+          >
+            {/* Header */}
+            <div className="p-4 border-b border-[var(--color-border)] flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <BrandMark size={20} />
+                <div>
+                  <h3 className="font-serif text-lg text-[var(--color-text-primary)] leading-none">
+                    Ask Adrian&apos;s AI
+                  </h3>
+                  <p className="font-mono text-[10px] text-[var(--color-text-secondary)] mt-1 uppercase tracking-wider">
+                    Ask about my work, stack, or how I can help
+                  </p>
                 </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    setMessages([])
+                    sessionStorage.removeItem('chat_messages')
+                  }}
+                  className="p-2 font-mono text-[10px] uppercase tracking-widest transition-colors hover:text-[var(--color-accent)]"
+                  style={{ color: 'var(--color-text-secondary)' }}
+                  title="Clear conversation"
+                >
+                  Clear
+                </button>
                 <button 
                   onClick={() => setIsOpen(false)}
                   className="p-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors"
@@ -235,124 +271,125 @@ export default function ChatWidget() {
                   <X size={20} />
                 </button>
               </div>
+            </div>
 
-              {/* Messages Area */}
-              <div 
-                className="flex-1 overflow-y-auto p-4 space-y-4 chat-messages"
-                style={{
-                  overscrollBehavior: 'contain',
-                  WebkitOverflowScrolling: 'touch',
-                }}
-                data-lenis-prevent
-              >
-                {messages.length === 0 && (
-                  <div className="h-full flex flex-col items-center justify-center text-center space-y-6 px-4">
-                    <div className="w-12 h-12 rounded-full border border-[var(--color-border)] flex items-center justify-center bg-[var(--color-background)]">
-                      <BrandMark size={24} />
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="font-serif text-xl text-[var(--color-text-primary)]">How can I help you?</h4>
-                      <p className="font-sans text-sm text-[var(--color-text-secondary)]">
-                        Ask about Adrian&apos;s projects, technical stack, or how he can assist your business.
-                      </p>
-                    </div>
-                    
-                    <div className="flex flex-col gap-2 w-full pt-4">
-                      {SUGGESTED_QUESTIONS.map((q, i) => (
-                        <button
-                          key={i}
-                          onClick={() => handleSend(q)}
-                          className="text-left p-3 text-xs font-mono border border-[var(--color-border)] rounded-xl hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all group active:scale-95"
-                        >
-                          {q}
-                        </button>
-                      ))}
-                    </div>
+            {/* Messages Area */}
+            <div 
+              className="flex-1 overflow-y-auto p-4 space-y-4 chat-messages"
+              style={{
+                overscrollBehavior: 'contain',
+                WebkitOverflowScrolling: 'touch',
+              }}
+              data-lenis-prevent
+            >
+              {messages.length === 0 && (
+                <div className="h-full flex flex-col items-center justify-center text-center space-y-6 px-4">
+                  <div className="w-12 h-12 rounded-full border border-[var(--color-border)] flex items-center justify-center bg-[var(--color-background)]">
+                    <BrandMark size={24} />
                   </div>
-                )}
-
-                <AnimatePresence mode="popLayout">
-                  {messages.map((m) => (
-                    <ChatMessage key={m.id} message={m} />
-                  ))}
-                </AnimatePresence>
-
-                {messages.length === 1 && messages[0].id === 'welcome' && (
-                  <div className="flex flex-col gap-2 px-4 pb-2">
+                  <div className="space-y-2">
+                    <h4 className="font-serif text-xl text-[var(--color-text-primary)]">How can I help you?</h4>
+                    <p className="font-sans text-sm text-[var(--color-text-secondary)]">
+                      Ask about Adrian&apos;s projects, technical stack, or how he can assist your business.
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-col gap-2 w-full pt-4">
                     {SUGGESTED_QUESTIONS.map((q, i) => (
                       <button
                         key={i}
                         onClick={() => handleSend(q)}
-                        className="text-left p-3 text-xs font-mono border border-[var(--color-border)] rounded-xl hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all active:scale-95"
+                        className="text-left p-3 text-xs font-mono border border-[var(--color-border)] rounded-xl hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all group active:scale-95"
                       >
                         {q}
                       </button>
                     ))}
                   </div>
-                )}
+                </div>
+              )}
 
-                {isLoading && messages[messages.length - 1]?.role === 'user' && (
-                  <TypingIndicator />
-                )}
-                
-                <div ref={messagesEndRef} />
-              </div>
+              <AnimatePresence mode="popLayout">
+                {messages.map((m) => (
+                  <ChatMessage key={m.id} message={m} />
+                ))}
+              </AnimatePresence>
 
-              {/* Input Area */}
-              <div className="p-4 border-t border-[var(--color-border)] bg-[var(--color-background)]">
-                <form 
-                  onSubmit={(e) => {
-                    e.preventDefault()
-                    handleSend()
+              {messages.length === 1 && messages[0].id === 'welcome' && (
+                <div className="flex flex-col gap-2 px-4 pb-2">
+                  {SUGGESTED_QUESTIONS.map((q, i) => (
+                    <button
+                      key={i}
+                      onClick={() => handleSend(q)}
+                      className="text-left p-3 text-xs font-mono border border-[var(--color-border)] rounded-xl hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all active:scale-95"
+                    >
+                      {q}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {isLoading && messages[messages.length - 1]?.role === 'user' && (
+                <TypingIndicator />
+              )}
+              
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Input Area */}
+            <div className="p-4 border-t border-[var(--color-border)] bg-[var(--color-background)]">
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  handleSend()
+                }}
+                className="flex items-end gap-2"
+              >
+                <textarea
+                  ref={inputRef}
+                  value={input}
+                  onChange={(e) => {
+                    setInput(e.target.value)
                   }}
-                  className="flex items-end gap-2"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault()
+                      handleSend()
+                    }
+                  }}
+                  placeholder="Ask anything..."
+                  rows={1}
+                  className="flex-1 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl px-4 py-2 text-sm font-mono text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-accent)] transition-colors placeholder:text-[var(--color-text-secondary)]/50 resize-none overflow-y-auto leading-relaxed chat-messages"
+                  style={{ minHeight: '168px', maxHeight: '168px' }}
+                  aria-label="Message input"
+                  data-lenis-prevent="true"
+                />
+                <button
+                  type="submit"
+                  disabled={!input.trim() || isLoading}
+                  className={`
+                    p-2.5 rounded-xl transition-all
+                    \${input.trim() && !isLoading 
+                      ? 'bg-[var(--color-accent)] text-black shadow-lg shadow-amber-500/20 active:scale-95' 
+                      : 'bg-[var(--color-border)] text-[var(--color-text-secondary)] grayscale'
+                    }
+                  `}
                 >
-                  <textarea
-                    ref={inputRef}
-                    value={input}
-                    onChange={(e) => {
-                      setInput(e.target.value)
-                    }}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && !e.shiftKey) {
-                        e.preventDefault()
-                        handleSend()
-                      }
-                    }}
-                    placeholder="Ask anything..."
-                    rows={1}
-                    className="flex-1 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl px-4 py-2 text-sm font-mono text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-accent)] transition-colors placeholder:text-[var(--color-text-secondary)]/50 resize-none overflow-y-auto leading-relaxed chat-messages"
-                    style={{ minHeight: '168px', maxHeight: '168px' }}
-                    aria-label="Message input"
-                    data-lenis-prevent="true"
-                  />
-                  <button
-                    type="submit"
-                    disabled={!input.trim() || isLoading}
-                    className={`
-                      p-2.5 rounded-xl transition-all
-                      \${input.trim() && !isLoading 
-                        ? 'bg-[var(--color-accent)] text-black shadow-lg shadow-amber-500/20 active:scale-95' 
-                        : 'bg-[var(--color-border)] text-[var(--color-text-secondary)] grayscale'
-                      }
-                    `}
-                  >
-                    <Send size={18} />
-                  </button>
-                </form>
-                {input.length > 400 && (
-                  <p className="font-mono text-[10px] mt-1 text-right"
-                    style={{ 
-                      color: input.length > 480 
-                        ? 'var(--color-danger, #ef4444)' 
-                        : 'var(--color-text-secondary)' 
-                    }}>
-                    {500 - input.length} characters remaining
-                  </p>
-                )}
-              </div>
-            </m.div>
-          </>
+                  <Send size={18} />
+                </button>
+              </form>
+              {input.length > 400 && (
+                <p className="font-mono text-[10px] mt-1 text-right"
+                  style={{ 
+                    color: input.length > 480 
+                      ? 'var(--color-danger, #ef4444)' 
+                      : 'var(--color-text-secondary)' 
+                  }}>
+                  {500 - input.length} characters remaining
+                </p>
+              )}
+            </div>
+          </m.div>
+        </>
         )}
       </AnimatePresence>
     </>
