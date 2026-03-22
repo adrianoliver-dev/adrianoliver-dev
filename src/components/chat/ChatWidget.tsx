@@ -63,7 +63,10 @@ export default function ChatWidget() {
     try {
       const saved = sessionStorage.getItem('chat_messages')
       if (saved) {
-        const parsed = JSON.parse(saved)
+        const parsed = JSON.parse(saved).map((m: Message) => ({
+          ...m,
+          streaming: false, // always false on reload to prevent UI bugs
+        }))
         if (Array.isArray(parsed) && parsed.length > 0) {
           setMessages(parsed)
         }

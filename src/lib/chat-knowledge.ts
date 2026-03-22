@@ -108,7 +108,7 @@ This website itself is a project — built with:
 - Framer Motion for animations
 - Lenis for smooth scroll
 - Custom cursor with amber accent
-- AI chatbot (this one!) powered by Gemini 2.5 Flash
+- AI chatbot (this one!) powered by Gemini 3.1 Flash Lite and gemini 2.5 flash
 - Resend for contact form emails
 - Blog with MDX and dynamic OG images
 - JSON-LD structured data for SEO

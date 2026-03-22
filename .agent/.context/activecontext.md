@@ -5,20 +5,18 @@
 ---
 
 ## CURRENT BLOCK
-- **Block Number:** B8.3
-- **Block Name:** AI Chatbot Widget UI
+- **Block Number:** B8.5
+- **Block Name:** Chatbot Final Reliability & UX Fixes
 - **Status:** DONE
-- **Completed Date:** 2026-03-21
-- **Commit:** feat(portfolio-b8.3-chat-complete): Gemini 2.5 streaming, scroll fixes, fixed-height textarea
+- **Completed Date:** 2026-03-22
+- **Commit:** feat(portfolio-b8.5-chat-complete): final stability and accuracy fixes
 - **Files:**
-  - [NEW] src/components/chat/ChatTrigger.tsx
-  - [NEW] src/components/chat/ChatMessage.tsx
-  - [NEW] src/components/chat/ChatWidget.tsx
-  - [NEW] src/app/api/chat/route.ts
-  - [NEW] src/lib/chat-knowledge.ts
-  - [MODIFY] src/app/layout.tsx
-  - [MODIFY] src/app/globals.css
-- **Summary:** Completed the AI chatbot integration (Block 8.3). Implemented a streaming RAG-style assistant using Gemini 2.5 Flash with sliding window history (20 messages). Designed a premium sidebar UI with `framer-motion` animations and a `BrandMark` pill trigger. Resolved critical scroll propagation issues caused by Lenis conflict using `data-lenis-prevent` and `isolation: isolate`. Finalized the input area with a 7-line fixed-height textarea (168px) for stable typing UX.
+  - [MODIFY] src/app/api/chat/route.ts
+  - [MODIFY] src/lib/chat-knowledge.ts
+  - [MODIFY] src/components/chat/ChatWidget.tsx
+  - [MODIFY] src/components/chat/ChatMessage.tsx
+- **Summary:** Finalized Block 8.5 with stability and accuracy fixes. Sanitized session persistence messaging, implemented custom markdown/link parsing, and completed a truthfulness audit of the knowledge base (PageSpeed, Upwork, Projects). Verified with 0 build/lint errors.
+- **Next Block:** B8.6 — Final UI/UX Polish & Copy Audit
 
 | B7.5h | Footer Hotfix      | DONE | 2026-03-21 | fix(footer): remove nav duplication |
 | B7.5  | [Footer & Banner](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/layout/Footer.tsx) | DONE | 2026-03-21 | feat(portfolio-b7.5-footer-social) |
@@ -37,8 +35,8 @@
 ---
 
 ## NEXT BLOCK
-- **Block Number:** B8.4
-- **Block Name:** AI Chatbot Polishing & Mobile Optimization
+- **Block Number:** B8.6
+- **Block Name:** Final UI/UX Polish & Copy Audit
 
 ---
 
@@ -60,7 +58,8 @@
 | B4.5  | Personal brand mark            | DONE         | 2026-03-19 | feat(portfolio-b4.5) |
 | B4.5b | Brand assets export page       | DONE         | 2026-03-19 | feat(portfolio-b4.5b) |
 | B5.8  | Copy Audit Fixes + Hotfix     | DONE         | 2026-03-19 | feat(portfolio-b5.8) |
-| B6.1  | ProjectGallery Interactive Upgrade | DONE         | 2026-03-19 | feat(portfolio-b6.1) |
-| B6.B  | Cursor & LCP Performance Refinement | DONE | 2026-03-20 | fb0b337 |
-| B7.0  | Blog Infrastructure Rebuild | DONE | 2026-03-20 | feat(portfolio-b7.0) |
+| B8.5 | Chatbot Final Reliability & UX Fixes | DONE | 2026-03-22 | feat(portfolio-b8.5-chat-complete) |
+| B8.4 | AI Chatbot Reliability & Tone | DONE | 2026-03-22 | feat(portfolio-b8.4-chat-enhanced) |
+| B8.3 | AI Chatbot Widget UI | DONE | 2026-03-21 | feat(portfolio-b8.3-chat-complete) |
+| B7.1h | [Footer & Banner](file:///c:/AdrianOliver-dev/adrianoliver-dev/src/components/layout/Footer.tsx) | DONE | 2026-03-21 | feat(portfolio-b7.5-footer-social) |
 | B7.1  | Blog Post #1 Content | DONE | 2026-03-20 | feat(portfolio-b7.1) |

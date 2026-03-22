@@ -37,7 +37,7 @@ export default function ChatMessage({ message }: ChatMessageProps) {
         style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
       >
         <div className="whitespace-pre-wrap leading-relaxed">
-          {renderContent(message.content)}
+          {renderMarkdown(message.content)}
           {message.streaming && (
             <m.span
               animate={{ opacity: [1, 0] }}
@@ -53,9 +53,55 @@ export default function ChatMessage({ message }: ChatMessageProps) {
   )
 }
 
-function renderContent(content: string) {
-  const urlRegex = /(https?:\/\/[^\s]+|adrianoliver\.dev\/[^\s]+)/g
-  const parts = content.split(urlRegex)
+function renderMarkdown(text: string) {
+  // Split into lines and process
+  return text.split('\n').map((line, lineIdx) => {
+    // Bold: **text**
+    const boldParsed = line.split(/\*\*(.*?)\*\*/g).map((part, i) =>
+      i % 2 === 1 ? <strong key={i} className="font-bold text-[var(--color-text-primary)]">{part}</strong> : 
+        // Italic: *text*
+        part.split(/\*(.*?)\*/g).map((p, j) =>
+          j % 2 === 1 ? <em key={j} className="italic">{p}</em> : 
+            renderLinks(p, `${lineIdx}-${i}-${j}`)
+        )
+    )
+    
+    // Detect list items
+    if (line.match(/^[\*\-]\s/)) {
+      return (
+        <li key={lineIdx} className="ml-4 list-disc mb-1 text-[var(--color-text-secondary)]">
+          {boldParsed}
+        </li>
+      )
+    }
+    if (line.match(/^\d+\.\s/)) {
+      return (
+        <li key={lineIdx} className="ml-4 list-decimal mb-1 text-[var(--color-text-secondary)]">
+          {boldParsed}
+        </li>
+      )
+    }
+    // Heading
+    if (line.startsWith('### ')) {
+      return (
+        <p key={lineIdx} className="font-mono text-[10px] uppercase tracking-widest mt-4 mb-2 first:mt-0"
+          style={{ color: 'var(--color-accent)' }}>
+          {line.slice(4)}
+        </p>
+      )
+    }
+    // Empty line = spacer
+    if (line.trim() === '') {
+      return <div key={lineIdx} className="h-2" />
+    }
+    return <p key={lineIdx} className="mb-2 last:mb-0 text-[var(--color-text-secondary)]">{boldParsed}</p>
+  })
+}
+
+function renderLinks(text: string, key: string) {
+  // Clean URL regex — stops at common trailing punctuation
+  const urlRegex = /((?:https?:\/\/)?adrianoliver\.dev\/[^\s\)\]\.,]+|https?:\/\/[^\s\)\]\.,]+)/g
+  const parts = text.split(urlRegex)
   
   return parts.map((part, i) => {
     // Internal portfolio link
@@ -64,7 +110,7 @@ function renderContent(content: string) {
       const path = internalMatch[1] || '/'
       return (
         <Link
-          key={i}
+          key={`${key}-${i}`}
           href={path}
           className="underline decoration-dotted hover:no-underline transition-all"
           style={{ color: 'var(--color-accent)' }}
@@ -77,7 +123,7 @@ function renderContent(content: string) {
     if (part.match(/^https?:\/\//)) {
       return (
         <a
-          key={i}
+          key={`${key}-${i}`}
           href={part}
           target="_blank"
           rel="noopener noreferrer"
@@ -88,7 +134,7 @@ function renderContent(content: string) {
         </a>
       )
     }
-    return <span key={i}>{part}</span>
+    return <span key={`${key}-${i}`}>{part}</span>
   })
 }
 
